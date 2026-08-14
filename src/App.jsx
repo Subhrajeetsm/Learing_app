@@ -1368,6 +1368,8 @@ function App() {
           path="/feedback"
           element={<Feedback />}
         />
+<Route path="/login" element={<Login />} />
+        
 
       </Routes>
 
