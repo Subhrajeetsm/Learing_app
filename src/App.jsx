@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./App.css";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Feedback from "./Feedback";
-
+import Login from "./Login";
 /* =====================================================
    INHERITANCE DATA
 ===================================================== */
@@ -473,32 +473,42 @@ function Visualizer() {
 
       <header className="header">
 
-        <div className="logo">
-          C++
-        </div>
+  <div className="logo">
+    C++
+  </div>
 
-        <div className="header-content">
+  <div className="header-content">
 
-          <h1>
-            C++ Inheritance Visualizer
-          </h1>
+    <h1>
+      C++ Inheritance Visualizer
+    </h1>
 
-          <p>
-            Learn classes, objects, inheritance
-            and access specifiers visually.
-          </p>
+    <p>
+      Learn classes, objects, inheritance
+      and access specifiers visually.
+    </p>
 
-        </div>
+  </div>
 
-        {/* FEEDBACK BUTTON */}
+  {/* FEEDBACK BUTTON */}
 
-        <Link
-          to="/feedback"
-          className="feedback-nav-btn"
-        >
-          💬 Feedback
+  <Link
+    to="/feedback"
+    className="feedback-nav-btn"
+  >
+    💬 Feedback
+  </Link>
 
-      </header>
+  {/* LOGIN BUTTON */}
+
+  <Link
+    to="/login"
+    className="login-nav-btn"
+  >
+    🔐 Login
+  </Link>
+
+</header>
 
       <div className="main-container">
 
