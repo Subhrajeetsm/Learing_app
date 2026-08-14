@@ -103,6 +103,7 @@ int main() {
 
     output: [
       "Class A",
+     "Class A",
       "Class B",
       "Class C",
     ],
@@ -159,6 +160,7 @@ int main() {
 
     output: [
       "A",
+       "A",
       "B",
       "C",
     ],
@@ -219,6 +221,7 @@ int main() {
 
     output: [
       "Animal eats",
+       "Animal eats",
       "Dog barks",
       "Animal eats",
       "Cat meows",
@@ -288,6 +291,7 @@ int main() {
 
     output: [
       "Class A",
+       "Class A",
       "Class B",
       "Class C",
       "Class D",
