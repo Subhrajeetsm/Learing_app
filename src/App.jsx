@@ -502,11 +502,11 @@ function Visualizer() {
   {/* LOGIN BUTTON */}
 
   <Link
-    to="/login"
-    className="login-nav-btn"
-  >
-    🔐 Login
-  </Link>
+  to="/login"
+  className="login-nav-btn"
+>
+  🔐 Login
+</Link>
 
 </header>
 
