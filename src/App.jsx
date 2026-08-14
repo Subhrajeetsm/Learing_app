@@ -47,6 +47,7 @@ int main() {
 
     output: [
       "Animal eats",
+       "Animal eats",
       "Dog barks",
     ],
   },
