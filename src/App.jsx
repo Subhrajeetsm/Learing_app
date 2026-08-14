@@ -498,7 +498,9 @@ function Visualizer() {
         >
           💬 Feedback
         </Link>
-
+<Link to="/login">
+  <button>Login</button>
+</Link>
       </header>
 
       <div className="main-container">
