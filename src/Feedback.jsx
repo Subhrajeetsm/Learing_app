@@ -16,7 +16,7 @@ function Feedback() {
 
     try {
       const response = await fetch(
-        "http://localhost:5000/api/feedback",
+        "https://cpp-inheritance-visualizer-backend.onrender.com/",
         {
           method: "POST",
           headers: {
