@@ -586,7 +586,9 @@ function Visualizer() {
         </div>
 
         <Link
-          to="/feedback"
+          to="/feedback" 
+          target="_blank"
+  rel="noopener noreferrer"
           className="feedback-nav-btn"
         >
           💬 Feedback
