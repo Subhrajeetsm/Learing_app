@@ -451,15 +451,35 @@ const accessData = {
 
 const constructorData = {
   rules: [
-    "The constructor has the same name as the class.",
-    "It has no return type (not even void).",
-    "It is usually declared public.",
-    "It is automatically called when an object is created.",
+    {
+      number: "01",
+      title: "Same Name as Class",
+      text: "The constructor has the same name as the class.",
+    },
+    {
+      number: "02",
+      title: "No Return Type",
+      text: "A constructor has no return type, not even void.",
+    },
+    {
+      number: "03",
+      title: "Usually Public",
+      text: "Constructors are usually declared in the public section.",
+    },
+    {
+      number: "04",
+      title: "Automatically Called",
+      text: "The constructor is automatically called when an object is created.",
+    },
   ],
 
-  defaultConstructor: `class Student {
+  basicCode: `#include <iostream>
+using namespace std;
+
+class Student {
 public:
 
+    // Constructor
     Student() {
         cout << "Constructor called";
     }
@@ -472,17 +492,16 @@ int main() {
     return 0;
 }`,
 
-  parameterizedConstructor: `class Student {
+  parameterCode: `#include <iostream>
+using namespace std;
+
+class Student {
 public:
 
     Student(string n, int a) {
-        name = n;
-        age = a;
+        cout << "Name: " << n << endl;
+        cout << "Age: " << a << endl;
     }
-
-private:
-    string name;
-    int age;
 };
 
 int main() {
@@ -492,34 +511,20 @@ int main() {
     return 0;
 }`,
 
-  outsideConstructor: `class Student {
+  overloadCode: `#include <iostream>
+using namespace std;
+
+class Student {
 public:
 
-    Student();
-};
-
-Student::Student() {
-    cout << "Constructor defined outside";
-}
-
-int main() {
-
-    Student s;
-
-    return 0;
-}`,
-
-  overloadedConstructor: `class Student {
-public:
-
-    // Constructor 1
+    // Default constructor
     Student() {
-        cout << "Default constructor";
+        cout << "Default Constructor" << endl;
     }
 
-    // Constructor 2
+    // Parameterized constructor
     Student(string name) {
-        cout << "Parameterized constructor";
+        cout << "Name: " << name << endl;
     }
 };
 
@@ -527,6 +532,27 @@ int main() {
 
     Student s1;
     Student s2("Rahul");
+
+    return 0;
+}`,
+
+  outsideCode: `#include <iostream>
+using namespace std;
+
+class Student {
+public:
+
+    Student();
+};
+
+// Constructor defined outside class
+Student::Student() {
+    cout << "Constructor called";
+}
+
+int main() {
+
+    Student s;
 
     return 0;
 }`,
@@ -672,6 +698,21 @@ function Visualizer() {
     types.indexOf(selectedType);
 
   /* =====================================================
+     SCROLL FUNCTION
+  ===================================================== */
+
+  const scrollToSection = (id) => {
+    setTimeout(() => {
+      document
+        .getElementById(id)
+        ?.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+    }, 50);
+  };
+
+  /* =====================================================
      SELECT TYPE
   ===================================================== */
 
@@ -692,6 +733,7 @@ function Visualizer() {
       (currentIndex + 1) % types.length;
 
     selectType(types[nextIndex]);
+    scrollToSection("inheritance-section");
   };
 
   /* =====================================================
@@ -704,6 +746,7 @@ function Visualizer() {
       types.length;
 
     selectType(types[prevIndex]);
+    scrollToSection("inheritance-section");
   };
 
   /* =====================================================
@@ -757,19 +800,6 @@ function Visualizer() {
     }, 50);
   };
 
-  /* =====================================================
-     CONSTRUCTOR SCROLL
-  ===================================================== */
-
-  const handleConstructorClick = () => {
-    document
-      .getElementById("constructor-section")
-      ?.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-  };
-
   return (
     <div className="app">
 
@@ -804,8 +834,6 @@ function Visualizer() {
           }}
         >
 
-          {/* FEEDBACK NEW TAB */}
-
           <Link
             to="/feedback"
             target="_blank"
@@ -814,8 +842,6 @@ function Visualizer() {
           >
             💬 Feedback
           </Link>
-
-          {/* CLERK USER */}
 
           <UserButton />
 
@@ -835,70 +861,111 @@ function Visualizer() {
 
         <aside className="sidebar">
 
-          <h2>
-            Inheritance Types
-          </h2>
+          {/* C++ CONCEPTS */}
 
-          {types.map((type) => (
+          <div className="sidebar-section">
+
+            <h2 className="sidebar-title">
+              C++ Concepts
+            </h2>
+
             <button
-              key={type}
-              className={
-                selectedType === type
-                  ? "type-btn active"
-                  : "type-btn"
-              }
+              className="concept-nav-btn"
               onClick={() =>
-                selectType(type)
+                scrollToSection(
+                  "class-object-section"
+                )
               }
             >
-              {type}
+              📘 Class and Object
             </button>
-          ))}
 
-          <div className="sidebar-divider"></div>
+            <button
+              className="concept-nav-btn"
+              onClick={() =>
+                scrollToSection(
+                  "constructor-section"
+                )
+              }
+            >
+              🏗️ Constructors
+            </button>
 
-          <h2>
-            Access Specifier
-          </h2>
+          </div>
 
-          {Object.keys(accessData).map(
-            (type) => (
+          {/* INHERITANCE TYPES */}
+
+          <div className="sidebar-section">
+
+            <h2 className="sidebar-title">
+              Inheritance Types
+            </h2>
+
+            {types.map((type) => (
+
               <button
                 key={type}
                 className={
-                  accessType === type
-                    ? "access-btn active"
-                    : "access-btn"
+                  selectedType === type
+                    ? "type-btn active"
+                    : "type-btn"
                 }
-                onClick={() =>
-                  setAccessType(type)
-                }
+                onClick={() => {
+
+                  selectType(type);
+
+                  scrollToSection(
+                    "inheritance-section"
+                  );
+
+                }}
               >
-                {type.toUpperCase()}
+                {type}
               </button>
-            )
-          )}
 
-          {/* =================================================
-              CONSTRUCTOR
-          ================================================= */}
+            ))}
+
+          </div>
+
+          {/* ACCESS SPECIFIER */}
+
+          <div className="sidebar-section">
+
+            <h2 className="sidebar-title">
+              Access Specifier
+            </h2>
+
+            {Object.keys(accessData).map(
+              (type) => (
+
+                <button
+                  key={type}
+                  className={
+                    accessType === type
+                      ? "access-btn active"
+                      : "access-btn"
+                  }
+                  onClick={() => {
+
+                    setAccessType(type);
+
+                    scrollToSection(
+                      "access-section"
+                    );
+
+                  }}
+                >
+                  {type.toUpperCase()}
+                </button>
+
+              )
+            )}
+
+          </div>
 
           <div className="sidebar-divider"></div>
 
-          <h2>
-            C++ Concepts
-          </h2>
-
-          <button
-            className="access-btn"
-            onClick={handleConstructorClick}
-          >
-            CONSTRUCTOR
-          </button>
-
-          <div className="sidebar-divider"></div>
-
-          {/* FEEDBACK NEW TAB */}
+          {/* FEEDBACK */}
 
           <Link
             to="/feedback"
@@ -921,7 +988,10 @@ function Visualizer() {
               CLASS AND OBJECT
           ================================================= */}
 
-          <section className="card class-object-card">
+          <section
+            id="class-object-section"
+            className="card class-object-card"
+          >
 
             <div className="class-object-header">
 
@@ -1010,7 +1080,7 @@ public:
           </section>
 
           {/* =================================================
-              CONSTRUCTOR
+              CONSTRUCTORS
           ================================================= */}
 
           <section
@@ -1026,14 +1096,14 @@ public:
                   C++ FUNDAMENTALS
                 </span>
 
-                <h3>
+                <h2>
                   Constructors
-                </h3>
+                </h2>
 
                 <p>
                   A constructor is a special member
                   function that is automatically called
-                  when an object of a class is created.
+                  when an object is created.
                 </p>
 
               </div>
@@ -1051,20 +1121,28 @@ public:
               <div className="rules-grid">
 
                 {constructorData.rules.map(
-                  (rule, index) => (
+                  (rule) => (
 
                     <div
                       className="rule-box"
-                      key={index}
+                      key={rule.number}
                     >
 
                       <div className="concept-number">
-                        {String(index + 1).padStart(2, "0")}
+                        {rule.number}
                       </div>
 
-                      <p>
-                        {rule}
-                      </p>
+                      <div>
+
+                        <strong>
+                          {rule.title}
+                        </strong>
+
+                        <p>
+                          {rule.text}
+                        </p>
+
+                      </div>
 
                     </div>
 
@@ -1084,33 +1162,33 @@ public:
               </h4>
 
               <p>
-                Constructors are useful for initializing
-                objects when they are created. They make
-                sure that an object starts with valid and
-                meaningful values.
+                Constructors initialize objects when
+                they are created. They help assign
+                initial values to data members and
+                make object creation easier and safer.
               </p>
 
             </div>
 
-            {/* DEFAULT CONSTRUCTOR */}
+            {/* BASIC CONSTRUCTOR */}
 
             <div className="constructor-example">
 
               <div className="constructor-example-header">
 
                 <h4>
-                  Default Constructor
+                  Basic Constructor
                 </h4>
 
                 <span>
-                  Automatically called when object is created
+                  Constructor called automatically
                 </span>
 
               </div>
 
               <pre>
                 <code>
-                  {constructorData.defaultConstructor}
+                  {constructorData.basicCode}
                 </code>
               </pre>
 
@@ -1127,20 +1205,58 @@ public:
                 </h4>
 
                 <span>
-                  Used to initialize objects with values
+                  Pass values during object creation
                 </span>
 
               </div>
 
               <pre>
                 <code>
-                  {constructorData.parameterizedConstructor}
+                  {constructorData.parameterCode}
                 </code>
               </pre>
 
             </div>
 
-            {/* CONSTRUCTOR OUTSIDE CLASS */}
+            {/* CONSTRUCTOR OVERLOADING */}
+
+            <div className="constructor-info">
+
+              <h4>
+                Constructor Overloading
+              </h4>
+
+              <p>
+                Constructor overloading means defining
+                multiple constructors in the same class
+                with different parameter lists.
+              </p>
+
+            </div>
+
+            <div className="constructor-example">
+
+              <div className="constructor-example-header">
+
+                <h4>
+                  Example with Two Constructors
+                </h4>
+
+                <span>
+                  Default + Parameterized
+                </span>
+
+              </div>
+
+              <pre>
+                <code>
+                  {constructorData.overloadCode}
+                </code>
+              </pre>
+
+            </div>
+
+            {/* OUTSIDE CLASS */}
 
             <div className="constructor-example">
 
@@ -1151,68 +1267,29 @@ public:
                 </h4>
 
                 <span>
-                  Uses the scope resolution operator ::
+                  Using scope resolution operator ::
                 </span>
 
               </div>
 
               <pre>
                 <code>
-                  {constructorData.outsideConstructor}
+                  {constructorData.outsideCode}
                 </code>
               </pre>
-
-            </div>
-
-            {/* CONSTRUCTOR OVERLOADING */}
-
-            <div className="constructor-example">
-
-              <div className="constructor-example-header">
-
-                <h4>
-                  Constructor Overloading
-                </h4>
-
-                <span>
-                  Multiple constructors with different parameters
-                </span>
-
-              </div>
-
-              <pre>
-                <code>
-                  {constructorData.overloadedConstructor}
-                </code>
-              </pre>
-
-            </div>
-
-            {/* WHY OVERLOADING */}
-
-            <div className="access-detail">
-
-              <h4>
-                Why Use Constructor Overloading?
-              </h4>
-
-              <p>
-                Constructor overloading allows a class
-                to have multiple constructors with
-                different parameter lists. This allows
-                objects to be initialized in different
-                ways depending on the requirements.
-              </p>
 
             </div>
 
           </section>
 
           {/* =================================================
-              HERO
+              INHERITANCE HERO
           ================================================= */}
 
-          <section className="hero">
+          <section
+            id="inheritance-section"
+            className="hero"
+          >
 
             <div>
 
@@ -1560,7 +1637,10 @@ public:
               ACCESS SPECIFIER
           ================================================= */}
 
-          <section className="card access-card">
+          <section
+            id="access-section"
+            className="card access-card"
+          >
 
             <div className="card-header">
 
@@ -1721,27 +1801,21 @@ function App() {
 
       <Routes>
 
-        {/* ===============================
-            SIGN IN
-        =============================== */}
+        {/* SIGN IN */}
 
         <Route
           path="/sign-in/*"
           element={<SignInPage />}
         />
 
-        {/* ===============================
-            SIGN UP
-        =============================== */}
+        {/* SIGN UP */}
 
         <Route
           path="/sign-up/*"
           element={<SignUpPage />}
         />
 
-        {/* ===============================
-            FEEDBACK
-        =============================== */}
+        {/* FEEDBACK */}
 
         <Route
           path="/feedback"
@@ -1752,9 +1826,7 @@ function App() {
           }
         />
 
-        {/* ===============================
-            VISUALIZER
-        =============================== */}
+        {/* VISUALIZER */}
 
         <Route
           path="/*"
