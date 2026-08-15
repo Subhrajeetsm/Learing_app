@@ -42,9 +42,7 @@ const inheritanceData = {
       },
     ],
 
-    arrows: [
-      ["A", "B"],
-    ],
+    arrows: [["A", "B"]],
 
     code: `#include <iostream>
 using namespace std;
@@ -73,7 +71,6 @@ int main() {
 }`,
 
     output: [
-      "Animal eats",
       "Animal eats",
       "Dog barks",
     ],
@@ -145,7 +142,6 @@ int main() {
 
     output: [
       "Class A",
-      "Class A",
       "Class B",
       "Class C",
     ],
@@ -216,7 +212,6 @@ int main() {
 }`,
 
     output: [
-      "A",
       "A",
       "B",
       "C",
@@ -292,7 +287,6 @@ int main() {
 }`,
 
     output: [
-      "Animal eats",
       "Animal eats",
       "Dog barks",
       "Animal eats",
@@ -382,7 +376,6 @@ int main() {
 }`,
 
     output: [
-      "Class A",
       "Class A",
       "Class B",
       "Class C",
@@ -479,7 +472,6 @@ using namespace std;
 class Student {
 public:
 
-    // Constructor
     Student() {
         cout << "Constructor called";
     }
@@ -517,12 +509,10 @@ using namespace std;
 class Student {
 public:
 
-    // Default constructor
     Student() {
         cout << "Default Constructor" << endl;
     }
 
-    // Parameterized constructor
     Student(string name) {
         cout << "Name: " << name << endl;
     }
@@ -545,7 +535,6 @@ public:
     Student();
 };
 
-// Constructor defined outside class
 Student::Student() {
     cout << "Constructor called";
 }
@@ -567,16 +556,10 @@ function ProtectedRoute({ children }) {
 
   if (!isLoaded) {
     return (
-      <div
-        style={{
-          minHeight: "100vh",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          fontSize: "20px",
-        }}
-      >
-        Loading...
+      <div className="loading-screen">
+        <div className="loading-box">
+          Loading...
+        </div>
       </div>
     );
   }
@@ -589,14 +572,14 @@ function ProtectedRoute({ children }) {
 }
 
 /* =====================================================
-   SIGN IN PAGE
+   SIGN IN
 ===================================================== */
 
 function SignInPage() {
   const { isLoaded, isSignedIn } = useAuth();
 
   if (!isLoaded) {
-    return <div>Loading...</div>;
+    return <div className="loading-screen">Loading...</div>;
   }
 
   if (isSignedIn) {
@@ -604,16 +587,7 @@ function SignInPage() {
   }
 
   return (
-    <div
-      style={{
-        minHeight: "100vh",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        background: "#f8fafc",
-        padding: "20px",
-      }}
-    >
+    <div className="auth-page">
       <SignIn
         routing="path"
         path="/sign-in"
@@ -625,14 +599,14 @@ function SignInPage() {
 }
 
 /* =====================================================
-   SIGN UP PAGE
+   SIGN UP
 ===================================================== */
 
 function SignUpPage() {
   const { isLoaded, isSignedIn } = useAuth();
 
   if (!isLoaded) {
-    return <div>Loading...</div>;
+    return <div className="loading-screen">Loading...</div>;
   }
 
   if (isSignedIn) {
@@ -640,16 +614,7 @@ function SignUpPage() {
   }
 
   return (
-    <div
-      style={{
-        minHeight: "100vh",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        background: "#f8fafc",
-        padding: "20px",
-      }}
-    >
+    <div className="auth-page">
       <SignUp
         routing="path"
         path="/sign-up"
@@ -697,10 +662,6 @@ function Visualizer() {
   const currentIndex =
     types.indexOf(selectedType);
 
-  /* =====================================================
-     SCROLL FUNCTION
-  ===================================================== */
-
   const scrollToSection = (id) => {
     setTimeout(() => {
       document
@@ -712,10 +673,6 @@ function Visualizer() {
     }, 50);
   };
 
-  /* =====================================================
-     SELECT TYPE
-  ===================================================== */
-
   const selectType = (type) => {
     setSelectedType(type);
     setOutput([]);
@@ -723,10 +680,6 @@ function Visualizer() {
     setAnimation(false);
     setRunning(false);
   };
-
-  /* =====================================================
-     NEXT
-  ===================================================== */
 
   const handleNext = () => {
     const nextIndex =
@@ -736,10 +689,6 @@ function Visualizer() {
     scrollToSection("inheritance-section");
   };
 
-  /* =====================================================
-     PREVIOUS
-  ===================================================== */
-
   const handlePrevious = () => {
     const prevIndex =
       (currentIndex - 1 + types.length) %
@@ -748,10 +697,6 @@ function Visualizer() {
     selectType(types[prevIndex]);
     scrollToSection("inheritance-section");
   };
-
-  /* =====================================================
-     RUN
-  ===================================================== */
 
   const handleRun = () => {
     if (running) return;
@@ -776,10 +721,6 @@ function Visualizer() {
     }, 600);
   };
 
-  /* =====================================================
-     RESET
-  ===================================================== */
-
   const handleReset = () => {
     setOutput([]);
     setRunning(false);
@@ -787,10 +728,6 @@ function Visualizer() {
     setSelectedNode(null);
     setShowCode(true);
   };
-
-  /* =====================================================
-     ANIMATION
-  ===================================================== */
 
   const handleAnimation = () => {
     setAnimation(false);
@@ -820,19 +757,12 @@ function Visualizer() {
           </h1>
 
           <p>
-            Learn classes, objects, inheritance
-            and access specifiers visually.
+            Interactive C++ learning playground
           </p>
 
         </div>
 
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: "15px",
-          }}
-        >
+        <div className="header-actions">
 
           <Link
             to="/feedback"
@@ -850,7 +780,7 @@ function Visualizer() {
       </header>
 
       {/* =================================================
-          MAIN CONTAINER
+          MAIN
       ================================================= */}
 
       <div className="main-container">
@@ -861,7 +791,21 @@ function Visualizer() {
 
         <aside className="sidebar">
 
-          {/* C++ CONCEPTS */}
+          <div className="sidebar-brand">
+            <span className="sidebar-brand-icon">
+              C++
+            </span>
+
+            <div>
+              <strong>
+                Learning Path
+              </strong>
+
+              <span>
+                C++ OOP Fundamentals
+              </span>
+            </div>
+          </div>
 
           <div className="sidebar-section">
 
@@ -877,7 +821,8 @@ function Visualizer() {
                 )
               }
             >
-              📘 Class and Object
+              <span>📘</span>
+              <span>Class and Object</span>
             </button>
 
             <button
@@ -888,12 +833,11 @@ function Visualizer() {
                 )
               }
             >
-              🏗️ Constructors
+              <span>🏗️</span>
+              <span>Constructors</span>
             </button>
 
           </div>
-
-          {/* INHERITANCE TYPES */}
 
           <div className="sidebar-section">
 
@@ -920,14 +864,19 @@ function Visualizer() {
 
                 }}
               >
-                {type}
+                <span className="type-icon">
+                  ◆
+                </span>
+
+                <span>
+                  {type} Inheritance
+                </span>
+
               </button>
 
             ))}
 
           </div>
-
-          {/* ACCESS SPECIFIER */}
 
           <div className="sidebar-section">
 
@@ -955,7 +904,12 @@ function Visualizer() {
 
                   }}
                 >
-                  {type.toUpperCase()}
+                  <span>🔐</span>
+
+                  <span>
+                    {type.toUpperCase()}
+                  </span>
+
                 </button>
 
               )
@@ -964,8 +918,6 @@ function Visualizer() {
           </div>
 
           <div className="sidebar-divider"></div>
-
-          {/* FEEDBACK */}
 
           <Link
             to="/feedback"
@@ -984,9 +936,7 @@ function Visualizer() {
 
         <main className="content">
 
-          {/* =================================================
-              CLASS AND OBJECT
-          ================================================= */}
+          {/* CLASS OBJECT */}
 
           <section
             id="class-object-section"
@@ -1012,8 +962,6 @@ function Visualizer() {
             </div>
 
             <div className="class-object-grid">
-
-              {/* CLASS */}
 
               <div className="concept-box">
 
@@ -1042,8 +990,6 @@ public:
                 </pre>
 
               </div>
-
-              {/* OBJECT */}
 
               <div className="concept-box">
 
@@ -1079,38 +1025,30 @@ public:
 
           </section>
 
-          {/* =================================================
-              CONSTRUCTORS
-          ================================================= */}
+          {/* CONSTRUCTORS */}
 
           <section
             id="constructor-section"
             className="card constructor-card"
           >
 
-            <div className="card-header">
+            <div className="section-heading">
 
-              <div>
+              <span className="badge">
+                C++ FUNDAMENTALS
+              </span>
 
-                <span className="badge">
-                  C++ FUNDAMENTALS
-                </span>
+              <h2>
+                Constructors
+              </h2>
 
-                <h2>
-                  Constructors
-                </h2>
-
-                <p>
-                  A constructor is a special member
-                  function that is automatically called
-                  when an object is created.
-                </p>
-
-              </div>
+              <p>
+                A constructor is a special member
+                function that is automatically called
+                when an object is created.
+              </p>
 
             </div>
-
-            {/* CONSTRUCTOR RULES */}
 
             <div className="constructor-rules">
 
@@ -1153,8 +1091,6 @@ public:
 
             </div>
 
-            {/* WHY CONSTRUCTORS */}
-
             <div className="constructor-info">
 
               <h4>
@@ -1170,8 +1106,6 @@ public:
 
             </div>
 
-            {/* BASIC CONSTRUCTOR */}
-
             <div className="constructor-example">
 
               <div className="constructor-example-header">
@@ -1181,7 +1115,7 @@ public:
                 </h4>
 
                 <span>
-                  Constructor called automatically
+                  Automatically called
                 </span>
 
               </div>
@@ -1193,8 +1127,6 @@ public:
               </pre>
 
             </div>
-
-            {/* PARAMETERIZED CONSTRUCTOR */}
 
             <div className="constructor-example">
 
@@ -1217,8 +1149,6 @@ public:
               </pre>
 
             </div>
-
-            {/* CONSTRUCTOR OVERLOADING */}
 
             <div className="constructor-info">
 
@@ -1256,8 +1186,6 @@ public:
 
             </div>
 
-            {/* OUTSIDE CLASS */}
-
             <div className="constructor-example">
 
               <div className="constructor-example-header">
@@ -1267,7 +1195,7 @@ public:
                 </h4>
 
                 <span>
-                  Using scope resolution operator ::
+                  Using ::
                 </span>
 
               </div>
@@ -1282,9 +1210,7 @@ public:
 
           </section>
 
-          {/* =================================================
-              INHERITANCE HERO
-          ================================================= */}
+          {/* INHERITANCE HERO */}
 
           <section
             id="inheritance-section"
@@ -1337,13 +1263,9 @@ public:
 
           </section>
 
-          {/* =================================================
-              DIAGRAM + CODE
-          ================================================= */}
+          {/* DIAGRAM + CODE */}
 
           <section className="grid">
-
-            {/* DIAGRAM */}
 
             <div className="card diagram-card">
 
@@ -1372,6 +1294,26 @@ public:
                   preserveAspectRatio="none"
                   className="arrows"
                 >
+
+                  <defs>
+
+                    <marker
+                      id="arrow"
+                      markerWidth="6"
+                      markerHeight="6"
+                      refX="4"
+                      refY="3"
+                      orient="auto"
+                    >
+
+                      <path
+                        d="M0,0 L6,3 L0,6 Z"
+                        fill="currentColor"
+                      />
+
+                    </marker>
+
+                  </defs>
 
                   {current.arrows.map(
                     ([from, to], index) => {
@@ -1406,26 +1348,6 @@ public:
                       );
                     }
                   )}
-
-                  <defs>
-
-                    <marker
-                      id="arrow"
-                      markerWidth="6"
-                      markerHeight="6"
-                      refX="4"
-                      refY="3"
-                      orient="auto"
-                    >
-
-                      <path
-                        d="M0,0 L6,3 L0,6 Z"
-                        fill="currentColor"
-                      />
-
-                    </marker>
-
-                  </defs>
 
                 </svg>
 
@@ -1483,8 +1405,6 @@ public:
               )}
 
             </div>
-
-            {/* CODE */}
 
             <div className="card code-card">
 
@@ -1561,9 +1481,7 @@ public:
 
           </section>
 
-          {/* =================================================
-              HOW IT WORKS
-          ================================================= */}
+          {/* HOW IT WORKS */}
 
           <section className="card explanation">
 
@@ -1633,9 +1551,7 @@ public:
 
           </section>
 
-          {/* =================================================
-              ACCESS SPECIFIER
-          ================================================= */}
+          {/* ACCESS */}
 
           <section
             id="access-section"
@@ -1713,9 +1629,7 @@ public:
 
           </section>
 
-          {/* =================================================
-              BASIC SYNTAX
-          ================================================= */}
+          {/* SYNTAX */}
 
           <section className="card syntax-card">
 
@@ -1779,10 +1693,6 @@ public:
 
       </div>
 
-      {/* =================================================
-          FOOTER
-      ================================================= */}
-
       <footer>
         C++ Inheritance Visualizer • React
       </footer>
@@ -1792,7 +1702,7 @@ public:
 }
 
 /* =====================================================
-   APP
+   APP ROUTER
 ===================================================== */
 
 function App() {
@@ -1801,21 +1711,15 @@ function App() {
 
       <Routes>
 
-        {/* SIGN IN */}
-
         <Route
           path="/sign-in/*"
           element={<SignInPage />}
         />
 
-        {/* SIGN UP */}
-
         <Route
           path="/sign-up/*"
           element={<SignUpPage />}
         />
-
-        {/* FEEDBACK */}
 
         <Route
           path="/feedback"
@@ -1825,8 +1729,6 @@ function App() {
             </ProtectedRoute>
           }
         />
-
-        {/* VISUALIZER */}
 
         <Route
           path="/*"
