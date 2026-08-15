@@ -29,24 +29,27 @@ function Feedback() {
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify(data),
+    body: JSON.stringify({
+      name,
+      email,
+      message,
+    }),
   }
 );
 
       const result = await response.json();
 
-      if (response.ok) {
-        alert("Feedback submitted successfully!");
+console.log("Backend:", result);
 
-        setName("");
-        setEmail("");
-        setMessage("");
-      } else {
-        alert(
-          result.message ||
-            "Failed to submit feedback."
-        );
-      }
+if (response.ok) {
+  alert(result.message);
+
+  setName("");
+  setEmail("");
+  setMessage("");
+} else {
+  alert(result.message);
+}
     } catch (error) {
       console.error(error);
 
