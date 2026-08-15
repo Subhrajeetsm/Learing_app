@@ -25,20 +25,22 @@ import Feedback from "./Feedback";
 const inheritanceData = {
   Single: {
     description:
-      "One derived class inherits from one base class.",
+      "One derived class inherits properties and behaviors from one base class.",
 
     diagram: [
       {
         id: "A",
-        label: "Base Class A",
+        label: "Base Class",
+        sub: "Animal",
         x: 50,
-        y: 10,
+        y: 18,
       },
       {
         id: "B",
-        label: "Derived Class B",
+        label: "Derived Class",
+        sub: "Dog",
         x: 50,
-        y: 70,
+        y: 78,
       },
     ],
 
@@ -50,14 +52,14 @@ using namespace std;
 class Animal {
 public:
     void eat() {
-        cout << "Animal eats";
+        cout << "Animal eats" << endl;
     }
 };
 
 class Dog : public Animal {
 public:
     void bark() {
-        cout << "Dog barks";
+        cout << "Dog barks" << endl;
     }
 };
 
@@ -78,26 +80,29 @@ int main() {
 
   Multilevel: {
     description:
-      "A derived class becomes the base class for another class.",
+      "A derived class becomes the base class for another derived class.",
 
     diagram: [
       {
         id: "A",
-        label: "Class A",
+        label: "Base Class",
+        sub: "A",
         x: 50,
-        y: 5,
+        y: 10,
       },
       {
         id: "B",
-        label: "Class B",
+        label: "Intermediate",
+        sub: "B",
         x: 50,
-        y: 45,
+        y: 50,
       },
       {
         id: "C",
-        label: "Class C",
+        label: "Derived Class",
+        sub: "C",
         x: 50,
-        y: 85,
+        y: 90,
       },
     ],
 
@@ -112,21 +117,21 @@ using namespace std;
 class A {
 public:
     void showA() {
-        cout << "Class A";
+        cout << "Class A" << endl;
     }
 };
 
 class B : public A {
 public:
     void showB() {
-        cout << "Class B";
+        cout << "Class B" << endl;
     }
 };
 
 class C : public B {
 public:
     void showC() {
-        cout << "Class C";
+        cout << "Class C" << endl;
     }
 };
 
@@ -154,21 +159,24 @@ int main() {
     diagram: [
       {
         id: "A",
-        label: "Base A",
+        label: "Base Class",
+        sub: "A",
         x: 25,
-        y: 10,
+        y: 15,
       },
       {
         id: "B",
-        label: "Base B",
+        label: "Base Class",
+        sub: "B",
         x: 75,
-        y: 10,
+        y: 15,
       },
       {
         id: "C",
-        label: "Derived C",
+        label: "Derived Class",
+        sub: "C",
         x: 50,
-        y: 75,
+        y: 80,
       },
     ],
 
@@ -183,21 +191,21 @@ using namespace std;
 class A {
 public:
     void showA() {
-        cout << "A";
+        cout << "A" << endl;
     }
 };
 
 class B {
 public:
     void showB() {
-        cout << "B";
+        cout << "B" << endl;
     }
 };
 
 class C : public A, public B {
 public:
     void showC() {
-        cout << "C";
+        cout << "C" << endl;
     }
 };
 
@@ -225,21 +233,24 @@ int main() {
     diagram: [
       {
         id: "A",
-        label: "Base A",
+        label: "Base Class",
+        sub: "Animal",
         x: 50,
-        y: 10,
+        y: 15,
       },
       {
         id: "B",
-        label: "Derived B",
+        label: "Derived Class",
+        sub: "Dog",
         x: 25,
-        y: 75,
+        y: 80,
       },
       {
         id: "C",
-        label: "Derived C",
+        label: "Derived Class",
+        sub: "Cat",
         x: 75,
-        y: 75,
+        y: 80,
       },
     ],
 
@@ -254,26 +265,25 @@ using namespace std;
 class Animal {
 public:
     void eat() {
-        cout << "Animal eats";
+        cout << "Animal eats" << endl;
     }
 };
 
 class Dog : public Animal {
 public:
     void bark() {
-        cout << "Dog barks";
+        cout << "Dog barks" << endl;
     }
 };
 
 class Cat : public Animal {
 public:
     void meow() {
-        cout << "Cat meows";
+        cout << "Cat meows" << endl;
     }
 };
 
 int main() {
-
     Dog d;
     Cat c;
 
@@ -296,32 +306,36 @@ int main() {
 
   Hybrid: {
     description:
-      "Hybrid inheritance is a combination of two or more types of inheritance.",
+      "Hybrid inheritance combines two or more types of inheritance.",
 
     diagram: [
       {
         id: "A",
-        label: "Base Class A",
+        label: "Base Class",
+        sub: "A",
         x: 50,
-        y: 5,
+        y: 8,
       },
       {
         id: "B",
-        label: "Class B",
+        label: "Derived Class",
+        sub: "B",
         x: 25,
-        y: 42,
+        y: 45,
       },
       {
         id: "C",
-        label: "Class C",
+        label: "Derived Class",
+        sub: "C",
         x: 75,
-        y: 42,
+        y: 45,
       },
       {
         id: "D",
-        label: "Derived Class D",
+        label: "Final Class",
+        sub: "D",
         x: 50,
-        y: 82,
+        y: 88,
       },
     ],
 
@@ -338,33 +352,32 @@ using namespace std;
 class A {
 public:
     void showA() {
-        cout << "Class A";
+        cout << "Class A" << endl;
     }
 };
 
 class B : virtual public A {
 public:
     void showB() {
-        cout << "Class B";
+        cout << "Class B" << endl;
     }
 };
 
 class C : virtual public A {
 public:
     void showC() {
-        cout << "Class C";
+        cout << "Class C" << endl;
     }
 };
 
 class D : public B, public C {
 public:
     void showD() {
-        cout << "Class D";
+        cout << "Class D" << endl;
     }
 };
 
 int main() {
-
     D obj;
 
     obj.showA();
@@ -393,10 +406,9 @@ const accessData = {
     title: "Public Inheritance",
 
     description:
-      "Public inheritance keeps public members of the base class public in the derived class.",
+      "Public inheritance keeps public members public and protected members protected in the derived class.",
 
-    example:
-      "class Dog : public Animal",
+    example: "class Dog : public Animal",
 
     visibility: [
       ["Base public", "Public"],
@@ -411,8 +423,7 @@ const accessData = {
     description:
       "Protected inheritance makes public and protected members of the base class protected in the derived class.",
 
-    example:
-      "class Dog : protected Animal",
+    example: "class Dog : protected Animal",
 
     visibility: [
       ["Base public", "Protected"],
@@ -427,8 +438,7 @@ const accessData = {
     description:
       "Private inheritance makes public and protected members of the base class private in the derived class.",
 
-    example:
-      "class Dog : private Animal",
+    example: "class Dog : private Animal",
 
     visibility: [
       ["Base public", "Private"],
@@ -471,14 +481,12 @@ using namespace std;
 
 class Student {
 public:
-
     Student() {
         cout << "Constructor called";
     }
 };
 
 int main() {
-
     Student s;
 
     return 0;
@@ -489,7 +497,6 @@ using namespace std;
 
 class Student {
 public:
-
     Student(string n, int a) {
         cout << "Name: " << n << endl;
         cout << "Age: " << a << endl;
@@ -497,7 +504,6 @@ public:
 };
 
 int main() {
-
     Student s("Rahul", 20);
 
     return 0;
@@ -519,7 +525,6 @@ public:
 };
 
 int main() {
-
     Student s1;
     Student s2("Rahul");
 
@@ -531,7 +536,6 @@ using namespace std;
 
 class Student {
 public:
-
     Student();
 };
 
@@ -540,7 +544,6 @@ Student::Student() {
 }
 
 int main() {
-
     Student s;
 
     return 0;
@@ -556,10 +559,9 @@ function ProtectedRoute({ children }) {
 
   if (!isLoaded) {
     return (
-      <div className="loading-screen">
-        <div className="loading-box">
-          Loading...
-        </div>
+      <div className="auth-loading">
+        <div className="loading-spinner"></div>
+        <span>Loading...</span>
       </div>
     );
   }
@@ -572,14 +574,14 @@ function ProtectedRoute({ children }) {
 }
 
 /* =====================================================
-   SIGN IN
+   SIGN IN PAGE
 ===================================================== */
 
 function SignInPage() {
   const { isLoaded, isSignedIn } = useAuth();
 
   if (!isLoaded) {
-    return <div className="loading-screen">Loading...</div>;
+    return <div className="auth-loading">Loading...</div>;
   }
 
   if (isSignedIn) {
@@ -588,25 +590,38 @@ function SignInPage() {
 
   return (
     <div className="auth-page">
-      <SignIn
-        routing="path"
-        path="/sign-in"
-        signUpUrl="/sign-up"
-        fallbackRedirectUrl="/"
-      />
+      <div className="auth-background"></div>
+
+      <div className="auth-wrapper">
+        <div className="auth-brand">
+          <div className="auth-logo">C++</div>
+
+          <div>
+            <strong>C++ Learning Lab</strong>
+            <span>Interactive programming playground</span>
+          </div>
+        </div>
+
+        <SignIn
+          routing="path"
+          path="/sign-in"
+          signUpUrl="/sign-up"
+          fallbackRedirectUrl="/"
+        />
+      </div>
     </div>
   );
 }
 
 /* =====================================================
-   SIGN UP
+   SIGN UP PAGE
 ===================================================== */
 
 function SignUpPage() {
   const { isLoaded, isSignedIn } = useAuth();
 
   if (!isLoaded) {
-    return <div className="loading-screen">Loading...</div>;
+    return <div className="auth-loading">Loading...</div>;
   }
 
   if (isSignedIn) {
@@ -615,13 +630,55 @@ function SignUpPage() {
 
   return (
     <div className="auth-page">
-      <SignUp
-        routing="path"
-        path="/sign-up"
-        signInUrl="/sign-in"
-        fallbackRedirectUrl="/"
-      />
+      <div className="auth-background"></div>
+
+      <div className="auth-wrapper">
+        <div className="auth-brand">
+          <div className="auth-logo">C++</div>
+
+          <div>
+            <strong>C++ Learning Lab</strong>
+            <span>Interactive programming playground</span>
+          </div>
+        </div>
+
+        <SignUp
+          routing="path"
+          path="/sign-up"
+          signInUrl="/sign-in"
+          fallbackRedirectUrl="/"
+        />
+      </div>
     </div>
+  );
+}
+
+/* =====================================================
+   SIDEBAR NAVIGATION ITEM
+===================================================== */
+
+function SidebarItem({
+  active,
+  icon,
+  title,
+  subtitle,
+  onClick,
+}) {
+  return (
+    <button
+      className={`sidebar-item ${active ? "active" : ""}`}
+      onClick={onClick}
+    >
+      <span className="sidebar-item-icon">{icon}</span>
+
+      <span className="sidebar-item-content">
+        <strong>{title}</strong>
+
+        {subtitle && <small>{subtitle}</small>}
+      </span>
+
+      <span className="sidebar-item-arrow">›</span>
+    </button>
   );
 }
 
@@ -662,6 +719,10 @@ function Visualizer() {
   const currentIndex =
     types.indexOf(selectedType);
 
+  /* =====================================================
+     SCROLL
+  ===================================================== */
+
   const scrollToSection = (id) => {
     setTimeout(() => {
       document
@@ -673,6 +734,10 @@ function Visualizer() {
     }, 50);
   };
 
+  /* =====================================================
+     SELECT TYPE
+  ===================================================== */
+
   const selectType = (type) => {
     setSelectedType(type);
     setOutput([]);
@@ -681,13 +746,22 @@ function Visualizer() {
     setRunning(false);
   };
 
+  /* =====================================================
+     NEXT
+  ===================================================== */
+
   const handleNext = () => {
     const nextIndex =
       (currentIndex + 1) % types.length;
 
     selectType(types[nextIndex]);
+
     scrollToSection("inheritance-section");
   };
+
+  /* =====================================================
+     PREVIOUS
+  ===================================================== */
 
   const handlePrevious = () => {
     const prevIndex =
@@ -695,8 +769,13 @@ function Visualizer() {
       types.length;
 
     selectType(types[prevIndex]);
+
     scrollToSection("inheritance-section");
   };
+
+  /* =====================================================
+     RUN
+  ===================================================== */
 
   const handleRun = () => {
     if (running) return;
@@ -718,8 +797,12 @@ function Visualizer() {
         clearInterval(timer);
         setRunning(false);
       }
-    }, 600);
+    }, 650);
   };
+
+  /* =====================================================
+     RESET
+  ===================================================== */
 
   const handleReset = () => {
     setOutput([]);
@@ -728,6 +811,10 @@ function Visualizer() {
     setSelectedNode(null);
     setShowCode(true);
   };
+
+  /* =====================================================
+     ANIMATION
+  ===================================================== */
 
   const handleAnimation = () => {
     setAnimation(false);
@@ -741,25 +828,27 @@ function Visualizer() {
     <div className="app">
 
       {/* =================================================
-          HEADER
+          TOP HEADER
       ================================================= */}
 
-      <header className="header">
+      <header className="top-header">
 
-        <div className="logo">
-          C++
-        </div>
+        <Link to="/" className="brand">
 
-        <div className="header-content">
+          <div className="brand-mark">
+            C++
+          </div>
 
-          <h1>
-            C++ Inheritance Visualizer
-          </h1>
+          <div className="brand-text">
+            <strong>C++ Learning Lab</strong>
+            <span>Interactive OOP Playground</span>
+          </div>
 
-          <p>
-            Interactive C++ learning playground
-          </p>
+        </Link>
 
+        <div className="header-center">
+          <span className="header-status-dot"></span>
+          Interactive Learning Environment
         </div>
 
         <div className="header-actions">
@@ -768,12 +857,15 @@ function Visualizer() {
             to="/feedback"
             target="_blank"
             rel="noopener noreferrer"
-            className="feedback-nav-btn"
+            className="header-feedback"
           >
-            💬 Feedback
+            <span>💬</span>
+            Feedback
           </Link>
 
-          <UserButton />
+          <div className="header-user">
+            <UserButton />
+          </div>
 
         </div>
 
@@ -783,150 +875,189 @@ function Visualizer() {
           MAIN
       ================================================= */}
 
-      <div className="main-container">
+      <div className="workspace">
 
         {/* =================================================
             SIDEBAR
         ================================================= */}
 
-        <aside className="sidebar">
+        <aside className="learning-sidebar">
 
-          <div className="sidebar-brand">
-            <span className="sidebar-brand-icon">
-              C++
-            </span>
+          <div className="sidebar-heading">
 
             <div>
-              <strong>
-                Learning Path
-              </strong>
-
-              <span>
-                C++ OOP Fundamentals
+              <span className="eyebrow">
+                LEARNING PATH
               </span>
+
+              <h2>C++ OOP</h2>
             </div>
+
+            <span className="sidebar-count">
+              3
+            </span>
+
           </div>
 
-          <div className="sidebar-section">
+          {/* FUNDAMENTALS */}
 
-            <h2 className="sidebar-title">
-              C++ Concepts
-            </h2>
+          <div className="sidebar-group">
 
-            <button
-              className="concept-nav-btn"
+            <div className="sidebar-group-title">
+              Fundamentals
+            </div>
+
+            <SidebarItem
+              icon="▣"
+              title="Class & Object"
+              subtitle="C++ fundamentals"
               onClick={() =>
                 scrollToSection(
                   "class-object-section"
                 )
               }
-            >
-              <span>📘</span>
-              <span>Class and Object</span>
-            </button>
+            />
 
-            <button
-              className="concept-nav-btn"
+            <SidebarItem
+              icon="◇"
+              title="Constructors"
+              subtitle="Object initialization"
               onClick={() =>
                 scrollToSection(
                   "constructor-section"
                 )
               }
-            >
-              <span>🏗️</span>
-              <span>Constructors</span>
-            </button>
+            />
 
           </div>
 
-          <div className="sidebar-section">
+          {/* INHERITANCE */}
 
-            <h2 className="sidebar-title">
-              Inheritance Types
-            </h2>
+          <div className="sidebar-group">
 
-            {types.map((type) => (
+            <div className="sidebar-group-title">
+              Inheritance
+            </div>
 
-              <button
+            {types.map((type, index) => (
+
+              <SidebarItem
                 key={type}
-                className={
+                active={
                   selectedType === type
-                    ? "type-btn active"
-                    : "type-btn"
+                }
+                icon={
+                  index === 0
+                    ? "↳"
+                    : index === 1
+                    ? "⇣"
+                    : index === 2
+                    ? "⊕"
+                    : index === 3
+                    ? "⑂"
+                    : "◇"
+                }
+                title={type}
+                subtitle={
+                  type === "Single"
+                    ? "One base → one derived"
+                    : type === "Multilevel"
+                    ? "Chain inheritance"
+                    : type === "Multiple"
+                    ? "Multiple base classes"
+                    : type === "Hierarchical"
+                    ? "One base → many"
+                    : "Combined inheritance"
                 }
                 onClick={() => {
-
                   selectType(type);
-
                   scrollToSection(
                     "inheritance-section"
                   );
-
                 }}
-              >
-                <span className="type-icon">
-                  ◆
-                </span>
-
-                <span>
-                  {type} Inheritance
-                </span>
-
-              </button>
+              />
 
             ))}
 
           </div>
 
-          <div className="sidebar-section">
+          {/* ACCESS */}
 
-            <h2 className="sidebar-title">
-              Access Specifier
-            </h2>
+          <div className="sidebar-group">
+
+            <div className="sidebar-group-title">
+              Access Specifiers
+            </div>
 
             {Object.keys(accessData).map(
               (type) => (
 
-                <button
+                <SidebarItem
                   key={type}
-                  className={
+                  active={
                     accessType === type
-                      ? "access-btn active"
-                      : "access-btn"
+                  }
+                  icon={
+                    type === "public"
+                      ? "🌐"
+                      : type === "protected"
+                      ? "◈"
+                      : "🔒"
+                  }
+                  title={
+                    type.charAt(0).toUpperCase() +
+                    type.slice(1)
+                  }
+                  subtitle={
+                    type === "public"
+                      ? "Accessible interface"
+                      : type === "protected"
+                      ? "Family access"
+                      : "Restricted access"
                   }
                   onClick={() => {
-
                     setAccessType(type);
-
                     scrollToSection(
                       "access-section"
                     );
-
                   }}
-                >
-                  <span>🔐</span>
-
-                  <span>
-                    {type.toUpperCase()}
-                  </span>
-
-                </button>
+                />
 
               )
             )}
 
           </div>
 
-          <div className="sidebar-divider"></div>
+          <div className="sidebar-bottom">
 
-          <Link
-            to="/feedback"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="sidebar-feedback"
-          >
-            💬 Send Feedback
-          </Link>
+            <div className="sidebar-tip">
+
+              <span className="tip-icon">
+                💡
+              </span>
+
+              <div>
+                <strong>Learning tip</strong>
+
+                <p>
+                  Click a class in the diagram
+                  to inspect it.
+                </p>
+              </div>
+
+            </div>
+
+            <Link
+              to="/feedback"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="sidebar-feedback"
+            >
+              <span>💬</span>
+              Send Feedback
+            </Link>
+
+          </div>
 
         </aside>
 
@@ -934,48 +1065,98 @@ function Visualizer() {
             CONTENT
         ================================================= */}
 
-        <main className="content">
+        <main className="learning-content">
 
-          {/* CLASS OBJECT */}
+          {/* =================================================
+              PAGE INTRO
+          ================================================= */}
 
-          <section
-            id="class-object-section"
-            className="card class-object-card"
-          >
+          <section className="page-intro">
 
-            <div className="class-object-header">
+            <div>
 
-              <span className="badge">
-                C++ FUNDAMENTALS
+              <span className="intro-label">
+                C++ OBJECT ORIENTED PROGRAMMING
               </span>
 
-              <h2>
-                Class and Object
-              </h2>
+              <h1>
+                Understand OOP
+                <span> visually.</span>
+              </h1>
 
               <p>
-                A class is a blueprint for creating
-                objects. An object is an instance of
-                a class.
+                Explore classes, objects, constructors,
+                inheritance and access specifiers through
+                interactive examples.
               </p>
 
             </div>
 
-            <div className="class-object-grid">
+            <div className="intro-decoration">
+              <div className="code-symbol">
+                {"{ }"}
+              </div>
 
-              <div className="concept-box">
+              <div className="floating-dot dot-one"></div>
+              <div className="floating-dot dot-two"></div>
+              <div className="floating-dot dot-three"></div>
+            </div>
 
-                <div className="concept-number">
-                  01
-                </div>
+          </section>
 
-                <h3>
-                  Class
-                </h3>
+          {/* =================================================
+              CLASS AND OBJECT
+          ================================================= */}
+
+          <section
+            id="class-object-section"
+            className="learning-section"
+          >
+
+            <div className="section-heading">
+
+              <div className="section-number">
+                01
+              </div>
+
+              <div>
+                <span className="section-kicker">
+                  FUNDAMENTALS
+                </span>
+
+                <h2>
+                  Class & Object
+                </h2>
 
                 <p>
-                  A class defines the data members
-                  and functions that an object will have.
+                  A class is a blueprint for objects,
+                  while an object is an instance of a class.
+                </p>
+              </div>
+
+            </div>
+
+            <div className="fundamental-grid">
+
+              <article className="learning-card concept-card">
+
+                <div className="concept-top">
+
+                  <span className="concept-icon">
+                    ◫
+                  </span>
+
+                  <span className="concept-tag">
+                    BLUEPRINT
+                  </span>
+
+                </div>
+
+                <h3>Class</h3>
+
+                <p>
+                  A class defines the data and functions
+                  that objects created from it will contain.
                 </p>
 
                 <pre>
@@ -989,21 +1170,27 @@ public:
 };`}
                 </pre>
 
-              </div>
+              </article>
 
-              <div className="concept-box">
+              <article className="learning-card concept-card">
 
-                <div className="concept-number">
-                  02
+                <div className="concept-top">
+
+                  <span className="concept-icon">
+                    ●
+                  </span>
+
+                  <span className="concept-tag">
+                    INSTANCE
+                  </span>
+
                 </div>
 
-                <h3>
-                  Object
-                </h3>
+                <h3>Object</h3>
 
                 <p>
-                  An object is created from a class
-                  and can access its public members.
+                  An object is an instance of a class
+                  that can access its available members.
                 </p>
 
                 <pre>
@@ -1019,42 +1206,59 @@ public:
 }`}
                 </pre>
 
-              </div>
+              </article>
 
             </div>
 
           </section>
 
-          {/* CONSTRUCTORS */}
+          {/* =================================================
+              CONSTRUCTORS
+          ================================================= */}
 
           <section
             id="constructor-section"
-            className="card constructor-card"
+            className="learning-section"
           >
 
             <div className="section-heading">
 
-              <span className="badge">
-                C++ FUNDAMENTALS
-              </span>
+              <div className="section-number">
+                02
+              </div>
 
-              <h2>
-                Constructors
-              </h2>
+              <div>
+                <span className="section-kicker">
+                  FUNDAMENTALS
+                </span>
 
-              <p>
-                A constructor is a special member
-                function that is automatically called
-                when an object is created.
-              </p>
+                <h2>
+                  Constructors
+                </h2>
+
+                <p>
+                  Special member functions that are
+                  automatically called when objects are created.
+                </p>
+              </div>
 
             </div>
 
-            <div className="constructor-rules">
+            {/* RULES */}
 
-              <h4>
-                Constructor Rules
-              </h4>
+            <div className="learning-card constructor-main">
+
+              <div className="subsection-heading">
+                <div>
+                  <span className="mini-label">
+                    CORE CONCEPT
+                  </span>
+
+                  <h3>
+                    Constructor Rules
+                  </h3>
+                </div>
+              </div>
 
               <div className="rules-grid">
 
@@ -1062,24 +1266,22 @@ public:
                   (rule) => (
 
                     <div
-                      className="rule-box"
+                      className="rule-card"
                       key={rule.number}
                     >
 
-                      <div className="concept-number">
+                      <div className="rule-number">
                         {rule.number}
                       </div>
 
                       <div>
-
-                        <strong>
+                        <h4>
                           {rule.title}
-                        </strong>
+                        </h4>
 
                         <p>
                           {rule.text}
                         </p>
-
                       </div>
 
                     </div>
@@ -1089,294 +1291,692 @@ public:
 
               </div>
 
-            </div>
+              <div className="info-banner">
 
-            <div className="constructor-info">
+                <div className="info-icon">
+                  💡
+                </div>
 
-              <h4>
-                Why Constructors Are Useful
-              </h4>
+                <div>
 
-              <p>
-                Constructors initialize objects when
-                they are created. They help assign
-                initial values to data members and
-                make object creation easier and safer.
-              </p>
+                  <strong>
+                    Why are constructors useful?
+                  </strong>
 
-            </div>
+                  <p>
+                    Constructors initialize objects at
+                    creation time and make it easier to
+                    assign initial values to data members.
+                  </p>
 
-            <div className="constructor-example">
-
-              <div className="constructor-example-header">
-
-                <h4>
-                  Basic Constructor
-                </h4>
-
-                <span>
-                  Automatically called
-                </span>
+                </div>
 
               </div>
 
-              <pre>
-                <code>
-                  {constructorData.basicCode}
-                </code>
-              </pre>
-
             </div>
 
-            <div className="constructor-example">
+            {/* CODE EXAMPLES */}
 
-              <div className="constructor-example-header">
+            <div className="example-stack">
 
-                <h4>
-                  Constructor with Parameters
-                </h4>
+              <div className="learning-card code-example-card">
 
-                <span>
-                  Pass values during object creation
-                </span>
+                <div className="code-example-header">
+
+                  <div>
+                    <span>
+                      EXAMPLE 01
+                    </span>
+
+                    <h3>
+                      Basic Constructor
+                    </h3>
+                  </div>
+
+                  <div className="code-language">
+                    C++
+                  </div>
+
+                </div>
+
+                <pre>
+                  <code>
+                    {constructorData.basicCode}
+                  </code>
+                </pre>
 
               </div>
 
-              <pre>
-                <code>
-                  {constructorData.parameterCode}
-                </code>
-              </pre>
+              <div className="learning-card code-example-card">
 
-            </div>
+                <div className="code-example-header">
 
-            <div className="constructor-info">
+                  <div>
+                    <span>
+                      EXAMPLE 02
+                    </span>
 
-              <h4>
-                Constructor Overloading
-              </h4>
+                    <h3>
+                      Parameterized Constructor
+                    </h3>
+                  </div>
 
-              <p>
-                Constructor overloading means defining
-                multiple constructors in the same class
-                with different parameter lists.
-              </p>
+                  <div className="code-language">
+                    C++
+                  </div>
 
-            </div>
+                </div>
 
-            <div className="constructor-example">
-
-              <div className="constructor-example-header">
-
-                <h4>
-                  Example with Two Constructors
-                </h4>
-
-                <span>
-                  Default + Parameterized
-                </span>
+                <pre>
+                  <code>
+                    {constructorData.parameterCode}
+                  </code>
+                </pre>
 
               </div>
 
-              <pre>
-                <code>
-                  {constructorData.overloadCode}
-                </code>
-              </pre>
+              <div className="learning-card code-example-card">
 
-            </div>
+                <div className="code-example-header">
 
-            <div className="constructor-example">
+                  <div>
+                    <span>
+                      EXAMPLE 03
+                    </span>
 
-              <div className="constructor-example-header">
+                    <h3>
+                      Constructor Overloading
+                    </h3>
+                  </div>
 
-                <h4>
-                  Constructor Defined Outside the Class
-                </h4>
+                  <div className="code-language">
+                    C++
+                  </div>
 
-                <span>
-                  Using ::
-                </span>
+                </div>
+
+                <pre>
+                  <code>
+                    {constructorData.overloadCode}
+                  </code>
+                </pre>
 
               </div>
 
-              <pre>
-                <code>
-                  {constructorData.outsideCode}
-                </code>
-              </pre>
+              <div className="learning-card code-example-card">
+
+                <div className="code-example-header">
+
+                  <div>
+                    <span>
+                      EXAMPLE 04
+                    </span>
+
+                    <h3>
+                      Constructor Outside Class
+                    </h3>
+                  </div>
+
+                  <div className="code-language">
+                    C++
+                  </div>
+
+                </div>
+
+                <pre>
+                  <code>
+                    {constructorData.outsideCode}
+                  </code>
+                </pre>
+
+              </div>
 
             </div>
 
           </section>
 
-          {/* INHERITANCE HERO */}
+          {/* =================================================
+              INHERITANCE
+          ================================================= */}
 
           <section
             id="inheritance-section"
-            className="hero"
+            className="inheritance-section"
           >
 
-            <div>
+            <div className="inheritance-heading">
 
-              <span className="badge">
-                {selectedType} Inheritance
-              </span>
+              <div>
 
-              <h2>
-                {selectedType} Inheritance
-              </h2>
+                <span className="section-kicker">
+                  INTERACTIVE PLAYGROUND
+                </span>
 
-              <p>
-                {current.description}
-              </p>
+                <h2>
+                  {selectedType} Inheritance
+                </h2>
+
+                <p>
+                  {current.description}
+                </p>
+
+              </div>
+
+              <div className="inheritance-badge">
+                <span></span>
+                Interactive
+              </div>
 
             </div>
 
-            <div className="controls">
+            {/* CONTROLS */}
+
+            <div className="playground-controls">
 
               <button
+                className="control-button secondary"
                 onClick={handlePrevious}
               >
-                ← Previous
+                <span>←</span>
+                Previous
               </button>
 
               <button
+                className="control-button secondary"
                 onClick={handleNext}
               >
-                Next →
+                Next
+                <span>→</span>
               </button>
 
               <button
+                className="control-button animate-button"
                 onClick={handleAnimation}
               >
-                ▶ Animate
+                <span>▶</span>
+                Animate
               </button>
 
               <button
+                className="control-button reset-button"
                 onClick={handleReset}
               >
-                ↻ Reset
+                <span>↻</span>
+                Reset
               </button>
+
+            </div>
+
+            {/* DIAGRAM + CODE */}
+
+            <div className="playground-grid">
+
+              {/* DIAGRAM */}
+
+              <div className="playground-card">
+
+                <div className="playground-card-header">
+
+                  <div>
+                    <span className="card-kicker">
+                      VISUALIZATION
+                    </span>
+
+                    <h3>
+                      Inheritance Diagram
+                    </h3>
+                  </div>
+
+                  <span className="class-count">
+                    {current.diagram.length} Classes
+                  </span>
+
+                </div>
+
+                <div
+                  className={
+                    animation
+                      ? "inheritance-diagram animated"
+                      : "inheritance-diagram"
+                  }
+                >
+
+                  <svg
+                    viewBox="0 0 100 100"
+                    preserveAspectRatio="none"
+                    className="diagram-lines"
+                  >
+
+                    <defs>
+
+                      <marker
+                        id="arrow-head"
+                        markerWidth="7"
+                        markerHeight="7"
+                        refX="5"
+                        refY="3.5"
+                        orient="auto"
+                      >
+                        <path
+                          d="M0,0 L7,3.5 L0,7 Z"
+                          fill="currentColor"
+                        />
+                      </marker>
+
+                    </defs>
+
+                    {current.arrows.map(
+                      ([from, to], index) => {
+
+                        const start =
+                          current.diagram.find(
+                            (node) =>
+                              node.id === from
+                          );
+
+                        const end =
+                          current.diagram.find(
+                            (node) =>
+                              node.id === to
+                          );
+
+                        if (!start || !end) {
+                          return null;
+                        }
+
+                        return (
+                          <line
+                            key={index}
+                            x1={start.x}
+                            y1={start.y + 9}
+                            x2={end.x}
+                            y2={end.y - 9}
+                            stroke="currentColor"
+                            strokeWidth="0.65"
+                            markerEnd="url(#arrow-head)"
+                          />
+                        );
+                      }
+                    )}
+
+                  </svg>
+
+                  {current.diagram.map(
+                    (node) => (
+
+                      <button
+                        key={node.id}
+                        className={
+                          selectedNode === node.id
+                            ? "diagram-node selected"
+                            : "diagram-node"
+                        }
+                        style={{
+                          left: `${node.x}%`,
+                          top: `${node.y}%`,
+                        }}
+                        onClick={() =>
+                          setSelectedNode(node.id)
+                        }
+                      >
+
+                        <span className="node-letter">
+                          {node.id}
+                        </span>
+
+                        <span className="node-label">
+                          {node.label}
+                        </span>
+
+                        <span className="node-sub">
+                          {node.sub}
+                        </span>
+
+                      </button>
+
+                    )
+                  )}
+
+                </div>
+
+                {selectedNode && (
+
+                  <div className="selected-node-info">
+
+                    <div className="selected-node-icon">
+                      {selectedNode}
+                    </div>
+
+                    <div>
+                      <span>
+                        SELECTED CLASS
+                      </span>
+
+                      <strong>
+                        Class {selectedNode}
+                      </strong>
+                    </div>
+
+                    <button
+                      onClick={() =>
+                        setSelectedNode(null)
+                      }
+                    >
+                      ×
+                    </button>
+
+                  </div>
+
+                )}
+
+              </div>
+
+              {/* CODE */}
+
+              <div className="playground-card code-playground">
+
+                <div className="playground-card-header">
+
+                  <div>
+                    <span className="card-kicker">
+                      CODE EDITOR
+                    </span>
+
+                    <h3>
+                      C++ Example
+                    </h3>
+                  </div>
+
+                  <button
+                    className="code-toggle"
+                    onClick={() =>
+                      setShowCode(!showCode)
+                    }
+                  >
+                    {showCode
+                      ? "Hide"
+                      : "Show"}
+                  </button>
+
+                </div>
+
+                {showCode && (
+
+                  <>
+
+                    <div className="code-window">
+
+                      <div className="code-window-bar">
+
+                        <div className="window-dots">
+                          <i></i>
+                          <i></i>
+                          <i></i>
+                        </div>
+
+                        <span>
+                          main.cpp
+                        </span>
+
+                        <span className="cpp-label">
+                          C++
+                        </span>
+
+                      </div>
+
+                      <pre>
+                        <code>
+                          {current.code}
+                        </code>
+                      </pre>
+
+                    </div>
+
+                    <button
+                      className="run-example"
+                      onClick={handleRun}
+                      disabled={running}
+                    >
+                      {running ? (
+                        <>
+                          <span className="run-spinner"></span>
+                          Running...
+                        </>
+                      ) : (
+                        <>
+                          <span>▶</span>
+                          Run Example
+                        </>
+                      )}
+                    </button>
+
+                  </>
+
+                )}
+
+                <div className="terminal">
+
+                  <div className="terminal-header">
+
+                    <span>
+                      OUTPUT
+                    </span>
+
+                    <span className="terminal-status">
+                      ● Ready
+                    </span>
+
+                  </div>
+
+                  <div className="terminal-body">
+
+                    {output.length === 0 ? (
+
+                      <span className="terminal-placeholder">
+                        Run the example to see the output...
+                      </span>
+
+                    ) : (
+
+                      output.map(
+                        (line, index) => (
+
+                          <div
+                            className="terminal-line"
+                            key={index}
+                          >
+                            <span>
+                              $
+                            </span>
+
+                            {line}
+                          </div>
+
+                        )
+                      )
+
+                    )}
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+            {/* HOW IT WORKS */}
+
+            <div className="how-it-works">
+
+              <div className="how-heading">
+
+                <div>
+                  <span className="card-kicker">
+                    CONCEPT
+                  </span>
+
+                  <h3>
+                    How Inheritance Works
+                  </h3>
+                </div>
+
+              </div>
+
+              <div className="how-grid">
+
+                <div className="how-card">
+
+                  <span className="how-number">
+                    01
+                  </span>
+
+                  <div>
+                    <h4>
+                      Base Class
+                    </h4>
+
+                    <p>
+                      The parent class contains common
+                      properties and functions.
+                    </p>
+                  </div>
+
+                </div>
+
+                <div className="how-card">
+
+                  <span className="how-number">
+                    02
+                  </span>
+
+                  <div>
+                    <h4>
+                      Inheritance
+                    </h4>
+
+                    <p>
+                      The derived class receives accessible
+                      members from the base class.
+                    </p>
+                  </div>
+
+                </div>
+
+                <div className="how-card">
+
+                  <span className="how-number">
+                    03
+                  </span>
+
+                  <div>
+                    <h4>
+                      Derived Class
+                    </h4>
+
+                    <p>
+                      The child class can add its own
+                      data and member functions.
+                    </p>
+                  </div>
+
+                </div>
+
+              </div>
 
             </div>
 
           </section>
 
-          {/* DIAGRAM + CODE */}
+          {/* =================================================
+              ACCESS SPECIFIER
+          ================================================= */}
 
-          <section className="grid">
+          <section
+            id="access-section"
+            className="learning-section"
+          >
 
-            <div className="card diagram-card">
+            <div className="section-heading">
 
-              <div className="card-header">
+              <div className="section-number">
+                03
+              </div>
 
-                <h3>
-                  Inheritance Diagram
-                </h3>
+              <div>
 
-                <span className="small-label">
-                  {current.diagram.length} Classes
+                <span className="section-kicker">
+                  ACCESS CONTROL
                 </span>
+
+                <h2>
+                  Access Specifiers
+                </h2>
+
+                <p>
+                  Control how inherited members are exposed
+                  inside a derived class.
+                </p>
 
               </div>
 
-              <div
-                className={
-                  animation
-                    ? "diagram animated"
-                    : "diagram"
-                }
-              >
+            </div>
 
-                <svg
-                  viewBox="0 0 100 100"
-                  preserveAspectRatio="none"
-                  className="arrows"
-                >
+            <div className="learning-card access-main">
 
-                  <defs>
+              <div className="access-top">
 
-                    <marker
-                      id="arrow"
-                      markerWidth="6"
-                      markerHeight="6"
-                      refX="4"
-                      refY="3"
-                      orient="auto"
-                    >
+                <div>
 
-                      <path
-                        d="M0,0 L6,3 L0,6 Z"
-                        fill="currentColor"
-                      />
+                  <span className="access-pill">
+                    {accessType.toUpperCase()}
+                  </span>
 
-                    </marker>
+                  <h3>
+                    {access.title}
+                  </h3>
 
-                  </defs>
+                  <p>
+                    {access.description}
+                  </p>
 
-                  {current.arrows.map(
-                    ([from, to], index) => {
+                </div>
 
-                      const start =
-                        current.diagram.find(
-                          (node) =>
-                            node.id === from
-                        );
+                <code>
+                  {access.example}
+                </code>
 
-                      const end =
-                        current.diagram.find(
-                          (node) =>
-                            node.id === to
-                        );
+              </div>
 
-                      if (!start || !end) {
-                        return null;
-                      }
+              <div className="access-options">
 
-                      return (
-                        <line
-                          key={index}
-                          x1={start.x}
-                          y1={start.y + 9}
-                          x2={end.x}
-                          y2={end.y - 6}
-                          stroke="currentColor"
-                          strokeWidth="0.8"
-                          markerEnd="url(#arrow)"
-                        />
-                      );
-                    }
-                  )}
-
-                </svg>
-
-                {current.diagram.map(
-                  (node) => (
+                {Object.keys(accessData).map(
+                  (type) => (
 
                     <button
-                      key={node.id}
+                      key={type}
                       className={
-                        selectedNode === node.id
-                          ? "class-node selected"
-                          : "class-node"
+                        accessType === type
+                          ? "access-option active"
+                          : "access-option"
                       }
-                      style={{
-                        left: `${node.x}%`,
-                        top: `${node.y}%`,
+                      onClick={() => {
+                        setAccessType(type);
                       }}
-                      onClick={() =>
-                        setSelectedNode(node.id)
-                      }
                     >
 
-                      <strong>
-                        {node.id}
-                      </strong>
-
                       <span>
-                        {node.label}
+                        {type === "public"
+                          ? "🌐"
+                          : type === "protected"
+                          ? "◈"
+                          : "🔒"}
                       </span>
+
+                      <strong>
+                        {type.charAt(0).toUpperCase() +
+                          type.slice(1)}
+                      </strong>
 
                     </button>
 
@@ -1385,190 +1985,48 @@ public:
 
               </div>
 
-              {selectedNode && (
+              <div className="visibility-table">
 
-                <div className="node-info">
-
-                  <strong>
-                    Selected Class:
-                  </strong>{" "}
-
-                  {selectedNode}
-
-                  <br />
-
-                  Click another class
-                  to inspect it.
-
-                </div>
-
-              )}
-
-            </div>
-
-            <div className="card code-card">
-
-              <div className="card-header">
-
-                <h3>
-                  C++ Example
-                </h3>
-
-                <button
-                  className="small-btn"
-                  onClick={() =>
-                    setShowCode(!showCode)
-                  }
-                >
-                  {showCode
-                    ? "Hide Code"
-                    : "Show Code"}
-                </button>
-
-              </div>
-
-              {showCode && (
-                <>
-
-                  <pre>
-                    <code>
-                      {current.code}
-                    </code>
-                  </pre>
-
-                  <button
-                    className="run-btn"
-                    onClick={handleRun}
-                    disabled={running}
-                  >
-                    {running
-                      ? "Running..."
-                      : "▶ Run Example"}
-                  </button>
-
-                </>
-              )}
-
-              <div className="output">
-
-                <div className="output-title">
-                  Output
-                </div>
-
-                {output.length === 0 ? (
-
-                  <span className="placeholder">
-                    Click "Run Example"
+                <div className="visibility-header">
+                  <span>
+                    Base Member
                   </span>
 
-                ) : (
+                  <span>
+                    Derived Class
+                  </span>
+                </div>
 
-                  output.map(
-                    (line, index) => (
+                {access.visibility.map(
+                  ([from, to]) => (
 
-                      <div key={index}>
-                        {">"} {line}
-                      </div>
+                    <div
+                      className="visibility-row"
+                      key={from}
+                    >
 
-                    )
+                      <span>
+                        {from}
+                      </span>
+
+                      <span className={
+                        `visibility-value ${to
+                          .toLowerCase()
+                          .replaceAll(" ", "-")}`
+                      }>
+                        {to}
+                      </span>
+
+                    </div>
+
                   )
-
                 )}
 
               </div>
 
-            </div>
+              <div className="access-note">
 
-          </section>
-
-          {/* HOW IT WORKS */}
-
-          <section className="card explanation">
-
-            <div className="card-header">
-
-              <h3>
-                How It Works
-              </h3>
-
-            </div>
-
-            <div className="explanation-grid">
-
-              <div>
-
-                <div className="step">
-                  01
-                </div>
-
-                <h4>
-                  Base Class
-                </h4>
-
-                <p>
-                  The parent class contains
-                  common properties and functions.
-                </p>
-
-              </div>
-
-              <div>
-
-                <div className="step">
-                  02
-                </div>
-
-                <h4>
-                  Inheritance
-                </h4>
-
-                <p>
-                  The derived class receives
-                  accessible members from the
-                  base class.
-                </p>
-
-              </div>
-
-              <div>
-
-                <div className="step">
-                  03
-                </div>
-
-                <h4>
-                  Derived Class
-                </h4>
-
-                <p>
-                  The child class can add its own
-                  functions and data members.
-                </p>
-
-              </div>
-
-            </div>
-
-          </section>
-
-          {/* ACCESS */}
-
-          <section
-            id="access-section"
-            className="card access-card"
-          >
-
-            <div className="card-header">
-
-              <div>
-
-                <span className="badge">
-                  {accessType.toUpperCase()} ACCESS
-                </span>
-
-                <h3>
-                  {access.title}
-                </h3>
+                <span>💡</span>
 
                 <p>
                   {access.description}
@@ -1576,112 +2034,90 @@ public:
 
               </div>
 
-              <span className="syntax">
-                {access.example}
-              </span>
-
-            </div>
-
-            <div className="visibility-grid">
-
-              {access.visibility.map(
-                ([from, to]) => (
-
-                  <div
-                    className="visibility-box"
-                    key={from}
-                  >
-
-                    <span>
-                      {from}
-                    </span>
-
-                    <strong>
-                      →
-                    </strong>
-
-                    <span
-                      className={`visibility ${to
-                        .toLowerCase()
-                        .replaceAll(" ", "-")}`}
-                    >
-                      {to}
-                    </span>
-
-                  </div>
-
-                )
-              )}
-
-            </div>
-
-            <div className="access-detail">
-
-              <h4>
-                Where can it be accessed?
-              </h4>
-
-              <p>
-                {access.description}
-              </p>
-
             </div>
 
           </section>
 
-          {/* SYNTAX */}
+          {/* =================================================
+              SYNTAX
+          ================================================= */}
 
-          <section className="card syntax-card">
+          <section className="learning-section">
 
-            <h3>
-              Basic C++ Inheritance Syntax
-            </h3>
+            <div className="section-heading">
 
-            <pre>
-              <code>
+              <div className="section-number">
+                04
+              </div>
+
+              <div>
+
+                <span className="section-kicker">
+                  QUICK REFERENCE
+                </span>
+
+                <h2>
+                  Inheritance Syntax
+                </h2>
+
+                <p>
+                  The basic syntax used to create a derived
+                  class in C++.
+                </p>
+
+              </div>
+
+            </div>
+
+            <div className="learning-card syntax-main">
+
+              <div className="syntax-code">
+
+                <div className="syntax-code-header">
+                  <span>
+                    C++
+                  </span>
+
+                  <span>
+                    Basic Syntax
+                  </span>
+                </div>
+
+                <pre>
 {`class DerivedClass : access_specifier BaseClass {
 
     // members of derived class
 
 };`}
-              </code>
-            </pre>
-
-            <div className="syntax-examples">
-
-              <div>
-
-                <strong>
-                  Public
-                </strong>
-
-                <code>
-                  class Dog : public Animal {};
-                </code>
+                </pre>
 
               </div>
 
-              <div>
+              <div className="syntax-examples">
 
-                <strong>
-                  Protected
-                </strong>
+                <div>
+                  <span>PUBLIC</span>
 
-                <code>
-                  class Dog : protected Animal {};
-                </code>
+                  <code>
+                    class Dog : public Animal {};
+                  </code>
+                </div>
 
-              </div>
+                <div>
+                  <span>PROTECTED</span>
 
-              <div>
+                  <code>
+                    class Dog : protected Animal {};
+                  </code>
+                </div>
 
-                <strong>
-                  Private
-                </strong>
+                <div>
+                  <span>PRIVATE</span>
 
-                <code>
-                  class Dog : private Animal {};
-                </code>
+                  <code>
+                    class Dog : private Animal {};
+                  </code>
+                </div>
 
               </div>
 
@@ -1689,20 +2125,42 @@ public:
 
           </section>
 
+          {/* =================================================
+              FOOTER
+          ================================================= */}
+
+          <footer className="learning-footer">
+
+            <div>
+              <strong>
+                C++ Learning Lab
+              </strong>
+
+              <span>
+                Interactive OOP Visualizer
+              </span>
+            </div>
+
+            <Link
+              to="/feedback"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Send Feedback →
+            </Link>
+
+          </footer>
+
         </main>
 
       </div>
-
-      <footer>
-        C++ Inheritance Visualizer • React
-      </footer>
 
     </div>
   );
 }
 
 /* =====================================================
-   APP ROUTER
+   APP
 ===================================================== */
 
 function App() {
