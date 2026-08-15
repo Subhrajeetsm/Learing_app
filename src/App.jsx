@@ -3,6 +3,7 @@ import "./App.css";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Feedback from "./Feedback";
 import Login from "./Login";
+import Signup from "./Signup";
 /* =====================================================
    INHERITANCE DATA
 ===================================================== */
@@ -1368,7 +1369,9 @@ function App() {
           path="/feedback"
           element={<Feedback />}
         />
-<Route path="/login" element={<Login />} />
+                <Route path="/login/*" element={<Login />} />
+
+        <Route path="/signup/*" element={<Signup />} />
         
 
       </Routes>
