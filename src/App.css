@@ -14,46 +14,25 @@ body {
   margin: 0;
   font-family:
     Inter,
-    "Segoe UI",
     Arial,
+    Helvetica,
     sans-serif;
-  background: #f1f5f9;
-  color: #1e293b;
-}
 
-button,
-input,
-textarea {
-  font-family: inherit;
+  background: #f5f7fb;
+  color: #1f2937;
 }
 
 button {
-  cursor: pointer;
+  font-family: inherit;
 }
 
+button,
 a {
-  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
 }
-
-::selection {
-  background: #2563eb;
-  color: white;
-}
-
-
-/* =====================================================
-   APP
-===================================================== */
 
 .app {
   min-height: 100vh;
-  background:
-    radial-gradient(
-      circle at top right,
-      rgba(37, 99, 235, 0.08),
-      transparent 30%
-    ),
-    #f1f5f9;
 }
 
 
@@ -62,37 +41,28 @@ a {
 ===================================================== */
 
 .header {
-  min-height: 90px;
-
   display: flex;
   align-items: center;
-
   gap: 20px;
 
-  padding: 18px 32px;
+  padding: 20px 30px;
 
   background:
     linear-gradient(
       135deg,
-      #0f172a,
-      #172554
+      #111827,
+      #1e3a8a
     );
 
   color: white;
 
+  box-shadow:
+    0 4px 20px rgba(15, 23, 42, 0.15);
+
   position: sticky;
   top: 0;
-
-  z-index: 1000;
-
-  box-shadow:
-    0 5px 20px rgba(15, 23, 42, 0.2);
+  z-index: 100;
 }
-
-
-/* =====================================================
-   LOGO
-===================================================== */
 
 .logo {
   width: 58px;
@@ -104,28 +74,15 @@ a {
 
   border-radius: 16px;
 
-  background:
-    linear-gradient(
-      135deg,
-      #2563eb,
-      #7c3aed
-    );
+  background: rgba(255, 255, 255, 0.12);
 
-  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
 
-  font-size: 23px;
-  font-weight: 900;
-
-  box-shadow:
-    0 8px 20px rgba(37, 99, 235, 0.35);
+  font-size: 25px;
+  font-weight: 800;
 
   flex-shrink: 0;
 }
-
-
-/* =====================================================
-   HEADER CONTENT
-===================================================== */
 
 .header-content {
   flex: 1;
@@ -141,7 +98,7 @@ a {
 }
 
 .header-content p {
-  margin: 6px 0 0;
+  margin: 5px 0 0;
 
   color: #cbd5e1;
 
@@ -154,20 +111,17 @@ a {
 ===================================================== */
 
 .feedback-nav-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
   padding: 11px 17px;
-
-  border-radius: 10px;
 
   background: #2563eb;
 
   color: white;
 
-  font-size: 14px;
-  font-weight: 700;
+  text-decoration: none;
+
+  border-radius: 10px;
+
+  font-weight: 600;
 
   transition:
     transform 0.2s ease,
@@ -176,12 +130,12 @@ a {
 }
 
 .feedback-nav-btn:hover {
-  background: #3b82f6;
+  background: #1d4ed8;
 
   transform: translateY(-2px);
 
   box-shadow:
-    0 8px 20px rgba(37, 99, 235, 0.35);
+    0 6px 15px rgba(37, 99, 235, 0.3);
 }
 
 
@@ -193,7 +147,7 @@ a {
   display: flex;
 
   min-height:
-    calc(100vh - 90px);
+    calc(100vh - 98px);
 }
 
 
@@ -202,52 +156,76 @@ a {
 ===================================================== */
 
 .sidebar {
-  width: 300px;
+  width: 310px;
 
-  min-width: 300px;
+  flex-shrink: 0;
 
   padding: 28px 20px;
 
   background: #ffffff;
 
   border-right:
-    1px solid #e2e8f0;
+    1px solid #e5e7eb;
 
   position: sticky;
 
-  top: 90px;
+  top: 98px;
 
   height:
-    calc(100vh - 90px);
+    calc(100vh - 98px);
 
   overflow-y: auto;
 
   box-shadow:
-    4px 0 18px rgba(15, 23, 42, 0.04);
-
-  scrollbar-width: thin;
+    4px 0 20px rgba(15, 23, 42, 0.04);
 }
 
 
-/* Sidebar scrollbar */
+/* =====================================================
+   SIDEBAR SCROLLBAR
+===================================================== */
 
 .sidebar::-webkit-scrollbar {
   width: 6px;
 }
 
+.sidebar::-webkit-scrollbar-track {
+  background: #f8fafc;
+}
+
 .sidebar::-webkit-scrollbar-thumb {
   background: #cbd5e1;
-
   border-radius: 10px;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
 }
 
 
 /* =====================================================
-   SIDEBAR TITLE
+   SIDEBAR SECTION
 ===================================================== */
 
-.sidebar h2 {
-  margin: 0 0 12px;
+.sidebar-section {
+  margin-bottom: 28px;
+}
+
+
+/* =====================================================
+   SIDEBAR SECTION TITLE
+===================================================== */
+
+.sidebar-title {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin: 0 0 13px;
+
+  padding: 0 6px;
 
   font-size: 14px;
 
@@ -255,58 +233,133 @@ a {
 
   text-transform: uppercase;
 
-  letter-spacing: 0.8px;
+  letter-spacing: 0.7px;
 
   color: #475569;
 }
 
+.sidebar-title-icon {
+  width: 28px;
+  height: 28px;
 
-/* =====================================================
-   C++ CONCEPTS SECTION
-===================================================== */
+  display: flex;
 
-.sidebar h2:first-child {
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 8px;
+
+  background: #dbeafe;
+
   color: #2563eb;
+
+  font-size: 14px;
 }
 
 
 /* =====================================================
-   SIDEBAR BUTTON BASE
+   C++ CONCEPT BUTTONS
 ===================================================== */
 
-.type-btn,
-.access-btn {
+.concept-nav-btn {
   width: 100%;
 
   display: flex;
 
   align-items: center;
 
-  gap: 10px;
+  gap: 13px;
 
-  padding: 13px 15px;
+  padding: 13px 14px;
 
-  margin-bottom: 7px;
+  margin-bottom: 8px;
 
   border: 1px solid transparent;
 
   border-radius: 11px;
 
-  background: transparent;
+  background: #f8fafc;
 
-  color: #475569;
+  color: #334155;
+
+  cursor: pointer;
+
+  text-align: left;
 
   font-size: 14px;
 
   font-weight: 600;
 
-  text-align: left;
-
   transition:
     background 0.2s ease,
     color 0.2s ease,
     transform 0.2s ease,
-    border 0.2s ease;
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.concept-nav-btn:hover {
+  background: #eff6ff;
+
+  color: #1d4ed8;
+
+  border-color: #bfdbfe;
+
+  transform: translateX(3px);
+}
+
+
+/* =====================================================
+   CONCEPT ICON
+===================================================== */
+
+.concept-nav-icon {
+  width: 34px;
+  height: 34px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 9px;
+
+  background: white;
+
+  border: 1px solid #e2e8f0;
+
+  color: #2563eb;
+
+  font-size: 16px;
+
+  box-shadow:
+    0 2px 5px rgba(15, 23, 42, 0.05);
+
+  transition: 0.2s ease;
+}
+
+.concept-nav-btn:hover .concept-nav-icon {
+  background: #2563eb;
+
+  color: white;
+
+  border-color: #2563eb;
+}
+
+
+/* =====================================================
+   INHERITANCE SECTION
+===================================================== */
+
+.inheritance-title {
+  color: #1e3a8a;
+}
+
+.inheritance-title .sidebar-title-icon {
+  background: #dbeafe;
+  color: #1d4ed8;
 }
 
 
@@ -315,19 +368,112 @@ a {
 ===================================================== */
 
 .type-btn {
-  padding-left: 25px;
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 12px 14px;
+
+  margin-bottom: 7px;
+
+  border: 1px solid transparent;
+
+  border-radius: 10px;
+
+  background: #f8fafc;
+
+  color: #334155;
+
+  cursor: pointer;
+
+  text-align: left;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  transition:
+    all 0.2s ease;
 }
 
 .type-btn::before {
-  content: "◆";
+  content: "→";
 
-  color: #94a3b8;
+  width: 25px;
+  height: 25px;
 
-  font-size: 8px;
+  display: flex;
 
-  transition:
-    transform 0.2s ease,
-    color 0.2s ease;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 7px;
+
+  background: #e2e8f0;
+
+  color: #64748b;
+
+  font-size: 13px;
+
+  transition: 0.2s ease;
+}
+
+.type-btn:hover {
+  background: #eff6ff;
+
+  color: #1d4ed8;
+
+  transform: translateX(3px);
+}
+
+.type-btn:hover::before {
+  background: #dbeafe;
+
+  color: #2563eb;
+}
+
+.type-btn.active {
+  background:
+    linear-gradient(
+      135deg,
+      #2563eb,
+      #1d4ed8
+    );
+
+  color: white;
+
+  border-color: #2563eb;
+
+  box-shadow:
+    0 5px 14px rgba(37, 99, 235, 0.25);
+
+  transform: translateX(3px);
+}
+
+.type-btn.active::before {
+  content: "✓";
+
+  background: rgba(255, 255, 255, 0.2);
+
+  color: white;
+}
+
+
+/* =====================================================
+   ACCESS SPECIFIER TITLE
+===================================================== */
+
+.access-title {
+  color: #7c3aed;
+}
+
+.access-title .sidebar-title-icon {
+  background: #ede9fe;
+  color: #7c3aed;
 }
 
 
@@ -336,62 +482,73 @@ a {
 ===================================================== */
 
 .access-btn {
-  padding-left: 25px;
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 12px 14px;
+
+  margin-bottom: 7px;
+
+  border: 1px solid transparent;
+
+  border-radius: 10px;
+
+  background: #f8fafc;
+
+  color: #334155;
+
+  cursor: pointer;
+
+  text-align: left;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  transition:
+    all 0.2s ease;
 }
 
 .access-btn::before {
-  content: "🔐";
+  content: "●";
 
-  font-size: 13px;
+  font-size: 9px;
+
+  color: #94a3b8;
 }
 
-
-/* =====================================================
-   SIDEBAR HOVER
-===================================================== */
-
-.type-btn:hover,
 .access-btn:hover {
-  background: #eff6ff;
+  background: #f5f3ff;
 
-  color: #1d4ed8;
-
-  transform: translateX(4px);
-
-  border-color: #dbeafe;
-}
-
-.type-btn:hover::before {
-  color: #2563eb;
-
-  transform: scale(1.3);
-}
-
-
-/* =====================================================
-   SIDEBAR ACTIVE
-===================================================== */
-
-.type-btn.active,
-.access-btn.active {
-  background:
-    linear-gradient(
-      135deg,
-      #2563eb,
-      #4f46e5
-    );
-
-  color: white;
-
-  border-color: transparent;
-
-  box-shadow:
-    0 7px 18px rgba(37, 99, 235, 0.25);
+  color: #7c3aed;
 
   transform: translateX(3px);
 }
 
-.type-btn.active::before {
+.access-btn.active {
+  background:
+    linear-gradient(
+      135deg,
+      #7c3aed,
+      #6d28d9
+    );
+
+  color: white;
+
+  border-color: #7c3aed;
+
+  box-shadow:
+    0 5px 14px rgba(124, 58, 237, 0.25);
+
+  transform: translateX(3px);
+}
+
+.access-btn.active::before {
   color: white;
 }
 
@@ -405,13 +562,13 @@ a {
 
   background:
     linear-gradient(
-      to right,
+      90deg,
       transparent,
       #e2e8f0,
       transparent
     );
 
-  margin: 25px 5px;
+  margin: 25px 0;
 }
 
 
@@ -430,29 +587,30 @@ a {
 
   padding: 13px;
 
-  margin-top: 8px;
-
-  border-radius: 11px;
-
-  background: #eff6ff;
+  text-decoration: none;
 
   color: #2563eb;
 
-  font-size: 14px;
+  background: #eff6ff;
+
+  border: 1px solid #bfdbfe;
+
+  border-radius: 10px;
 
   font-weight: 700;
 
-  border: 1px solid #dbeafe;
-
-  transition:
-    background 0.2s ease,
-    transform 0.2s ease;
+  transition: 0.2s ease;
 }
 
 .sidebar-feedback:hover {
-  background: #dbeafe;
+  background: #2563eb;
+
+  color: white;
 
   transform: translateY(-2px);
+
+  box-shadow:
+    0 5px 15px rgba(37, 99, 235, 0.2);
 }
 
 
@@ -463,13 +621,13 @@ a {
 .content {
   flex: 1;
 
-  width: 100%;
+  padding: 35px;
 
   max-width: 1500px;
 
-  margin: 0 auto;
+  margin: auto;
 
-  padding: 35px;
+  width: 100%;
 }
 
 
@@ -478,27 +636,27 @@ a {
 ===================================================== */
 
 .card {
-  background: rgba(255, 255, 255, 0.95);
+  background: white;
 
-  border-radius: 18px;
+  border-radius: 16px;
 
-  padding: 28px;
+  padding: 27px;
 
-  margin-bottom: 28px;
+  margin-bottom: 27px;
 
-  border: 1px solid #e2e8f0;
+  border: 1px solid #e5e7eb;
 
   box-shadow:
-    0 8px 30px rgba(15, 23, 42, 0.06);
+    0 5px 25px rgba(15, 23, 42, 0.05);
 
   transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
 }
 
 .card:hover {
   box-shadow:
-    0 12px 35px rgba(15, 23, 42, 0.08);
+    0 10px 30px rgba(15, 23, 42, 0.08);
 }
 
 
@@ -507,9 +665,7 @@ a {
 ===================================================== */
 
 .badge {
-  display: inline-flex;
-
-  align-items: center;
+  display: inline-block;
 
   padding: 6px 11px;
 
@@ -523,138 +679,95 @@ a {
 
   font-weight: 800;
 
-  letter-spacing: 0.5px;
+  letter-spacing: 0.4px;
 }
 
 
 /* =====================================================
-   CLASS AND OBJECT
+   CLASS OBJECT
 ===================================================== */
 
 .class-object-header h2 {
-  margin: 10px 0 6px;
+  margin: 10px 0 5px;
 
-  font-size: 27px;
-
-  color: #0f172a;
+  font-size: 26px;
 }
 
 .class-object-header p {
-  margin: 0;
-
   color: #64748b;
 
-  line-height: 1.7;
+  line-height: 1.6;
 }
-
-
-/* =====================================================
-   CLASS OBJECT GRID
-===================================================== */
 
 .class-object-grid {
   display: grid;
 
   grid-template-columns:
-    repeat(2, minmax(0, 1fr));
+    repeat(2, 1fr);
 
-  gap: 22px;
+  gap: 20px;
 
   margin-top: 25px;
 }
 
-
-/* =====================================================
-   CONCEPT BOX
-===================================================== */
-
 .concept-box {
-  position: relative;
-
-  padding: 23px;
+  padding: 22px;
 
   background:
     linear-gradient(
       145deg,
       #f8fafc,
-      #eef2ff
+      #f1f5f9
     );
 
-  border:
-    1px solid #e2e8f0;
+  border-radius: 13px;
 
-  border-radius: 15px;
+  border: 1px solid #e2e8f0;
 
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
+  transition: 0.25s ease;
 }
 
 .concept-box:hover {
   transform: translateY(-4px);
 
+  border-color: #bfdbfe;
+
   box-shadow:
-    0 12px 25px rgba(37, 99, 235, 0.1);
+    0 8px 20px rgba(37, 99, 235, 0.08);
 }
-
-.concept-box h3 {
-  margin: 8px 0;
-
-  font-size: 21px;
-
-  color: #1e293b;
-}
-
-.concept-box p {
-  color: #64748b;
-
-  line-height: 1.65;
-}
-
-
-/* =====================================================
-   NUMBER
-===================================================== */
 
 .concept-number {
   color: #2563eb;
 
-  font-weight: 900;
+  font-weight: 800;
 
-  font-size: 14px;
+  font-size: 13px;
 
   letter-spacing: 1px;
 }
 
+.concept-box h3 {
+  margin: 8px 0;
+}
 
-/* =====================================================
-   CODE BLOCKS
-===================================================== */
+.concept-box p {
+  line-height: 1.6;
 
-pre {
-  font-family:
-    "Cascadia Code",
-    "Fira Code",
-    "Courier New",
-    monospace;
+  color: #64748b;
 }
 
 .concept-box pre {
   overflow-x: auto;
 
-  margin-top: 18px;
+  background: #111827;
 
-  padding: 18px;
+  color: white;
 
-  border-radius: 12px;
+  padding: 17px;
 
-  background: #0f172a;
-
-  color: #e2e8f0;
+  border-radius: 10px;
 
   line-height: 1.6;
-
-  font-size: 13px;
 }
 
 
@@ -671,54 +784,43 @@ pre {
 
   gap: 25px;
 
-  padding: 30px;
+  padding: 28px;
 
-  margin-bottom: 28px;
+  margin-bottom: 27px;
 
-  border-radius: 18px;
+  border-radius: 16px;
 
   background:
     linear-gradient(
       135deg,
       #1e3a8a,
-      #4338ca
+      #2563eb
     );
 
   color: white;
 
   box-shadow:
-    0 12px 30px rgba(37, 99, 235, 0.2);
+    0 10px 30px rgba(37, 99, 235, 0.18);
 }
 
 .hero h2 {
   margin: 10px 0;
 
-  font-size: 30px;
+  font-size: 29px;
 }
 
 .hero p {
-  margin: 0;
-
-  max-width: 650px;
-
   color: #dbeafe;
 
-  line-height: 1.7;
+  line-height: 1.6;
 }
-
-
-/* =====================================================
-   HERO CONTROLS
-===================================================== */
 
 .controls {
   display: flex;
 
-  gap: 9px;
+  gap: 8px;
 
   flex-wrap: wrap;
-
-  justify-content: flex-end;
 }
 
 .controls button {
@@ -726,43 +828,38 @@ pre {
 
   border: none;
 
-  border-radius: 9px;
+  border-radius: 8px;
+
+  cursor: pointer;
 
   background: white;
 
   color: #1e3a8a;
 
-  font-size: 13px;
-
   font-weight: 700;
 
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
+  transition: 0.2s ease;
 }
 
 .controls button:hover {
   transform: translateY(-2px);
 
   box-shadow:
-    0 7px 15px rgba(0, 0, 0, 0.15);
+    0 5px 12px rgba(0, 0, 0, 0.15);
 }
 
 
 /* =====================================================
-   MAIN GRID
+   GRID
 ===================================================== */
 
 .grid {
   display: grid;
 
   grid-template-columns:
-    minmax(0, 1fr)
-    minmax(0, 1fr);
+    repeat(2, minmax(0, 1fr));
 
-  gap: 28px;
-
-  align-items: start;
+  gap: 27px;
 }
 
 
@@ -784,24 +881,18 @@ pre {
 
 .card-header h3 {
   margin: 0;
-
-  font-size: 20px;
-
-  color: #0f172a;
 }
 
 .small-label {
-  padding: 5px 10px;
-
-  border-radius: 20px;
-
-  background: #f1f5f9;
+  font-size: 12px;
 
   color: #64748b;
 
-  font-size: 12px;
+  background: #f1f5f9;
 
-  font-weight: 700;
+  padding: 6px 10px;
+
+  border-radius: 20px;
 }
 
 
@@ -812,30 +903,21 @@ pre {
 .diagram {
   position: relative;
 
-  height: 470px;
+  height: 450px;
 
   background:
     radial-gradient(
-      circle at 1px 1px,
-      #cbd5e1 1px,
-      transparent 0
+      circle at center,
+      #ffffff,
+      #f8fafc
     );
 
-  background-size: 22px 22px;
-
-  background-color: #f8fafc;
-
-  border-radius: 15px;
+  border-radius: 13px;
 
   overflow: hidden;
 
   border: 1px solid #e2e8f0;
 }
-
-
-/* =====================================================
-   SVG ARROWS
-===================================================== */
 
 .arrows {
   position: absolute;
@@ -847,14 +929,7 @@ pre {
   height: 100%;
 
   color: #2563eb;
-
-  z-index: 1;
 }
-
-
-/* =====================================================
-   CLASS NODE
-===================================================== */
 
 .class-node {
   position: absolute;
@@ -862,16 +937,13 @@ pre {
   transform:
     translate(-50%, -50%);
 
-  width: 155px;
+  width: 145px;
 
-  min-height: 72px;
+  min-height: 70px;
 
-  padding: 10px;
+  border: 2px solid #2563eb;
 
-  border:
-    2px solid #2563eb;
-
-  border-radius: 13px;
+  border-radius: 11px;
 
   background: white;
 
@@ -890,70 +962,57 @@ pre {
   gap: 3px;
 
   box-shadow:
-    0 7px 18px rgba(15, 23, 42, 0.1);
+    0 5px 15px rgba(37, 99, 235, 0.1);
 
   transition:
     transform 0.2s ease,
-    box-shadow 0.2s ease,
-    background 0.2s ease;
+    box-shadow 0.2s ease;
 }
 
 .class-node:hover {
   transform:
     translate(-50%, -50%)
-    scale(1.06);
+    scale(1.05);
 
   box-shadow:
-    0 12px 25px rgba(37, 99, 235, 0.2);
+    0 8px 20px rgba(37, 99, 235, 0.2);
 }
 
 .class-node strong {
-  font-size: 21px;
+  font-size: 20px;
 
   color: #2563eb;
 }
 
 .class-node span {
   font-size: 12px;
-
-  color: #475569;
-
-  text-align: center;
 }
 
 .class-node.selected {
-  background:
-    linear-gradient(
-      135deg,
-      #2563eb,
-      #4f46e5
-    );
+  background: #2563eb;
 
   color: white;
 
   box-shadow:
-    0 12px 25px rgba(37, 99, 235, 0.3);
+    0 8px 20px rgba(37, 99, 235, 0.3);
 }
 
-.class-node.selected strong,
-.class-node.selected span {
+.class-node.selected strong {
   color: white;
 }
 
 
 /* =====================================================
-   DIAGRAM ANIMATION
+   ANIMATION
 ===================================================== */
 
 .diagram.animated .class-node {
   animation:
-    nodePulse
-    0.8s
-    ease-in-out
+    pulse 0.8s ease-in-out
     infinite alternate;
 }
 
-@keyframes nodePulse {
+@keyframes pulse {
   from {
     transform:
       translate(-50%, -50%)
@@ -975,22 +1034,20 @@ pre {
 .node-info {
   margin-top: 15px;
 
-  padding: 14px 16px;
-
-  border-radius: 11px;
+  padding: 13px;
 
   background: #eff6ff;
 
-  border: 1px solid #dbeafe;
+  border: 1px solid #bfdbfe;
+
+  border-radius: 9px;
 
   color: #1e40af;
-
-  line-height: 1.6;
 }
 
 
 /* =====================================================
-   CODE CARD
+   CODE
 ===================================================== */
 
 .code-card pre {
@@ -998,67 +1055,35 @@ pre {
 
   overflow: auto;
 
-  margin: 0 0 15px;
+  background: #111827;
 
-  background: #0f172a;
-
-  color: #e2e8f0;
+  color: #e5e7eb;
 
   padding: 20px;
 
-  border-radius: 12px;
-
-  font-size: 13px;
-
-  line-height: 1.65;
-}
-
-
-/* =====================================================
-   CODE SCROLLBAR
-===================================================== */
-
-.code-card pre::-webkit-scrollbar,
-.concept-box pre::-webkit-scrollbar {
-  height: 7px;
-
-  width: 7px;
-}
-
-.code-card pre::-webkit-scrollbar-thumb,
-.concept-box pre::-webkit-scrollbar-thumb {
-  background: #475569;
-
   border-radius: 10px;
+
+  line-height: 1.6;
 }
-
-
-/* =====================================================
-   SMALL BUTTON
-===================================================== */
 
 .small-btn {
-  padding: 8px 13px;
+  padding: 8px 12px;
 
-  border: 1px solid #dbeafe;
+  border: none;
 
-  border-radius: 8px;
+  border-radius: 7px;
 
-  background: #eff6ff;
+  cursor: pointer;
 
-  color: #2563eb;
+  background: #f1f5f9;
 
-  font-weight: 700;
-
-  transition:
-    background 0.2s ease,
-    transform 0.2s ease;
+  transition: 0.2s ease;
 }
 
 .small-btn:hover {
   background: #dbeafe;
 
-  transform: translateY(-1px);
+  color: #2563eb;
 }
 
 
@@ -1071,10 +1096,6 @@ pre {
 
   padding: 14px;
 
-  border: none;
-
-  border-radius: 10px;
-
   background:
     linear-gradient(
       135deg,
@@ -1084,23 +1105,22 @@ pre {
 
   color: white;
 
-  font-weight: 800;
+  border: none;
 
-  font-size: 14px;
+  border-radius: 9px;
 
-  box-shadow:
-    0 6px 15px rgba(22, 163, 74, 0.2);
+  cursor: pointer;
 
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
+  font-weight: bold;
+
+  transition: 0.2s ease;
 }
 
 .run-btn:hover:not(:disabled) {
   transform: translateY(-2px);
 
   box-shadow:
-    0 10px 20px rgba(22, 163, 74, 0.25);
+    0 6px 15px rgba(22, 163, 74, 0.25);
 }
 
 .run-btn:disabled {
@@ -1117,50 +1137,31 @@ pre {
 .output {
   margin-top: 20px;
 
-  background: #020617;
+  background: #111827;
 
   color: #22c55e;
 
-  padding: 17px;
+  padding: 16px;
 
-  border-radius: 11px;
+  border-radius: 9px;
 
   min-height: 110px;
 
-  font-family:
-    "Cascadia Code",
-    "Courier New",
-    monospace;
-
-  font-size: 13px;
+  font-family: monospace;
 
   line-height: 1.7;
-
-  border:
-    1px solid #1e293b;
 }
 
 .output-title {
   color: white;
 
-  font-family:
-    Inter,
-    "Segoe UI",
-    Arial,
-    sans-serif;
-
-  font-weight: 800;
+  font-weight: bold;
 
   margin-bottom: 10px;
-
-  padding-bottom: 8px;
-
-  border-bottom:
-    1px solid #1e293b;
 }
 
 .placeholder {
-  color: #64748b;
+  color: #94a3b8;
 }
 
 
@@ -1168,17 +1169,13 @@ pre {
    EXPLANATION
 ===================================================== */
 
-.explanation h3 {
-  margin: 0;
-}
-
 .explanation-grid {
   display: grid;
 
   grid-template-columns:
     repeat(3, 1fr);
 
-  gap: 22px;
+  gap: 20px;
 }
 
 .explanation-grid > div {
@@ -1186,93 +1183,36 @@ pre {
 
   background: #f8fafc;
 
-  border:
-    1px solid #e2e8f0;
+  border-radius: 12px;
 
-  border-radius: 13px;
+  border: 1px solid #e2e8f0;
 
-  transition:
-    transform 0.2s ease;
+  transition: 0.2s ease;
 }
 
 .explanation-grid > div:hover {
-  transform: translateY(-4px);
+  transform: translateY(-3px);
+
+  border-color: #bfdbfe;
 }
 
 .step {
-  width: 42px;
-  height: 42px;
-
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
-
-  border-radius: 11px;
-
-  background: #dbeafe;
-
   color: #2563eb;
 
-  font-weight: 900;
+  font-weight: bold;
 
-  margin-bottom: 12px;
+  font-size: 20px;
 }
 
-.explanation h4 {
-  margin: 0 0 8px;
-
-  font-size: 17px;
-}
-
-.explanation p {
-  margin: 0;
-
-  color: #64748b;
-
-  line-height: 1.65;
-}
-
-
-/* =====================================================
-   ACCESS SPECIFIER
-===================================================== */
-
-.access-card .card-header {
-  align-items: flex-start;
-}
-
-.access-card h3 {
-  margin: 10px 0 5px;
-
-  font-size: 22px;
-}
-
-.access-card p {
+.explanation-grid p {
   color: #64748b;
 
   line-height: 1.6;
 }
 
-.syntax {
-  padding: 11px 14px;
-
-  border-radius: 9px;
-
-  background: #0f172a;
-
-  color: #e2e8f0;
-
-  font-family: monospace;
-
-  font-size: 12px;
-
-  white-space: nowrap;
-}
-
 
 /* =====================================================
-   VISIBILITY
+   ACCESS
 ===================================================== */
 
 .visibility-grid {
@@ -1285,14 +1225,13 @@ pre {
 }
 
 .visibility-box {
-  padding: 17px;
+  padding: 15px;
 
   background: #f8fafc;
 
-  border:
-    1px solid #e2e8f0;
+  border: 1px solid #e2e8f0;
 
-  border-radius: 11px;
+  border-radius: 9px;
 
   display: flex;
 
@@ -1301,12 +1240,10 @@ pre {
   gap: 8px;
 
   align-items: center;
-
-  font-size: 13px;
 }
 
 .visibility {
-  font-weight: 800;
+  font-weight: bold;
 }
 
 .visibility.public {
@@ -1325,61 +1262,39 @@ pre {
   color: #64748b;
 }
 
-
-/* =====================================================
-   ACCESS DETAIL
-===================================================== */
-
 .access-detail {
-  margin-top: 22px;
+  margin-top: 25px;
 
   padding: 20px;
 
-  background:
-    linear-gradient(
-      135deg,
-      #eff6ff,
-      #eef2ff
-    );
+  background: #f8fafc;
 
-  border-radius: 12px;
-
-  border: 1px solid #dbeafe;
-}
-
-.access-detail h4 {
-  margin-top: 0;
-
-  color: #1e40af;
+  border-radius: 10px;
 }
 
 .access-detail p {
-  margin-bottom: 0;
+  color: #64748b;
+
+  line-height: 1.6;
 }
 
 
 /* =====================================================
-   BASIC SYNTAX
+   SYNTAX
 ===================================================== */
 
-.syntax-card h3 {
-  margin-top: 0;
-
-  font-size: 21px;
-}
-
 .syntax-card pre {
-  background: #0f172a;
+  background: #111827;
 
-  color: #e2e8f0;
+  color: white;
 
   padding: 20px;
 
-  border-radius: 12px;
+  border-radius: 10px;
 
   overflow-x: auto;
 
-  line-height: 1.7;
+  line-height: 1.6;
 }
 
 .syntax-examples {
@@ -1389,34 +1304,24 @@ pre {
     repeat(3, 1fr);
 
   gap: 15px;
-
-  margin-top: 20px;
 }
 
 .syntax-examples div {
-  padding: 18px;
+  padding: 17px;
 
   background: #f8fafc;
 
-  border:
-    1px solid #e2e8f0;
+  border: 1px solid #e2e8f0;
 
-  border-radius: 11px;
+  border-radius: 9px;
 
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
+  transition: 0.2s ease;
 }
 
 .syntax-examples div:hover {
-  transform: translateY(-3px);
+  border-color: #bfdbfe;
 
-  box-shadow:
-    0 8px 20px rgba(15, 23, 42, 0.08);
-}
-
-.syntax-examples strong {
-  color: #2563eb;
+  transform: translateY(-2px);
 }
 
 .syntax-examples code {
@@ -1424,11 +1329,9 @@ pre {
 
   margin-top: 10px;
 
-  font-size: 12px;
+  font-size: 13px;
 
   color: #475569;
-
-  overflow-x: auto;
 }
 
 
@@ -1437,9 +1340,7 @@ pre {
 ===================================================== */
 
 .constructor-card {
-  margin-top: 28px;
-
-  scroll-margin-top: 110px;
+  margin-top: 25px;
 }
 
 .constructor-card > .card-header {
@@ -1447,15 +1348,11 @@ pre {
 }
 
 .constructor-card h3 {
-  margin: 9px 0;
-
-  font-size: 24px;
+  margin: 8px 0;
 }
 
 .constructor-card p {
-  line-height: 1.7;
-
-  color: #64748b;
+  line-height: 1.6;
 }
 
 
@@ -1470,10 +1367,7 @@ pre {
 .constructor-rules h4 {
   font-size: 20px;
 
-  margin:
-    0 0 15px;
-
-  color: #0f172a;
+  margin-bottom: 15px;
 }
 
 .rules-grid {
@@ -1486,12 +1380,11 @@ pre {
 }
 
 .rule-box {
-  padding: 19px;
+  padding: 18px;
 
-  border:
-    1px solid #e2e8f0;
+  border: 1px solid #e2e8f0;
 
-  border-radius: 13px;
+  border-radius: 12px;
 
   background: #f8fafc;
 
@@ -1513,23 +1406,11 @@ pre {
   border-color: #bfdbfe;
 
   box-shadow:
-    0 8px 20px rgba(37, 99, 235, 0.08);
+    0 8px 18px rgba(0, 0, 0, 0.06);
 }
 
 .rule-box .concept-number {
   flex-shrink: 0;
-
-  width: 34px;
-  height: 34px;
-
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
-
-  border-radius: 9px;
-
-  background: #dbeafe;
 }
 
 .rule-box p {
@@ -1548,24 +1429,19 @@ pre {
 .constructor-info {
   margin-top: 25px;
 
-  padding: 21px;
+  padding: 20px;
 
-  border-radius: 13px;
+  border-radius: 12px;
 
-  background:
-    linear-gradient(
-      135deg,
-      #f8fafc,
-      #eef2ff
-    );
+  background: #f8fafc;
 
-  border:
-    1px solid #e2e8f0;
+  border: 1px solid #e2e8f0;
 }
 
 .constructor-info h4 {
-  margin:
-    0 0 10px;
+  margin-top: 0;
+
+  margin-bottom: 10px;
 
   font-size: 19px;
 }
@@ -1574,6 +1450,8 @@ pre {
   margin: 0;
 
   color: #475569;
+
+  line-height: 1.6;
 }
 
 
@@ -1584,18 +1462,17 @@ pre {
 .constructor-example {
   margin-top: 25px;
 
-  border:
-    1px solid #e2e8f0;
+  border: 1px solid #e2e8f0;
 
-  border-radius: 13px;
+  border-radius: 12px;
 
   overflow: hidden;
 
-  background: white;
+  background: #ffffff;
 }
 
 .constructor-example-header {
-  padding: 17px 20px;
+  padding: 16px 18px;
 
   background: #f8fafc;
 
@@ -1618,15 +1495,20 @@ pre {
 }
 
 .constructor-example-header span {
-  font-size: 12px;
+  font-size: 13px;
 
   color: #64748b;
 }
 
+
+/* =====================================================
+   CONSTRUCTOR CODE
+===================================================== */
+
 .constructor-example pre {
   margin: 0;
 
-  padding: 21px;
+  padding: 20px;
 
   overflow-x: auto;
 
@@ -1634,17 +1516,46 @@ pre {
 
   color: #e2e8f0;
 
-  font-size: 13px;
+  font-size: 14px;
 
   line-height: 1.7;
 }
 
 .constructor-example code {
   font-family:
-    "Cascadia Code",
-    "Fira Code",
     "Courier New",
     monospace;
+}
+
+
+/* =====================================================
+   CONSTRUCTOR SIDEBAR BUTTON
+===================================================== */
+
+.sidebar .access-btn {
+  cursor: pointer;
+}
+
+
+/* =====================================================
+   CONSTRUCTOR SCROLL POSITION
+===================================================== */
+
+#constructor-section {
+  scroll-margin-top: 120px;
+}
+
+#class-object-section {
+  scroll-margin-top: 120px;
+
+}
+
+#inheritance-section {
+  scroll-margin-top: 120px;
+}
+
+#access-section {
+  scroll-margin-top: 120px;
 }
 
 
@@ -1680,7 +1591,7 @@ pre {
 }
 
 .login-btn {
-  background: white;
+  background: #ffffff;
 
   color: #111827;
 }
@@ -1688,25 +1599,7 @@ pre {
 .signup-btn {
   background: #4f46e5;
 
-  color: white;
-}
-
-
-/* =====================================================
-   CONSTRUCTOR SIDEBAR
-===================================================== */
-
-.sidebar .access-btn {
-  cursor: pointer;
-}
-
-
-/* =====================================================
-   CONSTRUCTOR SCROLL
-===================================================== */
-
-#constructor-section {
-  scroll-margin-top: 110px;
+  color: #ffffff;
 }
 
 
@@ -1719,65 +1612,22 @@ footer {
 
   padding: 28px;
 
-  background:
-    linear-gradient(
-      135deg,
-      #0f172a,
-      #172554
-    );
+  background: #111827;
 
   color: #cbd5e1;
 
-  font-size: 13px;
-
-  border-top:
-    1px solid #1e293b;
+  font-size: 14px;
 }
 
 
 /* =====================================================
-   FOCUS ACCESSIBILITY
-===================================================== */
-
-button:focus-visible,
-a:focus-visible {
-  outline:
-    3px solid rgba(59, 130, 246, 0.4);
-
-  outline-offset: 3px;
-}
-
-
-/* =====================================================
-   LARGE SCREEN
-===================================================== */
-
-@media (min-width: 1500px) {
-
-  .sidebar {
-    width: 320px;
-
-    min-width: 320px;
-  }
-
-  .content {
-    padding:
-      40px 45px;
-  }
-
-}
-
-
-/* =====================================================
-   TABLET
+   MOBILE / TABLET
 ===================================================== */
 
 @media (max-width: 1100px) {
 
   .sidebar {
-    width: 260px;
-
-    min-width: 260px;
+    width: 270px;
   }
 
   .content {
@@ -1788,31 +1638,17 @@ a:focus-visible {
     grid-template-columns: 1fr;
   }
 
-  .diagram {
-    height: 430px;
-  }
-
-  .visibility-grid {
-    grid-template-columns:
-      repeat(2, 1fr);
-  }
-
-  .syntax-examples {
-    grid-template-columns:
-      repeat(2, 1fr);
-  }
-
 }
 
 
 /* =====================================================
-   MOBILE / TABLET
+   TABLET
 ===================================================== */
 
 @media (max-width: 900px) {
 
   .header {
-    padding: 15px 18px;
+    padding: 17px 20px;
   }
 
   .header-content h1 {
@@ -1830,33 +1666,33 @@ a:focus-visible {
   .sidebar {
     width: 100%;
 
-    min-width: 100%;
-
-    height: auto;
-
     position: relative;
 
     top: 0;
 
-    padding: 20px;
+    height: auto;
 
     border-right: none;
 
     border-bottom:
-      1px solid #e2e8f0;
+      1px solid #e5e7eb;
+
+    padding: 20px;
   }
 
-  .sidebar h2 {
-    margin-top: 5px;
-  }
-
-  .type-btn,
-  .access-btn {
-    padding: 12px 15px;
+  .sidebar-section {
+    margin-bottom: 20px;
   }
 
   .content {
     padding: 20px;
+  }
+
+  .class-object-grid,
+  .explanation-grid,
+  .visibility-grid,
+  .syntax-examples {
+    grid-template-columns: 1fr;
   }
 
   .hero {
@@ -1865,39 +1701,19 @@ a:focus-visible {
     align-items: flex-start;
   }
 
-  .controls {
-    justify-content: flex-start;
-  }
-
-  .class-object-grid,
-  .explanation-grid,
-  .rules-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .visibility-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .syntax-examples {
-    grid-template-columns: 1fr;
-  }
-
 }
 
 
 /* =====================================================
-   SMALL MOBILE
+   MOBILE
 ===================================================== */
 
 @media (max-width: 600px) {
 
   .header {
-    min-height: auto;
-
     flex-wrap: wrap;
 
-    padding: 14px;
+    padding: 15px;
   }
 
   .logo {
@@ -1905,11 +1721,11 @@ a:focus-visible {
 
     height: 48px;
 
-    font-size: 19px;
+    font-size: 20px;
   }
 
   .header-content {
-    min-width: 200px;
+    min-width: 180px;
   }
 
   .header-content h1 {
@@ -1922,26 +1738,30 @@ a:focus-visible {
 
   .feedback-nav-btn {
     width: 100%;
+
+    text-align: center;
+  }
+
+  .sidebar {
+    padding: 18px 15px;
   }
 
   .content {
-    padding: 14px;
+    padding: 15px;
   }
 
   .card {
     padding: 18px;
 
-    border-radius: 14px;
+    border-radius: 13px;
   }
 
   .hero {
     padding: 20px;
-
-    border-radius: 14px;
   }
 
   .hero h2 {
-    font-size: 24px;
+    font-size: 23px;
   }
 
   .controls {
@@ -1959,40 +1779,17 @@ a:focus-visible {
   }
 
   .class-node {
-    width: 125px;
+    width: 120px;
 
-    min-height: 62px;
-  }
-
-  .class-node strong {
-    font-size: 18px;
+    min-height: 60px;
   }
 
   .class-node span {
     font-size: 10px;
   }
 
-  .card-header {
-    align-items: flex-start;
-
-    flex-direction: column;
-  }
-
-  .syntax {
-    white-space: normal;
-
-    word-break: break-word;
-  }
-
-  .class-object-header h2 {
-    font-size: 23px;
-  }
-
-  .concept-box pre,
-  .code-card pre,
-  .constructor-example pre,
-  .syntax-card pre {
-    font-size: 11px;
+  .rules-grid {
+    grid-template-columns: 1fr;
   }
 
   .constructor-example-header {
@@ -2001,29 +1798,8 @@ a:focus-visible {
     align-items: flex-start;
   }
 
-  footer {
-    padding: 22px 14px;
-  }
-
-}
-
-
-/* =====================================================
-   REDUCED MOTION
-===================================================== */
-
-@media (prefers-reduced-motion: reduce) {
-
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-
-    animation-iteration-count: 1 !important;
-
-    scroll-behavior: auto !important;
-
-    transition-duration: 0.01ms !important;
+  .constructor-example pre {
+    font-size: 13px;
   }
 
 }
