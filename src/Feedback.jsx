@@ -36,6 +36,7 @@ function Feedback() {
       }
     } catch (error) {
       console.error(error);
+      alert(error);
       alert("Unable to connect to backend.");
     }
   };
