@@ -28,11 +28,23 @@ const inheritanceData = {
       "One derived class inherits from one base class.",
 
     diagram: [
-      { id: "A", label: "Base Class A", x: 50, y: 15 },
-      { id: "B", label: "Derived Class B", x: 50, y: 75 },
+      {
+        id: "A",
+        label: "Base Class A",
+        x: 50,
+        y: 10,
+      },
+      {
+        id: "B",
+        label: "Derived Class B",
+        x: 50,
+        y: 70,
+      },
     ],
 
-    arrows: [["A", "B"]],
+    arrows: [
+      ["A", "B"],
+    ],
 
     code: `#include <iostream>
 using namespace std;
@@ -62,6 +74,7 @@ int main() {
 
     output: [
       "Animal eats",
+      "Animal eats",
       "Dog barks",
     ],
   },
@@ -71,9 +84,24 @@ int main() {
       "A derived class becomes the base class for another class.",
 
     diagram: [
-      { id: "A", label: "Class A", x: 50, y: 10 },
-      { id: "B", label: "Class B", x: 50, y: 50 },
-      { id: "C", label: "Class C", x: 50, y: 90 },
+      {
+        id: "A",
+        label: "Class A",
+        x: 50,
+        y: 5,
+      },
+      {
+        id: "B",
+        label: "Class B",
+        x: 50,
+        y: 45,
+      },
+      {
+        id: "C",
+        label: "Class C",
+        x: 50,
+        y: 85,
+      },
     ],
 
     arrows: [
@@ -117,6 +145,7 @@ int main() {
 
     output: [
       "Class A",
+      "Class A",
       "Class B",
       "Class C",
     ],
@@ -127,9 +156,24 @@ int main() {
       "One derived class inherits from two or more base classes.",
 
     diagram: [
-      { id: "A", label: "Base A", x: 25, y: 15 },
-      { id: "B", label: "Base B", x: 75, y: 15 },
-      { id: "C", label: "Derived C", x: 50, y: 75 },
+      {
+        id: "A",
+        label: "Base A",
+        x: 25,
+        y: 10,
+      },
+      {
+        id: "B",
+        label: "Base B",
+        x: 75,
+        y: 10,
+      },
+      {
+        id: "C",
+        label: "Derived C",
+        x: 50,
+        y: 75,
+      },
     ],
 
     arrows: [
@@ -173,6 +217,7 @@ int main() {
 
     output: [
       "A",
+      "A",
       "B",
       "C",
     ],
@@ -183,9 +228,24 @@ int main() {
       "Multiple derived classes inherit from the same base class.",
 
     diagram: [
-      { id: "A", label: "Base A", x: 50, y: 15 },
-      { id: "B", label: "Derived B", x: 25, y: 75 },
-      { id: "C", label: "Derived C", x: 75, y: 75 },
+      {
+        id: "A",
+        label: "Base A",
+        x: 50,
+        y: 10,
+      },
+      {
+        id: "B",
+        label: "Derived B",
+        x: 25,
+        y: 75,
+      },
+      {
+        id: "C",
+        label: "Derived C",
+        x: 75,
+        y: 75,
+      },
     ],
 
     arrows: [
@@ -233,6 +293,7 @@ int main() {
 
     output: [
       "Animal eats",
+      "Animal eats",
       "Dog barks",
       "Animal eats",
       "Cat meows",
@@ -244,10 +305,30 @@ int main() {
       "Hybrid inheritance is a combination of two or more types of inheritance.",
 
     diagram: [
-      { id: "A", label: "Base Class A", x: 50, y: 8 },
-      { id: "B", label: "Class B", x: 25, y: 42 },
-      { id: "C", label: "Class C", x: 75, y: 42 },
-      { id: "D", label: "Derived Class D", x: 50, y: 82 },
+      {
+        id: "A",
+        label: "Base Class A",
+        x: 50,
+        y: 5,
+      },
+      {
+        id: "B",
+        label: "Class B",
+        x: 25,
+        y: 42,
+      },
+      {
+        id: "C",
+        label: "Class C",
+        x: 75,
+        y: 42,
+      },
+      {
+        id: "D",
+        label: "Derived Class D",
+        x: 50,
+        y: 82,
+      },
     ],
 
     arrows: [
@@ -302,6 +383,7 @@ int main() {
 
     output: [
       "Class A",
+      "Class A",
       "Class B",
       "Class C",
       "Class D",
@@ -316,9 +398,13 @@ int main() {
 const accessData = {
   public: {
     title: "Public Inheritance",
+
     description:
       "Public inheritance keeps public members of the base class public in the derived class.",
-    example: "class Dog : public Animal",
+
+    example:
+      "class Dog : public Animal",
+
     visibility: [
       ["Base public", "Public"],
       ["Base protected", "Protected"],
@@ -328,9 +414,13 @@ const accessData = {
 
   protected: {
     title: "Protected Inheritance",
+
     description:
       "Protected inheritance makes public and protected members of the base class protected in the derived class.",
-    example: "class Dog : protected Animal",
+
+    example:
+      "class Dog : protected Animal",
+
     visibility: [
       ["Base public", "Protected"],
       ["Base protected", "Protected"],
@@ -340,9 +430,13 @@ const accessData = {
 
   private: {
     title: "Private Inheritance",
+
     description:
       "Private inheritance makes public and protected members of the base class private in the derived class.",
-    example: "class Dog : private Animal",
+
+    example:
+      "class Dog : private Animal",
+
     visibility: [
       ["Base public", "Private"],
       ["Base protected", "Private"],
@@ -384,13 +478,17 @@ using namespace std;
 
 class Student {
 public:
+
+    // Constructor
     Student() {
         cout << "Constructor called";
     }
 };
 
 int main() {
+
     Student s;
+
     return 0;
 }`,
 
@@ -399,6 +497,7 @@ using namespace std;
 
 class Student {
 public:
+
     Student(string n, int a) {
         cout << "Name: " << n << endl;
         cout << "Age: " << a << endl;
@@ -406,7 +505,9 @@ public:
 };
 
 int main() {
+
     Student s("Rahul", 20);
+
     return 0;
 }`,
 
@@ -416,16 +517,19 @@ using namespace std;
 class Student {
 public:
 
+    // Default constructor
     Student() {
         cout << "Default Constructor" << endl;
     }
 
+    // Parameterized constructor
     Student(string name) {
         cout << "Name: " << name << endl;
     }
 };
 
 int main() {
+
     Student s1;
     Student s2("Rahul");
 
@@ -437,15 +541,19 @@ using namespace std;
 
 class Student {
 public:
+
     Student();
 };
 
+// Constructor defined outside class
 Student::Student() {
     cout << "Constructor called";
 }
 
 int main() {
+
     Student s;
+
     return 0;
 }`,
 };
@@ -459,9 +567,16 @@ function ProtectedRoute({ children }) {
 
   if (!isLoaded) {
     return (
-      <div className="loading-screen">
-        <div className="loading-spinner"></div>
-        <span>Loading C++ Playground...</span>
+      <div
+        style={{
+          minHeight: "100vh",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          fontSize: "20px",
+        }}
+      >
+        Loading...
       </div>
     );
   }
@@ -474,20 +589,31 @@ function ProtectedRoute({ children }) {
 }
 
 /* =====================================================
-   SIGN IN
+   SIGN IN PAGE
 ===================================================== */
 
 function SignInPage() {
   const { isLoaded, isSignedIn } = useAuth();
 
-  if (!isLoaded) return <div>Loading...</div>;
+  if (!isLoaded) {
+    return <div>Loading...</div>;
+  }
 
   if (isSignedIn) {
     return <Navigate to="/" replace />;
   }
 
   return (
-    <div className="auth-page">
+    <div
+      style={{
+        minHeight: "100vh",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        background: "#f8fafc",
+        padding: "20px",
+      }}
+    >
       <SignIn
         routing="path"
         path="/sign-in"
@@ -499,20 +625,31 @@ function SignInPage() {
 }
 
 /* =====================================================
-   SIGN UP
+   SIGN UP PAGE
 ===================================================== */
 
 function SignUpPage() {
   const { isLoaded, isSignedIn } = useAuth();
 
-  if (!isLoaded) return <div>Loading...</div>;
+  if (!isLoaded) {
+    return <div>Loading...</div>;
+  }
 
   if (isSignedIn) {
     return <Navigate to="/" replace />;
   }
 
   return (
-    <div className="auth-page">
+    <div
+      style={{
+        minHeight: "100vh",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        background: "#f8fafc",
+        padding: "20px",
+      }}
+    >
       <SignUp
         routing="path"
         path="/sign-up"
@@ -524,113 +661,10 @@ function SignUpPage() {
 }
 
 /* =====================================================
-   QUIZ
-===================================================== */
-
-function Quiz() {
-  const [answered, setAnswered] = useState(false);
-  const [correct, setCorrect] = useState(false);
-
-  const answer = (value) => {
-    if (answered) return;
-
-    setAnswered(true);
-    setCorrect(value === "Single");
-  };
-
-  return (
-    <section className="card quiz-card">
-
-      <div className="quiz-top">
-        <div>
-          <span className="section-kicker">QUICK QUIZ</span>
-          <h3>Test Your Knowledge</h3>
-        </div>
-
-        <div className="streak">
-          🔥 Streak: {correct ? 1 : 0}
-        </div>
-      </div>
-
-      <p className="quiz-question">
-        Which inheritance type has one base class
-        and one derived class?
-      </p>
-
-      <div className="quiz-options">
-
-        <button
-          className={
-            answered && "Multiple" === "Multiple" && !correct
-              ? "quiz-option wrong"
-              : "quiz-option"
-          }
-          onClick={() => answer("Multiple")}
-        >
-          <span>A</span>
-          Multiple
-        </button>
-
-        <button
-          className={
-            answered && correct
-              ? "quiz-option correct"
-              : answered
-              ? "quiz-option wrong"
-              : "quiz-option"
-          }
-          onClick={() => answer("Single")}
-        >
-          <span>B</span>
-          Single
-        </button>
-
-        <button
-          className="quiz-option"
-          onClick={() => answer("Hybrid")}
-        >
-          <span>C</span>
-          Hybrid
-        </button>
-
-      </div>
-
-      {answered && (
-        <div
-          className={
-            correct
-              ? "quiz-result success"
-              : "quiz-result error"
-          }
-        >
-          {correct
-            ? "🎉 Correct! Single inheritance has one base and one derived class."
-            : "❌ Not quite. The correct answer is Single."}
-        </div>
-      )}
-
-      {answered && (
-        <button
-          className="quiz-next"
-          onClick={() => {
-            setAnswered(false);
-            setCorrect(false);
-          }}
-        >
-          Next question →
-        </button>
-      )}
-
-    </section>
-  );
-}
-
-/* =====================================================
    VISUALIZER
 ===================================================== */
 
 function Visualizer() {
-
   const types = Object.keys(inheritanceData);
 
   const [selectedType, setSelectedType] =
@@ -654,12 +688,6 @@ function Visualizer() {
   const [selectedNode, setSelectedNode] =
     useState(null);
 
-  const [mobileMenu, setMobileMenu] =
-    useState(false);
-
-  const [xp, setXp] =
-    useState(0);
-
   const current =
     inheritanceData[selectedType];
 
@@ -669,116 +697,102 @@ function Visualizer() {
   const currentIndex =
     types.indexOf(selectedType);
 
+  /* =====================================================
+     SCROLL FUNCTION
+  ===================================================== */
+
   const scrollToSection = (id) => {
-
-    setMobileMenu(false);
-
     setTimeout(() => {
-
       document
         .getElementById(id)
         ?.scrollIntoView({
           behavior: "smooth",
           block: "start",
         });
-
     }, 50);
   };
 
+  /* =====================================================
+     SELECT TYPE
+  ===================================================== */
+
   const selectType = (type) => {
-
     setSelectedType(type);
-
     setOutput([]);
-
     setSelectedNode(null);
-
     setAnimation(false);
-
     setRunning(false);
-
-    setXp((value) =>
-      Math.min(value + 10, 100)
-    );
   };
 
-  const handleNext = () => {
+  /* =====================================================
+     NEXT
+  ===================================================== */
 
+  const handleNext = () => {
     const nextIndex =
       (currentIndex + 1) % types.length;
 
     selectType(types[nextIndex]);
-
-    scrollToSection(
-      "inheritance-section"
-    );
+    scrollToSection("inheritance-section");
   };
 
-  const handlePrevious = () => {
+  /* =====================================================
+     PREVIOUS
+  ===================================================== */
 
+  const handlePrevious = () => {
     const prevIndex =
       (currentIndex - 1 + types.length) %
       types.length;
 
     selectType(types[prevIndex]);
-
-    scrollToSection(
-      "inheritance-section"
-    );
+    scrollToSection("inheritance-section");
   };
 
-  const handleRun = () => {
+  /* =====================================================
+     RUN
+  ===================================================== */
 
+  const handleRun = () => {
     if (running) return;
 
     setRunning(true);
-
     setOutput([]);
-
-    setXp((value) =>
-      Math.min(value + 10, 100)
-    );
 
     let index = 0;
 
-    const timer =
-      setInterval(() => {
+    const timer = setInterval(() => {
+      setOutput((prev) => [
+        ...prev,
+        current.output[index],
+      ]);
 
-        setOutput((prev) => [
-          ...prev,
-          current.output[index],
-        ]);
+      index++;
 
-        index++;
-
-        if (
-          index >=
-          current.output.length
-        ) {
-
-          clearInterval(timer);
-
-          setRunning(false);
-        }
-
-      }, 600);
+      if (index >= current.output.length) {
+        clearInterval(timer);
+        setRunning(false);
+      }
+    }, 600);
   };
 
+  /* =====================================================
+     RESET
+  ===================================================== */
+
   const handleReset = () => {
-
     setOutput([]);
-
     setRunning(false);
-
     setAnimation(false);
-
     setSelectedNode(null);
-
     setShowCode(true);
   };
 
-  const handleAnimation = () => {
+  /* =====================================================
+     ANIMATION
+  ===================================================== */
 
+  const handleAnimation = () => {
     setAnimation(false);
 
     setTimeout(() => {
@@ -790,19 +804,10 @@ function Visualizer() {
     <div className="app">
 
       {/* =================================================
-          TOP HEADER
+          HEADER
       ================================================= */}
 
       <header className="header">
-
-        <button
-          className="mobile-menu-btn"
-          onClick={() =>
-            setMobileMenu(!mobileMenu)
-          }
-        >
-          ☰
-        </button>
 
         <div className="logo">
           C++
@@ -821,34 +826,31 @@ function Visualizer() {
 
         </div>
 
-        <div className="learning-stats">
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: "15px",
+          }}
+        >
 
-          <span className="xp-badge">
-            ⭐ {xp} XP
-          </span>
+          <Link
+            to="/feedback"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="feedback-nav-btn"
+          >
+            💬 Feedback
+          </Link>
 
-          <span className="progress-text">
-            {currentIndex + 1}/5 inheritance
-            types explored
-          </span>
+          <UserButton />
 
         </div>
-
-        <Link
-          to="/feedback"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="header-feedback"
-        >
-          💬 Feedback
-        </Link>
-
-        <UserButton />
 
       </header>
 
       {/* =================================================
-          MAIN
+          MAIN CONTAINER
       ================================================= */}
 
       <div className="main-container">
@@ -857,35 +859,13 @@ function Visualizer() {
             SIDEBAR
         ================================================= */}
 
-        <aside
-          className={
-            mobileMenu
-              ? "sidebar mobile-open"
-              : "sidebar"
-          }
-        >
+        <aside className="sidebar">
 
-          <div className="sidebar-brand">
-
-            <div className="sidebar-cpp">
-              C++
-            </div>
-
-            <div>
-              <strong>
-                Learn OOP
-              </strong>
-
-              <small>
-                Interactive Playground
-              </small>
-            </div>
-
-          </div>
+          {/* C++ CONCEPTS */}
 
           <div className="sidebar-section">
 
-            <h2>
+            <h2 className="sidebar-title">
               C++ Concepts
             </h2>
 
@@ -897,8 +877,7 @@ function Visualizer() {
                 )
               }
             >
-              <span>📘</span>
-              Class and Object
+              📘 Class and Object
             </button>
 
             <button
@@ -909,15 +888,16 @@ function Visualizer() {
                 )
               }
             >
-              <span>🏗️</span>
-              Constructors
+              🏗️ Constructors
             </button>
 
           </div>
 
+          {/* INHERITANCE TYPES */}
+
           <div className="sidebar-section">
 
-            <h2>
+            <h2 className="sidebar-title">
               Inheritance Types
             </h2>
 
@@ -930,28 +910,28 @@ function Visualizer() {
                     ? "type-btn active"
                     : "type-btn"
                 }
-                onClick={() =>
-                  selectType(type)
-                }
+                onClick={() => {
+
+                  selectType(type);
+
+                  scrollToSection(
+                    "inheritance-section"
+                  );
+
+                }}
               >
-
-                <span className="type-icon">
-                  {selectedType === type
-                    ? "✓"
-                    : "○"}
-                </span>
-
                 {type}
-
               </button>
 
             ))}
 
           </div>
 
+          {/* ACCESS SPECIFIER */}
+
           <div className="sidebar-section">
 
-            <h2>
+            <h2 className="sidebar-title">
               Access Specifier
             </h2>
 
@@ -975,13 +955,7 @@ function Visualizer() {
 
                   }}
                 >
-
-                  <span>
-                    🔐
-                  </span>
-
                   {type.toUpperCase()}
-
                 </button>
 
               )
@@ -990,6 +964,8 @@ function Visualizer() {
           </div>
 
           <div className="sidebar-divider"></div>
+
+          {/* FEEDBACK */}
 
           <Link
             to="/feedback"
@@ -1000,27 +976,6 @@ function Visualizer() {
             💬 Send Feedback
           </Link>
 
-          <div className="sidebar-progress">
-
-            <div className="progress-heading">
-              <span>Your Progress</span>
-              <strong>{xp}%</strong>
-            </div>
-
-            <div className="progress-bar">
-              <span
-                style={{
-                  width: `${xp}%`,
-                }}
-              ></span>
-            </div>
-
-            <small>
-              Keep exploring C++ concepts!
-            </small>
-
-          </div>
-
         </aside>
 
         {/* =================================================
@@ -1030,7 +985,7 @@ function Visualizer() {
         <main className="content">
 
           {/* =================================================
-              CLASS OBJECT
+              CLASS AND OBJECT
           ================================================= */}
 
           <section
@@ -1038,31 +993,27 @@ function Visualizer() {
             className="card class-object-card"
           >
 
-            <span className="badge">
-              C++ FUNDAMENTALS
-            </span>
+            <div className="class-object-header">
 
-            <div className="section-title-row">
+              <span className="badge">
+                C++ FUNDAMENTALS
+              </span>
 
-              <div>
-                <h2>
-                  Class and Object
-                </h2>
+              <h2>
+                Class and Object
+              </h2>
 
-                <p>
-                  A class is a blueprint for creating
-                  objects. An object is an instance
-                  of a class.
-                </p>
-              </div>
-
-              <div className="concept-icon-large">
-                ◈
-              </div>
+              <p>
+                A class is a blueprint for creating
+                objects. An object is an instance of
+                a class.
+              </p>
 
             </div>
 
             <div className="class-object-grid">
+
+              {/* CLASS */}
 
               <div className="concept-box">
 
@@ -1091,6 +1042,8 @@ public:
                 </pre>
 
               </div>
+
+              {/* OBJECT */}
 
               <div className="concept-box">
 
@@ -1135,19 +1088,29 @@ public:
             className="card constructor-card"
           >
 
-            <span className="badge">
-              C++ FUNDAMENTALS
-            </span>
+            <div className="card-header">
 
-            <h2>
-              Constructors
-            </h2>
+              <div>
 
-            <p className="section-description">
-              A constructor is a special member
-              function that is automatically called
-              when an object is created.
-            </p>
+                <span className="badge">
+                  C++ FUNDAMENTALS
+                </span>
+
+                <h2>
+                  Constructors
+                </h2>
+
+                <p>
+                  A constructor is a special member
+                  function that is automatically called
+                  when an object is created.
+                </p>
+
+              </div>
+
+            </div>
+
+            {/* CONSTRUCTOR RULES */}
 
             <div className="constructor-rules">
 
@@ -1165,11 +1128,12 @@ public:
                       key={rule.number}
                     >
 
-                      <div className="rule-number">
+                      <div className="concept-number">
                         {rule.number}
                       </div>
 
                       <div>
+
                         <strong>
                           {rule.title}
                         </strong>
@@ -1177,6 +1141,7 @@ public:
                         <p>
                           {rule.text}
                         </p>
+
                       </div>
 
                     </div>
@@ -1187,6 +1152,8 @@ public:
               </div>
 
             </div>
+
+            {/* WHY CONSTRUCTORS */}
 
             <div className="constructor-info">
 
@@ -1202,6 +1169,8 @@ public:
               </p>
 
             </div>
+
+            {/* BASIC CONSTRUCTOR */}
 
             <div className="constructor-example">
 
@@ -1225,6 +1194,8 @@ public:
 
             </div>
 
+            {/* PARAMETERIZED CONSTRUCTOR */}
+
             <div className="constructor-example">
 
               <div className="constructor-example-header">
@@ -1246,6 +1217,8 @@ public:
               </pre>
 
             </div>
+
+            {/* CONSTRUCTOR OVERLOADING */}
 
             <div className="constructor-info">
 
@@ -1283,6 +1256,8 @@ public:
 
             </div>
 
+            {/* OUTSIDE CLASS */}
+
             <div className="constructor-example">
 
               <div className="constructor-example-header">
@@ -1316,10 +1291,10 @@ public:
             className="hero"
           >
 
-            <div className="hero-content">
+            <div>
 
-              <span className="hero-kicker">
-                {selectedType.toUpperCase()} INHERITANCE
+              <span className="badge">
+                {selectedType} Inheritance
               </span>
 
               <h2>
@@ -1334,19 +1309,27 @@ public:
 
             <div className="controls">
 
-              <button onClick={handlePrevious}>
+              <button
+                onClick={handlePrevious}
+              >
                 ← Previous
               </button>
 
-              <button onClick={handleNext}>
+              <button
+                onClick={handleNext}
+              >
                 Next →
               </button>
 
-              <button onClick={handleAnimation}>
+              <button
+                onClick={handleAnimation}
+              >
                 ▶ Animate
               </button>
 
-              <button onClick={handleReset}>
+              <button
+                onClick={handleReset}
+              >
                 ↻ Reset
               </button>
 
@@ -1359,6 +1342,8 @@ public:
           ================================================= */}
 
           <section className="grid">
+
+            {/* DIAGRAM */}
 
             <div className="card diagram-card">
 
@@ -1388,26 +1373,6 @@ public:
                   className="arrows"
                 >
 
-                  <defs>
-
-                    <marker
-                      id="arrow"
-                      markerWidth="7"
-                      markerHeight="7"
-                      refX="5"
-                      refY="3"
-                      orient="auto"
-                    >
-
-                      <path
-                        d="M0,0 L6,3 L0,6 Z"
-                        fill="currentColor"
-                      />
-
-                    </marker>
-
-                  </defs>
-
                   {current.arrows.map(
                     ([from, to], index) => {
 
@@ -1431,16 +1396,36 @@ public:
                         <line
                           key={index}
                           x1={start.x}
-                          y1={start.y + 8}
+                          y1={start.y + 9}
                           x2={end.x}
-                          y2={end.y - 8}
+                          y2={end.y - 6}
                           stroke="currentColor"
-                          strokeWidth="0.7"
+                          strokeWidth="0.8"
                           markerEnd="url(#arrow)"
                         />
                       );
                     }
                   )}
+
+                  <defs>
+
+                    <marker
+                      id="arrow"
+                      markerWidth="6"
+                      markerHeight="6"
+                      refX="4"
+                      refY="3"
+                      orient="auto"
+                    >
+
+                      <path
+                        d="M0,0 L6,3 L0,6 Z"
+                        fill="currentColor"
+                      />
+
+                    </marker>
+
+                  </defs>
 
                 </svg>
 
@@ -1458,20 +1443,9 @@ public:
                         left: `${node.x}%`,
                         top: `${node.y}%`,
                       }}
-                      onClick={() => {
-
-                        setSelectedNode(
-                          node.id
-                        );
-
-                        setXp((value) =>
-                          Math.min(
-                            value + 5,
-                            100
-                          )
-                        );
-
-                      }}
+                      onClick={() =>
+                        setSelectedNode(node.id)
+                      }
                     >
 
                       <strong>
@@ -1499,16 +1473,18 @@ public:
 
                   {selectedNode}
 
-                  <span>
-                    Click another class
-                    to inspect it.
-                  </span>
+                  <br />
+
+                  Click another class
+                  to inspect it.
 
                 </div>
 
               )}
 
             </div>
+
+            {/* CODE */}
 
             <div className="card code-card">
 
@@ -1556,20 +1532,13 @@ public:
               <div className="output">
 
                 <div className="output-title">
-                  <span>
-                    Terminal Output
-                  </span>
-
-                  <span>
-                    ●
-                  </span>
+                  Output
                 </div>
 
                 {output.length === 0 ? (
 
                   <span className="placeholder">
-                    Click "Run Example" to see
-                    the output.
+                    Click "Run Example"
                   </span>
 
                 ) : (
@@ -1578,10 +1547,7 @@ public:
                     (line, index) => (
 
                       <div key={index}>
-                        <span className="terminal-arrow">
-                          &gt;
-                        </span>{" "}
-                        {line}
+                        {">"} {line}
                       </div>
 
                     )
@@ -1668,7 +1634,7 @@ public:
           </section>
 
           {/* =================================================
-              ACCESS
+              ACCESS SPECIFIER
           ================================================= */}
 
           <section
@@ -1721,10 +1687,7 @@ public:
                     <span
                       className={`visibility ${to
                         .toLowerCase()
-                        .replaceAll(
-                          " ",
-                          "-"
-                        )}`}
+                        .replaceAll(" ", "-")}`}
                     >
                       {to}
                     </span>
@@ -1751,14 +1714,10 @@ public:
           </section>
 
           {/* =================================================
-              SYNTAX
+              BASIC SYNTAX
           ================================================= */}
 
           <section className="card syntax-card">
-
-            <span className="badge">
-              C++ SYNTAX
-            </span>
 
             <h3>
               Basic C++ Inheritance Syntax
@@ -1777,6 +1736,7 @@ public:
             <div className="syntax-examples">
 
               <div>
+
                 <strong>
                   Public
                 </strong>
@@ -1784,9 +1744,11 @@ public:
                 <code>
                   class Dog : public Animal {};
                 </code>
+
               </div>
 
               <div>
+
                 <strong>
                   Protected
                 </strong>
@@ -1794,9 +1756,11 @@ public:
                 <code>
                   class Dog : protected Animal {};
                 </code>
+
               </div>
 
               <div>
+
                 <strong>
                   Private
                 </strong>
@@ -1804,30 +1768,23 @@ public:
                 <code>
                   class Dog : private Animal {};
                 </code>
+
               </div>
 
             </div>
 
           </section>
 
-          {/* =================================================
-              QUIZ
-          ================================================= */}
-
-          <Quiz />
-
         </main>
 
       </div>
 
-      <footer>
-        <strong>
-          C++ Inheritance Visualizer
-        </strong>
+      {/* =================================================
+          FOOTER
+      ================================================= */}
 
-        <span>
-          • React Learning Playground
-        </span>
+      <footer>
+        C++ Inheritance Visualizer • React
       </footer>
 
     </div>
@@ -1835,25 +1792,30 @@ public:
 }
 
 /* =====================================================
-   APP ROUTES
+   APP
 ===================================================== */
 
 function App() {
-
   return (
     <BrowserRouter>
 
       <Routes>
+
+        {/* SIGN IN */}
 
         <Route
           path="/sign-in/*"
           element={<SignInPage />}
         />
 
+        {/* SIGN UP */}
+
         <Route
           path="/sign-up/*"
           element={<SignUpPage />}
         />
+
+        {/* FEEDBACK */}
 
         <Route
           path="/feedback"
@@ -1863,6 +1825,8 @@ function App() {
             </ProtectedRoute>
           }
         />
+
+        {/* VISUALIZER */}
 
         <Route
           path="/*"
