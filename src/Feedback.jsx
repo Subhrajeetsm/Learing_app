@@ -22,34 +22,67 @@ function Feedback() {
     };
 
     try {
-    const response = await fetch(
-  "https://cpp-inheritance-visualizer-backend.onrender.com/api/feedback",
-  {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(data),
-  }
-);
+      const response = await fetch(
+        "https://cpp-inheritance-visualizer-backend.onrender.com/api/feedback",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        }
+      );
 
-      const result = await response.json();
+      // Read response as text first
+      const text = await response.text();
 
-console.log("Backend:", result);
+      console.log("Raw backend response:", text);
 
-if (response.ok) {
-  alert(result.message);
+      let result;
 
-  setName("");
-  setEmail("");
-  setMessage("");
-} else {
-  alert(result.message);
-}
+      try {
+        result = JSON.parse(text);
+      } catch (error) {
+        console.error(
+          "Backend did not return JSON:",
+          text
+        );
+
+        alert(
+          "Backend returned an invalid response. Please try again."
+        );
+
+        return;
+      }
+
+      console.log("Backend:", result);
+
+      if (response.ok) {
+        alert(
+          result.message ||
+          "Feedback submitted successfully."
+        );
+
+        setName("");
+        setEmail("");
+        setMessage("");
+      } else {
+        alert(
+          result.message ||
+          "Failed to submit feedback."
+        );
+      }
+
     } catch (error) {
-      console.error(error);
 
-      alert("Unable to connect to backend.");
+      console.error(
+        "Feedback error:",
+        error
+      );
+
+      alert(
+        "Unable to connect to backend."
+      );
     }
   };
 
@@ -76,6 +109,8 @@ if (response.ok) {
 
         <form onSubmit={handleSubmit}>
 
+          {/* NAME */}
+
           <div className="input-group">
 
             <label>
@@ -92,6 +127,8 @@ if (response.ok) {
             />
 
           </div>
+
+          {/* EMAIL */}
 
           <div className="input-group">
 
@@ -110,6 +147,8 @@ if (response.ok) {
 
           </div>
 
+          {/* MESSAGE */}
+
           <div className="input-group">
 
             <label>
@@ -126,6 +165,8 @@ if (response.ok) {
             />
 
           </div>
+
+          {/* SUBMIT */}
 
           <button
             type="submit"

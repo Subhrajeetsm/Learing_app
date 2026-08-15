@@ -5,9 +5,7 @@ import {
   Route,
   Link,
 } from "react-router-dom";
-//clerk
 
-//
 import "./App.css";
 import Feedback from "./Feedback";
 
@@ -559,15 +557,10 @@ function Visualizer() {
   return (
     <div className="app">
 
-      {/* =================================================
-          HEADER
-      ================================================= */}
+      {/* HEADER */}
 
       <header className="header">
-        //clerk
 
-
-        //
         <div className="logo">
           C++
         </div>
@@ -585,25 +578,25 @@ function Visualizer() {
 
         </div>
 
+        {/* OPEN FEEDBACK IN NEW TAB */}
+
         <Link
           to="/feedback"
+          target="_blank"
+          rel="noopener noreferrer"
           className="feedback-nav-btn"
         >
           💬 Feedback
         </Link>
 
-
       </header>
 
-      {/* =================================================
-          MAIN CONTAINER
-      ================================================= */}
+      {/* MAIN CONTAINER */}
 
       <div className="main-container">
 
-        {/* =================================================
-            SIDEBAR
-        ================================================= */}
+        {/* SIDEBAR */}
+
         <aside className="sidebar">
 
           <h2>
@@ -652,8 +645,12 @@ function Visualizer() {
 
           <div className="sidebar-divider"></div>
 
+          {/* OPEN FEEDBACK IN NEW TAB */}
+
           <Link
             to="/feedback"
+            target="_blank"
+            rel="noopener noreferrer"
             className="sidebar-feedback"
           >
             💬 Send Feedback
@@ -661,15 +658,11 @@ function Visualizer() {
 
         </aside>
 
-        {/* =================================================
-            CONTENT
-        ================================================= */}
+        {/* CONTENT */}
 
         <main className="content">
 
-          {/* =================================================
-              CLASS AND OBJECT
-          ================================================= */}
+          {/* CLASS AND OBJECT */}
 
           <section className="card class-object-card">
 
@@ -692,8 +685,6 @@ function Visualizer() {
             </div>
 
             <div className="class-object-grid">
-
-              {/* CLASS */}
 
               <div className="concept-box">
 
@@ -722,8 +713,6 @@ public:
                 </pre>
 
               </div>
-
-              {/* OBJECT */}
 
               <div className="concept-box">
 
@@ -759,9 +748,7 @@ public:
 
           </section>
 
-          {/* =================================================
-              HERO
-          ================================================= */}
+          {/* HERO */}
 
           <section className="hero">
 
@@ -811,15 +798,11 @@ public:
 
           </section>
 
-          {/* =================================================
-              DIAGRAM + CODE
-          ================================================= */}
+          {/* DIAGRAM + CODE */}
 
           <section className="grid">
 
-            {/* =================================================
-                DIAGRAM
-            ================================================= */}
+            {/* DIAGRAM */}
 
             <div className="card diagram-card">
 
@@ -933,7 +916,6 @@ public:
                       </span>
 
                     </button>
-
                   )
                 )}
 
@@ -960,9 +942,7 @@ public:
 
             </div>
 
-            {/* =================================================
-                CODE
-            ================================================= */}
+            {/* CODE */}
 
             <div className="card code-card">
 
@@ -1039,9 +1019,7 @@ public:
 
           </section>
 
-          {/* =================================================
-              HOW IT WORKS
-          ================================================= */}
+          {/* HOW IT WORKS */}
 
           <section className="card explanation">
 
@@ -1111,9 +1089,7 @@ public:
 
           </section>
 
-          {/* =================================================
-              ACCESS SPECIFIER
-          ================================================= */}
+          {/* ACCESS SPECIFIER */}
 
           <section className="card access-card">
 
@@ -1188,9 +1164,7 @@ public:
 
           </section>
 
-          {/* =================================================
-              BASIC SYNTAX
-          ================================================= */}
+          {/* BASIC SYNTAX */}
 
           <section className="card syntax-card">
 
@@ -1254,9 +1228,7 @@ public:
 
       </div>
 
-      {/* =================================================
-          FOOTER
-      ================================================= */}
+      {/* FOOTER */}
 
       <footer>
         C++ Inheritance Visualizer • React
