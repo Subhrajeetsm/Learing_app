@@ -501,3 +501,197 @@ footer {
   background: #4f46e5;
   color: #ffffff;
 }
+/* =====================================================
+   CONSTRUCTOR SECTION
+===================================================== */
+
+.constructor-card {
+  margin-top: 25px;
+}
+
+.constructor-card > .card-header {
+  margin-bottom: 25px;
+}
+
+.constructor-card h3 {
+  margin: 8px 0;
+}
+
+.constructor-card p {
+  line-height: 1.6;
+}
+
+
+/* =====================================================
+   CONSTRUCTOR RULES
+===================================================== */
+
+.constructor-rules {
+  margin-top: 25px;
+}
+
+.constructor-rules h4 {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.rules-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.rule-box {
+  padding: 18px;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  background: #f8fafc;
+
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+
+  transition: transform 0.2s ease,
+              box-shadow 0.2s ease;
+}
+
+.rule-box:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+}
+
+.rule-box .concept-number {
+  flex-shrink: 0;
+}
+
+.rule-box p {
+  margin: 0;
+  color: #334155;
+}
+
+
+/* =====================================================
+   WHY CONSTRUCTORS
+===================================================== */
+
+.constructor-info {
+  margin-top: 25px;
+  padding: 20px;
+
+  border-radius: 12px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+}
+
+.constructor-info h4 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 19px;
+}
+
+.constructor-info p {
+  margin: 0;
+  color: #475569;
+}
+
+
+/* =====================================================
+   CONSTRUCTOR EXAMPLES
+===================================================== */
+
+.constructor-example {
+  margin-top: 25px;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.constructor-example-header {
+  padding: 16px 18px;
+
+  background: #f8fafc;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 15px;
+
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.constructor-example-header h4 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.constructor-example-header span {
+  font-size: 13px;
+  color: #64748b;
+}
+
+
+/* =====================================================
+   CONSTRUCTOR CODE
+===================================================== */
+
+.constructor-example pre {
+  margin: 0;
+
+  padding: 20px;
+
+  overflow-x: auto;
+
+  background: #0f172a;
+  color: #e2e8f0;
+
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.constructor-example code {
+  font-family: "Courier New", monospace;
+}
+
+
+/* =====================================================
+   CONSTRUCTOR SIDEBAR BUTTON
+===================================================== */
+
+.sidebar .access-btn {
+  cursor: pointer;
+}
+
+
+/* =====================================================
+   CONSTRUCTOR SCROLL POSITION
+===================================================== */
+
+#constructor-section {
+  scroll-margin-top: 25px;
+}
+
+
+/* =====================================================
+   MOBILE RESPONSIVE
+===================================================== */
+
+@media (max-width: 768px) {
+
+  .rules-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .constructor-example-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .constructor-example pre {
+    font-size: 13px;
+  }
+
+}
