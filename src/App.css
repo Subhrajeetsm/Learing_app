@@ -17,6 +17,7 @@ body {
     "Segoe UI",
     Arial,
     sans-serif;
+
   background: #f1f5f9;
   color: #1e293b;
 }
@@ -47,6 +48,7 @@ a {
 
 .app {
   min-height: 100vh;
+
   background:
     radial-gradient(
       circle at top right,
@@ -155,6 +157,7 @@ a {
 
 .feedback-nav-btn {
   display: flex;
+
   align-items: center;
   justify-content: center;
 
@@ -203,7 +206,6 @@ a {
 
 .sidebar {
   width: 300px;
-
   min-width: 300px;
 
   padding: 28px 20px;
@@ -806,13 +808,20 @@ pre {
 
 
 /* =====================================================
-   DIAGRAM
+   INHERITANCE DIAGRAM
+   FIXED / FITTED VERSION
 ===================================================== */
 
 .diagram {
   position: relative;
 
-  height: 470px;
+  width: 100%;
+
+  /*
+    Increased slightly so all three nodes
+    have comfortable spacing.
+  */
+  height: 520px;
 
   background:
     radial-gradient(
@@ -849,6 +858,8 @@ pre {
   color: #2563eb;
 
   z-index: 1;
+
+  pointer-events: none;
 }
 
 
@@ -954,6 +965,7 @@ pre {
 }
 
 @keyframes nodePulse {
+
   from {
     transform:
       translate(-50%, -50%)
@@ -965,6 +977,7 @@ pre {
       translate(-50%, -50%)
       scale(1.08);
   }
+
 }
 
 
@@ -1040,7 +1053,8 @@ pre {
 .small-btn {
   padding: 8px 13px;
 
-  border: 1px solid #dbeafe;
+  border:
+    1px solid #dbeafe;
 
   border-radius: 8px;
 
@@ -1206,6 +1220,7 @@ pre {
   display: flex;
 
   align-items: center;
+
   justify-content: center;
 
   border-radius: 11px;
@@ -1702,10 +1717,22 @@ pre {
 
 
 /* =====================================================
-   CONSTRUCTOR SCROLL
+   SCROLL POSITIONS
 ===================================================== */
 
 #constructor-section {
+  scroll-margin-top: 110px;
+}
+
+#access-section {
+  scroll-margin-top: 110px;
+}
+
+#inheritance-section {
+  scroll-margin-top: 110px;
+}
+
+#class-object-section {
   scroll-margin-top: 110px;
 }
 
@@ -1789,7 +1816,7 @@ a:focus-visible {
   }
 
   .diagram {
-    height: 430px;
+    height: 500px;
   }
 
   .visibility-grid {
@@ -1883,6 +1910,15 @@ a:focus-visible {
     grid-template-columns: 1fr;
   }
 
+  /*
+     Keep diagram large enough
+     for A -> B -> C.
+  */
+
+  .diagram {
+    height: 500px;
+  }
+
 }
 
 
@@ -1954,14 +1990,23 @@ a:focus-visible {
     min-width: 100px;
   }
 
+
+  /* ================================================
+     MOBILE INHERITANCE DIAGRAM
+  ================================================ */
+
   .diagram {
-    height: 380px;
+    height: 440px;
+
+    border-radius: 12px;
   }
 
   .class-node {
     width: 125px;
 
     min-height: 62px;
+
+    padding: 8px;
   }
 
   .class-node strong {
@@ -1971,6 +2016,7 @@ a:focus-visible {
   .class-node span {
     font-size: 10px;
   }
+
 
   .card-header {
     align-items: flex-start;
@@ -2009,6 +2055,29 @@ a:focus-visible {
 
 
 /* =====================================================
+   VERY SMALL MOBILE
+===================================================== */
+
+@media (max-width: 400px) {
+
+  .diagram {
+    height: 400px;
+  }
+
+  .class-node {
+    width: 110px;
+
+    min-height: 58px;
+  }
+
+  .class-node strong {
+    font-size: 17px;
+  }
+
+}
+
+
+/* =====================================================
    REDUCED MOTION
 ===================================================== */
 
@@ -2017,13 +2086,17 @@ a:focus-visible {
   *,
   *::before,
   *::after {
-    animation-duration: 0.01ms !important;
+    animation-duration:
+      0.01ms !important;
 
-    animation-iteration-count: 1 !important;
+    animation-iteration-count:
+      1 !important;
 
-    scroll-behavior: auto !important;
+    scroll-behavior:
+      auto !important;
 
-    transition-duration: 0.01ms !important;
+    transition-duration:
+      0.01ms !important;
   }
 
 }
