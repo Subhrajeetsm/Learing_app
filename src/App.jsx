@@ -581,9 +581,15 @@ function Visualizer() {
         {/* OPEN FEEDBACK IN NEW TAB */}
 
         <Link
+<<<<<<< HEAD
           to="/feedback"
           target="_blank"
           rel="noopener noreferrer"
+=======
+          to="/feedback" 
+          target="_blank"
+  rel="noopener noreferrer"
+>>>>>>> 695d41ef67353e28ffdd6685b86cb4a06f32ebe8
           className="feedback-nav-btn"
         >
           💬 Feedback
