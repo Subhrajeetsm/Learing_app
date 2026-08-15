@@ -12,17 +12,48 @@ html {
 
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: #f5f7fb;
-  color: #1f2937;
+  font-family:
+    Inter,
+    "Segoe UI",
+    Arial,
+    sans-serif;
+  background: #f1f5f9;
+  color: #1e293b;
 }
 
-button {
+button,
+input,
+textarea {
   font-family: inherit;
 }
 
+button {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
+::selection {
+  background: #2563eb;
+  color: white;
+}
+
+
+/* =====================================================
+   APP
+===================================================== */
+
 .app {
   min-height: 100vh;
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(37, 99, 235, 0.08),
+      transparent 30%
+    ),
+    #f1f5f9;
 }
 
 
@@ -31,23 +62,70 @@ button {
 ===================================================== */
 
 .header {
+  min-height: 90px;
+
   display: flex;
   align-items: center;
+
   gap: 20px;
-  padding: 20px 30px;
-  background: #111827;
+
+  padding: 18px 32px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #0f172a,
+      #172554
+    );
+
   color: white;
 
   position: sticky;
   top: 0;
-  z-index: 100;
+
+  z-index: 1000;
+
+  box-shadow:
+    0 5px 20px rgba(15, 23, 42, 0.2);
 }
 
+
+/* =====================================================
+   LOGO
+===================================================== */
+
 .logo {
-  font-size: 30px;
-  font-weight: bold;
-  min-width: 60px;
+  width: 58px;
+  height: 58px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 16px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #2563eb,
+      #7c3aed
+    );
+
+  color: white;
+
+  font-size: 23px;
+  font-weight: 900;
+
+  box-shadow:
+    0 8px 20px rgba(37, 99, 235, 0.35);
+
+  flex-shrink: 0;
 }
+
+
+/* =====================================================
+   HEADER CONTENT
+===================================================== */
 
 .header-content {
   flex: 1;
@@ -55,41 +133,67 @@ button {
 
 .header-content h1 {
   margin: 0;
+
+  font-size: 25px;
+  font-weight: 800;
+
+  letter-spacing: -0.4px;
 }
 
 .header-content p {
-  margin: 5px 0 0;
+  margin: 6px 0 0;
+
   color: #cbd5e1;
-}
 
-.feedback-nav-btn {
-  padding: 10px 16px;
-  background: #2563eb;
-  color: white;
-  text-decoration: none;
-  border-radius: 8px;
-
-  transition:
-    background 0.2s ease,
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
-}
-
-.feedback-nav-btn:hover {
-  background: #1d4ed8;
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3);
+  font-size: 14px;
 }
 
 
 /* =====================================================
-   MAIN
+   FEEDBACK HEADER BUTTON
+===================================================== */
+
+.feedback-nav-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 11px 17px;
+
+  border-radius: 10px;
+
+  background: #2563eb;
+
+  color: white;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.feedback-nav-btn:hover {
+  background: #3b82f6;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 8px 20px rgba(37, 99, 235, 0.35);
+}
+
+
+/* =====================================================
+   MAIN CONTAINER
 ===================================================== */
 
 .main-container {
   display: flex;
-  min-height: calc(100vh - 100px);
-  align-items: flex-start;
+
+  min-height:
+    calc(100vh - 90px);
 }
 
 
@@ -98,32 +202,30 @@ button {
 ===================================================== */
 
 .sidebar {
-  width: 280px;
-  min-width: 280px;
+  width: 300px;
+
+  min-width: 300px;
 
   padding: 28px 20px;
 
-  background: linear-gradient(
-    180deg,
-    #ffffff 0%,
-    #f8fafc 100%
-  );
+  background: #ffffff;
 
-  border-right: 1px solid #e2e8f0;
+  border-right:
+    1px solid #e2e8f0;
 
   position: sticky;
-  top: 80px;
 
-  height: calc(100vh - 80px);
+  top: 90px;
+
+  height:
+    calc(100vh - 90px);
 
   overflow-y: auto;
 
   box-shadow:
-    4px 0 20px rgba(15, 23, 42, 0.04);
+    4px 0 18px rgba(15, 23, 42, 0.04);
 
-  transition:
-    width 0.3s ease,
-    box-shadow 0.3s ease;
+  scrollbar-width: thin;
 }
 
 
@@ -133,185 +235,164 @@ button {
   width: 6px;
 }
 
-.sidebar::-webkit-scrollbar-track {
-  background: transparent;
-}
-
 .sidebar::-webkit-scrollbar-thumb {
   background: #cbd5e1;
+
   border-radius: 10px;
-}
-
-.sidebar::-webkit-scrollbar-thumb:hover {
-  background: #94a3b8;
-}
-
-
-/* Sidebar headings */
-
-.sidebar h2 {
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-
-  color: #64748b;
-
-  margin: 5px 8px 14px;
 }
 
 
 /* =====================================================
-   SIDEBAR INHERITANCE BUTTONS
+   SIDEBAR TITLE
 ===================================================== */
 
-.type-btn {
-  width: 100%;
-  min-height: 48px;
+.sidebar h2 {
+  margin: 0 0 12px;
 
-  padding: 12px 16px;
-  margin-bottom: 8px;
+  font-size: 14px;
+
+  font-weight: 800;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.8px;
+
+  color: #475569;
+}
+
+
+/* =====================================================
+   C++ CONCEPTS SECTION
+===================================================== */
+
+.sidebar h2:first-child {
+  color: #2563eb;
+}
+
+
+/* =====================================================
+   SIDEBAR BUTTON BASE
+===================================================== */
+
+.type-btn,
+.access-btn {
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 13px 15px;
+
+  margin-bottom: 7px;
 
   border: 1px solid transparent;
-  border-radius: 12px;
+
+  border-radius: 11px;
 
   background: transparent;
-  color: #334155;
 
-  font-size: 15px;
+  color: #475569;
+
+  font-size: 14px;
+
   font-weight: 600;
 
   text-align: left;
 
-  cursor: pointer;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
   transition:
     background 0.2s ease,
     color 0.2s ease,
     transform 0.2s ease,
-    box-shadow 0.2s ease,
-    border-color 0.2s ease;
-}
-
-
-/* Arrow */
-
-.type-btn::after {
-  content: "→";
-
-  font-size: 17px;
-
-  opacity: 0;
-
-  transform: translateX(-5px);
-
-  transition:
-    opacity 0.2s ease,
-    transform 0.2s ease;
-}
-
-
-/* Hover */
-
-.type-btn:hover {
-  background: #f1f5f9;
-  border-color: #e2e8f0;
-
-  color: #0f172a;
-
-  transform: translateX(3px);
-}
-
-.type-btn:hover::after {
-  opacity: 0.6;
-  transform: translateX(0);
-}
-
-
-/* Active */
-
-.type-btn.active {
-  background: linear-gradient(
-    135deg,
-    #0f172a,
-    #334155
-  );
-
-  color: white;
-
-  border-color: #0f172a;
-
-  box-shadow:
-    0 6px 16px rgba(15, 23, 42, 0.18);
-
-  transform: translateX(4px);
-}
-
-.type-btn.active::after {
-  opacity: 1;
-  transform: translateX(0);
+    border 0.2s ease;
 }
 
 
 /* =====================================================
-   SIDEBAR ACCESS BUTTONS
+   INHERITANCE BUTTONS
+===================================================== */
+
+.type-btn {
+  padding-left: 25px;
+}
+
+.type-btn::before {
+  content: "◆";
+
+  color: #94a3b8;
+
+  font-size: 8px;
+
+  transition:
+    transform 0.2s ease,
+    color 0.2s ease;
+}
+
+
+/* =====================================================
+   ACCESS BUTTONS
 ===================================================== */
 
 .access-btn {
-  width: 100%;
-  min-height: 44px;
+  padding-left: 25px;
+}
 
-  padding: 11px 15px;
-  margin-bottom: 7px;
-
-  border: 1px solid #e2e8f0;
-  border-radius: 10px;
-
-  background: #ffffff;
-  color: #475569;
+.access-btn::before {
+  content: "🔐";
 
   font-size: 13px;
-  font-weight: 700;
-
-  letter-spacing: 0.04em;
-
-  text-align: left;
-
-  cursor: pointer;
-
-  transition:
-    background 0.2s ease,
-    color 0.2s ease,
-    transform 0.2s ease,
-    box-shadow 0.2s ease,
-    border-color 0.2s ease;
 }
 
-.access-btn:hover {
-  background: #f8fafc;
-  border-color: #cbd5e1;
 
-  color: #0f172a;
+/* =====================================================
+   SIDEBAR HOVER
+===================================================== */
+
+.type-btn:hover,
+.access-btn:hover {
+  background: #eff6ff;
+
+  color: #1d4ed8;
+
+  transform: translateX(4px);
+
+  border-color: #dbeafe;
+}
+
+.type-btn:hover::before {
+  color: #2563eb;
+
+  transform: scale(1.3);
+}
+
+
+/* =====================================================
+   SIDEBAR ACTIVE
+===================================================== */
+
+.type-btn.active,
+.access-btn.active {
+  background:
+    linear-gradient(
+      135deg,
+      #2563eb,
+      #4f46e5
+    );
+
+  color: white;
+
+  border-color: transparent;
+
+  box-shadow:
+    0 7px 18px rgba(37, 99, 235, 0.25);
 
   transform: translateX(3px);
-
-  box-shadow:
-    0 3px 10px rgba(15, 23, 42, 0.06);
 }
 
-.access-btn.active {
-  background: #e2e8f0;
-
-  color: #0f172a;
-
-  border-color: #94a3b8;
-
-  box-shadow:
-    inset 3px 0 0 #0f172a;
+.type-btn.active::before {
+  color: white;
 }
 
 
@@ -322,14 +403,15 @@ button {
 .sidebar-divider {
   height: 1px;
 
-  background: linear-gradient(
-    90deg,
-    transparent,
-    #e2e8f0,
-    transparent
-  );
+  background:
+    linear-gradient(
+      to right,
+      transparent,
+      #e2e8f0,
+      transparent
+    );
 
-  margin: 22px 0;
+  margin: 25px 5px;
 }
 
 
@@ -338,47 +420,39 @@ button {
 ===================================================== */
 
 .sidebar-feedback {
-  width: 100%;
-  min-height: 46px;
-
-  box-sizing: border-box;
-
-  padding: 12px 15px;
-
-  border-radius: 11px;
-
-  background: #ffffff;
-
-  border: 1px solid #e2e8f0;
-
-  color: #475569;
-
-  text-decoration: none;
-
-  font-size: 14px;
-  font-weight: 600;
-
   display: flex;
+
   align-items: center;
+
+  justify-content: center;
 
   gap: 8px;
 
+  padding: 13px;
+
+  margin-top: 8px;
+
+  border-radius: 11px;
+
+  background: #eff6ff;
+
+  color: #2563eb;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  border: 1px solid #dbeafe;
+
   transition:
     background 0.2s ease,
-    color 0.2s ease,
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
+    transform 0.2s ease;
 }
 
 .sidebar-feedback:hover {
-  background: #f1f5f9;
-
-  color: #0f172a;
+  background: #dbeafe;
 
   transform: translateY(-2px);
-
-  box-shadow:
-    0 5px 15px rgba(15, 23, 42, 0.08);
 }
 
 
@@ -389,15 +463,13 @@ button {
 .content {
   flex: 1;
 
-  padding: 30px;
-
-  max-width: 1400px;
-
-  margin: auto;
-
   width: 100%;
 
-  min-width: 0;
+  max-width: 1500px;
+
+  margin: 0 auto;
+
+  padding: 35px;
 }
 
 
@@ -406,16 +478,27 @@ button {
 ===================================================== */
 
 .card {
-  background: white;
+  background: rgba(255, 255, 255, 0.95);
 
-  border-radius: 14px;
+  border-radius: 18px;
 
-  padding: 25px;
+  padding: 28px;
 
-  margin-bottom: 25px;
+  margin-bottom: 28px;
+
+  border: 1px solid #e2e8f0;
 
   box-shadow:
-    0 4px 20px rgba(0, 0, 0, 0.05);
+    0 8px 30px rgba(15, 23, 42, 0.06);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.card:hover {
+  box-shadow:
+    0 12px 35px rgba(15, 23, 42, 0.08);
 }
 
 
@@ -424,9 +507,11 @@ button {
 ===================================================== */
 
 .badge {
-  display: inline-block;
+  display: inline-flex;
 
-  padding: 5px 10px;
+  align-items: center;
+
+  padding: 6px 11px;
 
   border-radius: 20px;
 
@@ -434,40 +519,71 @@ button {
 
   color: #1d4ed8;
 
-  font-size: 12px;
+  font-size: 11px;
 
-  font-weight: bold;
+  font-weight: 800;
+
+  letter-spacing: 0.5px;
 }
 
 
 /* =====================================================
-   CLASS OBJECT
+   CLASS AND OBJECT
 ===================================================== */
 
 .class-object-header h2 {
-  margin-bottom: 5px;
+  margin: 10px 0 6px;
+
+  font-size: 27px;
+
+  color: #0f172a;
 }
 
 .class-object-header p {
+  margin: 0;
+
   color: #64748b;
+
+  line-height: 1.7;
 }
+
+
+/* =====================================================
+   CLASS OBJECT GRID
+===================================================== */
 
 .class-object-grid {
   display: grid;
 
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
 
-  gap: 20px;
+  gap: 22px;
 
   margin-top: 25px;
 }
 
+
+/* =====================================================
+   CONCEPT BOX
+===================================================== */
+
 .concept-box {
-  padding: 20px;
+  position: relative;
 
-  background: #f8fafc;
+  padding: 23px;
 
-  border-radius: 12px;
+  background:
+    linear-gradient(
+      145deg,
+      #f8fafc,
+      #eef2ff
+    );
+
+  border:
+    1px solid #e2e8f0;
+
+  border-radius: 15px;
 
   transition:
     transform 0.2s ease,
@@ -475,28 +591,70 @@ button {
 }
 
 .concept-box:hover {
-  transform: translateY(-3px);
+  transform: translateY(-4px);
 
   box-shadow:
-    0 8px 20px rgba(15, 23, 42, 0.08);
+    0 12px 25px rgba(37, 99, 235, 0.1);
 }
+
+.concept-box h3 {
+  margin: 8px 0;
+
+  font-size: 21px;
+
+  color: #1e293b;
+}
+
+.concept-box p {
+  color: #64748b;
+
+  line-height: 1.65;
+}
+
+
+/* =====================================================
+   NUMBER
+===================================================== */
 
 .concept-number {
   color: #2563eb;
 
-  font-weight: bold;
+  font-weight: 900;
+
+  font-size: 14px;
+
+  letter-spacing: 1px;
+}
+
+
+/* =====================================================
+   CODE BLOCKS
+===================================================== */
+
+pre {
+  font-family:
+    "Cascadia Code",
+    "Fira Code",
+    "Courier New",
+    monospace;
 }
 
 .concept-box pre {
   overflow-x: auto;
 
-  background: #111827;
+  margin-top: 18px;
 
-  color: white;
+  padding: 18px;
 
-  padding: 15px;
+  border-radius: 12px;
 
-  border-radius: 8px;
+  background: #0f172a;
+
+  color: #e2e8f0;
+
+  line-height: 1.6;
+
+  font-size: 13px;
 }
 
 
@@ -511,46 +669,75 @@ button {
 
   align-items: center;
 
-  gap: 20px;
+  gap: 25px;
 
-  padding: 25px;
+  padding: 30px;
 
-  margin-bottom: 25px;
+  margin-bottom: 28px;
 
-  border-radius: 14px;
+  border-radius: 18px;
 
-  background: #1e3a8a;
+  background:
+    linear-gradient(
+      135deg,
+      #1e3a8a,
+      #4338ca
+    );
 
   color: white;
 
   box-shadow:
-    0 8px 25px rgba(30, 58, 138, 0.2);
+    0 12px 30px rgba(37, 99, 235, 0.2);
+}
+
+.hero h2 {
+  margin: 10px 0;
+
+  font-size: 30px;
 }
 
 .hero p {
+  margin: 0;
+
+  max-width: 650px;
+
   color: #dbeafe;
+
+  line-height: 1.7;
 }
+
+
+/* =====================================================
+   HERO CONTROLS
+===================================================== */
 
 .controls {
   display: flex;
 
-  gap: 8px;
+  gap: 9px;
 
   flex-wrap: wrap;
+
+  justify-content: flex-end;
 }
 
 .controls button {
-  padding: 10px 14px;
+  padding: 11px 15px;
 
   border: none;
 
-  border-radius: 7px;
+  border-radius: 9px;
 
-  cursor: pointer;
+  background: white;
+
+  color: #1e3a8a;
+
+  font-size: 13px;
+
+  font-weight: 700;
 
   transition:
     transform 0.2s ease,
-    background 0.2s ease,
     box-shadow 0.2s ease;
 }
 
@@ -558,20 +745,24 @@ button {
   transform: translateY(-2px);
 
   box-shadow:
-    0 5px 12px rgba(0, 0, 0, 0.15);
+    0 7px 15px rgba(0, 0, 0, 0.15);
 }
 
 
 /* =====================================================
-   GRID
+   MAIN GRID
 ===================================================== */
 
 .grid {
   display: grid;
 
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(0, 1fr);
 
-  gap: 25px;
+  gap: 28px;
+
+  align-items: start;
 }
 
 
@@ -591,6 +782,28 @@ button {
   margin-bottom: 20px;
 }
 
+.card-header h3 {
+  margin: 0;
+
+  font-size: 20px;
+
+  color: #0f172a;
+}
+
+.small-label {
+  padding: 5px 10px;
+
+  border-radius: 20px;
+
+  background: #f1f5f9;
+
+  color: #64748b;
+
+  font-size: 12px;
+
+  font-weight: 700;
+}
+
 
 /* =====================================================
    DIAGRAM
@@ -599,14 +812,30 @@ button {
 .diagram {
   position: relative;
 
-  height: 450px;
+  height: 470px;
 
-  background: #f8fafc;
+  background:
+    radial-gradient(
+      circle at 1px 1px,
+      #cbd5e1 1px,
+      transparent 0
+    );
 
-  border-radius: 12px;
+  background-size: 22px 22px;
+
+  background-color: #f8fafc;
+
+  border-radius: 15px;
 
   overflow: hidden;
+
+  border: 1px solid #e2e8f0;
 }
+
+
+/* =====================================================
+   SVG ARROWS
+===================================================== */
 
 .arrows {
   position: absolute;
@@ -618,20 +847,31 @@ button {
   height: 100%;
 
   color: #2563eb;
+
+  z-index: 1;
 }
+
+
+/* =====================================================
+   CLASS NODE
+===================================================== */
 
 .class-node {
   position: absolute;
 
-  transform: translate(-50%, -50%);
+  transform:
+    translate(-50%, -50%);
 
-  width: 140px;
+  width: 155px;
 
-  min-height: 65px;
+  min-height: 72px;
 
-  border: 2px solid #2563eb;
+  padding: 10px;
 
-  border-radius: 10px;
+  border:
+    2px solid #2563eb;
+
+  border-radius: 13px;
 
   background: white;
 
@@ -647,6 +887,11 @@ button {
 
   justify-content: center;
 
+  gap: 3px;
+
+  box-shadow:
+    0 7px 18px rgba(15, 23, 42, 0.1);
+
   transition:
     transform 0.2s ease,
     box-shadow 0.2s ease,
@@ -656,41 +901,59 @@ button {
 .class-node:hover {
   transform:
     translate(-50%, -50%)
-    scale(1.05);
+    scale(1.06);
 
   box-shadow:
-    0 7px 18px rgba(37, 99, 235, 0.2);
+    0 12px 25px rgba(37, 99, 235, 0.2);
 }
 
 .class-node strong {
-  font-size: 20px;
+  font-size: 21px;
 
   color: #2563eb;
 }
 
 .class-node span {
   font-size: 12px;
+
+  color: #475569;
+
+  text-align: center;
 }
 
 .class-node.selected {
-  background: #2563eb;
+  background:
+    linear-gradient(
+      135deg,
+      #2563eb,
+      #4f46e5
+    );
 
   color: white;
 
   box-shadow:
-    0 8px 20px rgba(37, 99, 235, 0.3);
+    0 12px 25px rgba(37, 99, 235, 0.3);
 }
 
-.class-node.selected strong {
+.class-node.selected strong,
+.class-node.selected span {
   color: white;
 }
 
+
+/* =====================================================
+   DIAGRAM ANIMATION
+===================================================== */
+
 .diagram.animated .class-node {
   animation:
-    pulse 0.8s ease-in-out infinite alternate;
+    nodePulse
+    0.8s
+    ease-in-out
+    infinite alternate;
 }
 
-@keyframes pulse {
+@keyframes nodePulse {
   from {
     transform:
       translate(-50%, -50%)
@@ -704,19 +967,30 @@ button {
   }
 }
 
+
+/* =====================================================
+   NODE INFO
+===================================================== */
+
 .node-info {
   margin-top: 15px;
 
-  padding: 12px;
+  padding: 14px 16px;
+
+  border-radius: 11px;
 
   background: #eff6ff;
 
-  border-radius: 8px;
+  border: 1px solid #dbeafe;
+
+  color: #1e40af;
+
+  line-height: 1.6;
 }
 
 
 /* =====================================================
-   CODE
+   CODE CARD
 ===================================================== */
 
 .code-card pre {
@@ -724,23 +998,57 @@ button {
 
   overflow: auto;
 
-  background: #111827;
+  margin: 0 0 15px;
 
-  color: #e5e7eb;
+  background: #0f172a;
+
+  color: #e2e8f0;
 
   padding: 20px;
+
+  border-radius: 12px;
+
+  font-size: 13px;
+
+  line-height: 1.65;
+}
+
+
+/* =====================================================
+   CODE SCROLLBAR
+===================================================== */
+
+.code-card pre::-webkit-scrollbar,
+.concept-box pre::-webkit-scrollbar {
+  height: 7px;
+
+  width: 7px;
+}
+
+.code-card pre::-webkit-scrollbar-thumb,
+.concept-box pre::-webkit-scrollbar-thumb {
+  background: #475569;
 
   border-radius: 10px;
 }
 
+
+/* =====================================================
+   SMALL BUTTON
+===================================================== */
+
 .small-btn {
-  padding: 8px 12px;
+  padding: 8px 13px;
 
-  border: none;
+  border: 1px solid #dbeafe;
 
-  border-radius: 6px;
+  border-radius: 8px;
 
-  cursor: pointer;
+  background: #eff6ff;
+
+  color: #2563eb;
+
+  font-weight: 700;
 
   transition:
     background 0.2s ease,
@@ -748,41 +1056,51 @@ button {
 }
 
 .small-btn:hover {
-  background: #e2e8f0;
+  background: #dbeafe;
 
   transform: translateY(-1px);
 }
 
+
+/* =====================================================
+   RUN BUTTON
+===================================================== */
+
 .run-btn {
   width: 100%;
 
-  padding: 13px;
-
-  background: #16a34a;
-
-  color: white;
+  padding: 14px;
 
   border: none;
 
-  border-radius: 8px;
+  border-radius: 10px;
 
-  cursor: pointer;
+  background:
+    linear-gradient(
+      135deg,
+      #16a34a,
+      #15803d
+    );
 
-  font-weight: bold;
+  color: white;
+
+  font-weight: 800;
+
+  font-size: 14px;
+
+  box-shadow:
+    0 6px 15px rgba(22, 163, 74, 0.2);
 
   transition:
-    background 0.2s ease,
     transform 0.2s ease,
     box-shadow 0.2s ease;
 }
 
 .run-btn:hover:not(:disabled) {
-  background: #15803d;
-
   transform: translateY(-2px);
 
   box-shadow:
-    0 5px 15px rgba(22, 163, 74, 0.25);
+    0 10px 20px rgba(22, 163, 74, 0.25);
 }
 
 .run-btn:disabled {
@@ -791,32 +1109,58 @@ button {
   cursor: not-allowed;
 }
 
+
+/* =====================================================
+   OUTPUT
+===================================================== */
+
 .output {
   margin-top: 20px;
 
-  background: #111827;
+  background: #020617;
 
   color: #22c55e;
 
-  padding: 15px;
+  padding: 17px;
 
-  border-radius: 8px;
+  border-radius: 11px;
 
-  min-height: 100px;
+  min-height: 110px;
 
-  font-family: monospace;
+  font-family:
+    "Cascadia Code",
+    "Courier New",
+    monospace;
+
+  font-size: 13px;
+
+  line-height: 1.7;
+
+  border:
+    1px solid #1e293b;
 }
 
 .output-title {
   color: white;
 
-  font-weight: bold;
+  font-family:
+    Inter,
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
+  font-weight: 800;
 
   margin-bottom: 10px;
+
+  padding-bottom: 8px;
+
+  border-bottom:
+    1px solid #1e293b;
 }
 
 .placeholder {
-  color: #94a3b8;
+  color: #64748b;
 }
 
 
@@ -824,26 +1168,111 @@ button {
    EXPLANATION
 ===================================================== */
 
+.explanation h3 {
+  margin: 0;
+}
+
 .explanation-grid {
   display: grid;
 
   grid-template-columns:
     repeat(3, 1fr);
 
-  gap: 20px;
+  gap: 22px;
+}
+
+.explanation-grid > div {
+  padding: 20px;
+
+  background: #f8fafc;
+
+  border:
+    1px solid #e2e8f0;
+
+  border-radius: 13px;
+
+  transition:
+    transform 0.2s ease;
+}
+
+.explanation-grid > div:hover {
+  transform: translateY(-4px);
 }
 
 .step {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 11px;
+
+  background: #dbeafe;
+
   color: #2563eb;
 
-  font-weight: bold;
+  font-weight: 900;
 
-  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+.explanation h4 {
+  margin: 0 0 8px;
+
+  font-size: 17px;
+}
+
+.explanation p {
+  margin: 0;
+
+  color: #64748b;
+
+  line-height: 1.65;
 }
 
 
 /* =====================================================
-   ACCESS
+   ACCESS SPECIFIER
+===================================================== */
+
+.access-card .card-header {
+  align-items: flex-start;
+}
+
+.access-card h3 {
+  margin: 10px 0 5px;
+
+  font-size: 22px;
+}
+
+.access-card p {
+  color: #64748b;
+
+  line-height: 1.6;
+}
+
+.syntax {
+  padding: 11px 14px;
+
+  border-radius: 9px;
+
+  background: #0f172a;
+
+  color: #e2e8f0;
+
+  font-family: monospace;
+
+  font-size: 12px;
+
+  white-space: nowrap;
+}
+
+
+/* =====================================================
+   VISIBILITY
 ===================================================== */
 
 .visibility-grid {
@@ -856,11 +1285,14 @@ button {
 }
 
 .visibility-box {
-  padding: 15px;
+  padding: 17px;
 
   background: #f8fafc;
 
-  border-radius: 8px;
+  border:
+    1px solid #e2e8f0;
+
+  border-radius: 11px;
 
   display: flex;
 
@@ -869,10 +1301,12 @@ button {
   gap: 8px;
 
   align-items: center;
+
+  font-size: 13px;
 }
 
 .visibility {
-  font-weight: bold;
+  font-weight: 800;
 }
 
 .visibility.public {
@@ -891,31 +1325,61 @@ button {
   color: #64748b;
 }
 
+
+/* =====================================================
+   ACCESS DETAIL
+===================================================== */
+
 .access-detail {
-  margin-top: 25px;
+  margin-top: 22px;
 
   padding: 20px;
 
-  background: #f8fafc;
+  background:
+    linear-gradient(
+      135deg,
+      #eff6ff,
+      #eef2ff
+    );
 
-  border-radius: 10px;
+  border-radius: 12px;
+
+  border: 1px solid #dbeafe;
+}
+
+.access-detail h4 {
+  margin-top: 0;
+
+  color: #1e40af;
+}
+
+.access-detail p {
+  margin-bottom: 0;
 }
 
 
 /* =====================================================
-   SYNTAX
+   BASIC SYNTAX
 ===================================================== */
 
-.syntax-card pre {
-  background: #111827;
+.syntax-card h3 {
+  margin-top: 0;
 
-  color: white;
+  font-size: 21px;
+}
+
+.syntax-card pre {
+  background: #0f172a;
+
+  color: #e2e8f0;
 
   padding: 20px;
 
-  border-radius: 10px;
+  border-radius: 12px;
 
   overflow-x: auto;
+
+  line-height: 1.7;
 }
 
 .syntax-examples {
@@ -925,14 +1389,19 @@ button {
     repeat(3, 1fr);
 
   gap: 15px;
+
+  margin-top: 20px;
 }
 
 .syntax-examples div {
-  padding: 15px;
+  padding: 18px;
 
   background: #f8fafc;
 
-  border-radius: 8px;
+  border:
+    1px solid #e2e8f0;
+
+  border-radius: 11px;
 
   transition:
     transform 0.2s ease,
@@ -943,7 +1412,11 @@ button {
   transform: translateY(-3px);
 
   box-shadow:
-    0 6px 15px rgba(15, 23, 42, 0.08);
+    0 8px 20px rgba(15, 23, 42, 0.08);
+}
+
+.syntax-examples strong {
+  color: #2563eb;
 }
 
 .syntax-examples code {
@@ -951,22 +1424,227 @@ button {
 
   margin-top: 10px;
 
-  font-size: 13px;
+  font-size: 12px;
+
+  color: #475569;
+
+  overflow-x: auto;
 }
 
 
 /* =====================================================
-   FOOTER
+   CONSTRUCTOR SECTION
 ===================================================== */
 
-footer {
-  text-align: center;
+.constructor-card {
+  margin-top: 28px;
 
-  padding: 25px;
+  scroll-margin-top: 110px;
+}
 
-  background: #111827;
+.constructor-card > .card-header {
+  margin-bottom: 25px;
+}
 
-  color: #cbd5e1;
+.constructor-card h3 {
+  margin: 9px 0;
+
+  font-size: 24px;
+}
+
+.constructor-card p {
+  line-height: 1.7;
+
+  color: #64748b;
+}
+
+
+/* =====================================================
+   CONSTRUCTOR RULES
+===================================================== */
+
+.constructor-rules {
+  margin-top: 25px;
+}
+
+.constructor-rules h4 {
+  font-size: 20px;
+
+  margin:
+    0 0 15px;
+
+  color: #0f172a;
+}
+
+.rules-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, 1fr);
+
+  gap: 15px;
+}
+
+.rule-box {
+  padding: 19px;
+
+  border:
+    1px solid #e2e8f0;
+
+  border-radius: 13px;
+
+  background: #f8fafc;
+
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 15px;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.rule-box:hover {
+  transform: translateY(-3px);
+
+  border-color: #bfdbfe;
+
+  box-shadow:
+    0 8px 20px rgba(37, 99, 235, 0.08);
+}
+
+.rule-box .concept-number {
+  flex-shrink: 0;
+
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 9px;
+
+  background: #dbeafe;
+}
+
+.rule-box p {
+  margin: 0;
+
+  color: #334155;
+
+  line-height: 1.6;
+}
+
+
+/* =====================================================
+   WHY CONSTRUCTORS
+===================================================== */
+
+.constructor-info {
+  margin-top: 25px;
+
+  padding: 21px;
+
+  border-radius: 13px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f8fafc,
+      #eef2ff
+    );
+
+  border:
+    1px solid #e2e8f0;
+}
+
+.constructor-info h4 {
+  margin:
+    0 0 10px;
+
+  font-size: 19px;
+}
+
+.constructor-info p {
+  margin: 0;
+
+  color: #475569;
+}
+
+
+/* =====================================================
+   CONSTRUCTOR EXAMPLES
+===================================================== */
+
+.constructor-example {
+  margin-top: 25px;
+
+  border:
+    1px solid #e2e8f0;
+
+  border-radius: 13px;
+
+  overflow: hidden;
+
+  background: white;
+}
+
+.constructor-example-header {
+  padding: 17px 20px;
+
+  background: #f8fafc;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  gap: 15px;
+
+  border-bottom:
+    1px solid #e2e8f0;
+}
+
+.constructor-example-header h4 {
+  margin: 0;
+
+  font-size: 18px;
+}
+
+.constructor-example-header span {
+  font-size: 12px;
+
+  color: #64748b;
+}
+
+.constructor-example pre {
+  margin: 0;
+
+  padding: 21px;
+
+  overflow-x: auto;
+
+  background: #0f172a;
+
+  color: #e2e8f0;
+
+  font-size: 13px;
+
+  line-height: 1.7;
+}
+
+.constructor-example code {
+  font-family:
+    "Cascadia Code",
+    "Fira Code",
+    "Courier New",
+    monospace;
 }
 
 
@@ -1002,7 +1680,7 @@ footer {
 }
 
 .login-btn {
-  background: #ffffff;
+  background: white;
 
   color: #111827;
 }
@@ -1010,195 +1688,7 @@ footer {
 .signup-btn {
   background: #4f46e5;
 
-  color: #ffffff;
-}
-
-
-/* =====================================================
-   CONSTRUCTOR SECTION
-===================================================== */
-
-.constructor-card {
-  margin-top: 25px;
-
-  scroll-margin-top: 100px;
-}
-
-.constructor-card > .card-header {
-  margin-bottom: 25px;
-}
-
-.constructor-card h3 {
-  margin: 8px 0;
-}
-
-.constructor-card p {
-  line-height: 1.6;
-}
-
-
-/* =====================================================
-   CONSTRUCTOR RULES
-===================================================== */
-
-.constructor-rules {
-  margin-top: 25px;
-}
-
-.constructor-rules h4 {
-  font-size: 20px;
-
-  margin-bottom: 15px;
-}
-
-.rules-grid {
-  display: grid;
-
-  grid-template-columns:
-    repeat(2, 1fr);
-
-  gap: 15px;
-}
-
-.rule-box {
-  padding: 18px;
-
-  border: 1px solid #e2e8f0;
-
-  border-radius: 12px;
-
-  background: #f8fafc;
-
-  display: flex;
-
-  align-items: flex-start;
-
-  gap: 15px;
-
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease,
-    border-color 0.2s ease;
-}
-
-.rule-box:hover {
-  transform: translateY(-3px);
-
-  box-shadow:
-    0 8px 20px rgba(15, 23, 42, 0.08);
-
-  border-color: #bfdbfe;
-}
-
-.rule-box .concept-number {
-  flex-shrink: 0;
-}
-
-.rule-box p {
-  margin: 0;
-
-  color: #334155;
-}
-
-
-/* =====================================================
-   WHY CONSTRUCTORS
-===================================================== */
-
-.constructor-info {
-  margin-top: 25px;
-
-  padding: 20px;
-
-  border-radius: 12px;
-
-  background: #f8fafc;
-
-  border: 1px solid #e2e8f0;
-}
-
-.constructor-info h4 {
-  margin-top: 0;
-
-  margin-bottom: 10px;
-
-  font-size: 19px;
-}
-
-.constructor-info p {
-  margin: 0;
-
-  color: #475569;
-}
-
-
-/* =====================================================
-   CONSTRUCTOR EXAMPLES
-===================================================== */
-
-.constructor-example {
-  margin-top: 25px;
-
-  border: 1px solid #e2e8f0;
-
-  border-radius: 12px;
-
-  overflow: hidden;
-
-  background: #ffffff;
-}
-
-.constructor-example-header {
-  padding: 16px 18px;
-
-  background: #f8fafc;
-
-  display: flex;
-
-  justify-content: space-between;
-
-  align-items: center;
-
-  gap: 15px;
-
-  border-bottom: 1px solid #e2e8f0;
-}
-
-.constructor-example-header h4 {
-  margin: 0;
-
-  font-size: 18px;
-}
-
-.constructor-example-header span {
-  font-size: 13px;
-
-  color: #64748b;
-}
-
-
-/* =====================================================
-   CONSTRUCTOR CODE
-===================================================== */
-
-.constructor-example pre {
-  margin: 0;
-
-  padding: 20px;
-
-  overflow-x: auto;
-
-  background: #0f172a;
-
-  color: #e2e8f0;
-
-  font-size: 14px;
-
-  line-height: 1.7;
-}
-
-.constructor-example code {
-  font-family: "Courier New", monospace;
+  color: white;
 }
 
 
@@ -1216,7 +1706,45 @@ footer {
 ===================================================== */
 
 #constructor-section {
-  scroll-margin-top: 100px;
+  scroll-margin-top: 110px;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+  text-align: center;
+
+  padding: 28px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #0f172a,
+      #172554
+    );
+
+  color: #cbd5e1;
+
+  font-size: 13px;
+
+  border-top:
+    1px solid #1e293b;
+}
+
+
+/* =====================================================
+   FOCUS ACCESSIBILITY
+===================================================== */
+
+button:focus-visible,
+a:focus-visible {
+  outline:
+    3px solid rgba(59, 130, 246, 0.4);
+
+  outline-offset: 3px;
 }
 
 
@@ -1224,17 +1752,19 @@ footer {
    LARGE SCREEN
 ===================================================== */
 
-@media (min-width: 1400px) {
+@media (min-width: 1500px) {
 
   .sidebar {
-    width: 300px;
+    width: 320px;
 
-    min-width: 300px;
+    min-width: 320px;
   }
 
   .content {
-    padding: 35px;
+    padding:
+      40px 45px;
   }
+
 }
 
 
@@ -1245,56 +1775,88 @@ footer {
 @media (max-width: 1100px) {
 
   .sidebar {
-    width: 250px;
+    width: 260px;
 
-    min-width: 250px;
-
-    padding: 22px 15px;
+    min-width: 260px;
   }
 
   .content {
-    padding: 22px;
+    padding: 25px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .diagram {
+    height: 430px;
+  }
+
+  .visibility-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+  .syntax-examples {
+    grid-template-columns:
+      repeat(2, 1fr);
   }
 
 }
 
 
 /* =====================================================
-   RESPONSIVE
+   MOBILE / TABLET
 ===================================================== */
 
 @media (max-width: 900px) {
+
+  .header {
+    padding: 15px 18px;
+  }
+
+  .header-content h1 {
+    font-size: 20px;
+  }
+
+  .header-content p {
+    font-size: 12px;
+  }
 
   .main-container {
     flex-direction: column;
   }
 
   .sidebar {
-    position: relative;
-
-    top: auto;
-
     width: 100%;
 
     min-width: 100%;
 
     height: auto;
 
-    max-height: none;
+    position: relative;
+
+    top: 0;
+
+    padding: 20px;
 
     border-right: none;
 
-    border-bottom: 1px solid #e5e7eb;
-
-    padding: 20px;
+    border-bottom:
+      1px solid #e2e8f0;
   }
 
-  .grid,
-  .class-object-grid,
-  .explanation-grid,
-  .visibility-grid,
-  .syntax-examples {
-    grid-template-columns: 1fr;
+  .sidebar h2 {
+    margin-top: 5px;
+  }
+
+  .type-btn,
+  .access-btn {
+    padding: 12px 15px;
+  }
+
+  .content {
+    padding: 20px;
   }
 
   .hero {
@@ -1303,73 +1865,22 @@ footer {
     align-items: flex-start;
   }
 
+  .controls {
+    justify-content: flex-start;
+  }
+
+  .class-object-grid,
+  .explanation-grid,
   .rules-grid {
     grid-template-columns: 1fr;
   }
 
-}
-
-
-/* =====================================================
-   MOBILE
-===================================================== */
-
-@media (max-width: 768px) {
-
-  .header {
-    padding: 15px 18px;
-
-    flex-wrap: wrap;
-
-    gap: 12px;
+  .visibility-grid {
+    grid-template-columns: 1fr;
   }
 
-  .logo {
-    font-size: 25px;
-  }
-
-  .header-content {
-    min-width: 200px;
-  }
-
-  .header-content h1 {
-    font-size: 20px;
-  }
-
-  .header-content p {
-    font-size: 13px;
-  }
-
-  .feedback-nav-btn {
-    padding: 8px 12px;
-
-    font-size: 13px;
-  }
-
-  .content {
-    padding: 18px;
-  }
-
-  .card {
-    padding: 20px;
-  }
-
-  .diagram {
-    height: 380px;
-  }
-
-  .class-node {
-    width: 120px;
-  }
-
-  .constructor-example-header {
-    flex-direction: column;
-
-    align-items: flex-start;
-  }
-
-  .constructor-example pre {
-    font-size: 13px;
+  .syntax-examples {
+    grid-template-columns: 1fr;
   }
 
 }
@@ -1379,62 +1890,58 @@ footer {
    SMALL MOBILE
 ===================================================== */
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
 
   .header {
-    align-items: flex-start;
+    min-height: auto;
+
+    flex-wrap: wrap;
+
+    padding: 14px;
+  }
+
+  .logo {
+    width: 48px;
+
+    height: 48px;
+
+    font-size: 19px;
   }
 
   .header-content {
-    width: 100%;
+    min-width: 200px;
   }
 
   .header-content h1 {
-    font-size: 18px;
-  }
-
-  .header-content p {
-    font-size: 12px;
-  }
-
-  .content {
-    padding: 12px;
-  }
-
-  .card {
-    padding: 16px;
-
-    border-radius: 11px;
-  }
-
-  .sidebar {
-    padding: 15px;
-  }
-
-  .type-btn {
-    min-height: 46px;
-  }
-
-  .diagram {
-    height: 330px;
-  }
-
-  .class-node {
-    width: 105px;
-
-    min-height: 58px;
-  }
-
-  .class-node strong {
     font-size: 17px;
   }
 
-  .class-node span {
-    font-size: 10px;
+  .header-content p {
+    display: none;
+  }
+
+  .feedback-nav-btn {
+    width: 100%;
+  }
+
+  .content {
+    padding: 14px;
+  }
+
+  .card {
+    padding: 18px;
+
+    border-radius: 14px;
   }
 
   .hero {
     padding: 20px;
+
+    border-radius: 14px;
+  }
+
+  .hero h2 {
+    font-size: 24px;
   }
 
   .controls {
@@ -1443,6 +1950,80 @@ footer {
 
   .controls button {
     flex: 1;
+
+    min-width: 100px;
+  }
+
+  .diagram {
+    height: 380px;
+  }
+
+  .class-node {
+    width: 125px;
+
+    min-height: 62px;
+  }
+
+  .class-node strong {
+    font-size: 18px;
+  }
+
+  .class-node span {
+    font-size: 10px;
+  }
+
+  .card-header {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+  .syntax {
+    white-space: normal;
+
+    word-break: break-word;
+  }
+
+  .class-object-header h2 {
+    font-size: 23px;
+  }
+
+  .concept-box pre,
+  .code-card pre,
+  .constructor-example pre,
+  .syntax-card pre {
+    font-size: 11px;
+  }
+
+  .constructor-example-header {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+  footer {
+    padding: 22px 14px;
+  }
+
+}
+
+
+/* =====================================================
+   REDUCED MOTION
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+
+    animation-iteration-count: 1 !important;
+
+    scroll-behavior: auto !important;
+
+    transition-duration: 0.01ms !important;
   }
 
 }
