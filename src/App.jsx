@@ -74,6 +74,7 @@ int main() {
 
     output: [
       "Animal eats",
+      "Animal eats",
       "Dog barks",
     ],
   },
@@ -143,6 +144,7 @@ int main() {
 }`,
 
     output: [
+      "Class A",
       "Class A",
       "Class B",
       "Class C",
@@ -214,6 +216,7 @@ int main() {
 }`,
 
     output: [
+      "A",
       "A",
       "B",
       "C",
@@ -289,6 +292,7 @@ int main() {
 }`,
 
     output: [
+      "Animal eats",
       "Animal eats",
       "Dog barks",
       "Animal eats",
@@ -379,6 +383,7 @@ int main() {
 
     output: [
       "Class A",
+      "Class A",
       "Class B",
       "Class C",
       "Class D",
@@ -438,6 +443,93 @@ const accessData = {
       ["Base private", "Not directly accessible"],
     ],
   },
+};
+
+/* =====================================================
+   CONSTRUCTOR DATA
+===================================================== */
+
+const constructorData = {
+  rules: [
+    "The constructor has the same name as the class.",
+    "It has no return type (not even void).",
+    "It is usually declared public.",
+    "It is automatically called when an object is created.",
+  ],
+
+  defaultConstructor: `class Student {
+public:
+
+    Student() {
+        cout << "Constructor called";
+    }
+};
+
+int main() {
+
+    Student s;
+
+    return 0;
+}`,
+
+  parameterizedConstructor: `class Student {
+public:
+
+    Student(string n, int a) {
+        name = n;
+        age = a;
+    }
+
+private:
+    string name;
+    int age;
+};
+
+int main() {
+
+    Student s("Rahul", 20);
+
+    return 0;
+}`,
+
+  outsideConstructor: `class Student {
+public:
+
+    Student();
+};
+
+Student::Student() {
+    cout << "Constructor defined outside";
+}
+
+int main() {
+
+    Student s;
+
+    return 0;
+}`,
+
+  overloadedConstructor: `class Student {
+public:
+
+    // Constructor 1
+    Student() {
+        cout << "Default constructor";
+    }
+
+    // Constructor 2
+    Student(string name) {
+        cout << "Parameterized constructor";
+    }
+};
+
+int main() {
+
+    Student s1;
+    Student s2("Rahul");
+
+    return 0;
+}`,
 };
 
 /* =====================================================
@@ -665,6 +757,19 @@ function Visualizer() {
     }, 50);
   };
 
+  /* =====================================================
+     CONSTRUCTOR SCROLL
+  ===================================================== */
+
+  const handleConstructorClick = () => {
+    document
+      .getElementById("constructor-section")
+      ?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+  };
+
   return (
     <div className="app">
 
@@ -774,6 +879,23 @@ function Visualizer() {
             )
           )}
 
+          {/* =================================================
+              CONSTRUCTOR
+          ================================================= */}
+
+          <div className="sidebar-divider"></div>
+
+          <h2>
+            C++ Concepts
+          </h2>
+
+          <button
+            className="access-btn"
+            onClick={handleConstructorClick}
+          >
+            CONSTRUCTOR
+          </button>
+
           <div className="sidebar-divider"></div>
 
           {/* FEEDBACK NEW TAB */}
@@ -882,6 +1004,205 @@ public:
                 </pre>
 
               </div>
+
+            </div>
+
+          </section>
+
+          {/* =================================================
+              CONSTRUCTOR
+          ================================================= */}
+
+          <section
+            id="constructor-section"
+            className="card constructor-card"
+          >
+
+            <div className="card-header">
+
+              <div>
+
+                <span className="badge">
+                  C++ FUNDAMENTALS
+                </span>
+
+                <h3>
+                  Constructors
+                </h3>
+
+                <p>
+                  A constructor is a special member
+                  function that is automatically called
+                  when an object of a class is created.
+                </p>
+
+              </div>
+
+            </div>
+
+            {/* CONSTRUCTOR RULES */}
+
+            <div className="constructor-rules">
+
+              <h4>
+                Constructor Rules
+              </h4>
+
+              <div className="rules-grid">
+
+                {constructorData.rules.map(
+                  (rule, index) => (
+
+                    <div
+                      className="rule-box"
+                      key={index}
+                    >
+
+                      <div className="concept-number">
+                        {String(index + 1).padStart(2, "0")}
+                      </div>
+
+                      <p>
+                        {rule}
+                      </p>
+
+                    </div>
+
+                  )
+                )}
+
+              </div>
+
+            </div>
+
+            {/* WHY CONSTRUCTORS */}
+
+            <div className="constructor-info">
+
+              <h4>
+                Why Constructors Are Useful
+              </h4>
+
+              <p>
+                Constructors are useful for initializing
+                objects when they are created. They make
+                sure that an object starts with valid and
+                meaningful values.
+              </p>
+
+            </div>
+
+            {/* DEFAULT CONSTRUCTOR */}
+
+            <div className="constructor-example">
+
+              <div className="constructor-example-header">
+
+                <h4>
+                  Default Constructor
+                </h4>
+
+                <span>
+                  Automatically called when object is created
+                </span>
+
+              </div>
+
+              <pre>
+                <code>
+                  {constructorData.defaultConstructor}
+                </code>
+              </pre>
+
+            </div>
+
+            {/* PARAMETERIZED CONSTRUCTOR */}
+
+            <div className="constructor-example">
+
+              <div className="constructor-example-header">
+
+                <h4>
+                  Constructor with Parameters
+                </h4>
+
+                <span>
+                  Used to initialize objects with values
+                </span>
+
+              </div>
+
+              <pre>
+                <code>
+                  {constructorData.parameterizedConstructor}
+                </code>
+              </pre>
+
+            </div>
+
+            {/* CONSTRUCTOR OUTSIDE CLASS */}
+
+            <div className="constructor-example">
+
+              <div className="constructor-example-header">
+
+                <h4>
+                  Constructor Defined Outside the Class
+                </h4>
+
+                <span>
+                  Uses the scope resolution operator ::
+                </span>
+
+              </div>
+
+              <pre>
+                <code>
+                  {constructorData.outsideConstructor}
+                </code>
+              </pre>
+
+            </div>
+
+            {/* CONSTRUCTOR OVERLOADING */}
+
+            <div className="constructor-example">
+
+              <div className="constructor-example-header">
+
+                <h4>
+                  Constructor Overloading
+                </h4>
+
+                <span>
+                  Multiple constructors with different parameters
+                </span>
+
+              </div>
+
+              <pre>
+                <code>
+                  {constructorData.overloadedConstructor}
+                </code>
+              </pre>
+
+            </div>
+
+            {/* WHY OVERLOADING */}
+
+            <div className="access-detail">
+
+              <h4>
+                Why Use Constructor Overloading?
+              </h4>
+
+              <p>
+                Constructor overloading allows a class
+                to have multiple constructors with
+                different parameter lists. This allows
+                objects to be initialized in different
+                ways depending on the requirements.
+              </p>
 
             </div>
 
