@@ -1,154 +1,35 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import "./Feedback.css";
+const express = require("express");
+const router = express.Router();
 
-function Feedback() {
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+router.post("/", async (req, res) => {
+  try {
+    const { name, email, message } = req.body;
 
-    const form = e.target;
+    console.log("Feedback received:", {
+      name,
+      email,
+      message,
+    });
 
-    const data = {
-      name: form.name.value,
-      email: form.email.value,
-      message: form.message.value,
-    };
-
-    try {
-      const response = await fetch(
-        "https://cpp-inheritance-visualizer-backend.onrender.com/feedback",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(data),
-        }
-      );
-
-      //const result = await response.json();
-      const text = await response.text();
-
-console.log("STATUS:", response.status);
-console.log("RESPONSE:", text);
-
-let result;
-
-try {
-  result = JSON.parse(text);
-} catch (error) {
-  console.error("Not JSON:", text);
-  alert("Backend returned HTML instead of JSON.");
-  return;
-}
-
-
-
-
-
-
-
-
-      if (response.ok) {
-        alert("Feedback sent successfully! ❤️");
-        form.reset();
-      } else {
-        alert(result.message || "Failed to send feedback");
-      }
-    } catch (error) {
-      console.error(error);
-      alert(error);
-      alert("Unable to connect to backend.");
+    if (!name || !email || !message) {
+      return res.status(400).json({
+        success: false,
+        message: "Name, email and message are required",
+      });
     }
-  };
 
-  return (
-    <div className="feedback-page">
+    res.status(200).json({
+      success: true,
+      message: "Feedback submitted successfully ❤️",
+    });
+  } catch (error) {
+    console.error("Feedback error:", error);
 
-      <nav className="feedback-navbar">
-        <div className="feedback-logo">C++</div>
+    res.status(500).json({
+      success: false,
+      message: "Failed to submit feedback",
+    });
+  }
+});
 
-        <div className="feedback-nav-links">
-          <Link to="/">Visualizer</Link>
-          <Link to="/feedback" className="active">
-            Feedback
-          </Link>
-        </div>
-      </nav>
-
-      <main className="feedback-container">
-
-        <div className="feedback-heading">
-          <span>FEEDBACK</span>
-
-          <h1>Help Us Improve</h1>
-
-          <p>
-            Your feedback helps us make the C++ Inheritance
-            Visualizer better and easier to learn.
-          </p>
-        </div>
-
-        <div className="feedback-box">
-
-          <form onSubmit={handleSubmit}>
-
-            <div className="feedback-input-row">
-
-              <div className="feedback-input">
-                <label>Name</label>
-
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="Your name"
-                  required
-                />
-              </div>
-
-              <div className="feedback-input">
-                <label>Email</label>
-
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="your@email.com"
-                  required
-                />
-              </div>
-
-            </div>
-
-            <div className="feedback-input">
-              <label>Your Feedback</label>
-
-              <textarea
-                name="message"
-                placeholder="Tell us what you think..."
-                rows="7"
-                required
-              ></textarea>
-            </div>
-
-            <button
-              type="submit"
-              className="send-feedback"
-            >
-              Send Feedback →
-            </button>
-
-          </form>
-
-        </div>
-
-        <Link to="/" className="back-home">
-          ← Back to Visualizer
-        </Link>
-
-      </main>
-
-    </div>
-  );
-}
-
-export default Feedback;
+module.exports = router;
