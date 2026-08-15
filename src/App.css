@@ -14,25 +14,46 @@ body {
   margin: 0;
   font-family:
     Inter,
+    "Segoe UI",
     Arial,
-    Helvetica,
     sans-serif;
-
-  background: #f5f7fb;
-  color: #1f2937;
-}
-
-button {
-  font-family: inherit;
+  background: #f1f5f9;
+  color: #1e293b;
 }
 
 button,
-a {
-  -webkit-tap-highlight-color: transparent;
+input,
+textarea {
+  font-family: inherit;
 }
+
+button {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
+::selection {
+  background: #2563eb;
+  color: white;
+}
+
+
+/* =====================================================
+   APP
+===================================================== */
 
 .app {
   min-height: 100vh;
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(37, 99, 235, 0.08),
+      transparent 30%
+    ),
+    #f1f5f9;
 }
 
 
@@ -41,28 +62,37 @@ a {
 ===================================================== */
 
 .header {
+  min-height: 90px;
+
   display: flex;
   align-items: center;
+
   gap: 20px;
 
-  padding: 20px 30px;
+  padding: 18px 32px;
 
   background:
     linear-gradient(
       135deg,
-      #111827,
-      #1e3a8a
+      #0f172a,
+      #172554
     );
 
   color: white;
 
-  box-shadow:
-    0 4px 20px rgba(15, 23, 42, 0.15);
-
   position: sticky;
   top: 0;
-  z-index: 100;
+
+  z-index: 1000;
+
+  box-shadow:
+    0 5px 20px rgba(15, 23, 42, 0.2);
 }
+
+
+/* =====================================================
+   LOGO
+===================================================== */
 
 .logo {
   width: 58px;
@@ -74,15 +104,28 @@ a {
 
   border-radius: 16px;
 
-  background: rgba(255, 255, 255, 0.12);
+  background:
+    linear-gradient(
+      135deg,
+      #2563eb,
+      #7c3aed
+    );
 
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
 
-  font-size: 25px;
-  font-weight: 800;
+  font-size: 23px;
+  font-weight: 900;
+
+  box-shadow:
+    0 8px 20px rgba(37, 99, 235, 0.35);
 
   flex-shrink: 0;
 }
+
+
+/* =====================================================
+   HEADER CONTENT
+===================================================== */
 
 .header-content {
   flex: 1;
@@ -98,7 +141,7 @@ a {
 }
 
 .header-content p {
-  margin: 5px 0 0;
+  margin: 6px 0 0;
 
   color: #cbd5e1;
 
@@ -111,17 +154,20 @@ a {
 ===================================================== */
 
 .feedback-nav-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   padding: 11px 17px;
+
+  border-radius: 10px;
 
   background: #2563eb;
 
   color: white;
 
-  text-decoration: none;
-
-  border-radius: 10px;
-
-  font-weight: 600;
+  font-size: 14px;
+  font-weight: 700;
 
   transition:
     transform 0.2s ease,
@@ -130,12 +176,12 @@ a {
 }
 
 .feedback-nav-btn:hover {
-  background: #1d4ed8;
+  background: #3b82f6;
 
   transform: translateY(-2px);
 
   box-shadow:
-    0 6px 15px rgba(37, 99, 235, 0.3);
+    0 8px 20px rgba(37, 99, 235, 0.35);
 }
 
 
@@ -147,7 +193,7 @@ a {
   display: flex;
 
   min-height:
-    calc(100vh - 98px);
+    calc(100vh - 90px);
 }
 
 
@@ -156,76 +202,52 @@ a {
 ===================================================== */
 
 .sidebar {
-  width: 310px;
+  width: 300px;
 
-  flex-shrink: 0;
+  min-width: 300px;
 
   padding: 28px 20px;
 
   background: #ffffff;
 
   border-right:
-    1px solid #e5e7eb;
+    1px solid #e2e8f0;
 
   position: sticky;
 
-  top: 98px;
+  top: 90px;
 
   height:
-    calc(100vh - 98px);
+    calc(100vh - 90px);
 
   overflow-y: auto;
 
   box-shadow:
-    4px 0 20px rgba(15, 23, 42, 0.04);
+    4px 0 18px rgba(15, 23, 42, 0.04);
+
+  scrollbar-width: thin;
 }
 
 
-/* =====================================================
-   SIDEBAR SCROLLBAR
-===================================================== */
+/* Sidebar scrollbar */
 
 .sidebar::-webkit-scrollbar {
   width: 6px;
 }
 
-.sidebar::-webkit-scrollbar-track {
-  background: #f8fafc;
-}
-
 .sidebar::-webkit-scrollbar-thumb {
   background: #cbd5e1;
+
   border-radius: 10px;
 }
 
-.sidebar::-webkit-scrollbar-thumb:hover {
-  background: #94a3b8;
-}
-
 
 /* =====================================================
-   SIDEBAR SECTION
+   SIDEBAR TITLE
 ===================================================== */
 
-.sidebar-section {
-  margin-bottom: 28px;
-}
-
-
-/* =====================================================
-   SIDEBAR SECTION TITLE
-===================================================== */
-
-.sidebar-title {
-  display: flex;
-
-  align-items: center;
-
-  gap: 10px;
-
-  margin: 0 0 13px;
-
-  padding: 0 6px;
+.sidebar h2 {
+  margin: 0 0 12px;
 
   font-size: 14px;
 
@@ -233,133 +255,58 @@ a {
 
   text-transform: uppercase;
 
-  letter-spacing: 0.7px;
+  letter-spacing: 0.8px;
 
   color: #475569;
 }
 
-.sidebar-title-icon {
-  width: 28px;
-  height: 28px;
 
-  display: flex;
+/* =====================================================
+   C++ CONCEPTS SECTION
+===================================================== */
 
-  align-items: center;
-  justify-content: center;
-
-  border-radius: 8px;
-
-  background: #dbeafe;
-
+.sidebar h2:first-child {
   color: #2563eb;
-
-  font-size: 14px;
 }
 
 
 /* =====================================================
-   C++ CONCEPT BUTTONS
+   SIDEBAR BUTTON BASE
 ===================================================== */
 
-.concept-nav-btn {
+.type-btn,
+.access-btn {
   width: 100%;
 
   display: flex;
 
   align-items: center;
 
-  gap: 13px;
+  gap: 10px;
 
-  padding: 13px 14px;
+  padding: 13px 15px;
 
-  margin-bottom: 8px;
+  margin-bottom: 7px;
 
   border: 1px solid transparent;
 
   border-radius: 11px;
 
-  background: #f8fafc;
+  background: transparent;
 
-  color: #334155;
-
-  cursor: pointer;
-
-  text-align: left;
+  color: #475569;
 
   font-size: 14px;
 
   font-weight: 600;
 
+  text-align: left;
+
   transition:
     background 0.2s ease,
     color 0.2s ease,
     transform 0.2s ease,
-    border-color 0.2s ease,
-    box-shadow 0.2s ease;
-}
-
-.concept-nav-btn:hover {
-  background: #eff6ff;
-
-  color: #1d4ed8;
-
-  border-color: #bfdbfe;
-
-  transform: translateX(3px);
-}
-
-
-/* =====================================================
-   CONCEPT ICON
-===================================================== */
-
-.concept-nav-icon {
-  width: 34px;
-  height: 34px;
-
-  flex-shrink: 0;
-
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
-
-  border-radius: 9px;
-
-  background: white;
-
-  border: 1px solid #e2e8f0;
-
-  color: #2563eb;
-
-  font-size: 16px;
-
-  box-shadow:
-    0 2px 5px rgba(15, 23, 42, 0.05);
-
-  transition: 0.2s ease;
-}
-
-.concept-nav-btn:hover .concept-nav-icon {
-  background: #2563eb;
-
-  color: white;
-
-  border-color: #2563eb;
-}
-
-
-/* =====================================================
-   INHERITANCE SECTION
-===================================================== */
-
-.inheritance-title {
-  color: #1e3a8a;
-}
-
-.inheritance-title .sidebar-title-icon {
-  background: #dbeafe;
-  color: #1d4ed8;
+    border 0.2s ease;
 }
 
 
@@ -368,112 +315,19 @@ a {
 ===================================================== */
 
 .type-btn {
-  width: 100%;
-
-  display: flex;
-
-  align-items: center;
-
-  gap: 12px;
-
-  padding: 12px 14px;
-
-  margin-bottom: 7px;
-
-  border: 1px solid transparent;
-
-  border-radius: 10px;
-
-  background: #f8fafc;
-
-  color: #334155;
-
-  cursor: pointer;
-
-  text-align: left;
-
-  font-size: 14px;
-
-  font-weight: 600;
-
-  transition:
-    all 0.2s ease;
+  padding-left: 25px;
 }
 
 .type-btn::before {
-  content: "→";
+  content: "◆";
 
-  width: 25px;
-  height: 25px;
+  color: #94a3b8;
 
-  display: flex;
+  font-size: 8px;
 
-  align-items: center;
-  justify-content: center;
-
-  border-radius: 7px;
-
-  background: #e2e8f0;
-
-  color: #64748b;
-
-  font-size: 13px;
-
-  transition: 0.2s ease;
-}
-
-.type-btn:hover {
-  background: #eff6ff;
-
-  color: #1d4ed8;
-
-  transform: translateX(3px);
-}
-
-.type-btn:hover::before {
-  background: #dbeafe;
-
-  color: #2563eb;
-}
-
-.type-btn.active {
-  background:
-    linear-gradient(
-      135deg,
-      #2563eb,
-      #1d4ed8
-    );
-
-  color: white;
-
-  border-color: #2563eb;
-
-  box-shadow:
-    0 5px 14px rgba(37, 99, 235, 0.25);
-
-  transform: translateX(3px);
-}
-
-.type-btn.active::before {
-  content: "✓";
-
-  background: rgba(255, 255, 255, 0.2);
-
-  color: white;
-}
-
-
-/* =====================================================
-   ACCESS SPECIFIER TITLE
-===================================================== */
-
-.access-title {
-  color: #7c3aed;
-}
-
-.access-title .sidebar-title-icon {
-  background: #ede9fe;
-  color: #7c3aed;
+  transition:
+    transform 0.2s ease,
+    color 0.2s ease;
 }
 
 
@@ -482,73 +336,62 @@ a {
 ===================================================== */
 
 .access-btn {
-  width: 100%;
-
-  display: flex;
-
-  align-items: center;
-
-  gap: 12px;
-
-  padding: 12px 14px;
-
-  margin-bottom: 7px;
-
-  border: 1px solid transparent;
-
-  border-radius: 10px;
-
-  background: #f8fafc;
-
-  color: #334155;
-
-  cursor: pointer;
-
-  text-align: left;
-
-  font-size: 14px;
-
-  font-weight: 600;
-
-  transition:
-    all 0.2s ease;
+  padding-left: 25px;
 }
 
 .access-btn::before {
-  content: "●";
+  content: "🔐";
 
-  font-size: 9px;
-
-  color: #94a3b8;
+  font-size: 13px;
 }
 
+
+/* =====================================================
+   SIDEBAR HOVER
+===================================================== */
+
+.type-btn:hover,
 .access-btn:hover {
-  background: #f5f3ff;
+  background: #eff6ff;
 
-  color: #7c3aed;
+  color: #1d4ed8;
 
-  transform: translateX(3px);
+  transform: translateX(4px);
+
+  border-color: #dbeafe;
 }
 
+.type-btn:hover::before {
+  color: #2563eb;
+
+  transform: scale(1.3);
+}
+
+
+/* =====================================================
+   SIDEBAR ACTIVE
+===================================================== */
+
+.type-btn.active,
 .access-btn.active {
   background:
     linear-gradient(
       135deg,
-      #7c3aed,
-      #6d28d9
+      #2563eb,
+      #4f46e5
     );
 
   color: white;
 
-  border-color: #7c3aed;
+  border-color: transparent;
 
   box-shadow:
-    0 5px 14px rgba(124, 58, 237, 0.25);
+    0 7px 18px rgba(37, 99, 235, 0.25);
 
   transform: translateX(3px);
 }
 
-.access-btn.active::before {
+.type-btn.active::before {
   color: white;
 }
 
@@ -562,13 +405,13 @@ a {
 
   background:
     linear-gradient(
-      90deg,
+      to right,
       transparent,
       #e2e8f0,
       transparent
     );
 
-  margin: 25px 0;
+  margin: 25px 5px;
 }
 
 
@@ -587,30 +430,29 @@ a {
 
   padding: 13px;
 
-  text-decoration: none;
+  margin-top: 8px;
 
-  color: #2563eb;
+  border-radius: 11px;
 
   background: #eff6ff;
 
-  border: 1px solid #bfdbfe;
+  color: #2563eb;
 
-  border-radius: 10px;
+  font-size: 14px;
 
   font-weight: 700;
 
-  transition: 0.2s ease;
+  border: 1px solid #dbeafe;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
 }
 
 .sidebar-feedback:hover {
-  background: #2563eb;
-
-  color: white;
+  background: #dbeafe;
 
   transform: translateY(-2px);
-
-  box-shadow:
-    0 5px 15px rgba(37, 99, 235, 0.2);
 }
 
 
@@ -621,13 +463,13 @@ a {
 .content {
   flex: 1;
 
-  padding: 35px;
+  width: 100%;
 
   max-width: 1500px;
 
-  margin: auto;
+  margin: 0 auto;
 
-  width: 100%;
+  padding: 35px;
 }
 
 
@@ -636,27 +478,27 @@ a {
 ===================================================== */
 
 .card {
-  background: white;
+  background: rgba(255, 255, 255, 0.95);
 
-  border-radius: 16px;
+  border-radius: 18px;
 
-  padding: 27px;
+  padding: 28px;
 
-  margin-bottom: 27px;
+  margin-bottom: 28px;
 
-  border: 1px solid #e5e7eb;
+  border: 1px solid #e2e8f0;
 
   box-shadow:
-    0 5px 25px rgba(15, 23, 42, 0.05);
+    0 8px 30px rgba(15, 23, 42, 0.06);
 
   transition:
-    box-shadow 0.25s ease,
-    transform 0.25s ease;
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .card:hover {
   box-shadow:
-    0 10px 30px rgba(15, 23, 42, 0.08);
+    0 12px 35px rgba(15, 23, 42, 0.08);
 }
 
 
@@ -665,7 +507,9 @@ a {
 ===================================================== */
 
 .badge {
-  display: inline-block;
+  display: inline-flex;
+
+  align-items: center;
 
   padding: 6px 11px;
 
@@ -679,95 +523,138 @@ a {
 
   font-weight: 800;
 
-  letter-spacing: 0.4px;
+  letter-spacing: 0.5px;
 }
 
 
 /* =====================================================
-   CLASS OBJECT
+   CLASS AND OBJECT
 ===================================================== */
 
 .class-object-header h2 {
-  margin: 10px 0 5px;
+  margin: 10px 0 6px;
 
-  font-size: 26px;
+  font-size: 27px;
+
+  color: #0f172a;
 }
 
 .class-object-header p {
+  margin: 0;
+
   color: #64748b;
 
-  line-height: 1.6;
+  line-height: 1.7;
 }
+
+
+/* =====================================================
+   CLASS OBJECT GRID
+===================================================== */
 
 .class-object-grid {
   display: grid;
 
   grid-template-columns:
-    repeat(2, 1fr);
+    repeat(2, minmax(0, 1fr));
 
-  gap: 20px;
+  gap: 22px;
 
   margin-top: 25px;
 }
 
+
+/* =====================================================
+   CONCEPT BOX
+===================================================== */
+
 .concept-box {
-  padding: 22px;
+  position: relative;
+
+  padding: 23px;
 
   background:
     linear-gradient(
       145deg,
       #f8fafc,
-      #f1f5f9
+      #eef2ff
     );
 
-  border-radius: 13px;
+  border:
+    1px solid #e2e8f0;
 
-  border: 1px solid #e2e8f0;
+  border-radius: 15px;
 
-  transition: 0.25s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .concept-box:hover {
   transform: translateY(-4px);
 
-  border-color: #bfdbfe;
-
   box-shadow:
-    0 8px 20px rgba(37, 99, 235, 0.08);
-}
-
-.concept-number {
-  color: #2563eb;
-
-  font-weight: 800;
-
-  font-size: 13px;
-
-  letter-spacing: 1px;
+    0 12px 25px rgba(37, 99, 235, 0.1);
 }
 
 .concept-box h3 {
   margin: 8px 0;
+
+  font-size: 21px;
+
+  color: #1e293b;
 }
 
 .concept-box p {
-  line-height: 1.6;
-
   color: #64748b;
+
+  line-height: 1.65;
+}
+
+
+/* =====================================================
+   NUMBER
+===================================================== */
+
+.concept-number {
+  color: #2563eb;
+
+  font-weight: 900;
+
+  font-size: 14px;
+
+  letter-spacing: 1px;
+}
+
+
+/* =====================================================
+   CODE BLOCKS
+===================================================== */
+
+pre {
+  font-family:
+    "Cascadia Code",
+    "Fira Code",
+    "Courier New",
+    monospace;
 }
 
 .concept-box pre {
   overflow-x: auto;
 
-  background: #111827;
+  margin-top: 18px;
 
-  color: white;
+  padding: 18px;
 
-  padding: 17px;
+  border-radius: 12px;
 
-  border-radius: 10px;
+  background: #0f172a;
+
+  color: #e2e8f0;
 
   line-height: 1.6;
+
+  font-size: 13px;
 }
 
 
@@ -784,43 +671,54 @@ a {
 
   gap: 25px;
 
-  padding: 28px;
+  padding: 30px;
 
-  margin-bottom: 27px;
+  margin-bottom: 28px;
 
-  border-radius: 16px;
+  border-radius: 18px;
 
   background:
     linear-gradient(
       135deg,
       #1e3a8a,
-      #2563eb
+      #4338ca
     );
 
   color: white;
 
   box-shadow:
-    0 10px 30px rgba(37, 99, 235, 0.18);
+    0 12px 30px rgba(37, 99, 235, 0.2);
 }
 
 .hero h2 {
   margin: 10px 0;
 
-  font-size: 29px;
+  font-size: 30px;
 }
 
 .hero p {
+  margin: 0;
+
+  max-width: 650px;
+
   color: #dbeafe;
 
-  line-height: 1.6;
+  line-height: 1.7;
 }
+
+
+/* =====================================================
+   HERO CONTROLS
+===================================================== */
 
 .controls {
   display: flex;
 
-  gap: 8px;
+  gap: 9px;
 
   flex-wrap: wrap;
+
+  justify-content: flex-end;
 }
 
 .controls button {
@@ -828,38 +726,43 @@ a {
 
   border: none;
 
-  border-radius: 8px;
-
-  cursor: pointer;
+  border-radius: 9px;
 
   background: white;
 
   color: #1e3a8a;
 
+  font-size: 13px;
+
   font-weight: 700;
 
-  transition: 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .controls button:hover {
   transform: translateY(-2px);
 
   box-shadow:
-    0 5px 12px rgba(0, 0, 0, 0.15);
+    0 7px 15px rgba(0, 0, 0, 0.15);
 }
 
 
 /* =====================================================
-   GRID
+   MAIN GRID
 ===================================================== */
 
 .grid {
   display: grid;
 
   grid-template-columns:
-    repeat(2, minmax(0, 1fr));
+    minmax(0, 1fr)
+    minmax(0, 1fr);
 
-  gap: 27px;
+  gap: 28px;
+
+  align-items: start;
 }
 
 
@@ -881,18 +784,24 @@ a {
 
 .card-header h3 {
   margin: 0;
+
+  font-size: 20px;
+
+  color: #0f172a;
 }
 
 .small-label {
-  font-size: 12px;
+  padding: 5px 10px;
 
-  color: #64748b;
+  border-radius: 20px;
 
   background: #f1f5f9;
 
-  padding: 6px 10px;
+  color: #64748b;
 
-  border-radius: 20px;
+  font-size: 12px;
+
+  font-weight: 700;
 }
 
 
@@ -903,21 +812,30 @@ a {
 .diagram {
   position: relative;
 
-  height: 450px;
+  height: 470px;
 
   background:
     radial-gradient(
-      circle at center,
-      #ffffff,
-      #f8fafc
+      circle at 1px 1px,
+      #cbd5e1 1px,
+      transparent 0
     );
 
-  border-radius: 13px;
+  background-size: 22px 22px;
+
+  background-color: #f8fafc;
+
+  border-radius: 15px;
 
   overflow: hidden;
 
   border: 1px solid #e2e8f0;
 }
+
+
+/* =====================================================
+   SVG ARROWS
+===================================================== */
 
 .arrows {
   position: absolute;
@@ -929,7 +847,14 @@ a {
   height: 100%;
 
   color: #2563eb;
+
+  z-index: 1;
 }
+
+
+/* =====================================================
+   CLASS NODE
+===================================================== */
 
 .class-node {
   position: absolute;
@@ -937,13 +862,16 @@ a {
   transform:
     translate(-50%, -50%);
 
-  width: 145px;
+  width: 155px;
 
-  min-height: 70px;
+  min-height: 72px;
 
-  border: 2px solid #2563eb;
+  padding: 10px;
 
-  border-radius: 11px;
+  border:
+    2px solid #2563eb;
+
+  border-radius: 13px;
 
   background: white;
 
@@ -962,57 +890,70 @@ a {
   gap: 3px;
 
   box-shadow:
-    0 5px 15px rgba(37, 99, 235, 0.1);
+    0 7px 18px rgba(15, 23, 42, 0.1);
 
   transition:
     transform 0.2s ease,
-    box-shadow 0.2s ease;
+    box-shadow 0.2s ease,
+    background 0.2s ease;
 }
 
 .class-node:hover {
   transform:
     translate(-50%, -50%)
-    scale(1.05);
+    scale(1.06);
 
   box-shadow:
-    0 8px 20px rgba(37, 99, 235, 0.2);
+    0 12px 25px rgba(37, 99, 235, 0.2);
 }
 
 .class-node strong {
-  font-size: 20px;
+  font-size: 21px;
 
   color: #2563eb;
 }
 
 .class-node span {
   font-size: 12px;
+
+  color: #475569;
+
+  text-align: center;
 }
 
 .class-node.selected {
-  background: #2563eb;
+  background:
+    linear-gradient(
+      135deg,
+      #2563eb,
+      #4f46e5
+    );
 
   color: white;
 
   box-shadow:
-    0 8px 20px rgba(37, 99, 235, 0.3);
+    0 12px 25px rgba(37, 99, 235, 0.3);
 }
 
-.class-node.selected strong {
+.class-node.selected strong,
+.class-node.selected span {
   color: white;
 }
 
 
 /* =====================================================
-   ANIMATION
+   DIAGRAM ANIMATION
 ===================================================== */
 
 .diagram.animated .class-node {
   animation:
-    pulse 0.8s ease-in-out
+    nodePulse
+    0.8s
+    ease-in-out
     infinite alternate;
 }
 
-@keyframes pulse {
+@keyframes nodePulse {
   from {
     transform:
       translate(-50%, -50%)
@@ -1034,20 +975,22 @@ a {
 .node-info {
   margin-top: 15px;
 
-  padding: 13px;
+  padding: 14px 16px;
+
+  border-radius: 11px;
 
   background: #eff6ff;
 
-  border: 1px solid #bfdbfe;
-
-  border-radius: 9px;
+  border: 1px solid #dbeafe;
 
   color: #1e40af;
+
+  line-height: 1.6;
 }
 
 
 /* =====================================================
-   CODE
+   CODE CARD
 ===================================================== */
 
 .code-card pre {
@@ -1055,35 +998,67 @@ a {
 
   overflow: auto;
 
-  background: #111827;
+  margin: 0 0 15px;
 
-  color: #e5e7eb;
+  background: #0f172a;
+
+  color: #e2e8f0;
 
   padding: 20px;
 
-  border-radius: 10px;
+  border-radius: 12px;
 
-  line-height: 1.6;
+  font-size: 13px;
+
+  line-height: 1.65;
 }
 
+
+/* =====================================================
+   CODE SCROLLBAR
+===================================================== */
+
+.code-card pre::-webkit-scrollbar,
+.concept-box pre::-webkit-scrollbar {
+  height: 7px;
+
+  width: 7px;
+}
+
+.code-card pre::-webkit-scrollbar-thumb,
+.concept-box pre::-webkit-scrollbar-thumb {
+  background: #475569;
+
+  border-radius: 10px;
+}
+
+
+/* =====================================================
+   SMALL BUTTON
+===================================================== */
+
 .small-btn {
-  padding: 8px 12px;
+  padding: 8px 13px;
 
-  border: none;
+  border: 1px solid #dbeafe;
 
-  border-radius: 7px;
+  border-radius: 8px;
 
-  cursor: pointer;
+  background: #eff6ff;
 
-  background: #f1f5f9;
+  color: #2563eb;
 
-  transition: 0.2s ease;
+  font-weight: 700;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
 }
 
 .small-btn:hover {
   background: #dbeafe;
 
-  color: #2563eb;
+  transform: translateY(-1px);
 }
 
 
@@ -1096,6 +1071,10 @@ a {
 
   padding: 14px;
 
+  border: none;
+
+  border-radius: 10px;
+
   background:
     linear-gradient(
       135deg,
@@ -1105,22 +1084,23 @@ a {
 
   color: white;
 
-  border: none;
+  font-weight: 800;
 
-  border-radius: 9px;
+  font-size: 14px;
 
-  cursor: pointer;
+  box-shadow:
+    0 6px 15px rgba(22, 163, 74, 0.2);
 
-  font-weight: bold;
-
-  transition: 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .run-btn:hover:not(:disabled) {
   transform: translateY(-2px);
 
   box-shadow:
-    0 6px 15px rgba(22, 163, 74, 0.25);
+    0 10px 20px rgba(22, 163, 74, 0.25);
 }
 
 .run-btn:disabled {
@@ -1137,31 +1117,50 @@ a {
 .output {
   margin-top: 20px;
 
-  background: #111827;
+  background: #020617;
 
   color: #22c55e;
 
-  padding: 16px;
+  padding: 17px;
 
-  border-radius: 9px;
+  border-radius: 11px;
 
   min-height: 110px;
 
-  font-family: monospace;
+  font-family:
+    "Cascadia Code",
+    "Courier New",
+    monospace;
+
+  font-size: 13px;
 
   line-height: 1.7;
+
+  border:
+    1px solid #1e293b;
 }
 
 .output-title {
   color: white;
 
-  font-weight: bold;
+  font-family:
+    Inter,
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
+  font-weight: 800;
 
   margin-bottom: 10px;
+
+  padding-bottom: 8px;
+
+  border-bottom:
+    1px solid #1e293b;
 }
 
 .placeholder {
-  color: #94a3b8;
+  color: #64748b;
 }
 
 
@@ -1169,13 +1168,17 @@ a {
    EXPLANATION
 ===================================================== */
 
+.explanation h3 {
+  margin: 0;
+}
+
 .explanation-grid {
   display: grid;
 
   grid-template-columns:
     repeat(3, 1fr);
 
-  gap: 20px;
+  gap: 22px;
 }
 
 .explanation-grid > div {
@@ -1183,36 +1186,93 @@ a {
 
   background: #f8fafc;
 
-  border-radius: 12px;
+  border:
+    1px solid #e2e8f0;
 
-  border: 1px solid #e2e8f0;
+  border-radius: 13px;
 
-  transition: 0.2s ease;
+  transition:
+    transform 0.2s ease;
 }
 
 .explanation-grid > div:hover {
-  transform: translateY(-3px);
-
-  border-color: #bfdbfe;
+  transform: translateY(-4px);
 }
 
 .step {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 11px;
+
+  background: #dbeafe;
+
   color: #2563eb;
 
-  font-weight: bold;
+  font-weight: 900;
 
-  font-size: 20px;
+  margin-bottom: 12px;
 }
 
-.explanation-grid p {
+.explanation h4 {
+  margin: 0 0 8px;
+
+  font-size: 17px;
+}
+
+.explanation p {
+  margin: 0;
+
+  color: #64748b;
+
+  line-height: 1.65;
+}
+
+
+/* =====================================================
+   ACCESS SPECIFIER
+===================================================== */
+
+.access-card .card-header {
+  align-items: flex-start;
+}
+
+.access-card h3 {
+  margin: 10px 0 5px;
+
+  font-size: 22px;
+}
+
+.access-card p {
   color: #64748b;
 
   line-height: 1.6;
 }
 
+.syntax {
+  padding: 11px 14px;
+
+  border-radius: 9px;
+
+  background: #0f172a;
+
+  color: #e2e8f0;
+
+  font-family: monospace;
+
+  font-size: 12px;
+
+  white-space: nowrap;
+}
+
 
 /* =====================================================
-   ACCESS
+   VISIBILITY
 ===================================================== */
 
 .visibility-grid {
@@ -1225,13 +1285,14 @@ a {
 }
 
 .visibility-box {
-  padding: 15px;
+  padding: 17px;
 
   background: #f8fafc;
 
-  border: 1px solid #e2e8f0;
+  border:
+    1px solid #e2e8f0;
 
-  border-radius: 9px;
+  border-radius: 11px;
 
   display: flex;
 
@@ -1240,10 +1301,12 @@ a {
   gap: 8px;
 
   align-items: center;
+
+  font-size: 13px;
 }
 
 .visibility {
-  font-weight: bold;
+  font-weight: 800;
 }
 
 .visibility.public {
@@ -1262,39 +1325,61 @@ a {
   color: #64748b;
 }
 
+
+/* =====================================================
+   ACCESS DETAIL
+===================================================== */
+
 .access-detail {
-  margin-top: 25px;
+  margin-top: 22px;
 
   padding: 20px;
 
-  background: #f8fafc;
+  background:
+    linear-gradient(
+      135deg,
+      #eff6ff,
+      #eef2ff
+    );
 
-  border-radius: 10px;
+  border-radius: 12px;
+
+  border: 1px solid #dbeafe;
+}
+
+.access-detail h4 {
+  margin-top: 0;
+
+  color: #1e40af;
 }
 
 .access-detail p {
-  color: #64748b;
-
-  line-height: 1.6;
+  margin-bottom: 0;
 }
 
 
 /* =====================================================
-   SYNTAX
+   BASIC SYNTAX
 ===================================================== */
 
-.syntax-card pre {
-  background: #111827;
+.syntax-card h3 {
+  margin-top: 0;
 
-  color: white;
+  font-size: 21px;
+}
+
+.syntax-card pre {
+  background: #0f172a;
+
+  color: #e2e8f0;
 
   padding: 20px;
 
-  border-radius: 10px;
+  border-radius: 12px;
 
   overflow-x: auto;
 
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 .syntax-examples {
@@ -1304,24 +1389,34 @@ a {
     repeat(3, 1fr);
 
   gap: 15px;
+
+  margin-top: 20px;
 }
 
 .syntax-examples div {
-  padding: 17px;
+  padding: 18px;
 
   background: #f8fafc;
 
-  border: 1px solid #e2e8f0;
+  border:
+    1px solid #e2e8f0;
 
-  border-radius: 9px;
+  border-radius: 11px;
 
-  transition: 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .syntax-examples div:hover {
-  border-color: #bfdbfe;
+  transform: translateY(-3px);
 
-  transform: translateY(-2px);
+  box-shadow:
+    0 8px 20px rgba(15, 23, 42, 0.08);
+}
+
+.syntax-examples strong {
+  color: #2563eb;
 }
 
 .syntax-examples code {
@@ -1329,9 +1424,11 @@ a {
 
   margin-top: 10px;
 
-  font-size: 13px;
+  font-size: 12px;
 
   color: #475569;
+
+  overflow-x: auto;
 }
 
 
@@ -1340,7 +1437,9 @@ a {
 ===================================================== */
 
 .constructor-card {
-  margin-top: 25px;
+  margin-top: 28px;
+
+  scroll-margin-top: 110px;
 }
 
 .constructor-card > .card-header {
@@ -1348,11 +1447,15 @@ a {
 }
 
 .constructor-card h3 {
-  margin: 8px 0;
+  margin: 9px 0;
+
+  font-size: 24px;
 }
 
 .constructor-card p {
-  line-height: 1.6;
+  line-height: 1.7;
+
+  color: #64748b;
 }
 
 
@@ -1367,7 +1470,10 @@ a {
 .constructor-rules h4 {
   font-size: 20px;
 
-  margin-bottom: 15px;
+  margin:
+    0 0 15px;
+
+  color: #0f172a;
 }
 
 .rules-grid {
@@ -1380,11 +1486,12 @@ a {
 }
 
 .rule-box {
-  padding: 18px;
+  padding: 19px;
 
-  border: 1px solid #e2e8f0;
+  border:
+    1px solid #e2e8f0;
 
-  border-radius: 12px;
+  border-radius: 13px;
 
   background: #f8fafc;
 
@@ -1406,11 +1513,23 @@ a {
   border-color: #bfdbfe;
 
   box-shadow:
-    0 8px 18px rgba(0, 0, 0, 0.06);
+    0 8px 20px rgba(37, 99, 235, 0.08);
 }
 
 .rule-box .concept-number {
   flex-shrink: 0;
+
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 9px;
+
+  background: #dbeafe;
 }
 
 .rule-box p {
@@ -1429,19 +1548,24 @@ a {
 .constructor-info {
   margin-top: 25px;
 
-  padding: 20px;
+  padding: 21px;
 
-  border-radius: 12px;
+  border-radius: 13px;
 
-  background: #f8fafc;
+  background:
+    linear-gradient(
+      135deg,
+      #f8fafc,
+      #eef2ff
+    );
 
-  border: 1px solid #e2e8f0;
+  border:
+    1px solid #e2e8f0;
 }
 
 .constructor-info h4 {
-  margin-top: 0;
-
-  margin-bottom: 10px;
+  margin:
+    0 0 10px;
 
   font-size: 19px;
 }
@@ -1450,8 +1574,6 @@ a {
   margin: 0;
 
   color: #475569;
-
-  line-height: 1.6;
 }
 
 
@@ -1462,17 +1584,18 @@ a {
 .constructor-example {
   margin-top: 25px;
 
-  border: 1px solid #e2e8f0;
+  border:
+    1px solid #e2e8f0;
 
-  border-radius: 12px;
+  border-radius: 13px;
 
   overflow: hidden;
 
-  background: #ffffff;
+  background: white;
 }
 
 .constructor-example-header {
-  padding: 16px 18px;
+  padding: 17px 20px;
 
   background: #f8fafc;
 
@@ -1495,20 +1618,15 @@ a {
 }
 
 .constructor-example-header span {
-  font-size: 13px;
+  font-size: 12px;
 
   color: #64748b;
 }
 
-
-/* =====================================================
-   CONSTRUCTOR CODE
-===================================================== */
-
 .constructor-example pre {
   margin: 0;
 
-  padding: 20px;
+  padding: 21px;
 
   overflow-x: auto;
 
@@ -1516,46 +1634,17 @@ a {
 
   color: #e2e8f0;
 
-  font-size: 14px;
+  font-size: 13px;
 
   line-height: 1.7;
 }
 
 .constructor-example code {
   font-family:
+    "Cascadia Code",
+    "Fira Code",
     "Courier New",
     monospace;
-}
-
-
-/* =====================================================
-   CONSTRUCTOR SIDEBAR BUTTON
-===================================================== */
-
-.sidebar .access-btn {
-  cursor: pointer;
-}
-
-
-/* =====================================================
-   CONSTRUCTOR SCROLL POSITION
-===================================================== */
-
-#constructor-section {
-  scroll-margin-top: 120px;
-}
-
-#class-object-section {
-  scroll-margin-top: 120px;
-
-}
-
-#inheritance-section {
-  scroll-margin-top: 120px;
-}
-
-#access-section {
-  scroll-margin-top: 120px;
 }
 
 
@@ -1591,7 +1680,7 @@ a {
 }
 
 .login-btn {
-  background: #ffffff;
+  background: white;
 
   color: #111827;
 }
@@ -1599,7 +1688,25 @@ a {
 .signup-btn {
   background: #4f46e5;
 
-  color: #ffffff;
+  color: white;
+}
+
+
+/* =====================================================
+   CONSTRUCTOR SIDEBAR
+===================================================== */
+
+.sidebar .access-btn {
+  cursor: pointer;
+}
+
+
+/* =====================================================
+   CONSTRUCTOR SCROLL
+===================================================== */
+
+#constructor-section {
+  scroll-margin-top: 110px;
 }
 
 
@@ -1612,22 +1719,65 @@ footer {
 
   padding: 28px;
 
-  background: #111827;
+  background:
+    linear-gradient(
+      135deg,
+      #0f172a,
+      #172554
+    );
 
   color: #cbd5e1;
 
-  font-size: 14px;
+  font-size: 13px;
+
+  border-top:
+    1px solid #1e293b;
 }
 
 
 /* =====================================================
-   MOBILE / TABLET
+   FOCUS ACCESSIBILITY
+===================================================== */
+
+button:focus-visible,
+a:focus-visible {
+  outline:
+    3px solid rgba(59, 130, 246, 0.4);
+
+  outline-offset: 3px;
+}
+
+
+/* =====================================================
+   LARGE SCREEN
+===================================================== */
+
+@media (min-width: 1500px) {
+
+  .sidebar {
+    width: 320px;
+
+    min-width: 320px;
+  }
+
+  .content {
+    padding:
+      40px 45px;
+  }
+
+}
+
+
+/* =====================================================
+   TABLET
 ===================================================== */
 
 @media (max-width: 1100px) {
 
   .sidebar {
-    width: 270px;
+    width: 260px;
+
+    min-width: 260px;
   }
 
   .content {
@@ -1638,17 +1788,31 @@ footer {
     grid-template-columns: 1fr;
   }
 
+  .diagram {
+    height: 430px;
+  }
+
+  .visibility-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+  .syntax-examples {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
 }
 
 
 /* =====================================================
-   TABLET
+   MOBILE / TABLET
 ===================================================== */
 
 @media (max-width: 900px) {
 
   .header {
-    padding: 17px 20px;
+    padding: 15px 18px;
   }
 
   .header-content h1 {
@@ -1666,33 +1830,33 @@ footer {
   .sidebar {
     width: 100%;
 
+    min-width: 100%;
+
+    height: auto;
+
     position: relative;
 
     top: 0;
 
-    height: auto;
+    padding: 20px;
 
     border-right: none;
 
     border-bottom:
-      1px solid #e5e7eb;
-
-    padding: 20px;
+      1px solid #e2e8f0;
   }
 
-  .sidebar-section {
-    margin-bottom: 20px;
+  .sidebar h2 {
+    margin-top: 5px;
+  }
+
+  .type-btn,
+  .access-btn {
+    padding: 12px 15px;
   }
 
   .content {
     padding: 20px;
-  }
-
-  .class-object-grid,
-  .explanation-grid,
-  .visibility-grid,
-  .syntax-examples {
-    grid-template-columns: 1fr;
   }
 
   .hero {
@@ -1701,19 +1865,39 @@ footer {
     align-items: flex-start;
   }
 
+  .controls {
+    justify-content: flex-start;
+  }
+
+  .class-object-grid,
+  .explanation-grid,
+  .rules-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .visibility-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .syntax-examples {
+    grid-template-columns: 1fr;
+  }
+
 }
 
 
 /* =====================================================
-   MOBILE
+   SMALL MOBILE
 ===================================================== */
 
 @media (max-width: 600px) {
 
   .header {
+    min-height: auto;
+
     flex-wrap: wrap;
 
-    padding: 15px;
+    padding: 14px;
   }
 
   .logo {
@@ -1721,11 +1905,11 @@ footer {
 
     height: 48px;
 
-    font-size: 20px;
+    font-size: 19px;
   }
 
   .header-content {
-    min-width: 180px;
+    min-width: 200px;
   }
 
   .header-content h1 {
@@ -1738,30 +1922,26 @@ footer {
 
   .feedback-nav-btn {
     width: 100%;
-
-    text-align: center;
-  }
-
-  .sidebar {
-    padding: 18px 15px;
   }
 
   .content {
-    padding: 15px;
+    padding: 14px;
   }
 
   .card {
     padding: 18px;
 
-    border-radius: 13px;
+    border-radius: 14px;
   }
 
   .hero {
     padding: 20px;
+
+    border-radius: 14px;
   }
 
   .hero h2 {
-    font-size: 23px;
+    font-size: 24px;
   }
 
   .controls {
@@ -1779,17 +1959,40 @@ footer {
   }
 
   .class-node {
-    width: 120px;
+    width: 125px;
 
-    min-height: 60px;
+    min-height: 62px;
+  }
+
+  .class-node strong {
+    font-size: 18px;
   }
 
   .class-node span {
     font-size: 10px;
   }
 
-  .rules-grid {
-    grid-template-columns: 1fr;
+  .card-header {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+  .syntax {
+    white-space: normal;
+
+    word-break: break-word;
+  }
+
+  .class-object-header h2 {
+    font-size: 23px;
+  }
+
+  .concept-box pre,
+  .code-card pre,
+  .constructor-example pre,
+  .syntax-card pre {
+    font-size: 11px;
   }
 
   .constructor-example-header {
@@ -1798,8 +2001,29 @@ footer {
     align-items: flex-start;
   }
 
-  .constructor-example pre {
-    font-size: 13px;
+  footer {
+    padding: 22px 14px;
+  }
+
+}
+
+
+/* =====================================================
+   REDUCED MOTION
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+
+    animation-iteration-count: 1 !important;
+
+    scroll-behavior: auto !important;
+
+    transition-duration: 0.01ms !important;
   }
 
 }
