@@ -26,7 +26,28 @@ function Feedback() {
         }
       );
 
-      const result = await response.json();
+      //const result = await response.json();
+      const text = await response.text();
+
+console.log("STATUS:", response.status);
+console.log("RESPONSE:", text);
+
+let result;
+
+try {
+  result = JSON.parse(text);
+} catch (error) {
+  console.error("Not JSON:", text);
+  alert("Backend returned HTML instead of JSON.");
+  return;
+}
+
+
+
+
+
+
+
 
       if (response.ok) {
         alert("Feedback sent successfully! ❤️");
