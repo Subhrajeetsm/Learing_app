@@ -1,10 +1,19 @@
 import React, { useState } from "react";
+
 import {
   BrowserRouter,
   Routes,
   Route,
   Link,
+  Navigate,
 } from "react-router-dom";
+
+import {
+  SignIn,
+  SignUp,
+  UserButton,
+  useAuth,
+} from "@clerk/react";
 
 import "./App.css";
 import Feedback from "./Feedback";
@@ -432,6 +441,108 @@ const accessData = {
 };
 
 /* =====================================================
+   PROTECTED ROUTE
+===================================================== */
+
+function ProtectedRoute({ children }) {
+  const { isLoaded, isSignedIn } = useAuth();
+
+  if (!isLoaded) {
+    return (
+      <div
+        style={{
+          minHeight: "100vh",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          fontSize: "20px",
+        }}
+      >
+        Loading...
+      </div>
+    );
+  }
+
+  if (!isSignedIn) {
+    return <Navigate to="/sign-in" replace />;
+  }
+
+  return children;
+}
+
+/* =====================================================
+   SIGN IN PAGE
+===================================================== */
+
+function SignInPage() {
+  const { isLoaded, isSignedIn } = useAuth();
+
+  if (!isLoaded) {
+    return <div>Loading...</div>;
+  }
+
+  if (isSignedIn) {
+    return <Navigate to="/" replace />;
+  }
+
+  return (
+    <div
+      style={{
+        minHeight: "100vh",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        background: "#f8fafc",
+        padding: "20px",
+      }}
+    >
+      <SignIn
+        routing="path"
+        path="/sign-in"
+        signUpUrl="/sign-up"
+        fallbackRedirectUrl="/"
+      />
+    </div>
+  );
+}
+
+/* =====================================================
+   SIGN UP PAGE
+===================================================== */
+
+function SignUpPage() {
+  const { isLoaded, isSignedIn } = useAuth();
+
+  if (!isLoaded) {
+    return <div>Loading...</div>;
+  }
+
+  if (isSignedIn) {
+    return <Navigate to="/" replace />;
+  }
+
+  return (
+    <div
+      style={{
+        minHeight: "100vh",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        background: "#f8fafc",
+        padding: "20px",
+      }}
+    >
+      <SignUp
+        routing="path"
+        path="/sign-up"
+        signInUrl="/sign-in"
+        fallbackRedirectUrl="/"
+      />
+    </div>
+  );
+}
+
+/* =====================================================
    VISUALIZER
 ===================================================== */
 
@@ -557,7 +668,9 @@ function Visualizer() {
   return (
     <div className="app">
 
-      {/* HEADER */}
+      {/* =================================================
+          HEADER
+      ================================================= */}
 
       <header className="header">
 
@@ -578,24 +691,42 @@ function Visualizer() {
 
         </div>
 
-        {/* OPEN FEEDBACK IN NEW TAB */}
-
-        <Link
-          to="/feedback"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="feedback-nav-btn"
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: "15px",
+          }}
         >
-          💬 Feedback
-        </Link>
+
+          {/* FEEDBACK NEW TAB */}
+
+          <Link
+            to="/feedback"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="feedback-nav-btn"
+          >
+            💬 Feedback
+          </Link>
+
+          {/* CLERK USER */}
+
+          <UserButton />
+
+        </div>
 
       </header>
 
-      {/* MAIN CONTAINER */}
+      {/* =================================================
+          MAIN CONTAINER
+      ================================================= */}
 
       <div className="main-container">
 
-        {/* SIDEBAR */}
+        {/* =================================================
+            SIDEBAR
+        ================================================= */}
 
         <aside className="sidebar">
 
@@ -645,7 +776,7 @@ function Visualizer() {
 
           <div className="sidebar-divider"></div>
 
-          {/* OPEN FEEDBACK IN NEW TAB */}
+          {/* FEEDBACK NEW TAB */}
 
           <Link
             to="/feedback"
@@ -658,11 +789,15 @@ function Visualizer() {
 
         </aside>
 
-        {/* CONTENT */}
+        {/* =================================================
+            CONTENT
+        ================================================= */}
 
         <main className="content">
 
-          {/* CLASS AND OBJECT */}
+          {/* =================================================
+              CLASS AND OBJECT
+          ================================================= */}
 
           <section className="card class-object-card">
 
@@ -685,6 +820,8 @@ function Visualizer() {
             </div>
 
             <div className="class-object-grid">
+
+              {/* CLASS */}
 
               <div className="concept-box">
 
@@ -713,6 +850,8 @@ public:
                 </pre>
 
               </div>
+
+              {/* OBJECT */}
 
               <div className="concept-box">
 
@@ -748,7 +887,9 @@ public:
 
           </section>
 
-          {/* HERO */}
+          {/* =================================================
+              HERO
+          ================================================= */}
 
           <section className="hero">
 
@@ -798,7 +939,9 @@ public:
 
           </section>
 
-          {/* DIAGRAM + CODE */}
+          {/* =================================================
+              DIAGRAM + CODE
+          ================================================= */}
 
           <section className="grid">
 
@@ -916,6 +1059,7 @@ public:
                       </span>
 
                     </button>
+
                   )
                 )}
 
@@ -1019,7 +1163,9 @@ public:
 
           </section>
 
-          {/* HOW IT WORKS */}
+          {/* =================================================
+              HOW IT WORKS
+          ================================================= */}
 
           <section className="card explanation">
 
@@ -1089,7 +1235,9 @@ public:
 
           </section>
 
-          {/* ACCESS SPECIFIER */}
+          {/* =================================================
+              ACCESS SPECIFIER
+          ================================================= */}
 
           <section className="card access-card">
 
@@ -1164,7 +1312,9 @@ public:
 
           </section>
 
-          {/* BASIC SYNTAX */}
+          {/* =================================================
+              BASIC SYNTAX
+          ================================================= */}
 
           <section className="card syntax-card">
 
@@ -1228,7 +1378,9 @@ public:
 
       </div>
 
-      {/* FOOTER */}
+      {/* =================================================
+          FOOTER
+      ================================================= */}
 
       <footer>
         C++ Inheritance Visualizer • React
@@ -1248,14 +1400,48 @@ function App() {
 
       <Routes>
 
+        {/* ===============================
+            SIGN IN
+        =============================== */}
+
         <Route
-          path="/"
-          element={<Visualizer />}
+          path="/sign-in/*"
+          element={<SignInPage />}
         />
+
+        {/* ===============================
+            SIGN UP
+        =============================== */}
+
+        <Route
+          path="/sign-up/*"
+          element={<SignUpPage />}
+        />
+
+        {/* ===============================
+            FEEDBACK
+        =============================== */}
 
         <Route
           path="/feedback"
-          element={<Feedback />}
+          element={
+            <ProtectedRoute>
+              <Feedback />
+            </ProtectedRoute>
+          }
+        />
+
+        {/* ===============================
+            VISUALIZER
+        =============================== */}
+
+        <Route
+          path="/*"
+          element={
+            <ProtectedRoute>
+              <Visualizer />
+            </ProtectedRoute>
+          }
         />
 
       </Routes>
