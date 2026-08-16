@@ -2247,3 +2247,434 @@ pre {
   }
 
 }
+
+/* =====================================================
+   HEADER SEARCH
+===================================================== */
+
+.header-search {
+  flex: 1;
+  max-width: 420px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+
+  margin: 0 25px;
+
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+
+  transition: all 0.2s ease;
+}
+
+.header-search:focus-within {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.search-icon {
+  margin-left: 13px;
+  font-size: 16px;
+}
+
+.header-search input {
+  flex: 1;
+
+  width: 100%;
+  height: 100%;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  padding: 0 10px;
+
+  color: #0f172a;
+  font-size: 14px;
+}
+
+.header-search input::placeholder {
+  color: #94a3b8;
+}
+
+.search-clear {
+  border: none;
+  background: transparent;
+
+  margin-right: 8px;
+
+  font-size: 20px;
+  color: #64748b;
+
+  cursor: pointer;
+}
+
+.search-clear:hover {
+  color: #ef4444;
+}
+
+
+/* =====================================================
+   DARK MODE BUTTON
+===================================================== */
+
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  height: 38px;
+  padding: 0 12px;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 9px;
+
+  background: #f8fafc;
+  color: #334155;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.theme-toggle:hover {
+  background: #eff6ff;
+  border-color: #bfdbfe;
+  color: #2563eb;
+}
+
+
+/* =====================================================
+   DARK MODE
+===================================================== */
+
+body.dark-mode {
+  background: #0f172a;
+  color: #e2e8f0;
+}
+
+body.dark-mode .app {
+  background: #0f172a;
+  color: #e2e8f0;
+}
+
+
+/* HEADER */
+
+body.dark-mode .top-header {
+  background: #111827;
+  border-bottom-color: #1e293b;
+}
+
+body.dark-mode .brand-text strong {
+  color: #f8fafc;
+}
+
+body.dark-mode .brand-text span {
+  color: #94a3b8;
+}
+
+
+/* SEARCH */
+
+body.dark-mode .header-search {
+  background: #1e293b;
+  border-color: #334155;
+}
+
+body.dark-mode .header-search input {
+  color: #f8fafc;
+}
+
+body.dark-mode .header-search input::placeholder {
+  color: #64748b;
+}
+
+
+/* THEME BUTTON */
+
+body.dark-mode .theme-toggle {
+  background: #1e293b;
+  border-color: #334155;
+  color: #e2e8f0;
+}
+
+body.dark-mode .theme-toggle:hover {
+  background: #334155;
+  color: #60a5fa;
+}
+
+
+/* SIDEBAR */
+
+body.dark-mode .learning-sidebar {
+  background: #111827;
+  border-right-color: #1e293b;
+}
+
+body.dark-mode .sidebar-heading h2 {
+  color: #f8fafc;
+}
+
+body.dark-mode .sidebar-group-title {
+  color: #64748b;
+}
+
+body.dark-mode .sidebar-item {
+  color: #cbd5e1;
+}
+
+body.dark-mode .sidebar-item:hover {
+  background: #1e293b;
+}
+
+body.dark-mode .sidebar-item.active {
+  background: #172554;
+  color: #60a5fa;
+}
+
+
+/* MAIN CONTENT */
+
+body.dark-mode .learning-content {
+  background: #0f172a;
+}
+
+body.dark-mode .page-intro h1 {
+  color: #f8fafc;
+}
+
+body.dark-mode .page-intro p {
+  color: #94a3b8;
+}
+
+body.dark-mode .section-heading h2 {
+  color: #f8fafc;
+}
+
+body.dark-mode .section-heading p {
+  color: #94a3b8;
+}
+
+
+/* CARDS */
+
+body.dark-mode .learning-card,
+body.dark-mode .playground-card,
+body.dark-mode .about-card,
+body.dark-mode .about-topic,
+body.dark-mode .technology-card,
+body.dark-mode .feedback-card {
+  background: #111827;
+  border-color: #1e293b;
+  color: #e2e8f0;
+}
+
+body.dark-mode .learning-card h3,
+body.dark-mode .learning-card h4,
+body.dark-mode .playground-card h3 {
+  color: #f8fafc;
+}
+
+body.dark-mode .learning-card p,
+body.dark-mode .playground-card p {
+  color: #94a3b8;
+}
+
+
+/* CODE */
+
+body.dark-mode pre {
+  background: #020617;
+  color: #e2e8f0;
+}
+
+body.dark-mode .code-window {
+  background: #020617;
+  border-color: #1e293b;
+}
+
+
+/* DIAGRAM */
+
+body.dark-mode .inheritance-diagram {
+  background: #0b1120;
+  border-color: #1e293b;
+}
+
+body.dark-mode .diagram-node {
+  background: #1e293b;
+  border-color: #334155;
+  color: #f8fafc;
+}
+
+
+/* TERMINAL */
+
+body.dark-mode .terminal {
+  background: #020617;
+  border-color: #1e293b;
+}
+
+body.dark-mode .terminal-body {
+  color: #94a3b8;
+}
+
+
+/* ACCESS */
+
+body.dark-mode .access-option {
+  background: #1e293b;
+  border-color: #334155;
+  color: #e2e8f0;
+}
+
+body.dark-mode .access-option.active {
+  background: #172554;
+  border-color: #2563eb;
+  color: #60a5fa;
+}
+
+
+/* FOOTER */
+
+body.dark-mode .learning-footer {
+  border-top-color: #1e293b;
+  color: #94a3b8;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 900px) {
+
+  .header-center {
+    display: none;
+  }
+
+  .header-search {
+    max-width: 260px;
+    margin: 0 10px;
+  }
+
+  .theme-toggle span {
+    display: none;
+  }
+
+  .theme-toggle {
+    width: 38px;
+    padding: 0;
+  }
+}
+
+
+@media (max-width: 650px) {
+
+  .top-header {
+    flex-wrap: wrap;
+    height: auto;
+    padding: 10px;
+    gap: 10px;
+  }
+
+  .brand-text span {
+    display: none;
+  }
+
+  .header-search {
+    order: 3;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+  }
+
+  .header-actions {
+    margin-left: auto;
+  }
+
+}
+/* =========================================
+   LANGUAGE SWITCHER
+========================================= */
+
+.language-switcher {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  background: #f8fafc;
+}
+
+.language-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+
+  padding: 8px 14px;
+
+  border: none;
+  border-radius: 9px;
+
+  background: transparent;
+  color: #64748b;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.language-btn:hover {
+  background: #e2e8f0;
+  color: #1e293b;
+}
+
+.language-btn.active {
+  background: #2563eb;
+  color: white;
+  box-shadow: 0 2px 6px rgba(37, 99, 235, 0.25);
+}
+
+.language-icon {
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.java-icon {
+  font-size: 16px;
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+
+  .top-header {
+    flex-wrap: wrap;
+  }
+
+  .language-switcher {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .language-btn {
+    flex: 1;
+  }
+
+}

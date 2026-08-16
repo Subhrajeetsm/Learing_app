@@ -594,13 +594,18 @@ function SignInPage() {
       <div className="auth-background"></div>
 
       <div className="auth-wrapper">
+
         <div className="auth-brand">
-          <div className="auth-logo">C++</div>
+
+          <div className="auth-logo">
+            C++
+          </div>
 
           <div>
             <strong>C++ Learning Lab</strong>
             <span>Interactive programming playground</span>
           </div>
+
         </div>
 
         <SignIn
@@ -609,6 +614,7 @@ function SignInPage() {
           signUpUrl="/sign-up"
           fallbackRedirectUrl="/"
         />
+
       </div>
     </div>
   );
@@ -634,13 +640,18 @@ function SignUpPage() {
       <div className="auth-background"></div>
 
       <div className="auth-wrapper">
+
         <div className="auth-brand">
-          <div className="auth-logo">C++</div>
+
+          <div className="auth-logo">
+            c++
+          </div>
 
           <div>
             <strong>C++ Learning Lab</strong>
             <span>Interactive programming playground</span>
           </div>
+
         </div>
 
         <SignUp
@@ -649,13 +660,14 @@ function SignUpPage() {
           signInUrl="/sign-in"
           fallbackRedirectUrl="/"
         />
+
       </div>
     </div>
   );
 }
 
 /* =====================================================
-   SIDEBAR NAVIGATION ITEM
+   SIDEBAR ITEM
 ===================================================== */
 
 function SidebarItem({
@@ -670,15 +682,29 @@ function SidebarItem({
       className={`sidebar-item ${active ? "active" : ""}`}
       onClick={onClick}
     >
-      <span className="sidebar-item-icon">{icon}</span>
 
-      <span className="sidebar-item-content">
-        <strong>{title}</strong>
-
-        {subtitle && <small>{subtitle}</small>}
+      <span className="sidebar-item-icon">
+        {icon}
       </span>
 
-      <span className="sidebar-item-arrow">›</span>
+      <span className="sidebar-item-content">
+
+        <strong>
+          {title}
+        </strong>
+
+        {subtitle && (
+          <small>
+            {subtitle}
+          </small>
+        )}
+
+      </span>
+
+      <span className="sidebar-item-arrow">
+        ›
+      </span>
+
     </button>
   );
 }
@@ -688,6 +714,7 @@ function SidebarItem({
 ===================================================== */
 
 function Visualizer() {
+
   const types = Object.keys(inheritanceData);
 
   const [selectedType, setSelectedType] =
@@ -711,6 +738,13 @@ function Visualizer() {
   const [selectedNode, setSelectedNode] =
     useState(null);
 
+  /* =====================================================
+     LANGUAGE
+  ===================================================== */
+
+  const [selectedLanguage, setSelectedLanguage] =
+    useState("C++");
+
   const current =
     inheritanceData[selectedType];
 
@@ -721,17 +755,36 @@ function Visualizer() {
     types.indexOf(selectedType);
 
   /* =====================================================
+     LANGUAGE SWITCH
+  ===================================================== */
+
+  const handleLanguageChange = (language) => {
+
+    if (language === "Java") {
+
+      alert("Java support is coming soon 🚀");
+
+      return;
+    }
+
+    setSelectedLanguage(language);
+  };
+
+  /* =====================================================
      SCROLL
   ===================================================== */
 
   const scrollToSection = (id) => {
+
     setTimeout(() => {
+
       document
         .getElementById(id)
         ?.scrollIntoView({
           behavior: "smooth",
           block: "start",
         });
+
     }, 50);
   };
 
@@ -740,10 +793,15 @@ function Visualizer() {
   ===================================================== */
 
   const selectType = (type) => {
+
     setSelectedType(type);
+
     setOutput([]);
+
     setSelectedNode(null);
+
     setAnimation(false);
+
     setRunning(false);
   };
 
@@ -752,12 +810,15 @@ function Visualizer() {
   ===================================================== */
 
   const handleNext = () => {
+
     const nextIndex =
       (currentIndex + 1) % types.length;
 
     selectType(types[nextIndex]);
 
-    scrollToSection("inheritance-section");
+    scrollToSection(
+      "inheritance-section"
+    );
   };
 
   /* =====================================================
@@ -765,13 +826,16 @@ function Visualizer() {
   ===================================================== */
 
   const handlePrevious = () => {
+
     const prevIndex =
       (currentIndex - 1 + types.length) %
       types.length;
 
     selectType(types[prevIndex]);
 
-    scrollToSection("inheritance-section");
+    scrollToSection(
+      "inheritance-section"
+    );
   };
 
   /* =====================================================
@@ -779,14 +843,17 @@ function Visualizer() {
   ===================================================== */
 
   const handleRun = () => {
+
     if (running) return;
 
     setRunning(true);
+
     setOutput([]);
 
     let index = 0;
 
     const timer = setInterval(() => {
+
       setOutput((prev) => [
         ...prev,
         current.output[index],
@@ -794,10 +861,15 @@ function Visualizer() {
 
       index++;
 
-      if (index >= current.output.length) {
+      if (
+        index >= current.output.length
+      ) {
+
         clearInterval(timer);
+
         setRunning(false);
       }
+
     }, 650);
   };
 
@@ -806,10 +878,15 @@ function Visualizer() {
   ===================================================== */
 
   const handleReset = () => {
+
     setOutput([]);
+
     setRunning(false);
+
     setAnimation(false);
+
     setSelectedNode(null);
+
     setShowCode(true);
   };
 
@@ -818,6 +895,7 @@ function Visualizer() {
   ===================================================== */
 
   const handleAnimation = () => {
+
     setAnimation(false);
 
     setTimeout(() => {
@@ -834,23 +912,77 @@ function Visualizer() {
 
       <header className="top-header">
 
-        <Link to="/" className="brand">
+        {/* BRAND */}
+
+        <Link
+          to="/"
+          className="brand"
+        >
 
           <div className="brand-mark">
             C++
           </div>
 
           <div className="brand-text">
-            <strong>C++ Learning Lab</strong>
-            <span>Interactive OOP Playground</span>
+
+            <strong>
+              C++ Learning Lab
+            </strong>
+
+            <span>
+              Interactive OOP Playground
+            </span>
+
           </div>
 
         </Link>
 
-        <div className="header-center">
-          <span className="header-status-dot"></span>
-          Interactive Learning Environment
+        {/* LANGUAGE SWITCHER */}
+
+        <div className="language-switcher">
+
+          <button
+            type="button"
+            className={
+              selectedLanguage === "C++"
+                ? "language-btn active"
+                : "language-btn"
+            }
+            onClick={() =>
+              handleLanguageChange("C++")
+            }
+          >
+
+            <span className="language-icon">
+              C++
+            </span>
+
+
+          </button>
+
+          <button
+            type="button"
+            className={
+              selectedLanguage === "Java"
+                ? "language-btn active"
+                : "language-btn"
+            }
+            onClick={() =>
+              handleLanguageChange("Java")
+            }
+          >
+
+            <span className="language-icon java-icon">
+              ☕
+            </span>
+
+            Java
+
+          </button>
+
         </div>
+
+        {/* HEADER ACTIONS */}
 
         <div className="header-actions">
 
@@ -860,8 +992,13 @@ function Visualizer() {
             rel="noopener noreferrer"
             className="header-feedback"
           >
-            <span>💬</span>
+
+            <span>
+              💬
+            </span>
+
             Feedback
+
           </Link>
 
           <div className="header-user">
@@ -873,7 +1010,7 @@ function Visualizer() {
       </header>
 
       {/* =================================================
-          MAIN
+          WORKSPACE
       ================================================= */}
 
       <div className="workspace">
@@ -887,11 +1024,15 @@ function Visualizer() {
           <div className="sidebar-heading">
 
             <div>
+
               <span className="eyebrow">
                 LEARNING PATH
               </span>
 
-              <h2>C++ OOP</h2>
+              <h2>
+                C++ OOP
+              </h2>
+
             </div>
 
             <span className="sidebar-count">
@@ -940,45 +1081,50 @@ function Visualizer() {
               Inheritance
             </div>
 
-            {types.map((type, index) => (
+            {types.map(
+              (type, index) => (
 
-              <SidebarItem
-                key={type}
-                active={
-                  selectedType === type
-                }
-                icon={
-                  index === 0
-                    ? "↳"
-                    : index === 1
-                    ? "⇣"
-                    : index === 2
-                    ? "⊕"
-                    : index === 3
-                    ? "⑂"
-                    : "◇"
-                }
-                title={type}
-                subtitle={
-                  type === "Single"
-                    ? "One base → one derived"
-                    : type === "Multilevel"
-                    ? "Chain inheritance"
-                    : type === "Multiple"
-                    ? "Multiple base classes"
-                    : type === "Hierarchical"
-                    ? "One base → many"
-                    : "Combined inheritance"
-                }
-                onClick={() => {
-                  selectType(type);
-                  scrollToSection(
-                    "inheritance-section"
-                  );
-                }}
-              />
+                <SidebarItem
+                  key={type}
+                  active={
+                    selectedType === type
+                  }
+                  icon={
+                    index === 0
+                      ? "↳"
+                      : index === 1
+                      ? "⇣"
+                      : index === 2
+                      ? "⊕"
+                      : index === 3
+                      ? "⑂"
+                      : "◇"
+                  }
+                  title={type}
+                  subtitle={
+                    type === "Single"
+                      ? "One base → one derived"
+                      : type === "Multilevel"
+                      ? "Chain inheritance"
+                      : type === "Multiple"
+                      ? "Multiple base classes"
+                      : type === "Hierarchical"
+                      ? "One base → many"
+                      : "Combined inheritance"
+                  }
+                  onClick={() => {
 
-            ))}
+                    selectType(type);
+
+                    scrollToSection(
+                      "inheritance-section"
+                    );
+
+                  }}
+                />
+
+              )
+            )}
 
           </div>
 
@@ -1017,10 +1163,13 @@ function Visualizer() {
                       : "Restricted access"
                   }
                   onClick={() => {
+
                     setAccessType(type);
+
                     scrollToSection(
                       "access-section"
                     );
+
                   }}
                 />
 
@@ -1033,8 +1182,6 @@ function Visualizer() {
 
           <div className="sidebar-bottom">
 
-            {/* LEARNING TIP */}
-
             <div className="sidebar-tip">
 
               <span className="tip-icon">
@@ -1042,17 +1189,19 @@ function Visualizer() {
               </span>
 
               <div>
-                <strong>Learning tip</strong>
+
+                <strong>
+                  Learning tip
+                </strong>
 
                 <p>
                   Click a class in the diagram
                   to inspect it.
                 </p>
+
               </div>
 
             </div>
-
-            {/* FEEDBACK */}
 
             <Link
               to="/feedback"
@@ -1060,8 +1209,13 @@ function Visualizer() {
               rel="noopener noreferrer"
               className="sidebar-feedback"
             >
-              <span>💬</span>
+
+              <span>
+                💬
+              </span>
+
               Send Feedback
+
             </Link>
 
             {/* ABOUT US */}
@@ -1072,8 +1226,13 @@ function Visualizer() {
               rel="noopener noreferrer"
               className="sidebar-about"
             >
-              <span>👨‍💻</span>
+
+              <span>
+                👨‍💻
+              </span>
+
               About Us
+
             </Link>
 
           </div>
@@ -1098,7 +1257,9 @@ function Visualizer() {
 
               <h1>
                 Understand OOP
-                <span> visually.</span>
+                <span>
+                  {" "}visually.
+                </span>
               </h1>
 
               <p>
@@ -1124,7 +1285,7 @@ function Visualizer() {
           </section>
 
           {/* =================================================
-              CLASS AND OBJECT
+              CLASS & OBJECT
           ================================================= */}
 
           <section
@@ -1173,7 +1334,9 @@ function Visualizer() {
 
                 </div>
 
-                <h3>Class</h3>
+                <h3>
+                  Class
+                </h3>
 
                 <p>
                   A class defines the data and functions
@@ -1207,7 +1370,9 @@ public:
 
                 </div>
 
-                <h3>Object</h3>
+                <h3>
+                  Object
+                </h3>
 
                 <p>
                   An object is an instance of a class
@@ -1341,6 +1506,8 @@ public:
               </div>
 
             </div>
+
+            {/* CODE EXAMPLES */}
 
             <div className="example-stack">
 
@@ -1496,11 +1663,16 @@ public:
               </div>
 
               <div className="inheritance-badge">
+
                 <span></span>
+
                 Interactive
+
               </div>
 
             </div>
+
+            {/* CONTROLS */}
 
             <div className="playground-controls">
 
@@ -1508,7 +1680,9 @@ public:
                 className="control-button secondary"
                 onClick={handlePrevious}
               >
-                <span>←</span>
+                <span>
+                  ←
+                </span>
                 Previous
               </button>
 
@@ -1517,14 +1691,18 @@ public:
                 onClick={handleNext}
               >
                 Next
-                <span>→</span>
+                <span>
+                  →
+                </span>
               </button>
 
               <button
                 className="control-button animate-button"
                 onClick={handleAnimation}
               >
-                <span>▶</span>
+                <span>
+                  ▶
+                </span>
                 Animate
               </button>
 
@@ -1532,13 +1710,19 @@ public:
                 className="control-button reset-button"
                 onClick={handleReset}
               >
-                <span>↻</span>
+                <span>
+                  ↻
+                </span>
                 Reset
               </button>
 
             </div>
 
+            {/* PLAYGROUND */}
+
             <div className="playground-grid">
+
+              {/* DIAGRAM */}
 
               <div className="playground-card">
 
@@ -1611,7 +1795,10 @@ public:
                               node.id === to
                           );
 
-                        if (!start || !end) {
+                        if (
+                          !start ||
+                          !end
+                        ) {
                           return null;
                         }
 
@@ -1648,7 +1835,9 @@ public:
                           top: `${node.y}%`,
                         }}
                         onClick={() =>
-                          setSelectedNode(node.id)
+                          setSelectedNode(
+                            node.id
+                          )
                         }
                       >
 
@@ -1704,6 +1893,8 @@ public:
                 )}
 
               </div>
+
+              {/* CODE */}
 
               <div className="playground-card code-playground">
 
@@ -1761,9 +1952,11 @@ public:
                       </div>
 
                       <pre>
+
                         <code>
                           {current.code}
                         </code>
+
                       </pre>
 
                     </div>
@@ -1775,15 +1968,21 @@ public:
                     >
 
                       {running ? (
+
                         <>
                           <span className="run-spinner"></span>
                           Running...
                         </>
+
                       ) : (
+
                         <>
-                          <span>▶</span>
+                          <span>
+                            ▶
+                          </span>
                           Run Example
                         </>
+
                       )}
 
                     </button>
@@ -1844,6 +2043,8 @@ public:
               </div>
 
             </div>
+
+            {/* HOW IT WORKS */}
 
             <div className="how-it-works">
 
@@ -1935,7 +2136,7 @@ public:
           </section>
 
           {/* =================================================
-              ACCESS SPECIFIER
+              ACCESS SPECIFIERS
           ================================================= */}
 
           <section
@@ -2006,9 +2207,9 @@ public:
                           ? "access-option active"
                           : "access-option"
                       }
-                      onClick={() => {
-                        setAccessType(type);
-                      }}
+                      onClick={() =>
+                        setAccessType(type)
+                      }
                     >
 
                       <span>
@@ -2061,7 +2262,10 @@ public:
                         className={
                           `visibility-value ${to
                             .toLowerCase()
-                            .replaceAll(" ", "-")}`
+                            .replaceAll(
+                              " ",
+                              "-"
+                            )}`
                         }
                       >
                         {to}
@@ -2076,7 +2280,9 @@ public:
 
               <div className="access-note">
 
-                <span>💡</span>
+                <span>
+                  💡
+                </span>
 
                 <p>
                   {access.description}
@@ -2230,7 +2436,9 @@ public:
 ===================================================== */
 
 function App() {
+
   return (
+
     <BrowserRouter>
 
       <Routes>
@@ -2260,7 +2468,7 @@ function App() {
           }
         />
 
-        {/* ABOUT US */}
+        {/* ABOUT */}
 
         <Route
           path="/about"
