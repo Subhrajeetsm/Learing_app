@@ -22,3 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+public/support-qr.png
+src/Support.css
+src/Support.jsx
+src/consoleMessage.js

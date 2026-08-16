@@ -1,0 +1,430 @@
+/* =====================================================
+   SUPPORT PAGE
+===================================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+.support-page {
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 40px 20px;
+
+  font-family:
+    Inter,
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(37, 99, 235, 0.12),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at bottom left,
+      rgba(124, 58, 237, 0.10),
+      transparent 30%
+    ),
+    #f1f5f9;
+
+  color: #1e293b;
+}
+
+
+/* =====================================================
+   SUPPORT CARD
+===================================================== */
+
+.support-card {
+  width: 100%;
+  max-width: 650px;
+
+  padding: 45px 40px;
+
+  text-align: center;
+
+  background: rgba(255, 255, 255, 0.97);
+
+  border: 1px solid #e2e8f0;
+
+  border-radius: 24px;
+
+  box-shadow:
+    0 20px 50px rgba(15, 23, 42, 0.10);
+
+  animation: supportCardIn 0.5s ease;
+}
+
+@keyframes supportCardIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* =====================================================
+   COFFEE ICON
+===================================================== */
+
+.coffee-icon {
+  width: 90px;
+  height: 90px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 0 auto 20px;
+
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      135deg,
+      #fff7ed,
+      #ffedd5
+    );
+
+  border: 1px solid #fed7aa;
+
+  font-size: 48px;
+
+  box-shadow:
+    0 10px 25px rgba(234, 88, 12, 0.12);
+
+  animation: coffeeFloat 2.5s ease-in-out infinite;
+}
+
+@keyframes coffeeFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+
+/* =====================================================
+   BADGE
+===================================================== */
+
+.support-badge {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 7px 14px;
+
+  margin-bottom: 15px;
+
+  border-radius: 20px;
+
+  background: #eff6ff;
+
+  border: 1px solid #dbeafe;
+
+  color: #2563eb;
+
+  font-size: 12px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.4px;
+}
+
+
+/* =====================================================
+   TITLE
+===================================================== */
+
+.support-card h1 {
+  margin: 5px 0 18px;
+
+  font-size: 34px;
+
+  line-height: 1.2;
+
+  font-weight: 850;
+
+  letter-spacing: -0.6px;
+
+  color: #0f172a;
+}
+
+
+/* =====================================================
+   DESCRIPTION
+===================================================== */
+
+.support-card > p {
+  max-width: 530px;
+
+  margin: 0 auto 15px;
+
+  color: #64748b;
+
+  font-size: 15px;
+
+  line-height: 1.8;
+}
+
+
+/* =====================================================
+   BUTTON COMMON
+===================================================== */
+
+.coffee-btn,
+.support-btn {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 9px;
+
+  width: 100%;
+
+  max-width: 320px;
+
+  margin: 14px auto 0;
+
+  padding: 14px 25px;
+
+  border-radius: 12px;
+
+  font-size: 15px;
+
+  font-weight: 800;
+
+  color: white;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    filter 0.2s ease;
+}
+
+
+/* =====================================================
+   BUY COFFEE
+===================================================== */
+
+.coffee-btn {
+  background:
+    linear-gradient(
+      135deg,
+      #f97316,
+      #ea580c
+    );
+
+  box-shadow:
+    0 8px 20px rgba(234, 88, 12, 0.25);
+}
+
+.coffee-btn:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 12px 28px rgba(234, 88, 12, 0.32);
+
+  filter: brightness(1.05);
+}
+
+
+/* =====================================================
+   SUPPORT DEVELOPER
+===================================================== */
+
+.support-btn {
+  background:
+    linear-gradient(
+      135deg,
+      #2563eb,
+      #4f46e5
+    );
+
+  box-shadow:
+    0 8px 20px rgba(37, 99, 235, 0.25);
+}
+
+.support-btn:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 12px 28px rgba(37, 99, 235, 0.30);
+
+  filter: brightness(1.05);
+}
+
+
+/* =====================================================
+   SUPPORT MESSAGE
+===================================================== */
+
+.support-message {
+  margin-top: 28px;
+
+  padding: 18px;
+
+  border-radius: 13px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #eff6ff,
+      #eef2ff
+    );
+
+  border: 1px solid #dbeafe;
+
+  color: #1e40af;
+
+  font-size: 14px;
+
+  line-height: 1.7;
+}
+
+
+/* =====================================================
+   DEVELOPER NOTE
+===================================================== */
+
+.developer-note {
+  margin-top: 30px;
+
+  padding: 20px;
+
+  border-radius: 13px;
+
+  background: #f8fafc;
+
+  border: 1px solid #e2e8f0;
+}
+
+.developer-note h3 {
+  margin: 0 0 8px;
+
+  font-size: 17px;
+
+  color: #0f172a;
+}
+
+.developer-note p {
+  margin: 0;
+
+  font-size: 13px;
+
+  line-height: 1.7;
+
+  color: #64748b;
+}
+
+
+/* =====================================================
+   BACK HOME
+===================================================== */
+
+.back-home {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  margin-top: 25px;
+
+  padding: 10px 16px;
+
+  border-radius: 9px;
+
+  background: #f1f5f9;
+
+  border: 1px solid #e2e8f0;
+
+  color: #2563eb;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.back-home:hover {
+  background: #dbeafe;
+
+  transform: translateY(-2px);
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+  .support-page {
+    padding: 20px 14px;
+  }
+
+  .support-card {
+    padding: 35px 20px;
+
+    border-radius: 18px;
+  }
+
+  .coffee-icon {
+    width: 75px;
+    height: 75px;
+
+    font-size: 38px;
+  }
+
+  .support-card h1 {
+    font-size: 27px;
+  }
+
+  .support-card > p {
+    font-size: 14px;
+  }
+
+  .coffee-btn,
+  .support-btn {
+    max-width: 100%;
+  }
+}
+
+
+/* =====================================================
+   REDUCED MOTION
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+
+    transition: none !important;
+  }
+}
