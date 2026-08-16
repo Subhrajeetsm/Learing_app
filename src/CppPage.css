@@ -1182,3 +1182,940 @@
     flex-wrap: wrap;
   }
 }
+
+/* =====================================================
+   EXTRA COMPONENTS
+   Add these styles BELOW your existing cpppage.css
+===================================================== */
+
+
+/* =====================================================
+   LOADING STATE
+===================================================== */
+
+.cpp-loading {
+  min-height: 220px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 14px;
+
+  color: #64748b;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.cpp-loading-spinner {
+  width: 34px;
+  height: 34px;
+
+  border: 3px solid #dbeafe;
+  border-top-color: #2563eb;
+
+  border-radius: 50%;
+
+  animation: cppSpin 0.8s linear infinite;
+}
+
+@keyframes cppSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* =====================================================
+   ERROR MESSAGE
+===================================================== */
+
+.cpp-error {
+  margin: 15px 0;
+
+  padding: 14px 16px;
+
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+
+  border: 1px solid #fecaca;
+  border-radius: 10px;
+
+  background: #fef2f2;
+  color: #991b1b;
+
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.cpp-error-icon {
+  flex-shrink: 0;
+
+  width: 22px;
+  height: 22px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #fee2e2;
+
+  font-size: 12px;
+  font-weight: 900;
+}
+
+
+/* =====================================================
+   SUCCESS MESSAGE
+===================================================== */
+
+.cpp-success {
+  margin: 15px 0;
+
+  padding: 14px 16px;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  border: 1px solid #bbf7d0;
+  border-radius: 10px;
+
+  background: #f0fdf4;
+  color: #166534;
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.cpp-success-icon {
+  width: 22px;
+  height: 22px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #dcfce7;
+
+  font-size: 12px;
+  font-weight: 900;
+}
+
+
+/* =====================================================
+   COPY BUTTON
+===================================================== */
+
+.cpp-copy-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  padding: 8px 11px;
+
+  border: 1px solid #334155;
+  border-radius: 8px;
+
+  background: #1e293b;
+  color: #cbd5e1;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.cpp-copy-btn:hover {
+  background: #334155;
+  color: white;
+
+  border-color: #475569;
+}
+
+.cpp-copy-btn:active {
+  transform: scale(0.96);
+}
+
+.cpp-copy-btn.copied {
+  background: #166534;
+  border-color: #166534;
+  color: white;
+}
+
+
+/* =====================================================
+   CODE HEADER ACTIONS
+===================================================== */
+
+.cpp-code-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cpp-code-language {
+  padding: 5px 8px;
+
+  border-radius: 6px;
+
+  background: #334155;
+  color: #93c5fd;
+
+  font-family: monospace;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+
+/* =====================================================
+   CODE LINE NUMBERS
+===================================================== */
+
+.cpp-code-wrapper {
+  display: flex;
+
+  overflow: auto;
+
+  background: #0f172a;
+}
+
+.cpp-line-numbers {
+  flex-shrink: 0;
+
+  padding: 22px 12px;
+
+  border-right: 1px solid #1e293b;
+
+  background: #0b1220;
+
+  color: #475569;
+
+  text-align: right;
+
+  font-family: "Fira Code", Consolas, monospace;
+  font-size: 13px;
+  line-height: 1.65;
+
+  user-select: none;
+}
+
+.cpp-code-content {
+  min-width: 0;
+  flex: 1;
+
+  margin: 0;
+
+  padding: 22px;
+
+  overflow-x: auto;
+
+  color: #e2e8f0;
+
+  font-family: "Fira Code", Consolas, monospace;
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+
+/* =====================================================
+   RUNNING BUTTON STATE
+===================================================== */
+
+.cpp-run.running {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+}
+
+.cpp-run.running::before {
+  content: "";
+
+  width: 13px;
+  height: 13px;
+
+  border: 2px solid rgba(255, 255, 255, 0.45);
+  border-top-color: white;
+
+  border-radius: 50%;
+
+  animation: cppSpin 0.7s linear infinite;
+}
+
+
+/* =====================================================
+   DISABLED ACTION BUTTON
+===================================================== */
+
+.cpp-action-buttons button:disabled,
+.cpp-navigation-buttons button:disabled {
+  opacity: 0.5;
+
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+
+/* =====================================================
+   DIAGRAM TOOLBAR
+===================================================== */
+
+.cpp-diagram-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 12px;
+
+  padding: 10px 14px;
+
+  border-bottom: 1px solid #e2e8f0;
+
+  background: #f8fafc;
+}
+
+.cpp-diagram-toolbar-left,
+.cpp-diagram-toolbar-right {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.cpp-diagram-toolbar button {
+  width: 32px;
+  height: 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 7px;
+
+  background: white;
+  color: #475569;
+
+  font-size: 13px;
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.cpp-diagram-toolbar button:hover {
+  border-color: #93c5fd;
+
+  background: #eff6ff;
+  color: #2563eb;
+}
+
+.cpp-diagram-toolbar button:active {
+  transform: scale(0.95);
+}
+
+
+/* =====================================================
+   DIAGRAM ZOOM LABEL
+===================================================== */
+
+.cpp-zoom-label {
+  min-width: 50px;
+
+  text-align: center;
+
+  color: #64748b;
+
+  font-size: 11px;
+  font-weight: 800;
+}
+
+
+/* =====================================================
+   DIAGRAM EMPTY STATE
+===================================================== */
+
+.cpp-diagram-empty {
+  position: absolute;
+
+  inset: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 25px;
+
+  text-align: center;
+
+  color: #64748b;
+}
+
+.cpp-diagram-empty-icon {
+  width: 50px;
+  height: 50px;
+
+  margin-bottom: 12px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 14px;
+
+  background: #eff6ff;
+
+  color: #2563eb;
+
+  font-size: 22px;
+}
+
+.cpp-diagram-empty h3 {
+  margin: 0 0 6px;
+
+  color: #334155;
+
+  font-size: 15px;
+}
+
+.cpp-diagram-empty p {
+  max-width: 360px;
+
+  margin: 0;
+
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+
+/* =====================================================
+   SELECTED NODE INFORMATION
+===================================================== */
+
+.cpp-node-info strong {
+  color: #2563eb;
+}
+
+.cpp-node-info code {
+  padding: 3px 6px;
+
+  border-radius: 5px;
+
+  background: white;
+
+  color: #334155;
+
+  font-family: monospace;
+  font-size: 11px;
+}
+
+
+/* =====================================================
+   CLASS NODE BADGE
+===================================================== */
+
+.cpp-class-node .cpp-node-badge {
+  margin-top: 4px;
+
+  padding: 3px 7px;
+
+  border-radius: 5px;
+
+  background: #f1f5f9;
+
+  color: #64748b;
+
+  font-size: 9px;
+  font-weight: 800;
+}
+
+.cpp-class-node.selected .cpp-node-badge {
+  background: #dbeafe;
+  color: #2563eb;
+}
+
+
+/* =====================================================
+   INHERITANCE RELATION LABEL
+===================================================== */
+
+.cpp-arrow-label {
+  position: absolute;
+
+  padding: 4px 7px;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+
+  background: white;
+
+  color: #64748b;
+
+  font-size: 9px;
+  font-weight: 800;
+
+  box-shadow: 0 3px 10px rgba(15, 23, 42, 0.06);
+
+  pointer-events: none;
+}
+
+
+/* =====================================================
+   OUTPUT TERMINAL
+===================================================== */
+
+.cpp-terminal-output {
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+.cpp-terminal-line {
+  display: flex;
+  align-items: flex-start;
+
+  gap: 8px;
+}
+
+.cpp-terminal-prompt {
+  flex-shrink: 0;
+
+  color: #22c55e;
+
+  font-weight: 900;
+}
+
+.cpp-terminal-error {
+  color: #f87171;
+}
+
+.cpp-terminal-warning {
+  color: #fbbf24;
+}
+
+.cpp-terminal-info {
+  color: #60a5fa;
+}
+
+
+/* =====================================================
+   TERMINAL CURSOR
+===================================================== */
+
+.cpp-terminal-cursor {
+  display: inline-block;
+
+  width: 7px;
+  height: 15px;
+
+  margin-left: 3px;
+
+  vertical-align: middle;
+
+  background: #4ade80;
+
+  animation: cppCursorBlink 1s steps(2, start) infinite;
+}
+
+@keyframes cppCursorBlink {
+  50% {
+    opacity: 0;
+  }
+}
+
+
+/* =====================================================
+   OUTPUT CLEAR BUTTON
+===================================================== */
+
+.cpp-clear-output {
+  padding: 5px 8px;
+
+  border: none;
+  border-radius: 6px;
+
+  background: transparent;
+
+  color: #94a3b8;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.cpp-clear-output:hover {
+  background: #1e293b;
+
+  color: white;
+}
+
+
+/* =====================================================
+   INFO BADGE
+===================================================== */
+
+.cpp-info-badge {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 6px;
+
+  padding: 5px 9px;
+
+  border-radius: 20px;
+
+  background: #eff6ff;
+
+  color: #2563eb;
+
+  font-size: 10px;
+  font-weight: 800;
+}
+
+
+/* =====================================================
+   DIFFICULTY BADGES
+===================================================== */
+
+.cpp-difficulty {
+  display: inline-flex;
+
+  align-items: center;
+
+  padding: 5px 9px;
+
+  border-radius: 20px;
+
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.cpp-difficulty.beginner {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.cpp-difficulty.intermediate {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.cpp-difficulty.advanced {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+
+/* =====================================================
+   PROGRESS BAR
+===================================================== */
+
+.cpp-progress {
+  width: 100%;
+  height: 6px;
+
+  overflow: hidden;
+
+  border-radius: 20px;
+
+  background: #e2e8f0;
+}
+
+.cpp-progress-bar {
+  height: 100%;
+
+  border-radius: inherit;
+
+  background: #2563eb;
+
+  transition: width 0.3s ease;
+}
+
+
+/* =====================================================
+   SECTION DIVIDER
+===================================================== */
+
+.cpp-divider {
+  width: 100%;
+  height: 1px;
+
+  margin: 30px 0;
+
+  background: #e2e8f0;
+}
+
+
+/* =====================================================
+   KEYWORD HIGHLIGHT
+===================================================== */
+
+.cpp-keyword {
+  color: #60a5fa;
+}
+
+.cpp-string {
+  color: #86efac;
+}
+
+.cpp-number {
+  color: #fbbf24;
+}
+
+.cpp-comment {
+  color: #64748b;
+}
+
+.cpp-function {
+  color: #c4b5fd;
+}
+
+
+/* =====================================================
+   TOOLTIP
+===================================================== */
+
+.cpp-tooltip {
+  position: relative;
+}
+
+.cpp-tooltip::after {
+  content: attr(data-tooltip);
+
+  position: absolute;
+
+  left: 50%;
+  bottom: calc(100% + 8px);
+
+  transform: translateX(-50%);
+
+  width: max-content;
+  max-width: 220px;
+
+  padding: 6px 9px;
+
+  border-radius: 6px;
+
+  background: #0f172a;
+  color: white;
+
+  font-size: 10px;
+  font-weight: 600;
+
+  white-space: nowrap;
+
+  opacity: 0;
+  visibility: hidden;
+
+  pointer-events: none;
+
+  transition:
+    opacity 0.2s ease,
+    visibility 0.2s ease;
+}
+
+.cpp-tooltip:hover::after {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+/* =====================================================
+   FOCUS ACCESSIBILITY
+===================================================== */
+
+.cpp-page button:focus-visible,
+.cpp-page a:focus-visible {
+  outline: 3px solid rgba(37, 99, 235, 0.25);
+
+  outline-offset: 2px;
+}
+
+
+/* =====================================================
+   SMOOTH SCROLL
+===================================================== */
+
+.cpp-page {
+  scroll-behavior: smooth;
+}
+
+
+/* =====================================================
+   SELECTION
+===================================================== */
+
+.cpp-page ::selection {
+  background: #bfdbfe;
+  color: #0f172a;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 900px) {
+
+  .cpp-code-header {
+    flex-wrap: wrap;
+
+    min-height: 50px;
+
+    height: auto;
+
+    padding: 10px 15px;
+
+    gap: 8px;
+  }
+
+  .cpp-code-header-actions {
+    margin-left: auto;
+  }
+
+  .cpp-diagram-toolbar {
+    flex-wrap: wrap;
+  }
+
+  .cpp-terminal {
+    font-size: 13px;
+  }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 650px) {
+
+  .cpp-code-header {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+  .cpp-code-header-actions {
+    width: 100%;
+
+    justify-content: space-between;
+  }
+
+  .cpp-copy-btn {
+    padding: 7px 9px;
+
+    font-size: 10px;
+  }
+
+  .cpp-code-content,
+  .cpp-line-numbers {
+    font-size: 11px;
+
+    line-height: 1.6;
+  }
+
+  .cpp-line-numbers {
+    padding: 18px 8px;
+  }
+
+  .cpp-code-content {
+    padding: 18px;
+  }
+
+  .cpp-diagram-toolbar {
+    padding: 8px 10px;
+  }
+
+  .cpp-diagram-toolbar-right {
+    width: 100%;
+
+    justify-content: flex-end;
+  }
+
+  .cpp-terminal {
+    padding: 15px;
+
+    font-size: 12px;
+  }
+
+  .cpp-terminal-line {
+    overflow-wrap: anywhere;
+  }
+
+  .cpp-tooltip::after {
+    display: none;
+  }
+
+  .cpp-info-badge,
+  .cpp-difficulty {
+    font-size: 9px;
+  }
+
+}
+
+
+/* =====================================================
+   VERY SMALL DEVICES
+===================================================== */
+
+@media (max-width: 400px) {
+
+  .cpp-nav {
+    gap: 7px;
+  }
+
+  .cpp-nav a {
+    font-size: 10px;
+  }
+
+  .cpp-logo {
+    width: 36px;
+    height: 36px;
+
+    border-radius: 9px;
+
+    font-size: 13px;
+  }
+
+  .cpp-brand strong {
+    font-size: 12px;
+  }
+
+  .cpp-action-buttons button,
+  .cpp-navigation-buttons button {
+    flex: 1;
+  }
+
+  .cpp-code-actions {
+    flex-wrap: wrap;
+  }
+
+  .cpp-run,
+  .cpp-show-code {
+    flex: 1;
+  }
+
+}
