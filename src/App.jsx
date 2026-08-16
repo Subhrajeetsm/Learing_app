@@ -1029,7 +1029,11 @@ function Visualizer() {
 
           </div>
 
+          {/* SIDEBAR BOTTOM */}
+
           <div className="sidebar-bottom">
+
+            {/* LEARNING TIP */}
 
             <div className="sidebar-tip">
 
@@ -1048,6 +1052,8 @@ function Visualizer() {
 
             </div>
 
+            {/* FEEDBACK */}
+
             <Link
               to="/feedback"
               target="_blank"
@@ -1057,15 +1063,18 @@ function Visualizer() {
               <span>💬</span>
               Send Feedback
             </Link>
-              {/* ABOUT US */}
-  <a
-    href="/about"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="sidebar-about"
-  >
-    👨‍💻 About Us
-  </a>
+
+            {/* ABOUT US */}
+
+            <Link
+              to="/about"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="sidebar-about"
+            >
+              <span>👨‍💻</span>
+              About Us
+            </Link>
 
           </div>
 
@@ -1077,9 +1086,7 @@ function Visualizer() {
 
         <main className="learning-content">
 
-          {/* =================================================
-              PAGE INTRO
-          ================================================= */}
+          {/* PAGE INTRO */}
 
           <section className="page-intro">
 
@@ -1103,6 +1110,7 @@ function Visualizer() {
             </div>
 
             <div className="intro-decoration">
+
               <div className="code-symbol">
                 {"{ }"}
               </div>
@@ -1110,6 +1118,7 @@ function Visualizer() {
               <div className="floating-dot dot-one"></div>
               <div className="floating-dot dot-two"></div>
               <div className="floating-dot dot-three"></div>
+
             </div>
 
           </section>
@@ -1130,6 +1139,7 @@ function Visualizer() {
               </div>
 
               <div>
+
                 <span className="section-kicker">
                   FUNDAMENTALS
                 </span>
@@ -1142,6 +1152,7 @@ function Visualizer() {
                   A class is a blueprint for objects,
                   while an object is an instance of a class.
                 </p>
+
               </div>
 
             </div>
@@ -1238,6 +1249,7 @@ public:
               </div>
 
               <div>
+
                 <span className="section-kicker">
                   FUNDAMENTALS
                 </span>
@@ -1250,16 +1262,17 @@ public:
                   Special member functions that are
                   automatically called when objects are created.
                 </p>
+
               </div>
 
             </div>
 
-            {/* RULES */}
-
             <div className="learning-card constructor-main">
 
               <div className="subsection-heading">
+
                 <div>
+
                   <span className="mini-label">
                     CORE CONCEPT
                   </span>
@@ -1267,7 +1280,9 @@ public:
                   <h3>
                     Constructor Rules
                   </h3>
+
                 </div>
+
               </div>
 
               <div className="rules-grid">
@@ -1285,6 +1300,7 @@ public:
                       </div>
 
                       <div>
+
                         <h4>
                           {rule.title}
                         </h4>
@@ -1292,6 +1308,7 @@ public:
                         <p>
                           {rule.text}
                         </p>
+
                       </div>
 
                     </div>
@@ -1325,8 +1342,6 @@ public:
 
             </div>
 
-            {/* CODE EXAMPLES */}
-
             <div className="example-stack">
 
               <div className="learning-card code-example-card">
@@ -1334,6 +1349,7 @@ public:
                 <div className="code-example-header">
 
                   <div>
+
                     <span>
                       EXAMPLE 01
                     </span>
@@ -1341,6 +1357,7 @@ public:
                     <h3>
                       Basic Constructor
                     </h3>
+
                   </div>
 
                   <div className="code-language">
@@ -1362,6 +1379,7 @@ public:
                 <div className="code-example-header">
 
                   <div>
+
                     <span>
                       EXAMPLE 02
                     </span>
@@ -1369,6 +1387,7 @@ public:
                     <h3>
                       Parameterized Constructor
                     </h3>
+
                   </div>
 
                   <div className="code-language">
@@ -1390,6 +1409,7 @@ public:
                 <div className="code-example-header">
 
                   <div>
+
                     <span>
                       EXAMPLE 03
                     </span>
@@ -1397,6 +1417,7 @@ public:
                     <h3>
                       Constructor Overloading
                     </h3>
+
                   </div>
 
                   <div className="code-language">
@@ -1418,6 +1439,7 @@ public:
                 <div className="code-example-header">
 
                   <div>
+
                     <span>
                       EXAMPLE 04
                     </span>
@@ -1425,6 +1447,7 @@ public:
                     <h3>
                       Constructor Outside Class
                     </h3>
+
                   </div>
 
                   <div className="code-language">
@@ -1479,8 +1502,6 @@ public:
 
             </div>
 
-            {/* CONTROLS */}
-
             <div className="playground-controls">
 
               <button
@@ -1517,17 +1538,14 @@ public:
 
             </div>
 
-            {/* DIAGRAM + CODE */}
-
             <div className="playground-grid">
-
-              {/* DIAGRAM */}
 
               <div className="playground-card">
 
                 <div className="playground-card-header">
 
                   <div>
+
                     <span className="card-kicker">
                       VISUALIZATION
                     </span>
@@ -1535,6 +1553,7 @@ public:
                     <h3>
                       Inheritance Diagram
                     </h3>
+
                   </div>
 
                   <span className="class-count">
@@ -1567,10 +1586,12 @@ public:
                         refY="3.5"
                         orient="auto"
                       >
+
                         <path
                           d="M0,0 L7,3.5 L0,7 Z"
                           fill="currentColor"
                         />
+
                       </marker>
 
                     </defs>
@@ -1606,6 +1627,7 @@ public:
                             markerEnd="url(#arrow-head)"
                           />
                         );
+
                       }
                     )}
 
@@ -1658,6 +1680,7 @@ public:
                     </div>
 
                     <div>
+
                       <span>
                         SELECTED CLASS
                       </span>
@@ -1665,6 +1688,7 @@ public:
                       <strong>
                         Class {selectedNode}
                       </strong>
+
                     </div>
 
                     <button
@@ -1681,13 +1705,12 @@ public:
 
               </div>
 
-              {/* CODE */}
-
               <div className="playground-card code-playground">
 
                 <div className="playground-card-header">
 
                   <div>
+
                     <span className="card-kicker">
                       CODE EDITOR
                     </span>
@@ -1695,6 +1718,7 @@ public:
                     <h3>
                       C++ Example
                     </h3>
+
                   </div>
 
                   <button
@@ -1719,9 +1743,11 @@ public:
                       <div className="code-window-bar">
 
                         <div className="window-dots">
+
                           <i></i>
                           <i></i>
                           <i></i>
+
                         </div>
 
                         <span>
@@ -1747,6 +1773,7 @@ public:
                       onClick={handleRun}
                       disabled={running}
                     >
+
                       {running ? (
                         <>
                           <span className="run-spinner"></span>
@@ -1758,6 +1785,7 @@ public:
                           Run Example
                         </>
                       )}
+
                     </button>
 
                   </>
@@ -1795,11 +1823,13 @@ public:
                             className="terminal-line"
                             key={index}
                           >
+
                             <span>
                               $
                             </span>
 
                             {line}
+
                           </div>
 
                         )
@@ -1815,13 +1845,12 @@ public:
 
             </div>
 
-            {/* HOW IT WORKS */}
-
             <div className="how-it-works">
 
               <div className="how-heading">
 
                 <div>
+
                   <span className="card-kicker">
                     CONCEPT
                   </span>
@@ -1829,6 +1858,7 @@ public:
                   <h3>
                     How Inheritance Works
                   </h3>
+
                 </div>
 
               </div>
@@ -1842,6 +1872,7 @@ public:
                   </span>
 
                   <div>
+
                     <h4>
                       Base Class
                     </h4>
@@ -1850,6 +1881,7 @@ public:
                       The parent class contains common
                       properties and functions.
                     </p>
+
                   </div>
 
                 </div>
@@ -1861,6 +1893,7 @@ public:
                   </span>
 
                   <div>
+
                     <h4>
                       Inheritance
                     </h4>
@@ -1869,6 +1902,7 @@ public:
                       The derived class receives accessible
                       members from the base class.
                     </p>
+
                   </div>
 
                 </div>
@@ -1880,6 +1914,7 @@ public:
                   </span>
 
                   <div>
+
                     <h4>
                       Derived Class
                     </h4>
@@ -1888,6 +1923,7 @@ public:
                       The child class can add its own
                       data and member functions.
                     </p>
+
                   </div>
 
                 </div>
@@ -1998,6 +2034,7 @@ public:
               <div className="visibility-table">
 
                 <div className="visibility-header">
+
                   <span>
                     Base Member
                   </span>
@@ -2005,6 +2042,7 @@ public:
                   <span>
                     Derived Class
                   </span>
+
                 </div>
 
                 {access.visibility.map(
@@ -2019,11 +2057,13 @@ public:
                         {from}
                       </span>
 
-                      <span className={
-                        `visibility-value ${to
-                          .toLowerCase()
-                          .replaceAll(" ", "-")}`
-                      }>
+                      <span
+                        className={
+                          `visibility-value ${to
+                            .toLowerCase()
+                            .replaceAll(" ", "-")}`
+                        }
+                      >
                         {to}
                       </span>
 
@@ -2084,6 +2124,7 @@ public:
               <div className="syntax-code">
 
                 <div className="syntax-code-header">
+
                   <span>
                     C++
                   </span>
@@ -2091,6 +2132,7 @@ public:
                   <span>
                     Basic Syntax
                   </span>
+
                 </div>
 
                 <pre>
@@ -2106,27 +2148,39 @@ public:
               <div className="syntax-examples">
 
                 <div>
-                  <span>PUBLIC</span>
+
+                  <span>
+                    PUBLIC
+                  </span>
 
                   <code>
                     class Dog : public Animal {};
                   </code>
+
                 </div>
 
                 <div>
-                  <span>PROTECTED</span>
+
+                  <span>
+                    PROTECTED
+                  </span>
 
                   <code>
                     class Dog : protected Animal {};
                   </code>
+
                 </div>
 
                 <div>
-                  <span>PRIVATE</span>
+
+                  <span>
+                    PRIVATE
+                  </span>
 
                   <code>
                     class Dog : private Animal {};
                   </code>
+
                 </div>
 
               </div>
@@ -2142,6 +2196,7 @@ public:
           <footer className="learning-footer">
 
             <div>
+
               <strong>
                 C++ Learning Lab
               </strong>
@@ -2149,6 +2204,7 @@ public:
               <span>
                 Interactive OOP Visualizer
               </span>
+
             </div>
 
             <Link
@@ -2179,15 +2235,21 @@ function App() {
 
       <Routes>
 
+        {/* SIGN IN */}
+
         <Route
           path="/sign-in/*"
           element={<SignInPage />}
         />
 
+        {/* SIGN UP */}
+
         <Route
           path="/sign-up/*"
           element={<SignUpPage />}
         />
+
+        {/* FEEDBACK */}
 
         <Route
           path="/feedback"
@@ -2197,7 +2259,15 @@ function App() {
             </ProtectedRoute>
           }
         />
-        <Route path="/about" element={<About />} />
+
+        {/* ABOUT US */}
+
+        <Route
+          path="/about"
+          element={<About />}
+        />
+
+        {/* MAIN VISUALIZER */}
 
         <Route
           path="/*"
