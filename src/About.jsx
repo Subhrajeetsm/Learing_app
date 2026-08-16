@@ -7,21 +7,48 @@ function About() {
     <div className="about-page">
 
       {/* =====================================================
-          HEADER
+          TOP NAVIGATION
       ===================================================== */}
-      <header className="about-header">
+      <header className="about-topbar">
 
-        <div className="about-logo">
-          C++
-        </div>
+        {/* LOGO / BRAND */}
+        <Link to="/" className="about-brand">
+          <div className="about-logo">
+            C++
+          </div>
 
-        <div>
-          <h1>Programming Learning Lab</h1>
+          <div className="about-brand-text">
+            <strong>Programming Learning Lab</strong>
+            <span>Interactive Learning Platform</span>
+          </div>
+        </Link>
 
-          <p>
-            Learn programming concepts visually and interactively
-          </p>
-        </div>
+
+        {/* NAVIGATION LINKS */}
+        <nav className="about-navigation">
+
+          <Link
+            to="/"
+            className="about-nav-link"
+          >
+            Languages
+          </Link>
+
+          <Link
+            to="/about"
+            className="about-nav-link active"
+          >
+            About
+          </Link>
+
+          <Link
+            to="/feedback"
+            className="about-nav-link"
+          >
+            Feedback
+          </Link>
+
+        </nav>
 
       </header>
 
@@ -52,17 +79,7 @@ function About() {
             easy-to-understand content.
           </p>
 
-
-          <Link
-            to="/"
-            className="sidebar-about"
-          >
-            <span>←</span>
-            <span>Back to Learning Lab</span>
-          </Link>
-
         </section>
-
 
 
         {/* =====================================================
@@ -98,7 +115,6 @@ function About() {
         </section>
 
 
-
         {/* =====================================================
             AVAILABLE LANGUAGES
         ===================================================== */}
@@ -125,13 +141,10 @@ function About() {
           </div>
 
 
-
           <div className="about-grid">
 
 
-            {/* =================================================
-                C++
-            ================================================= */}
+            {/* C++ */}
             <div className="about-topic">
 
               <div className="topic-icon">
@@ -162,10 +175,7 @@ function About() {
             </div>
 
 
-
-            {/* =================================================
-                JAVA
-            ================================================= */}
+            {/* JAVA */}
             <div className="about-topic coming-soon-card">
 
               <div className="topic-icon java-topic">
@@ -196,10 +206,7 @@ function About() {
             </div>
 
 
-
-            {/* =================================================
-                PYTHON
-            ================================================= */}
+            {/* PYTHON */}
             <div className="about-topic coming-soon-card">
 
               <div className="topic-icon python-topic">
@@ -230,10 +237,7 @@ function About() {
             </div>
 
 
-
-            {/* =================================================
-                PHP
-            ================================================= */}
+            {/* PHP */}
             <div className="about-topic coming-soon-card">
 
               <div className="topic-icon php-topic">
@@ -263,10 +267,7 @@ function About() {
             </div>
 
 
-
-            {/* =================================================
-                SQL
-            ================================================= */}
+            {/* SQL */}
             <div className="about-topic coming-soon-card">
 
               <div className="topic-icon sql-topic">
@@ -300,7 +301,6 @@ function About() {
         </section>
 
 
-
         {/* =====================================================
             WHY THIS PLATFORM
         ===================================================== */}
@@ -316,15 +316,11 @@ function About() {
               Why Use This Learning Platform?
             </h2>
 
-
             <div className="feature-list">
-
 
               <div className="feature">
 
-                <span>
-                  ✓
-                </span>
+                <span>✓</span>
 
                 <div>
 
@@ -342,12 +338,9 @@ function About() {
               </div>
 
 
-
               <div className="feature">
 
-                <span>
-                  ✓
-                </span>
+                <span>✓</span>
 
                 <div>
 
@@ -365,12 +358,9 @@ function About() {
               </div>
 
 
-
               <div className="feature">
 
-                <span>
-                  ✓
-                </span>
+                <span>✓</span>
 
                 <div>
 
@@ -388,12 +378,9 @@ function About() {
               </div>
 
 
-
               <div className="feature">
 
-                <span>
-                  ✓
-                </span>
+                <span>✓</span>
 
                 <div>
 
@@ -410,7 +397,6 @@ function About() {
 
               </div>
 
-
             </div>
 
           </div>
@@ -418,12 +404,10 @@ function About() {
         </section>
 
 
-
         {/* =====================================================
             LEARNING FLOW
         ===================================================== */}
         <section className="about-section">
-
 
           <div className="section-heading">
 
@@ -446,9 +430,7 @@ function About() {
           </div>
 
 
-
           <div className="learning-flow">
-
 
             <div className="flow-step">
 
@@ -468,9 +450,7 @@ function About() {
             </div>
 
 
-
             <div className="flow-line"></div>
-
 
 
             <div className="flow-step">
@@ -491,9 +471,7 @@ function About() {
             </div>
 
 
-
             <div className="flow-line"></div>
-
 
 
             <div className="flow-step">
@@ -513,11 +491,9 @@ function About() {
 
             </div>
 
-
           </div>
 
         </section>
-
 
 
         {/* =====================================================
@@ -542,46 +518,19 @@ function About() {
 
           <div className="technology-list">
 
-            <span>
-              React
-            </span>
-
-            <span>
-              JavaScript
-            </span>
-
-            <span>
-              CSS
-            </span>
-
-            <span>
-              C++
-            </span>
-
-            <span>
-              Java
-            </span>
-
-            <span>
-              Python
-            </span>
-
-            <span>
-              PHP
-            </span>
-
-            <span>
-              SQL
-            </span>
-
-            <span>
-              Interactive UI
-            </span>
+            <span>React</span>
+            <span>JavaScript</span>
+            <span>CSS</span>
+            <span>C++</span>
+            <span>Java</span>
+            <span>Python</span>
+            <span>PHP</span>
+            <span>SQL</span>
+            <span>Interactive UI</span>
 
           </div>
 
         </section>
-
 
 
         {/* =====================================================
@@ -612,8 +561,6 @@ function About() {
 
           <Link
             to="/feedback"
-            target="_blank"
-            rel="noopener noreferrer"
             className="feedback-btn"
           >
             Send Feedback →
@@ -621,9 +568,7 @@ function About() {
 
         </section>
 
-
       </main>
-
 
 
       {/* =====================================================
