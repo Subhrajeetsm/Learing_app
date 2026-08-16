@@ -290,7 +290,13 @@ function HomePage() {
   return (
     <div className="language-home">
 
+      {/* =================================================
+          TOP HEADER
+      ================================================= */}
+
       <header className="language-header">
+
+        {/* BRAND */}
 
         <Link
           to="/"
@@ -298,10 +304,12 @@ function HomePage() {
         >
 
           <div className="language-brand-logo">
+
             <img
               src="/favicon.png"
               alt="Programming Learning Lab"
             />
+
           </div>
 
           <div>
@@ -318,11 +326,53 @@ function HomePage() {
 
         </Link>
 
+
+        {/* =================================================
+            TOP RIGHT NAVIGATION
+        ================================================= */}
+
+        <nav className="top-navigation">
+
+          <Link
+            to="/"
+            className="top-nav-link"
+          >
+            Languages
+          </Link>
+
+          <Link
+            to="/about"
+            className="top-nav-link"
+          >
+            About
+          </Link>
+
+          <Link
+            to="/feedback"
+            className="top-nav-link"
+          >
+            Feedback
+          </Link>
+
+        </nav>
+
+
+        {/* =================================================
+            CLERK USER BUTTON
+        ================================================= */}
+
         <div className="language-user">
+
           <UserButton />
+
         </div>
 
       </header>
+
+
+      {/* =================================================
+          MAIN CONTENT
+      ================================================= */}
 
       <main className="language-main">
 
@@ -340,15 +390,32 @@ function HomePage() {
             Choose a programming language and start your
             interactive learning experience.
           </p>
-          <p><strong>NOW C++ & PY concepts Available </strong></p>
+
+          <p>
+            <strong>
+              NOW C++ & PY concepts Available
+            </strong>
+          </p>
 
         </div>
 
+
+        {/* =================================================
+            LANGUAGE OPTIONS
+        ================================================= */}
+
         <LanguageSelector />
 
+
+        {/* =================================================
+            NOTE
+        ================================================= */}
+
         <div className="language-note">
+
           💡 Learn concepts, explore examples, and practice
           programming step by step.
+
         </div>
 
       </main>
@@ -382,8 +449,9 @@ function App() {
           element={<SignUpPage />}
         />
 
+
         {/* =================================================
-            HOME
+            LANGUAGES HOME
         ================================================= */}
 
         <Route
@@ -394,6 +462,7 @@ function App() {
             </ProtectedRoute>
           }
         />
+
 
         {/* =================================================
             C++
@@ -408,6 +477,7 @@ function App() {
           }
         />
 
+
         {/* =================================================
             JAVA
         ================================================= */}
@@ -420,6 +490,7 @@ function App() {
             </ProtectedRoute>
           }
         />
+
 
         {/* =================================================
             PHP
@@ -434,8 +505,9 @@ function App() {
           }
         />
 
+
         {/* =================================================
-            PYTHON MAIN PAGE
+            PYTHON
         ================================================= */}
 
         <Route
@@ -446,6 +518,7 @@ function App() {
             </ProtectedRoute>
           }
         />
+
 
         {/* =================================================
             PYTHON CONCEPTS
@@ -541,6 +614,7 @@ function App() {
           }
         />
 
+
         {/* =================================================
             SQL
         ================================================= */}
@@ -554,18 +628,6 @@ function App() {
           }
         />
 
-        {/* =================================================
-            FEEDBACK
-        ================================================= */}
-
-        <Route
-          path="/feedback"
-          element={
-            <ProtectedRoute>
-              <Feedback />
-            </ProtectedRoute>
-          }
-        />
 
         {/* =================================================
             ABOUT
@@ -580,6 +642,21 @@ function App() {
           }
         />
 
+
+        {/* =================================================
+            FEEDBACK
+        ================================================= */}
+
+        <Route
+          path="/feedback"
+          element={
+            <ProtectedRoute>
+              <Feedback />
+            </ProtectedRoute>
+          }
+        />
+
+
         {/* =================================================
             FALLBACK
         ================================================= */}
@@ -587,7 +664,10 @@ function App() {
         <Route
           path="*"
           element={
-            <Navigate to="/" replace />
+            <Navigate
+              to="/"
+              replace
+            />
           }
         />
 
