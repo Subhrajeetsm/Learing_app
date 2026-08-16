@@ -16,10 +16,10 @@ function About() {
         </div>
 
         <div>
-          <h1>C++ Inheritance Visualizer</h1>
+          <h1>Programming Learning Lab</h1>
 
           <p>
-            Learn C++ OOP concepts visually and interactively
+            Learn programming concepts visually and interactively
           </p>
         </div>
 
@@ -42,23 +42,23 @@ function About() {
           </span>
 
           <h2>
-            Learn C++ in a Simple & Interactive Way 🚀
+            Learn Programming in a Simple & Interactive Way 🚀
           </h2>
 
           <p>
-            C++ Inheritance Visualizer is an educational platform designed
-            to help students understand Object-Oriented Programming concepts
-            through interactive diagrams, examples, and easy explanations.
+            Programming Learning Lab is an educational platform designed
+            to help students understand programming concepts through
+            interactive learning, visual explanations, examples and
+            easy-to-understand content.
           </p>
 
 
-          {/* BACK TO VISUALIZER */}
           <Link
             to="/"
             className="sidebar-about"
           >
             <span>←</span>
-            <span>Back to Visualizer</span>
+            <span>Back to Learning Lab</span>
           </Link>
 
         </section>
@@ -81,16 +81,16 @@ function About() {
             </h2>
 
             <p>
-              Our mission is to make C++ Object-Oriented Programming easier
-              for students to understand. Instead of learning only from
-              theory, students can explore concepts visually and interact
-              with diagrams and examples.
+              Our mission is to make programming easier and more
+              understandable for students. Instead of learning only
+              from theory, students can explore concepts through
+              visual explanations, examples and interactive learning.
             </p>
 
             <p>
-              We focus on simple explanations, practical examples and
-              interactive learning so that difficult programming concepts
-              become easier to remember.
+              We aim to create a student-friendly platform where
+              difficult programming concepts become easier to learn,
+              understand and remember.
             </p>
 
           </div>
@@ -100,24 +100,24 @@ function About() {
 
 
         {/* =====================================================
-            WHAT YOU CAN LEARN
+            AVAILABLE LANGUAGES
         ===================================================== */}
         <section className="about-section">
 
           <div className="section-heading">
 
             <span>
-              📚
+              💻
             </span>
 
             <div>
 
               <h2>
-                What You Can Learn
+                Programming Languages
               </h2>
 
               <p>
-                Explore important C++ OOP concepts.
+                Choose a language and start your learning journey.
               </p>
 
             </div>
@@ -129,81 +129,169 @@ function About() {
           <div className="about-grid">
 
 
-            {/* CLASS & OBJECT */}
+            {/* =================================================
+                C++
+            ================================================= */}
             <div className="about-topic">
 
               <div className="topic-icon">
-                📦
+                C++
               </div>
 
+              <span className="language-status available">
+                AVAILABLE
+              </span>
+
               <h3>
-                Class & Object
+                C++
               </h3>
 
               <p>
-                Understand classes and objects with simple examples
-                and visual explanations.
+                Learn C++ Object-Oriented Programming concepts,
+                inheritance, classes, objects, constructors and
+                access specifiers with interactive examples.
               </p>
+
+              <Link
+                to="/cpp"
+                className="language-learn-btn"
+              >
+                Start Learning →
+              </Link>
 
             </div>
 
 
 
-            {/* CONSTRUCTORS */}
-            <div className="about-topic">
+            {/* =================================================
+                JAVA
+            ================================================= */}
+            <div className="about-topic coming-soon-card">
 
-              <div className="topic-icon">
-                🏗️
+              <div className="topic-icon java-topic">
+                ☕
               </div>
 
+              <span className="language-status coming-soon">
+                COMING SOON
+              </span>
+
               <h3>
-                Constructors
+                Java
               </h3>
 
               <p>
-                Learn how constructors work and how they initialize
-                objects in C++.
+                Java learning content with Object-Oriented
+                Programming concepts, examples and interactive
+                explanations is currently under development.
               </p>
+
+              <button
+                className="language-learn-btn disabled-btn"
+                disabled
+              >
+                Coming Soon
+              </button>
 
             </div>
 
 
 
-            {/* INHERITANCE */}
-            <div className="about-topic">
+            {/* =================================================
+                PYTHON
+            ================================================= */}
+            <div className="about-topic coming-soon-card">
 
-              <div className="topic-icon">
-                🔗
+              <div className="topic-icon python-topic">
+                🐍
               </div>
 
+              <span className="language-status coming-soon">
+                COMING SOON
+              </span>
+
               <h3>
-                Inheritance
+                Python
               </h3>
 
               <p>
-                Explore Single, Multilevel, Multiple, Hierarchical
-                and Hybrid inheritance.
+                Learn Python programming with simple examples,
+                practical concepts and interactive learning
+                resources.
               </p>
+
+              <button
+                className="language-learn-btn disabled-btn"
+                disabled
+              >
+                Coming Soon
+              </button>
 
             </div>
 
 
 
-            {/* ACCESS SPECIFIERS */}
-            <div className="about-topic">
+            {/* =================================================
+                PHP
+            ================================================= */}
+            <div className="about-topic coming-soon-card">
 
-              <div className="topic-icon">
-                🔐
+              <div className="topic-icon php-topic">
+                PHP
               </div>
 
+              <span className="language-status coming-soon">
+                COMING SOON
+              </span>
+
               <h3>
-                Access Specifiers
+                PHP
               </h3>
 
               <p>
-                Understand public, protected and private access
-                in C++.
+                Explore PHP fundamentals, web programming concepts
+                and practical server-side development examples.
               </p>
+
+              <button
+                className="language-learn-btn disabled-btn"
+                disabled
+              >
+                Coming Soon
+              </button>
+
+            </div>
+
+
+
+            {/* =================================================
+                SQL
+            ================================================= */}
+            <div className="about-topic coming-soon-card">
+
+              <div className="topic-icon sql-topic">
+                SQL
+              </div>
+
+              <span className="language-status coming-soon">
+                COMING SOON
+              </span>
+
+              <h3>
+                SQL
+              </h3>
+
+              <p>
+                Learn databases, SQL queries, tables, relationships
+                and database management through practical examples.
+              </p>
+
+              <button
+                className="language-learn-btn disabled-btn"
+                disabled
+              >
+                Coming Soon
+              </button>
 
             </div>
 
@@ -225,14 +313,13 @@ function About() {
           <div>
 
             <h2>
-              Why Use This Visualizer?
+              Why Use This Learning Platform?
             </h2>
 
 
             <div className="feature-list">
 
 
-              {/* FEATURE 1 */}
               <div className="feature">
 
                 <span>
@@ -256,7 +343,6 @@ function About() {
 
 
 
-              {/* FEATURE 2 */}
               <div className="feature">
 
                 <span>
@@ -266,12 +352,12 @@ function About() {
                 <div>
 
                   <strong>
-                    Interactive Diagrams
+                    Interactive Learning
                   </strong>
 
                   <p>
-                    Visualize how classes are connected through
-                    inheritance.
+                    Explore programming concepts through interactive
+                    diagrams and examples.
                   </p>
 
                 </div>
@@ -280,7 +366,6 @@ function About() {
 
 
 
-              {/* FEATURE 3 */}
               <div className="feature">
 
                 <span>
@@ -290,11 +375,12 @@ function About() {
                 <div>
 
                   <strong>
-                    Practical C++ Examples
+                    Practical Examples
                   </strong>
 
                   <p>
-                    Learn concepts using real C++ code examples.
+                    Understand programming concepts using practical
+                    code examples.
                   </p>
 
                 </div>
@@ -303,7 +389,6 @@ function About() {
 
 
 
-              {/* FEATURE 4 */}
               <div className="feature">
 
                 <span>
@@ -313,12 +398,12 @@ function About() {
                 <div>
 
                   <strong>
-                    Student Friendly
+                    Multiple Languages
                   </strong>
 
                   <p>
-                    Designed especially for students learning
-                    C++ and OOP.
+                    Learn C++ today and explore more programming
+                    languages as the platform grows.
                   </p>
 
                 </div>
@@ -353,7 +438,7 @@ function About() {
               </h2>
 
               <p>
-                Learn step by step.
+                Start learning in three simple steps.
               </p>
 
             </div>
@@ -365,7 +450,6 @@ function About() {
           <div className="learning-flow">
 
 
-            {/* STEP 1 */}
             <div className="flow-step">
 
               <div className="flow-number">
@@ -373,12 +457,12 @@ function About() {
               </div>
 
               <h3>
-                Choose a Concept
+                Choose a Language
               </h3>
 
               <p>
-                Select Class & Object, Constructors, Inheritance
-                or Access Specifiers from the sidebar.
+                Select C++ or explore the upcoming programming
+                languages.
               </p>
 
             </div>
@@ -389,7 +473,6 @@ function About() {
 
 
 
-            {/* STEP 2 */}
             <div className="flow-step">
 
               <div className="flow-number">
@@ -397,12 +480,12 @@ function About() {
               </div>
 
               <h3>
-                Explore
+                Explore Concepts
               </h3>
 
               <p>
-                Interact with diagrams and read the explanations
-                provided for each concept.
+                Read explanations, explore diagrams and study
+                practical examples.
               </p>
 
             </div>
@@ -413,7 +496,6 @@ function About() {
 
 
 
-            {/* STEP 3 */}
             <div className="flow-step">
 
               <div className="flow-number">
@@ -425,8 +507,8 @@ function About() {
               </h3>
 
               <p>
-                Study the C++ examples and understand how the
-                concepts work in actual programs.
+                Practice what you learn and build a stronger
+                programming foundation.
               </p>
 
             </div>
@@ -448,13 +530,13 @@ function About() {
           </span>
 
           <h2>
-            Built for Learning 💻
+            Built for Students 💻
           </h2>
 
           <p>
-            This project combines modern web technologies with C++
-            educational content to create an interactive learning
-            experience.
+            This project combines modern web technologies with
+            programming education to create a simple and interactive
+            learning experience.
           </p>
 
 
@@ -474,6 +556,22 @@ function About() {
 
             <span>
               C++
+            </span>
+
+            <span>
+              Java
+            </span>
+
+            <span>
+              Python
+            </span>
+
+            <span>
+              PHP
+            </span>
+
+            <span>
+              SQL
             </span>
 
             <span>
@@ -505,8 +603,8 @@ function About() {
             </h2>
 
             <p>
-              Your feedback can help us improve this learning platform
-              and make it more useful for students.
+              Your feedback can help us improve this learning
+              platform and make it more useful for students.
             </p>
 
           </div>
@@ -534,11 +632,11 @@ function About() {
       <footer className="about-footer">
 
         <p>
-          © {new Date().getFullYear()} C++ Inheritance Visualizer
+          © {new Date().getFullYear()} Programming Learning Lab
         </p>
 
         <p>
-          Made for students who want to learn C++ better 🚀
+          Made for students who want to learn programming better 🚀
         </p>
 
       </footer>
