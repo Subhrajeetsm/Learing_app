@@ -12,8 +12,20 @@ const inheritanceData = {
       "One derived class inherits properties and behaviors from one base class.",
 
     diagram: [
-      { id: "A", label: "Base Class A", x: 50, y: 10 },
-      { id: "B", label: "Derived Class B", x: 50, y: 70 },
+      {
+        id: "A",
+        label: "Base Class",
+        sub: "Animal",
+        x: 50,
+        y: 18,
+      },
+      {
+        id: "B",
+        label: "Derived Class",
+        sub: "Dog",
+        x: 50,
+        y: 78,
+      },
     ],
 
     arrows: [["A", "B"]],
@@ -55,9 +67,27 @@ int main() {
       "A derived class becomes the base class for another derived class.",
 
     diagram: [
-      { id: "A", label: "Class A", x: 50, y: 5 },
-      { id: "B", label: "Class B", x: 50, y: 45 },
-      { id: "C", label: "Class C", x: 50, y: 85 },
+      {
+        id: "A",
+        label: "Base Class",
+        sub: "A",
+        x: 50,
+        y: 10,
+      },
+      {
+        id: "B",
+        label: "Intermediate",
+        sub: "B",
+        x: 50,
+        y: 50,
+      },
+      {
+        id: "C",
+        label: "Derived Class",
+        sub: "C",
+        x: 50,
+        y: 90,
+      },
     ],
 
     arrows: [
@@ -111,9 +141,27 @@ int main() {
       "One derived class inherits from two or more base classes.",
 
     diagram: [
-      { id: "A", label: "Base Class A", x: 25, y: 10 },
-      { id: "B", label: "Base Class B", x: 75, y: 10 },
-      { id: "C", label: "Derived Class C", x: 50, y: 75 },
+      {
+        id: "A",
+        label: "Base Class",
+        sub: "A",
+        x: 25,
+        y: 15,
+      },
+      {
+        id: "B",
+        label: "Base Class",
+        sub: "B",
+        x: 75,
+        y: 15,
+      },
+      {
+        id: "C",
+        label: "Derived Class",
+        sub: "C",
+        x: 50,
+        y: 80,
+      },
     ],
 
     arrows: [
@@ -167,9 +215,27 @@ int main() {
       "Multiple derived classes inherit from the same base class.",
 
     diagram: [
-      { id: "A", label: "Base Class", x: 50, y: 10 },
-      { id: "B", label: "Derived Class B", x: 25, y: 75 },
-      { id: "C", label: "Derived Class C", x: 75, y: 75 },
+      {
+        id: "A",
+        label: "Base Class",
+        sub: "Animal",
+        x: 50,
+        y: 15,
+      },
+      {
+        id: "B",
+        label: "Derived Class",
+        sub: "Dog",
+        x: 25,
+        y: 80,
+      },
+      {
+        id: "C",
+        label: "Derived Class",
+        sub: "Cat",
+        x: 75,
+        y: 80,
+      },
     ],
 
     arrows: [
@@ -227,10 +293,34 @@ int main() {
       "Hybrid inheritance combines two or more types of inheritance.",
 
     diagram: [
-      { id: "A", label: "Base Class A", x: 50, y: 5 },
-      { id: "B", label: "Class B", x: 25, y: 42 },
-      { id: "C", label: "Class C", x: 75, y: 42 },
-      { id: "D", label: "Derived Class D", x: 50, y: 82 },
+      {
+        id: "A",
+        label: "Base Class",
+        sub: "A",
+        x: 50,
+        y: 8,
+      },
+      {
+        id: "B",
+        label: "Derived Class",
+        sub: "B",
+        x: 25,
+        y: 45,
+      },
+      {
+        id: "C",
+        label: "Derived Class",
+        sub: "C",
+        x: 75,
+        y: 45,
+      },
+      {
+        id: "D",
+        label: "Final Class",
+        sub: "D",
+        x: 50,
+        y: 88,
+      },
     ],
 
     arrows: [
@@ -292,7 +382,7 @@ int main() {
 };
 
 /* =====================================================
-   ACCESS DATA
+   ACCESS SPECIFIER DATA
 ===================================================== */
 
 const accessData = {
@@ -346,7 +436,10 @@ const accessData = {
    CLASS & OBJECT DATA
 ===================================================== */
 
-const classCode = `class Student {
+const classCode = `#include <iostream>
+using namespace std;
+
+class Student {
 public:
     string name;
 
@@ -366,7 +459,204 @@ const objectCode = `int main() {
 }`;
 
 /* =====================================================
-   COMPONENT
+   CONSTRUCTOR DATA
+===================================================== */
+
+const constructorData = {
+  rules: [
+    {
+      number: "01",
+      title: "Same Name as Class",
+      text: "The constructor has the same name as the class.",
+    },
+
+    {
+      number: "02",
+      title: "No Return Type",
+      text: "A constructor has no return type, not even void.",
+    },
+
+    {
+      number: "03",
+      title: "Usually Public",
+      text: "Constructors are usually declared in the public section.",
+    },
+
+    {
+      number: "04",
+      title: "Automatically Called",
+      text:
+        "The constructor is automatically called when an object is created.",
+    },
+  ],
+
+  basicCode: `#include <iostream>
+using namespace std;
+
+class Student {
+public:
+
+    Student() {
+        cout << "Constructor called";
+    }
+};
+
+int main() {
+
+    Student s;
+
+    return 0;
+}`,
+
+  parameterCode: `#include <iostream>
+using namespace std;
+
+class Student {
+public:
+
+    Student(string n, int a) {
+        cout << "Name: " << n << endl;
+        cout << "Age: " << a << endl;
+    }
+};
+
+int main() {
+
+    Student s("Rahul", 20);
+
+    return 0;
+}`,
+
+  overloadCode: `#include <iostream>
+using namespace std;
+
+class Student {
+public:
+
+    Student() {
+        cout << "Default Constructor" << endl;
+    }
+
+    Student(string name) {
+        cout << "Name: " << name << endl;
+    }
+};
+
+int main() {
+
+    Student s1;
+    Student s2("Rahul");
+
+    return 0;
+}`,
+
+  outsideCode: `#include <iostream>
+using namespace std;
+
+class Student {
+public:
+
+    Student();
+};
+
+Student::Student() {
+    cout << "Constructor called";
+}
+
+int main() {
+
+    Student s;
+
+    return 0;
+}`,
+};
+
+/* =====================================================
+   ACCESS EXAMPLE CODE
+===================================================== */
+
+const accessExampleCode = {
+  public: `class Animal {
+public:
+
+    void eat() {
+        cout << "Eating";
+    }
+};
+
+class Dog : public Animal {
+};
+
+int main() {
+
+    Dog d;
+
+    d.eat();
+
+    return 0;
+}`,
+
+  protected: `class Animal {
+protected:
+
+    void eat() {
+        cout << "Eating";
+    }
+};
+
+class Dog : protected Animal {
+
+public:
+
+    void show() {
+        eat();
+    }
+};
+
+int main() {
+
+    Dog d;
+
+    d.show();
+
+    return 0;
+}`,
+
+  private: `class Animal {
+private:
+
+    void eat() {
+        cout << "Eating";
+    }
+
+public:
+
+    void show() {
+        cout << "Animal";
+    }
+};
+
+class Dog : private Animal {
+
+public:
+
+    void display() {
+        show();
+    }
+};
+
+int main() {
+
+    Dog d;
+
+    d.display();
+
+    return 0;
+}`,
+};
+
+/* =====================================================
+   C++ PAGE
 ===================================================== */
 
 function CppPage() {
@@ -403,7 +693,22 @@ function CppPage() {
     types.indexOf(selectedType);
 
   /* =====================================================
-     SELECT INHERITANCE TYPE
+     SCROLL
+  ===================================================== */
+
+  const scrollToSection = (id) => {
+    setTimeout(() => {
+      document
+        .getElementById(id)
+        ?.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+    }, 50);
+  };
+
+  /* =====================================================
+     SELECT TYPE
   ===================================================== */
 
   const selectType = (type) => {
@@ -423,6 +728,8 @@ function CppPage() {
       (currentIndex + 1) % types.length;
 
     selectType(types[nextIndex]);
+
+    scrollToSection("inheritance-playground");
   };
 
   /* =====================================================
@@ -435,6 +742,8 @@ function CppPage() {
       types.length;
 
     selectType(types[previousIndex]);
+
+    scrollToSection("inheritance-playground");
   };
 
   /* =====================================================
@@ -461,7 +770,7 @@ function CppPage() {
         clearInterval(timer);
         setRunning(false);
       }
-    }, 600);
+    }, 650);
   };
 
   /* =====================================================
@@ -487,6 +796,10 @@ function CppPage() {
       setAnimation(true);
     }, 50);
   };
+
+  /* =====================================================
+     RENDER
+  ===================================================== */
 
   return (
     <div className="cpp-page">
@@ -557,9 +870,9 @@ function CppPage() {
           </h1>
 
           <p>
-            Learn classes, objects, inheritance and
-            access specifiers through interactive
-            examples and visual programming.
+            Learn classes, objects, constructors,
+            inheritance and access specifiers through
+            interactive examples and visual programming.
           </p>
 
         </section>
@@ -568,7 +881,10 @@ function CppPage() {
             CLASS & OBJECT
         ================================================= */}
 
-        <section className="cpp-card cpp-class-object">
+        <section
+          id="class-object-section"
+          className="cpp-card cpp-class-object"
+        >
 
           <div className="cpp-section-heading">
 
@@ -577,6 +893,7 @@ function CppPage() {
             </span>
 
             <div>
+
               <span className="cpp-mini-label">
                 C++ FUNDAMENTALS
               </span>
@@ -590,6 +907,7 @@ function CppPage() {
                 objects. An object is an instance of
                 a class.
               </p>
+
             </div>
 
           </div>
@@ -651,10 +969,265 @@ function CppPage() {
         </section>
 
         {/* =================================================
+            CONSTRUCTORS
+        ================================================= */}
+
+        <section
+          id="constructor-section"
+          className="cpp-card cpp-constructor-section"
+        >
+
+          <div className="cpp-section-heading">
+
+            <span className="cpp-section-icon">
+              ⚙️
+            </span>
+
+            <div>
+
+              <span className="cpp-mini-label">
+                C++ FUNDAMENTALS
+              </span>
+
+              <h2>
+                Constructors
+              </h2>
+
+              <p>
+                Special member functions that are
+                automatically called when objects are
+                created.
+              </p>
+
+            </div>
+
+          </div>
+
+          {/* =================================================
+              CONSTRUCTOR RULES
+          ================================================= */}
+
+          <div className="cpp-constructor-rules">
+
+            <div className="cpp-card-title">
+
+              <div>
+
+                <span className="cpp-mini-label">
+                  CORE CONCEPT
+                </span>
+
+                <h3>
+                  Constructor Rules
+                </h3>
+
+              </div>
+
+            </div>
+
+            <div className="cpp-rules-grid">
+
+              {constructorData.rules.map(
+                (rule) => (
+
+                  <div
+                    className="cpp-rule-card"
+                    key={rule.number}
+                  >
+
+                    <div className="cpp-rule-number">
+                      {rule.number}
+                    </div>
+
+                    <div>
+
+                      <h4>
+                        {rule.title}
+                      </h4>
+
+                      <p>
+                        {rule.text}
+                      </p>
+
+                    </div>
+
+                  </div>
+
+                )
+              )}
+
+            </div>
+
+            <div className="cpp-info-banner">
+
+              <span>
+                💡
+              </span>
+
+              <div>
+
+                <strong>
+                  Why are constructors useful?
+                </strong>
+
+                <p>
+                  Constructors initialize objects at
+                  creation time and make it easier to
+                  assign initial values to data members.
+                </p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          {/* =================================================
+              CONSTRUCTOR EXAMPLES
+          ================================================= */}
+
+          <div className="cpp-constructor-examples">
+
+            {/* BASIC */}
+
+            <div className="cpp-constructor-example">
+
+              <div className="cpp-example-heading">
+
+                <div>
+
+                  <span>
+                    EXAMPLE 01
+                  </span>
+
+                  <h3>
+                    Basic Constructor
+                  </h3>
+
+                </div>
+
+                <strong>
+                  C++
+                </strong>
+
+              </div>
+
+              <pre>
+                <code>
+                  {constructorData.basicCode}
+                </code>
+              </pre>
+
+            </div>
+
+            {/* PARAMETERIZED */}
+
+            <div className="cpp-constructor-example">
+
+              <div className="cpp-example-heading">
+
+                <div>
+
+                  <span>
+                    EXAMPLE 02
+                  </span>
+
+                  <h3>
+                    Parameterized Constructor
+                  </h3>
+
+                </div>
+
+                <strong>
+                  C++
+                </strong>
+
+              </div>
+
+              <pre>
+                <code>
+                  {constructorData.parameterCode}
+                </code>
+              </pre>
+
+            </div>
+
+            {/* OVERLOADING */}
+
+            <div className="cpp-constructor-example">
+
+              <div className="cpp-example-heading">
+
+                <div>
+
+                  <span>
+                    EXAMPLE 03
+                  </span>
+
+                  <h3>
+                    Constructor Overloading
+                  </h3>
+
+                </div>
+
+                <strong>
+                  C++
+                </strong>
+
+              </div>
+
+              <pre>
+                <code>
+                  {constructorData.overloadCode}
+                </code>
+              </pre>
+
+            </div>
+
+            {/* OUTSIDE CLASS */}
+
+            <div className="cpp-constructor-example">
+
+              <div className="cpp-example-heading">
+
+                <div>
+
+                  <span>
+                    EXAMPLE 04
+                  </span>
+
+                  <h3>
+                    Constructor Outside Class
+                  </h3>
+
+                </div>
+
+                <strong>
+                  C++
+                </strong>
+
+              </div>
+
+              <pre>
+                <code>
+                  {constructorData.outsideCode}
+                </code>
+              </pre>
+
+            </div>
+
+          </div>
+
+        </section>
+
+        {/* =================================================
             INHERITANCE TYPES
         ================================================= */}
 
-        <section className="cpp-types">
+        <section
+          id="inheritance-section"
+          className="cpp-types"
+        >
 
           <h2>
             Inheritance Types
@@ -676,9 +1249,12 @@ function CppPage() {
                     ? "cpp-type active"
                     : "cpp-type"
                 }
-                onClick={() =>
-                  selectType(type)
-                }
+                onClick={() => {
+                  selectType(type);
+                  scrollToSection(
+                    "inheritance-playground"
+                  );
+                }}
               >
                 {type}
               </button>
@@ -690,10 +1266,15 @@ function CppPage() {
         </section>
 
         {/* =================================================
-            INHERITANCE HERO
+            INHERITANCE PLAYGROUND
         ================================================= */}
 
-        <section className="cpp-playground">
+        <section
+          id="inheritance-playground"
+          className="cpp-playground"
+        >
+
+          {/* DESCRIPTION */}
 
           <div className="cpp-description">
 
@@ -830,6 +1411,26 @@ function CppPage() {
                 className="cpp-arrows"
               >
 
+                <defs>
+
+                  <marker
+                    id="cpp-arrow"
+                    markerWidth="7"
+                    markerHeight="7"
+                    refX="5"
+                    refY="3.5"
+                    orient="auto"
+                  >
+
+                    <path
+                      d="M0,0 L7,3.5 L0,7 Z"
+                      fill="currentColor"
+                    />
+
+                  </marker>
+
+                </defs>
+
                 {current.arrows.map(
                   ([from, to], index) => {
 
@@ -845,8 +1446,9 @@ function CppPage() {
                           node.id === to
                       );
 
-                    if (!start || !end)
+                    if (!start || !end) {
                       return null;
+                    }
 
                     return (
                       <line
@@ -854,34 +1456,15 @@ function CppPage() {
                         x1={start.x}
                         y1={start.y + 9}
                         x2={end.x}
-                        y2={end.y - 6}
+                        y2={end.y - 9}
                         stroke="currentColor"
-                        strokeWidth="0.8"
+                        strokeWidth="0.65"
                         markerEnd="url(#cpp-arrow)"
                       />
                     );
+
                   }
                 )}
-
-                <defs>
-
-                  <marker
-                    id="cpp-arrow"
-                    markerWidth="6"
-                    markerHeight="6"
-                    refX="4"
-                    refY="3"
-                    orient="auto"
-                  >
-
-                    <path
-                      d="M0,0 L6,3 L0,6 Z"
-                      fill="currentColor"
-                    />
-
-                  </marker>
-
-                </defs>
 
               </svg>
 
@@ -912,6 +1495,12 @@ function CppPage() {
                       {node.label}
                     </span>
 
+                    {node.sub && (
+                      <small>
+                        {node.sub}
+                      </small>
+                    )}
+
                   </button>
 
                 )
@@ -926,12 +1515,21 @@ function CppPage() {
                 <strong>
                   Selected Class:
                 </strong>{" "}
+
                 {selectedNode}
 
                 <br />
 
                 Click another class
                 to inspect it.
+
+                <button
+                  onClick={() =>
+                    setSelectedNode(null)
+                  }
+                >
+                  ×
+                </button>
 
               </div>
 
@@ -990,7 +1588,7 @@ function CppPage() {
         </section>
 
         {/* =================================================
-            HOW IT WORKS
+            HOW INHERITANCE WORKS
         ================================================= */}
 
         <section className="cpp-card cpp-explanation">
@@ -1073,10 +1671,13 @@ function CppPage() {
         </section>
 
         {/* =================================================
-            ACCESS SPECIFIER
+            ACCESS SPECIFIERS
         ================================================= */}
 
-        <section className="cpp-card cpp-access-card">
+        <section
+          id="access-section"
+          className="cpp-card cpp-access-card"
+        >
 
           <div className="cpp-access-heading">
 
@@ -1102,6 +1703,8 @@ function CppPage() {
 
           </div>
 
+          {/* ACCESS TABS */}
+
           <div className="cpp-access-tabs">
 
             {Object.keys(accessData).map(
@@ -1125,6 +1728,8 @@ function CppPage() {
             )}
 
           </div>
+
+          {/* VISIBILITY */}
 
           <div className="cpp-visibility-grid">
 
@@ -1159,6 +1764,8 @@ function CppPage() {
 
           </div>
 
+          {/* ACCESS DETAIL */}
+
           <div className="cpp-access-detail">
 
             <h3>
@@ -1169,96 +1776,18 @@ function CppPage() {
               {access.description}
             </p>
 
-            {accessType === "public" && (
-
-              <pre>
-                <code>{`class Animal {
-public:
-    void eat() {
-        cout << "Eating";
-    }
-};
-
-class Dog : public Animal {
-};
-
-int main() {
-    Dog d;
-
-    d.eat();
-
-    return 0;
-}`}</code>
-              </pre>
-
-            )}
-
-            {accessType === "protected" && (
-
-              <pre>
-                <code>{`class Animal {
-public:
-    void eat() {
-        cout << "Eating";
-    }
-};
-
-class Dog : protected Animal {
-
-public:
-
-    void show() {
-        eat();
-    }
-};
-
-int main() {
-    Dog d;
-
-    d.show();
-
-    return 0;
-}`}</code>
-              </pre>
-
-            )}
-
-            {accessType === "private" && (
-
-              <pre>
-                <code>{`class Animal {
-public:
-    void eat() {
-        cout << "Eating";
-    }
-};
-
-class Dog : private Animal {
-
-public:
-
-    void show() {
-        eat();
-    }
-};
-
-int main() {
-    Dog d;
-
-    d.show();
-
-    return 0;
-}`}</code>
-              </pre>
-
-            )}
+            <pre>
+              <code>
+                {accessExampleCode[accessType]}
+              </code>
+            </pre>
 
           </div>
 
         </section>
 
         {/* =================================================
-            BASIC SYNTAX
+            INHERITANCE SYNTAX
         ================================================= */}
 
         <section className="cpp-card cpp-syntax-card">
@@ -1271,6 +1800,11 @@ int main() {
             Basic C++ Inheritance Syntax
           </h2>
 
+          <p>
+            The following syntax is used to create a
+            derived class from a base class.
+          </p>
+
           <pre>
             <code>{`class DerivedClass : access_specifier BaseClass {
 
@@ -1282,6 +1816,7 @@ int main() {
           <div className="cpp-syntax-examples">
 
             <div>
+
               <strong>
                 Public
               </strong>
@@ -1289,9 +1824,11 @@ int main() {
               <code>
                 class Dog : public Animal {};
               </code>
+
             </div>
 
             <div>
+
               <strong>
                 Protected
               </strong>
@@ -1299,9 +1836,11 @@ int main() {
               <code>
                 class Dog : protected Animal {};
               </code>
+
             </div>
 
             <div>
+
               <strong>
                 Private
               </strong>
@@ -1309,6 +1848,121 @@ int main() {
               <code>
                 class Dog : private Animal {};
               </code>
+
+            </div>
+
+          </div>
+
+        </section>
+
+        {/* =================================================
+            QUICK CONCEPT SUMMARY
+        ================================================= */}
+
+        <section className="cpp-card cpp-summary-card">
+
+          <div className="cpp-card-title">
+
+            <span>
+              📚
+            </span>
+
+            <div>
+
+              <h2>
+                C++ OOP Quick Summary
+              </h2>
+
+              <p>
+                Important concepts covered in this
+                learning page.
+              </p>
+
+            </div>
+
+          </div>
+
+          <div className="cpp-summary-grid">
+
+            <div>
+              <strong>
+                Class
+              </strong>
+
+              <span>
+                Blueprint for creating objects.
+              </span>
+            </div>
+
+            <div>
+              <strong>
+                Object
+              </strong>
+
+              <span>
+                Instance of a class.
+              </span>
+            </div>
+
+            <div>
+              <strong>
+                Constructor
+              </strong>
+
+              <span>
+                Initializes an object automatically.
+              </span>
+            </div>
+
+            <div>
+              <strong>
+                Inheritance
+              </strong>
+
+              <span>
+                Allows a class to acquire members from
+                another class.
+              </span>
+            </div>
+
+            <div>
+              <strong>
+                Public
+              </strong>
+
+              <span>
+                Public members remain public.
+              </span>
+            </div>
+
+            <div>
+              <strong>
+                Protected
+              </strong>
+
+              <span>
+                Members become protected.
+              </span>
+            </div>
+
+            <div>
+              <strong>
+                Private
+              </strong>
+
+              <span>
+                Members become private.
+              </span>
+            </div>
+
+            <div>
+              <strong>
+                Virtual Inheritance
+              </strong>
+
+              <span>
+                Helps solve the diamond problem.
+              </span>
             </div>
 
           </div>
@@ -1322,7 +1976,21 @@ int main() {
       ================================================= */}
 
       <footer className="cpp-footer">
-        C++ Learning Lab • Interactive OOP Visualizer
+
+        <div>
+          <strong>
+            C++ Learning Lab
+          </strong>
+
+          <span>
+            Interactive OOP Visualizer
+          </span>
+        </div>
+
+        <Link to="/feedback">
+          Send Feedback →
+        </Link>
+
       </footer>
 
     </div>
