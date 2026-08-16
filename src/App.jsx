@@ -340,6 +340,7 @@ function HomePage() {
             Choose a programming language and start your
             interactive learning experience.
           </p>
+          <p><strong>NOW C++ & PY concepts Available </strong></p>
 
         </div>
 
