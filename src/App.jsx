@@ -201,6 +201,7 @@ function LanguageSelector() {
       icon: "C++",
       path: "/cpp",
       className: "cpp-option",
+      available: true,
     },
 
     {
@@ -209,6 +210,7 @@ function LanguageSelector() {
       icon: "☕",
       path: "/java",
       className: "java-option",
+      available: true,
     },
 
     {
@@ -217,6 +219,7 @@ function LanguageSelector() {
       icon: "🐘",
       path: "/php",
       className: "php-option",
+      available: true,
     },
 
     {
@@ -225,6 +228,7 @@ function LanguageSelector() {
       icon: "🐍",
       path: "/python",
       className: "python-option",
+      available: true,
     },
 
     {
@@ -233,6 +237,7 @@ function LanguageSelector() {
       icon: "🗄️",
       path: "/sql",
       className: "sql-option",
+      available: true,
     },
 
   ];
@@ -273,6 +278,72 @@ function LanguageSelector() {
       ))}
 
     </div>
+  );
+}
+
+/* =====================================================
+   TOP NAVIGATION
+===================================================== */
+
+function TopNavigation() {
+  return (
+    <nav className="top-navigation">
+
+      {/* LANGUAGES */}
+
+      <Link
+        to="/"
+        className="top-nav-link languages-link"
+      >
+        <span className="nav-icon">
+          ⌘
+        </span>
+
+        <span>
+          Languages
+        </span>
+      </Link>
+
+
+      {/* ABOUT */}
+
+      <Link
+        to="/about"
+        className="top-nav-link"
+      >
+        <span className="nav-icon">
+          ◎
+        </span>
+
+        <span>
+          About
+        </span>
+      </Link>
+
+
+      {/* FEEDBACK */}
+
+      <Link
+        to="/feedback"
+        className="top-nav-link"
+      >
+        <span className="nav-icon">
+          ✦
+        </span>
+
+        <span>
+          Feedback
+        </span>
+      </Link>
+
+
+      {/* USER */}
+
+      <div className="top-nav-user">
+        <UserButton />
+      </div>
+
+    </nav>
   );
 }
 
@@ -328,53 +399,21 @@ function HomePage() {
 
 
         {/* =================================================
-            TOP RIGHT NAVIGATION
+            TOP RIGHT LINKS
         ================================================= */}
 
-        <nav className="top-navigation">
-
-          <Link
-            to="/"
-            className="top-nav-link"
-          >
-            Languages
-          </Link>
-
-          <Link
-            to="/about"
-            className="top-nav-link"
-          >
-            About
-          </Link>
-
-          <Link
-            to="/feedback"
-            className="top-nav-link"
-          >
-            Feedback
-          </Link>
-
-        </nav>
-
-
-        {/* =================================================
-            CLERK USER BUTTON
-        ================================================= */}
-
-        <div className="language-user">
-
-          <UserButton />
-
-        </div>
+        <TopNavigation />
 
       </header>
 
 
       {/* =================================================
-          MAIN CONTENT
+          MAIN
       ================================================= */}
 
       <main className="language-main">
+
+        {/* INTRO */}
 
         <div className="language-intro">
 
@@ -393,7 +432,7 @@ function HomePage() {
 
           <p>
             <strong>
-              NOW C++ & PY concepts Available
+              NOW C++ & PYTHON CONCEPTS ARE AVAILABLE
             </strong>
           </p>
 
@@ -401,15 +440,13 @@ function HomePage() {
 
 
         {/* =================================================
-            LANGUAGE OPTIONS
+            LANGUAGE CARDS
         ================================================= */}
 
         <LanguageSelector />
 
 
-        {/* =================================================
-            NOTE
-        ================================================= */}
+        {/* NOTE */}
 
         <div className="language-note">
 
@@ -441,17 +478,21 @@ function App() {
 
         <Route
           path="/sign-in/*"
-          element={<SignInPage />}
+          element={
+            <SignInPage />
+          }
         />
 
         <Route
           path="/sign-up/*"
-          element={<SignUpPage />}
+          element={
+            <SignUpPage />
+          }
         />
 
 
         {/* =================================================
-            LANGUAGES HOME
+            HOME / LANGUAGES
         ================================================= */}
 
         <Route
@@ -507,7 +548,7 @@ function App() {
 
 
         {/* =================================================
-            PYTHON
+            PYTHON MAIN PAGE
         ================================================= */}
 
         <Route
@@ -521,7 +562,7 @@ function App() {
 
 
         {/* =================================================
-            PYTHON CONCEPTS
+            PYTHON BASICS
         ================================================= */}
 
         <Route
@@ -533,6 +574,11 @@ function App() {
           }
         />
 
+
+        {/* =================================================
+            PYTHON VARIABLES
+        ================================================= */}
+
         <Route
           path="/python/variables"
           element={
@@ -541,6 +587,11 @@ function App() {
             </ProtectedRoute>
           }
         />
+
+
+        {/* =================================================
+            PYTHON OPERATORS
+        ================================================= */}
 
         <Route
           path="/python/operators"
@@ -551,6 +602,11 @@ function App() {
           }
         />
 
+
+        {/* =================================================
+            PYTHON CONDITIONS
+        ================================================= */}
+
         <Route
           path="/python/conditions"
           element={
@@ -559,6 +615,11 @@ function App() {
             </ProtectedRoute>
           }
         />
+
+
+        {/* =================================================
+            PYTHON LOOPS
+        ================================================= */}
 
         <Route
           path="/python/loops"
@@ -569,6 +630,11 @@ function App() {
           }
         />
 
+
+        {/* =================================================
+            PYTHON FUNCTIONS
+        ================================================= */}
+
         <Route
           path="/python/functions"
           element={
@@ -577,6 +643,11 @@ function App() {
             </ProtectedRoute>
           }
         />
+
+
+        {/* =================================================
+            PYTHON LISTS & TUPLES
+        ================================================= */}
 
         <Route
           path="/python/lists-tuples"
@@ -587,6 +658,11 @@ function App() {
           }
         />
 
+
+        {/* =================================================
+            PYTHON DICTIONARIES & SETS
+        ================================================= */}
+
         <Route
           path="/python/dictionaries-sets"
           element={
@@ -596,6 +672,11 @@ function App() {
           }
         />
 
+
+        {/* =================================================
+            PYTHON OOP
+        ================================================= */}
+
         <Route
           path="/python/oop"
           element={
@@ -604,6 +685,11 @@ function App() {
             </ProtectedRoute>
           }
         />
+
+
+        {/* =================================================
+            PYTHON FILE HANDLING
+        ================================================= */}
 
         <Route
           path="/python/file-handling"
@@ -630,20 +716,6 @@ function App() {
 
 
         {/* =================================================
-            ABOUT
-        ================================================= */}
-
-        <Route
-          path="/about"
-          element={
-            <ProtectedRoute>
-              <About />
-            </ProtectedRoute>
-          }
-        />
-
-
-        {/* =================================================
             FEEDBACK
         ================================================= */}
 
@@ -652,6 +724,20 @@ function App() {
           element={
             <ProtectedRoute>
               <Feedback />
+            </ProtectedRoute>
+          }
+        />
+
+
+        {/* =================================================
+            ABOUT
+        ================================================= */}
+
+        <Route
+          path="/about"
+          element={
+            <ProtectedRoute>
+              <About />
             </ProtectedRoute>
           }
         />
