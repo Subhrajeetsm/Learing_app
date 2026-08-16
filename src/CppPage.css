@@ -1,8 +1,28 @@
+/* =====================================================
+   GLOBAL
+===================================================== */
+
+* {
+  box-sizing: border-box;
+}
+
 .cpp-page {
   min-height: 100vh;
   background: #f8fafc;
   color: #0f172a;
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
 }
+
+
+/* =====================================================
+   HEADER
+===================================================== */
 
 .cpp-header {
   height: 76px;
@@ -79,11 +99,21 @@
   color: #2563eb;
 }
 
+
+/* =====================================================
+   MAIN
+===================================================== */
+
 .cpp-container {
   width: min(1150px, calc(100% - 40px));
   margin: auto;
   padding: 60px 0;
 }
+
+
+/* =====================================================
+   HERO
+===================================================== */
 
 .cpp-hero {
   text-align: center;
@@ -112,19 +142,154 @@
 }
 
 .cpp-hero p {
-  max-width: 650px;
+  max-width: 680px;
   margin: auto;
 
   color: #64748b;
   line-height: 1.7;
 }
 
+
+/* =====================================================
+   COMMON CARD
+===================================================== */
+
+.cpp-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 28px;
+  margin-bottom: 25px;
+}
+
+
+/* =====================================================
+   CLASS & OBJECT
+===================================================== */
+
+.cpp-class-object {
+  margin-bottom: 45px;
+}
+
+.cpp-section-heading {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+
+  margin-bottom: 25px;
+}
+
+.cpp-section-icon {
+  width: 46px;
+  height: 46px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  background: #eff6ff;
+  font-size: 22px;
+}
+
+.cpp-mini-label {
+  display: inline-block;
+
+  color: #2563eb;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  letter-spacing: 1px;
+}
+
+.cpp-section-heading h2 {
+  margin: 5px 0 6px;
+}
+
+.cpp-section-heading p {
+  margin: 0;
+
+  color: #64748b;
+  line-height: 1.6;
+}
+
+.cpp-concept-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.cpp-concept-box {
+  padding: 22px;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+
+  background: #f8fafc;
+}
+
+.cpp-concept-number {
+  display: inline-flex;
+
+  width: 34px;
+  height: 34px;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 9px;
+
+  background: #2563eb;
+  color: white;
+
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.cpp-concept-box h3 {
+  margin: 14px 0 8px;
+}
+
+.cpp-concept-box p {
+  color: #64748b;
+  line-height: 1.6;
+}
+
+.cpp-concept-box pre {
+  margin-top: 18px;
+
+  padding: 17px;
+
+  overflow-x: auto;
+
+  background: #0f172a;
+  color: #e2e8f0;
+
+  border-radius: 10px;
+
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+
+/* =====================================================
+   INHERITANCE TYPES
+===================================================== */
+
 .cpp-types {
   margin-bottom: 25px;
 }
 
 .cpp-types h2 {
-  margin-bottom: 15px;
+  margin-bottom: 6px;
+}
+
+.cpp-types-description {
+  margin-top: 0;
+  margin-bottom: 16px;
+  color: #64748b;
 }
 
 .cpp-type-list {
@@ -159,11 +324,21 @@
   border-color: #2563eb;
 }
 
+
+/* =====================================================
+   PLAYGROUND
+===================================================== */
+
 .cpp-playground {
   display: grid;
   grid-template-columns: 1fr 1.5fr;
   gap: 20px;
 }
+
+
+/* =====================================================
+   DESCRIPTION
+===================================================== */
 
 .cpp-description {
   padding: 25px;
@@ -191,13 +366,55 @@
   line-height: 1.7;
 }
 
+
+/* =====================================================
+   NAVIGATION BUTTONS
+===================================================== */
+
+.cpp-navigation-buttons,
+.cpp-action-buttons {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 18px;
+}
+
+.cpp-navigation-buttons button,
+.cpp-action-buttons button {
+  padding: 9px 12px;
+
+  border: 1px solid #dbeafe;
+  border-radius: 8px;
+
+  background: #eff6ff;
+  color: #2563eb;
+
+  font-size: 12px;
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.cpp-navigation-buttons button:hover,
+.cpp-action-buttons button:hover {
+  background: #dbeafe;
+}
+
+
+/* =====================================================
+   CODE CARD
+===================================================== */
+
 .cpp-code-card {
   overflow: hidden;
 
   background: #0f172a;
   border-radius: 16px;
 
-  box-shadow: 0 15px 40px rgba(15, 23, 42, 0.15);
+  box-shadow:
+    0 15px 40px rgba(15, 23, 42, 0.15);
 }
 
 .cpp-code-header {
@@ -224,26 +441,42 @@
   padding: 22px;
 
   min-height: 350px;
-  overflow-x: auto;
+  max-height: 500px;
+
+  overflow: auto;
 
   color: #e2e8f0;
   font-size: 13px;
   line-height: 1.65;
+
+  font-family:
+    "Fira Code",
+    Consolas,
+    monospace;
 }
 
-.cpp-run {
-  margin: 0 22px 22px;
+.cpp-code-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 
+  padding: 0 22px 22px;
+}
+
+.cpp-run,
+.cpp-show-code {
   padding: 11px 18px;
 
   border: none;
   border-radius: 9px;
 
-  background: #2563eb;
-  color: white;
-
   font-weight: 800;
   cursor: pointer;
+}
+
+.cpp-run {
+  background: #2563eb;
+  color: white;
 }
 
 .cpp-run:hover {
@@ -254,6 +487,200 @@
   opacity: 0.6;
   cursor: not-allowed;
 }
+
+.cpp-show-code {
+  background: #334155;
+  color: #e2e8f0;
+}
+
+.cpp-show-code:hover {
+  background: #475569;
+}
+
+
+/* =====================================================
+   DIAGRAM
+===================================================== */
+
+.cpp-diagram-card {
+  overflow: hidden;
+
+  background: #ffffff;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+
+  min-height: 450px;
+}
+
+.cpp-diagram-card .cpp-output-header {
+  background: #ffffff;
+  color: #0f172a;
+
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.cpp-output-header {
+  min-height: 50px;
+  padding: 13px 18px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cpp-output-header span {
+  color: #64748b;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.cpp-diagram {
+  position: relative;
+
+  width: 100%;
+  height: 390px;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 1px 1px,
+      #e2e8f0 1px,
+      transparent 0
+    );
+
+  background-size: 24px 24px;
+
+  color: #2563eb;
+}
+
+.cpp-arrows {
+  position: absolute;
+
+  width: 100%;
+  height: 100%;
+
+  inset: 0;
+
+  overflow: visible;
+
+  color: #94a3b8;
+}
+
+.cpp-class-node {
+  position: absolute;
+
+  transform:
+    translate(-50%, -50%);
+
+  min-width: 125px;
+
+  padding: 13px 15px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+
+  border: 2px solid #bfdbfe;
+  border-radius: 12px;
+
+  background: white;
+  color: #0f172a;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 8px 20px rgba(15, 23, 42, 0.08);
+
+  transition:
+    0.2s transform,
+    0.2s box-shadow,
+    0.2s border-color;
+}
+
+.cpp-class-node:hover {
+  transform:
+    translate(-50%, -50%)
+    translateY(-3px);
+
+  border-color: #2563eb;
+
+  box-shadow:
+    0 12px 25px rgba(37, 99, 235, 0.15);
+}
+
+.cpp-class-node strong {
+  font-size: 18px;
+  color: #2563eb;
+}
+
+.cpp-class-node span {
+  font-size: 11px;
+  color: #64748b;
+}
+
+.cpp-class-node.selected {
+  border-color: #2563eb;
+
+  background: #eff6ff;
+
+  box-shadow:
+    0 0 0 4px rgba(37, 99, 235, 0.1);
+}
+
+.cpp-diagram.animated .cpp-class-node {
+  animation: cppNodePulse 0.8s ease;
+}
+
+.cpp-diagram.animated .cpp-arrows {
+  animation: cppArrowFlow 1s ease;
+}
+
+@keyframes cppNodePulse {
+  0% {
+    opacity: 0.35;
+    transform:
+      translate(-50%, -50%)
+      scale(0.9);
+  }
+
+  100% {
+    opacity: 1;
+    transform:
+      translate(-50%, -50%)
+      scale(1);
+  }
+}
+
+@keyframes cppArrowFlow {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.cpp-node-info {
+  margin: 0 18px 18px;
+  padding: 12px 14px;
+
+  border-radius: 9px;
+
+  background: #eff6ff;
+  color: #475569;
+
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+
+/* =====================================================
+   OUTPUT
+===================================================== */
 
 .cpp-output {
   grid-column: 1 / -1;
@@ -266,18 +693,12 @@
   background: #020617;
 }
 
-.cpp-output-header {
-  padding: 13px 18px;
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
+.cpp-output .cpp-output-header {
   background: #0f172a;
   color: white;
 }
 
-.cpp-output-header button {
+.cpp-output .cpp-output-header button {
   border: none;
   background: transparent;
   color: #94a3b8;
@@ -300,18 +721,352 @@
   color: #64748b;
 }
 
-@media (max-width: 800px) {
-  .cpp-header {
-    padding: 0 18px;
-  }
 
-  .cpp-nav {
-    gap: 10px;
-  }
+/* =====================================================
+   HOW IT WORKS
+===================================================== */
 
-  .cpp-nav a {
-    font-size: 12px;
-  }
+.cpp-explanation {
+  margin-top: 25px;
+}
+
+.cpp-card-title {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+
+  margin-bottom: 25px;
+}
+
+.cpp-card-title > span {
+  width: 45px;
+  height: 45px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  background: #eff6ff;
+
+  font-size: 21px;
+}
+
+.cpp-card-title h2 {
+  margin: 0 0 5px;
+}
+
+.cpp-card-title p {
+  margin: 0;
+  color: #64748b;
+}
+
+.cpp-explanation-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.cpp-step {
+  position: relative;
+
+  padding: 20px;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+
+  background: #f8fafc;
+}
+
+.cpp-step > div {
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+
+  background: #2563eb;
+  color: white;
+
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.cpp-step h3 {
+  margin: 15px 0 7px;
+}
+
+.cpp-step p {
+  margin: 0;
+
+  color: #64748b;
+  line-height: 1.6;
+}
+
+
+/* =====================================================
+   ACCESS SPECIFIER
+===================================================== */
+
+.cpp-access-card {
+  margin-top: 25px;
+}
+
+.cpp-access-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  gap: 25px;
+}
+
+.cpp-access-heading h2 {
+  margin: 7px 0;
+}
+
+.cpp-access-heading p {
+  max-width: 700px;
+
+  margin: 0;
+
+  color: #64748b;
+
+  line-height: 1.6;
+}
+
+.cpp-access-heading > code {
+  padding: 10px 13px;
+
+  border-radius: 8px;
+
+  background: #f1f5f9;
+  color: #475569;
+
+  font-family: monospace;
+  font-size: 12px;
+}
+
+.cpp-access-tabs {
+  display: flex;
+  gap: 8px;
+
+  margin-top: 22px;
+  margin-bottom: 18px;
+}
+
+.cpp-access-tabs button {
+  padding: 9px 15px;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+
+  background: white;
+  color: #64748b;
+
+  font-size: 12px;
+  font-weight: 800;
+
+  cursor: pointer;
+}
+
+.cpp-access-tabs button:hover {
+  color: #2563eb;
+  border-color: #93c5fd;
+}
+
+.cpp-access-tabs button.active {
+  background: #2563eb;
+  border-color: #2563eb;
+  color: white;
+}
+
+.cpp-visibility-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.cpp-visibility-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 8px;
+
+  padding: 14px;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+
+  background: #f8fafc;
+
+  font-size: 12px;
+}
+
+.cpp-visibility-box strong {
+  color: #94a3b8;
+}
+
+.cpp-visibility {
+  padding: 5px 8px;
+
+  border-radius: 6px;
+
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.cpp-visibility.public {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.cpp-visibility.protected {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.cpp-visibility.private {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.cpp-visibility.not-directly-accessible {
+  background: #f1f5f9;
+  color: #64748b;
+}
+
+.cpp-access-detail {
+  margin-top: 22px;
+
+  padding-top: 20px;
+
+  border-top: 1px solid #e2e8f0;
+}
+
+.cpp-access-detail h3 {
+  margin-bottom: 7px;
+}
+
+.cpp-access-detail p {
+  color: #64748b;
+  line-height: 1.6;
+}
+
+.cpp-access-detail pre {
+  margin-top: 18px;
+
+  padding: 20px;
+
+  overflow-x: auto;
+
+  background: #0f172a;
+  color: #e2e8f0;
+
+  border-radius: 12px;
+
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+
+/* =====================================================
+   BASIC SYNTAX
+===================================================== */
+
+.cpp-syntax-card {
+  margin-top: 25px;
+}
+
+.cpp-syntax-card h2 {
+  margin: 8px 0 18px;
+}
+
+.cpp-syntax-card > pre {
+  margin: 0;
+
+  padding: 20px;
+
+  overflow-x: auto;
+
+  background: #0f172a;
+  color: #e2e8f0;
+
+  border-radius: 12px;
+
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.cpp-syntax-examples {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 12px;
+
+  margin-top: 18px;
+}
+
+.cpp-syntax-examples > div {
+  padding: 15px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+
+  background: #f8fafc;
+}
+
+.cpp-syntax-examples strong {
+  color: #2563eb;
+}
+
+.cpp-syntax-examples code {
+  padding: 8px;
+
+  overflow-x: auto;
+
+  border-radius: 6px;
+
+  background: white;
+
+  color: #475569;
+
+  font-size: 11px;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.cpp-footer {
+  padding: 25px;
+
+  text-align: center;
+
+  border-top: 1px solid #e2e8f0;
+
+  background: white;
+
+  color: #64748b;
+
+  font-size: 13px;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 900px) {
 
   .cpp-playground {
     grid-template-columns: 1fr;
@@ -321,8 +1076,109 @@
     grid-column: auto;
   }
 
+  .cpp-concept-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cpp-explanation-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cpp-visibility-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cpp-syntax-examples {
+    grid-template-columns: 1fr;
+  }
+
+  .cpp-access-heading {
+    flex-direction: column;
+  }
+
+  .cpp-access-heading > code {
+    width: 100%;
+    overflow-x: auto;
+  }
+}
+
+
+@media (max-width: 650px) {
+
+  .cpp-header {
+    height: auto;
+    min-height: 70px;
+
+    padding: 12px 18px;
+
+    gap: 12px;
+  }
+
+  .cpp-brand span {
+    display: none;
+  }
+
+  .cpp-brand strong {
+    font-size: 14px;
+  }
+
+  .cpp-logo {
+    width: 40px;
+    height: 40px;
+  }
+
+  .cpp-nav {
+    gap: 10px;
+  }
+
+  .cpp-nav a {
+    font-size: 11px;
+  }
+
   .cpp-container {
     width: min(100% - 24px, 1150px);
     padding: 35px 0;
+  }
+
+  .cpp-hero h1 {
+    font-size: 34px;
+  }
+
+  .cpp-card {
+    padding: 20px;
+  }
+
+  .cpp-description {
+    padding: 20px;
+  }
+
+  .cpp-code-card pre {
+    min-height: 280px;
+    font-size: 11px;
+  }
+
+  .cpp-diagram {
+    height: 340px;
+  }
+
+  .cpp-class-node {
+    min-width: 105px;
+    padding: 10px;
+  }
+
+  .cpp-class-node strong {
+    font-size: 15px;
+  }
+
+  .cpp-class-node span {
+    font-size: 9px;
+  }
+
+  .cpp-section-heading {
+    align-items: flex-start;
+  }
+
+  .cpp-access-tabs {
+    flex-wrap: wrap;
   }
 }
