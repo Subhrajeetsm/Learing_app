@@ -17,6 +17,7 @@ import {
 
 import "./App.css";
 import Feedback from "./Feedback";
+import About from "./About";
 
 /* =====================================================
    INHERITANCE DATA
@@ -2187,6 +2188,7 @@ function App() {
             </ProtectedRoute>
           }
         />
+        <Route path="/about" element={<About />} />
 
         <Route
           path="/*"
