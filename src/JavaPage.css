@@ -1,0 +1,268 @@
+.java-page {
+  min-height: 100vh;
+  background: #fffaf5;
+  color: #1f2937;
+}
+
+.java-header {
+  height: 76px;
+  padding: 0 35px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: white;
+  border-bottom: 1px solid #fed7aa;
+
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.java-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  text-decoration: none;
+  color: #1f2937;
+}
+
+.java-logo {
+  width: 46px;
+  height: 46px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  background: #f97316;
+  color: white;
+
+  font-size: 22px;
+}
+
+.java-brand strong {
+  display: block;
+  font-size: 16px;
+}
+
+.java-brand span {
+  display: block;
+
+  margin-top: 3px;
+
+  font-size: 12px;
+  color: #78716c;
+}
+
+.java-nav {
+  display: flex;
+  gap: 24px;
+}
+
+.java-nav a {
+  text-decoration: none;
+
+  color: #57534e;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  transition: 0.2s;
+}
+
+.java-nav a:hover {
+  color: #ea580c;
+}
+
+.java-container {
+  width: min(1100px, calc(100% - 40px));
+
+  margin: auto;
+  padding: 70px 0;
+}
+
+.java-hero {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.java-label {
+  display: inline-block;
+
+  padding: 7px 13px;
+
+  border-radius: 20px;
+
+  background: #fff7ed;
+  color: #ea580c;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  letter-spacing: 1px;
+}
+
+.java-hero h1 {
+  margin: 18px 0 10px;
+
+  font-size: clamp(38px, 6vw, 58px);
+}
+
+.java-hero p {
+  max-width: 650px;
+
+  margin: auto;
+
+  color: #78716c;
+
+  line-height: 1.7;
+}
+
+.java-coming {
+  max-width: 750px;
+
+  margin: auto;
+  padding: 55px 40px;
+
+  text-align: center;
+
+  background: white;
+
+  border: 1px solid #fed7aa;
+  border-radius: 24px;
+
+  box-shadow:
+    0 20px 60px rgba(234, 88, 12, 0.08);
+}
+
+.java-coming-icon {
+  width: 75px;
+  height: 75px;
+
+  margin: 0 auto 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 20px;
+
+  background: #fff7ed;
+
+  font-size: 36px;
+}
+
+.java-badge {
+  display: inline-block;
+
+  padding: 7px 13px;
+
+  border-radius: 20px;
+
+  background: #ffedd5;
+  color: #c2410c;
+
+  font-size: 11px;
+  font-weight: 900;
+
+  letter-spacing: 1px;
+}
+
+.java-coming h2 {
+  margin: 20px 0 12px;
+
+  font-size: 30px;
+}
+
+.java-coming p {
+  max-width: 600px;
+
+  margin: 0 auto;
+
+  color: #78716c;
+
+  line-height: 1.8;
+}
+
+.java-topics {
+  margin: 30px 0;
+
+  display: flex;
+  flex-wrap: wrap;
+
+  justify-content: center;
+
+  gap: 10px;
+}
+
+.java-topics span {
+  padding: 9px 13px;
+
+  border-radius: 9px;
+
+  background: #fff7ed;
+
+  border: 1px solid #fed7aa;
+
+  color: #9a3412;
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.back-cpp-button {
+  display: inline-flex;
+
+  padding: 12px 18px;
+
+  border-radius: 10px;
+
+  background: #2563eb;
+  color: white;
+
+  text-decoration: none;
+
+  font-size: 14px;
+  font-weight: 800;
+
+  transition: 0.2s;
+}
+
+.back-cpp-button:hover {
+  background: #1d4ed8;
+
+  transform: translateY(-1px);
+}
+
+@media (max-width: 700px) {
+
+  .java-header {
+    padding: 0 18px;
+  }
+
+  .java-nav {
+    gap: 10px;
+  }
+
+  .java-nav a {
+    font-size: 12px;
+  }
+
+  .java-container {
+    width: min(100% - 24px, 1100px);
+    padding: 40px 0;
+  }
+
+  .java-coming {
+    padding: 40px 20px;
+  }
+
+  .java-coming h2 {
+    font-size: 25px;
+  }
+}

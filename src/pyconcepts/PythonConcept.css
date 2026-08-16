@@ -1,0 +1,371 @@
+/* =========================================
+   Python Basics Page
+   ========================================= */
+
+.python-basics-page {
+  min-height: 100vh;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 25px 70px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #1f2937;
+}
+
+/* Back Button */
+
+.back-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 25px;
+  color: #2563eb;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  transition: 0.2s ease;
+}
+
+.back-button:hover {
+  color: #1d4ed8;
+  transform: translateX(-4px);
+}
+
+
+/* =========================================
+   Hero
+   ========================================= */
+
+.python-hero {
+  padding: 45px;
+  margin-bottom: 30px;
+  border-radius: 22px;
+  background: linear-gradient(135deg, #eff6ff, #f8fafc);
+  border: 1px solid #dbeafe;
+}
+
+.lesson-badge {
+  display: inline-block;
+  padding: 7px 13px;
+  margin-bottom: 15px;
+  border-radius: 20px;
+  background: #dbeafe;
+  color: #1d4ed8;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.7px;
+}
+
+.python-hero h1 {
+  margin: 0 0 15px;
+  color: #111827;
+  font-size: 44px;
+  line-height: 1.2;
+}
+
+.python-hero p {
+  max-width: 750px;
+  margin: 0;
+  color: #4b5563;
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+
+/* =========================================
+   Sections
+   ========================================= */
+
+.concept-section {
+  margin-top: 28px;
+  padding: 32px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 18px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.concept-section h2 {
+  margin: 0 0 18px;
+  padding-left: 12px;
+  border-left: 4px solid #2563eb;
+  color: #111827;
+  font-size: 26px;
+}
+
+.concept-section p {
+  margin: 0 0 18px;
+  color: #4b5563;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.concept-section code {
+  padding: 3px 7px;
+  border-radius: 5px;
+  background: #f3f4f6;
+  color: #dc2626;
+  font-family: "Fira Code", "Courier New", monospace;
+}
+
+
+/* =========================================
+   Info Card
+   ========================================= */
+
+.info-card {
+  margin-top: 25px;
+  padding: 22px;
+  border-radius: 12px;
+  background: #f8fafc;
+  border: 1px solid #e5e7eb;
+}
+
+.info-card h3 {
+  margin-top: 0;
+  color: #111827;
+}
+
+.info-card ul {
+  margin-bottom: 0;
+  padding-left: 22px;
+  color: #4b5563;
+}
+
+.info-card li {
+  margin: 8px 0;
+}
+
+
+/* =========================================
+   Code Blocks
+   ========================================= */
+
+.concept-section pre {
+  margin: 20px 0;
+  padding: 22px;
+  overflow-x: auto;
+  border-radius: 12px;
+  background: #111827;
+  color: #e5e7eb;
+  font-family: "Fira Code", "Courier New", monospace;
+  font-size: 15px;
+  line-height: 1.7;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+
+/* =========================================
+   Output
+   ========================================= */
+
+.output-box {
+  margin-top: 18px;
+  padding: 18px 20px;
+  border-radius: 10px;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+}
+
+.output-box span {
+  display: block;
+  margin-bottom: 8px;
+  color: #15803d;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.output-box code {
+  padding: 0;
+  background: transparent;
+  color: #166534;
+}
+
+
+/* =========================================
+   Data Types
+   ========================================= */
+
+.data-type-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.type-card {
+  padding: 20px;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  background: #f9fafb;
+}
+
+.type-card h3 {
+  margin: 0 0 5px;
+  color: #2563eb;
+  font-size: 21px;
+}
+
+.type-card p {
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.type-card pre {
+  margin: 0;
+  padding: 14px;
+  font-size: 13px;
+}
+
+
+/* =========================================
+   Operator Table
+   ========================================= */
+
+.operator-table {
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+}
+
+.operator-row {
+  display: grid;
+  grid-template-columns: 1fr 2fr 2fr;
+  padding: 14px 18px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.operator-row:last-child {
+  border-bottom: none;
+}
+
+.operator-header {
+  background: #f3f4f6;
+  color: #111827;
+  font-weight: 700;
+}
+
+.operator-row span {
+  color: #4b5563;
+}
+
+.operator-row span:first-child {
+  color: #2563eb;
+  font-family: "Fira Code", monospace;
+  font-weight: 700;
+}
+
+
+/* =========================================
+   Summary
+   ========================================= */
+
+.summary-card {
+  margin-top: 30px;
+  padding: 32px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #eff6ff, #f8fafc);
+  border: 1px solid #bfdbfe;
+}
+
+.summary-card h2 {
+  margin-top: 0;
+  color: #111827;
+}
+
+.summary-card ul {
+  padding-left: 22px;
+  color: #4b5563;
+  line-height: 1.8;
+}
+
+.summary-card li {
+  margin: 5px 0;
+}
+
+
+/* =========================================
+   Continue Button
+   ========================================= */
+
+.next-button {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 12px 20px;
+  border-radius: 9px;
+  background: #2563eb;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.2s ease;
+}
+
+.next-button:hover {
+  background: #1d4ed8;
+  transform: translateY(-2px);
+}
+
+
+/* =========================================
+   Responsive
+   ========================================= */
+
+@media (max-width: 768px) {
+
+  .python-basics-page {
+    padding: 25px 15px 50px;
+  }
+
+  .python-hero {
+    padding: 30px 22px;
+  }
+
+  .python-hero h1 {
+    font-size: 34px;
+  }
+
+  .python-hero p {
+    font-size: 16px;
+  }
+
+  .concept-section {
+    padding: 24px 20px;
+  }
+
+  .concept-section h2 {
+    font-size: 22px;
+  }
+
+  .data-type-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .operator-row {
+    grid-template-columns: 0.8fr 1.5fr 1.5fr;
+    font-size: 14px;
+  }
+
+  .concept-section pre {
+    font-size: 13px;
+  }
+}
+
+
+@media (max-width: 480px) {
+
+  .python-hero h1 {
+    font-size: 29px;
+  }
+
+  .concept-section {
+    padding: 20px 16px;
+  }
+
+  .operator-row {
+    padding: 12px 10px;
+    font-size: 12px;
+  }
+
+  .summary-card {
+    padding: 24px 18px;
+  }
+}

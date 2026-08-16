@@ -1,0 +1,565 @@
+/* =====================================================
+   PYTHON PAGE
+===================================================== */
+
+.python-page {
+  min-height: 100vh;
+  background:
+    radial-gradient(
+      circle at 15% 10%,
+      #ffedd5 0,
+      transparent 30%
+    ),
+    #f8fafc;
+
+  color: #0f172a;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.python-header {
+  height: 72px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 30px;
+
+  background: rgba(255, 255, 255, 0.96);
+
+  border-bottom: 1px solid #e2e8f0;
+
+  position: sticky;
+  top: 0;
+
+  z-index: 1000;
+
+  backdrop-filter: blur(10px);
+}
+
+
+/* =====================================================
+   BACK BUTTON
+===================================================== */
+
+.python-back {
+  display: flex;
+  align-items: center;
+
+  padding: 9px 13px;
+
+  border: 1px solid #e2e8f0;
+
+  border-radius: 9px;
+
+  color: #475569;
+
+  background: #ffffff;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.python-back:hover {
+  background: #fff7ed;
+
+  border-color: #fed7aa;
+
+  color: #ea580c;
+
+  transform: translateX(-2px);
+}
+
+
+/* =====================================================
+   PYTHON BRAND
+===================================================== */
+
+.python-brand {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+}
+
+.python-icon {
+  width: 44px;
+  height: 44px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 11px;
+
+  background: #fff7ed;
+
+  border: 1px solid #fed7aa;
+
+  font-size: 23px;
+
+  box-shadow:
+    0 4px 10px rgba(234, 88, 12, 0.08);
+}
+
+.python-brand div:last-child {
+  display: flex;
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+.python-brand strong {
+  color: #0f172a;
+
+  font-size: 15px;
+
+  font-weight: 800;
+}
+
+.python-brand span {
+  color: #64748b;
+
+  font-size: 11px;
+}
+
+
+/* =====================================================
+   MAIN
+===================================================== */
+
+.python-main {
+  width: 100%;
+
+  max-width: 1100px;
+
+  margin: 0 auto;
+
+  padding: 75px 25px 70px;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.python-hero {
+  max-width: 760px;
+
+  margin-bottom: 60px;
+}
+
+.python-label {
+  display: inline-block;
+
+  margin-bottom: 15px;
+
+  padding: 7px 12px;
+
+  border-radius: 20px;
+
+  background: #fff7ed;
+
+  border: 1px solid #fed7aa;
+
+  color: #ea580c;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.12em;
+}
+
+.python-hero h1 {
+  margin: 0;
+
+  color: #0f172a;
+
+  font-size: clamp(38px, 5vw, 60px);
+
+  line-height: 1.04;
+
+  letter-spacing: -0.045em;
+}
+
+.python-hero p {
+  max-width: 680px;
+
+  margin: 20px 0 0;
+
+  color: #64748b;
+
+  font-size: 16px;
+
+  line-height: 1.75;
+}
+
+
+/* =====================================================
+   COURSE HEADING
+===================================================== */
+
+.python-heading {
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  margin-bottom: 25px;
+}
+
+.python-heading > div:first-child > span {
+  display: block;
+
+  color: #94a3b8;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.12em;
+}
+
+.python-heading h2 {
+  margin: 7px 0 0;
+
+  color: #0f172a;
+
+  font-size: 28px;
+
+  line-height: 1.2;
+
+  letter-spacing: -0.02em;
+}
+
+
+/* =====================================================
+   TOPIC COUNT
+===================================================== */
+
+.python-count {
+  flex-shrink: 0;
+
+  padding: 8px 13px;
+
+  border-radius: 9px;
+
+  background: #fff7ed;
+
+  border: 1px solid #fed7aa;
+
+  color: #ea580c;
+
+  font-size: 12px;
+
+  font-weight: 800;
+}
+
+
+/* =====================================================
+   CONCEPT GRID
+===================================================== */
+
+.python-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 20px;
+}
+
+
+/* =====================================================
+   CONCEPT CARD
+===================================================== */
+
+.python-card {
+  min-height: 220px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  padding: 25px;
+
+  background: #ffffff;
+
+  border: 1px solid #e2e8f0;
+
+  border-radius: 16px;
+
+  box-shadow:
+    0 5px 18px rgba(15, 23, 42, 0.04);
+
+  transition:
+    transform 0.22s ease,
+    box-shadow 0.22s ease,
+    border-color 0.22s ease;
+}
+
+.python-card:hover {
+  transform: translateY(-5px);
+
+  border-color: #fdba74;
+
+  box-shadow:
+    0 16px 35px rgba(15, 23, 42, 0.09);
+}
+
+
+/* =====================================================
+   CARD TOP
+===================================================== */
+
+.python-card-top {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 10px;
+}
+
+.python-number {
+  color: #ea580c;
+
+  font-size: 12px;
+
+  font-weight: 900;
+
+  letter-spacing: 0.05em;
+}
+
+
+/* =====================================================
+   STATUS
+===================================================== */
+
+.python-status {
+  padding: 5px 9px;
+
+  border-radius: 20px;
+
+  background: #dcfce7;
+
+  border: 1px solid #bbf7d0;
+
+  color: #15803d;
+
+  font-size: 10px;
+
+  font-weight: 800;
+}
+
+
+/* =====================================================
+   CARD TITLE
+===================================================== */
+
+.python-card h3 {
+  margin: 20px 0 8px;
+
+  color: #0f172a;
+
+  font-size: 19px;
+
+  line-height: 1.3;
+
+  font-weight: 800;
+}
+
+
+/* =====================================================
+   CARD DESCRIPTION
+===================================================== */
+
+.python-card p {
+  margin: 0;
+
+  min-height: 48px;
+
+  color: #64748b;
+
+  font-size: 13px;
+
+  line-height: 1.65;
+}
+
+
+/* =====================================================
+   START LEARNING BUTTON
+===================================================== */
+
+.python-button {
+  width: fit-content;
+
+  margin-top: auto;
+  padding: 10px 15px;
+
+  border: 1px solid #ea580c;
+
+  border-radius: 8px;
+
+  background: #ea580c;
+
+  color: #ffffff;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.python-button:hover {
+  background: #c2410c;
+
+  border-color: #c2410c;
+
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 6px 14px rgba(234, 88, 12, 0.2);
+}
+
+.python-button:active {
+  transform: translateY(0);
+}
+
+
+/* =====================================================
+   FOCUS ACCESSIBILITY
+===================================================== */
+
+.python-button:focus-visible,
+.python-back:focus-visible {
+  outline: 3px solid rgba(234, 88, 12, 0.25);
+
+  outline-offset: 3px;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 800px) {
+
+  .python-header {
+    padding: 0 18px;
+  }
+
+  .python-main {
+    padding: 55px 20px 50px;
+  }
+
+  .python-hero {
+    margin-bottom: 45px;
+  }
+
+  .python-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 520px) {
+
+  .python-header {
+    height: 64px;
+
+    padding: 0 14px;
+  }
+
+  .python-back {
+    padding: 8px 10px;
+
+    font-size: 11px;
+  }
+
+  .python-brand {
+    gap: 8px;
+  }
+
+  .python-icon {
+    width: 38px;
+    height: 38px;
+
+    font-size: 20px;
+  }
+
+  .python-brand strong {
+    font-size: 13px;
+  }
+
+  .python-brand span {
+    display: none;
+  }
+
+  .python-main {
+    padding: 45px 15px 40px;
+  }
+
+  .python-hero h1 {
+    font-size: 38px;
+  }
+
+  .python-hero p {
+    font-size: 14px;
+
+    line-height: 1.65;
+  }
+
+  .python-heading {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 12px;
+  }
+
+  .python-heading h2 {
+    font-size: 25px;
+  }
+
+  .python-card {
+    min-height: 210px;
+
+    padding: 21px;
+  }
+
+  .python-card h3 {
+    font-size: 18px;
+  }
+
+  .python-card p {
+    font-size: 12px;
+  }
+
+}
