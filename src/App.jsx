@@ -1057,6 +1057,15 @@ function Visualizer() {
               <span>💬</span>
               Send Feedback
             </Link>
+              {/* ABOUT US */}
+  <a
+    href="/about"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="sidebar-about"
+  >
+    👨‍💻 About Us
+  </a>
 
           </div>
 
