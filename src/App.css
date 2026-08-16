@@ -38,14 +38,702 @@ a {
 
 
 /* =====================================================
-   AUTH LOADING
+   LANGUAGE HOME
 ===================================================== */
+
+.language-home {
+  min-height: 100vh;
+
+  background:
+    radial-gradient(
+      circle at 15% 10%,
+      rgba(219, 234, 254, 0.55),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 85% 15%,
+      rgba(224, 231, 255, 0.45),
+      transparent 25%
+    ),
+    #f8fafc;
+}
+
+
+/* =====================================================
+   TOP HEADER
+===================================================== */
+
+.language-header {
+  width: 100%;
+  min-height: 76px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 32px;
+
+  background: rgba(255, 255, 255, 0.94);
+
+  border-bottom: 1px solid #e2e8f0;
+
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  backdrop-filter: blur(14px);
+
+  box-shadow:
+    0 4px 20px rgba(15, 23, 42, 0.04);
+}
+
+
+/* =====================================================
+   BRAND
+===================================================== */
+
+.language-brand {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  color: #0f172a;
+
+  text-decoration: none;
+
+  flex-shrink: 0;
+}
+
+.language-brand-logo {
+  width: 44px;
+  height: 44px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  background: #eff6ff;
+
+  border: 1px solid #bfdbfe;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 4px 10px rgba(37, 99, 235, 0.08);
+}
+
+.language-brand-logo img {
+  width: 30px;
+  height: 30px;
+
+  object-fit: contain;
+}
+
+.language-brand > div:last-child {
+  display: flex;
+  flex-direction: column;
+
+  gap: 2px;
+}
+
+.language-brand strong {
+  font-size: 15px;
+  font-weight: 800;
+
+  letter-spacing: -0.01em;
+}
+
+.language-brand span {
+  color: #64748b;
+
+  font-size: 11px;
+}
+
+
+/* =====================================================
+   TOP RIGHT NAVIGATION
+===================================================== */
+
+.top-navigation {
+  margin-left: auto;
+
+  display: flex;
+  align-items: center;
+
+  gap: 5px;
+
+  padding: 5px;
+
+  background: #f8fafc;
+
+  border: 1px solid #e2e8f0;
+
+  border-radius: 14px;
+
+  box-shadow:
+    0 5px 15px rgba(15, 23, 42, 0.05);
+}
+
+
+/* =====================================================
+   NAVIGATION LINK
+===================================================== */
+
+.top-nav-link {
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  padding: 0 13px;
+
+  border-radius: 9px;
+
+  color: #64748b;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  text-decoration: none;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.top-nav-link:hover {
+  background: #ffffff;
+
+  color: #2563eb;
+
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 3px 8px rgba(15, 23, 42, 0.06);
+}
+
+
+/* =====================================================
+   NAV ICON
+===================================================== */
+
+.nav-icon {
+  width: 23px;
+  height: 23px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 7px;
+
+  background: #ffffff;
+
+  border: 1px solid #e2e8f0;
+
+  color: #64748b;
+
+  font-size: 13px;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.top-nav-link:hover .nav-icon {
+  background: #eff6ff;
+
+  border-color: #bfdbfe;
+
+  color: #2563eb;
+}
+
+
+/* =====================================================
+   LANGUAGES LINK
+===================================================== */
+
+.languages-link {
+  color: #2563eb;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 2px 6px rgba(15, 23, 42, 0.04);
+}
+
+.languages-link .nav-icon {
+  background: #eff6ff;
+
+  border-color: #bfdbfe;
+
+  color: #2563eb;
+}
+
+
+/* =====================================================
+   USER SECTION
+===================================================== */
+
+.top-nav-user {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-left: 4px;
+
+  padding-left: 9px;
+
+  min-height: 34px;
+
+  border-left: 1px solid #e2e8f0;
+}
+
+
+/* =====================================================
+   MAIN CONTENT
+===================================================== */
+
+.language-main {
+  width: 100%;
+
+  max-width: 1180px;
+
+  margin: 0 auto;
+
+  padding: 75px 30px 80px;
+}
+
+
+/* =====================================================
+   INTRO
+===================================================== */
+
+.language-intro {
+  text-align: center;
+
+  max-width: 760px;
+
+  margin: 0 auto 50px;
+}
+
+.language-label {
+  display: inline-flex;
+
+  align-items: center;
+
+  padding: 7px 12px;
+
+  border-radius: 999px;
+
+  background: #eff6ff;
+
+  border: 1px solid #dbeafe;
+
+  color: #2563eb;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.12em;
+}
+
+.language-intro h1 {
+  margin: 18px 0 14px;
+
+  color: #0f172a;
+
+  font-size: clamp(38px, 6vw, 62px);
+
+  line-height: 1.05;
+
+  letter-spacing: -0.045em;
+
+  font-weight: 850;
+}
+
+.language-intro p {
+  margin: 0 auto 10px;
+
+  max-width: 650px;
+
+  color: #64748b;
+
+  font-size: 16px;
+
+  line-height: 1.7;
+}
+
+.language-intro p strong {
+  color: #2563eb;
+
+  font-size: 12px;
+
+  letter-spacing: 0.04em;
+}
+
+
+/* =====================================================
+   LANGUAGE CARDS
+===================================================== */
+
+.language-selector {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(5, minmax(0, 1fr));
+
+  gap: 16px;
+
+  margin-top: 35px;
+}
+
+
+/* =====================================================
+   LANGUAGE OPTION
+===================================================== */
+
+.language-option {
+  min-height: 190px;
+
+  position: relative;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-start;
+
+  justify-content: flex-start;
+
+  padding: 22px;
+
+  border-radius: 18px;
+
+  background: #ffffff;
+
+  border: 1px solid #e2e8f0;
+
+  color: #0f172a;
+
+  text-decoration: none;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 5px 20px rgba(15, 23, 42, 0.04);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.language-option::before {
+  content: "";
+
+  position: absolute;
+
+  width: 100px;
+  height: 100px;
+
+  right: -35px;
+  bottom: -35px;
+
+  border-radius: 50%;
+
+  background: #eff6ff;
+
+  opacity: 0;
+
+  transition: opacity 0.25s ease;
+}
+
+.language-option:hover {
+  transform: translateY(-6px);
+
+  border-color: #bfdbfe;
+
+  box-shadow:
+    0 14px 30px rgba(37, 99, 235, 0.11);
+}
+
+.language-option:hover::before {
+  opacity: 1;
+}
+
+
+/* =====================================================
+   LANGUAGE LOGO
+===================================================== */
+
+.language-logo {
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 18px;
+
+  border-radius: 13px;
+
+  background: #eff6ff;
+
+  border: 1px solid #dbeafe;
+
+  color: #2563eb;
+
+  font-size: 17px;
+
+  font-weight: 900;
+
+  position: relative;
+
+  z-index: 1;
+}
+
+
+/* =====================================================
+   LANGUAGE INFORMATION
+===================================================== */
+
+.language-info {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 5px;
+
+  position: relative;
+
+  z-index: 1;
+}
+
+.language-info strong {
+  font-size: 17px;
+
+  font-weight: 800;
+}
+
+.language-info small {
+  color: #64748b;
+
+  font-size: 11px;
+
+  line-height: 1.5;
+}
+
+
+/* =====================================================
+   LANGUAGE ARROW
+===================================================== */
+
+.language-arrow {
+  margin-top: auto;
+
+  padding-top: 15px;
+
+  color: #94a3b8;
+
+  font-size: 18px;
+
+  position: relative;
+
+  z-index: 1;
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.language-option:hover .language-arrow {
+  color: #2563eb;
+
+  transform: translateX(4px);
+}
+
+
+/* =====================================================
+   LANGUAGE COLORS
+===================================================== */
+
+.cpp-option:hover {
+  border-color: #93c5fd;
+}
+
+.cpp-option .language-logo {
+  background: #eff6ff;
+  color: #2563eb;
+}
+
+.java-option:hover {
+  border-color: #fecaca;
+}
+
+.java-option .language-logo {
+  background: #fef2f2;
+  color: #dc2626;
+}
+
+.php-option:hover {
+  border-color: #c4b5fd;
+}
+
+.php-option .language-logo {
+  background: #f5f3ff;
+  color: #7c3aed;
+}
+
+.python-option:hover {
+  border-color: #fde68a;
+}
+
+.python-option .language-logo {
+  background: #fffbeb;
+  color: #d97706;
+}
+
+.sql-option:hover {
+  border-color: #a5f3fc;
+}
+
+.sql-option .language-logo {
+  background: #ecfeff;
+  color: #0891b2;
+}
+
+
+/* =====================================================
+   NOTE
+===================================================== */
+
+.language-note {
+  width: fit-content;
+
+  max-width: 100%;
+
+  margin: 38px auto 0;
+
+  padding: 12px 18px;
+
+  border-radius: 10px;
+
+  background: #ffffff;
+
+  border: 1px solid #e2e8f0;
+
+  color: #64748b;
+
+  font-size: 12px;
+
+  box-shadow:
+    0 4px 12px rgba(15, 23, 42, 0.04);
+}
+
+
+/* =====================================================
+   AUTH
+===================================================== */
+
+.auth-page {
+  min-height: 100vh;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 30px;
+
+  background: #f8fafc;
+}
+
+.auth-wrapper {
+  width: 100%;
+
+  max-width: 430px;
+
+  position: relative;
+
+  z-index: 2;
+}
+
+.auth-brand {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin-bottom: 22px;
+}
+
+.auth-logo {
+  width: 45px;
+  height: 45px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 10px;
+
+  background: #eff6ff;
+
+  border: 1px solid #bfdbfe;
+
+  overflow: hidden;
+}
+
+.auth-logo img {
+  width: 30px;
+  height: 30px;
+
+  object-fit: contain;
+}
+
+.auth-brand div:last-child {
+  display: flex;
+
+  flex-direction: column;
+}
+
+.auth-brand strong {
+  font-size: 16px;
+}
+
+.auth-brand span {
+  margin-top: 2px;
+
+  color: #64748b;
+
+  font-size: 11px;
+}
 
 .auth-loading {
   min-height: 100vh;
 
   display: flex;
+
   align-items: center;
+
   justify-content: center;
 
   gap: 10px;
@@ -53,8 +741,6 @@ a {
   background: #f8fafc;
 
   color: #64748b;
-
-  font-size: 14px;
 }
 
 .loading-spinner {
@@ -78,1496 +764,122 @@ a {
 
 
 /* =====================================================
-   AUTH PAGE
-===================================================== */
-
-.auth-page {
-  min-height: 100vh;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  padding: 30px;
-
-  background:
-    radial-gradient(
-      circle at top left,
-      #dbeafe 0,
-      transparent 35%
-    ),
-    #f8fafc;
-}
-
-.auth-wrapper {
-  width: 100%;
-  max-width: 430px;
-
-  position: relative;
-  z-index: 2;
-}
-
-.auth-brand {
-  display: flex;
-  align-items: center;
-
-  gap: 12px;
-
-  margin-bottom: 22px;
-}
-
-
-/* =====================================================
-   AUTH LOGO - NEW IMAGE
-===================================================== */
-
-.auth-logo {
-  width: 48px;
-  height: 48px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  border-radius: 12px;
-
-  background: #eff6ff;
-
-  border: 1px solid #bfdbfe;
-
-  overflow: hidden;
-
-  flex-shrink: 0;
-}
-
-.auth-logo img {
-  width: 100%;
-  height: 100%;
-
-  object-fit: cover;
-
-  display: block;
-}
-
-.auth-brand div:last-child {
-  display: flex;
-  flex-direction: column;
-}
-
-.auth-brand strong {
-  font-size: 17px;
-  font-weight: 800;
-}
-
-.auth-brand span {
-  margin-top: 3px;
-
-  color: #64748b;
-
-  font-size: 11px;
-}
-
-
-/* =====================================================
-   LANGUAGE HOME
-===================================================== */
-
-.language-home {
-  min-height: 100vh;
-
-  background:
-    radial-gradient(
-      circle at 20% 10%,
-      #dbeafe 0,
-      transparent 30%
-    ),
-    #f8fafc;
-}
-
-
-/* =====================================================
-   LANGUAGE HEADER
-===================================================== */
-
-.language-header {
-  height: 72px;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  padding: 0 30px;
-
-  background: rgba(255, 255, 255, 0.95);
-
-  border-bottom: 1px solid #e2e8f0;
-
-  position: sticky;
-  top: 0;
-
-  z-index: 1000;
-
-  backdrop-filter: blur(10px);
-}
-
-
-/* =====================================================
-   LANGUAGE BRAND
-===================================================== */
-
-.language-brand {
-  display: flex;
-  align-items: center;
-
-  gap: 12px;
-
-  color: #0f172a;
-}
-
-
-/* =====================================================
-   LANGUAGE BRAND LOGO - NEW IMAGE
-===================================================== */
-
-.language-brand-logo {
-  width: 44px;
-  height: 44px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  border-radius: 11px;
-
-  background: #eff6ff;
-
-  border: 1px solid #bfdbfe;
-
-  overflow: hidden;
-
-  flex-shrink: 0;
-}
-
-.language-brand-logo img {
-  width: 100%;
-  height: 100%;
-
-  object-fit: cover;
-
-  display: block;
-}
-
-.language-brand div:last-child {
-  display: flex;
-  flex-direction: column;
-
-  gap: 3px;
-}
-
-.language-brand strong {
-  font-size: 15px;
-
-  font-weight: 800;
-}
-
-.language-brand span {
-  color: #64748b;
-
-  font-size: 11px;
-}
-
-
-/* =====================================================
-   LANGUAGE USER
-===================================================== */
-
-.language-user {
-  display: flex;
-  align-items: center;
-}
-
-
-/* =====================================================
-   LANGUAGE MAIN
-===================================================== */
-
-.language-main {
-  width: 100%;
-
-  max-width: 1000px;
-
-  margin: 0 auto;
-
-  padding: 80px 25px 60px;
-
-  text-align: center;
-}
-
-
-/* =====================================================
-   LANGUAGE INTRO
-===================================================== */
-
-.language-intro {
-  max-width: 680px;
-
-  margin: 0 auto 45px;
-}
-
-.language-label {
-  display: inline-block;
-
-  margin-bottom: 14px;
-
-  padding: 7px 12px;
-
-  border-radius: 20px;
-
-  background: #eff6ff;
-
-  border: 1px solid #dbeafe;
-
-  color: #2563eb;
-
-  font-size: 10px;
-
-  font-weight: 800;
-
-  letter-spacing: 0.12em;
-}
-
-.language-intro h1 {
-  margin: 0;
-
-  color: #0f172a;
-
-  font-size: clamp(34px, 5vw, 52px);
-
-  line-height: 1.08;
-
-  letter-spacing: -0.04em;
-}
-
-.language-intro p {
-  max-width: 600px;
-
-  margin: 18px auto 0;
-
-  color: #64748b;
-
-  font-size: 16px;
-
-  line-height: 1.7;
-}
-
-
-/* =====================================================
-   LANGUAGE OPTIONS
-===================================================== */
-
-.language-selector {
-  width: 100%;
-
-  display: grid;
-
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-
-  gap: 20px;
-
-  max-width: 760px;
-
-  margin: 0 auto;
-}
-
-.language-option {
-  min-height: 180px;
-
-  display: flex;
-
-  align-items: center;
-
-  gap: 18px;
-
-  padding: 28px;
-
-  text-align: left;
-
-  background: #ffffff;
-
-  border: 1px solid #e2e8f0;
-
-  border-radius: 18px;
-
-  color: #0f172a;
-
-  box-shadow:
-    0 5px 20px rgba(15, 23, 42, 0.05);
-
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease,
-    border-color 0.2s ease;
-}
-
-.language-option:hover {
-  transform: translateY(-5px);
-
-  box-shadow:
-    0 15px 35px rgba(15, 23, 42, 0.10);
-
-  border-color: #bfdbfe;
-}
-
-
-/* =====================================================
-   LANGUAGE LOGO
-===================================================== */
-
-.language-logo {
-  width: 64px;
-  height: 64px;
-
-  flex-shrink: 0;
-
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
-
-  border-radius: 15px;
-
-  background: #eff6ff;
-
-  border: 1px solid #bfdbfe;
-
-  color: #2563eb;
-
-  font-size: 18px;
-
-  font-weight: 900;
-}
-
-.java-logo {
-  background: #fff7ed;
-
-  border-color: #fed7aa;
-
-  font-size: 30px;
-}
-
-
-/* =====================================================
-   LANGUAGE TEXT
-===================================================== */
-
-.language-option > span:last-child {
-  display: flex;
-
-  flex-direction: column;
-
-  gap: 6px;
-}
-
-.language-option strong {
-  font-size: 20px;
-
-  font-weight: 800;
-}
-
-.language-option small {
-  color: #64748b;
-
-  font-size: 12px;
-
-  line-height: 1.5;
-}
-
-
-/* =====================================================
-   C++ OPTION
-===================================================== */
-
-.cpp-option:hover {
-  border-color: #93c5fd;
-}
-
-.cpp-option:hover .language-logo {
-  background: #dbeafe;
-}
-
-
-/* =====================================================
-   JAVA OPTION
-===================================================== */
-
-.java-option:hover {
-  border-color: #fdba74;
-}
-
-.java-option:hover .java-logo {
-  background: #ffedd5;
-}
-
-
-/* =====================================================
-   LANGUAGE NOTE
-===================================================== */
-
-.language-note {
-  margin-top: 30px;
-
-  color: #64748b;
-
-  font-size: 13px;
-}
-
-
-/* =====================================================
-   EXISTING VISUALIZER APP
-===================================================== */
-
-.app {
-  min-height: 100vh;
-
-  background: #f8fafc;
-}
-
-
-/* =====================================================
-   TOP HEADER
-===================================================== */
-
-.top-header {
-  height: 72px;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  padding: 0 28px;
-
-  background: #ffffff;
-
-  border-bottom: 1px solid #e2e8f0;
-
-  position: sticky;
-  top: 0;
-
-  z-index: 1000;
-}
-
-.brand {
-  display: flex;
-  align-items: center;
-
-  gap: 12px;
-
-  color: #0f172a;
-
-  min-width: 230px;
-}
-
-.brand-mark {
-  width: 42px;
-  height: 42px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  border-radius: 10px;
-
-  background: #eff6ff;
-
-  border: 1px solid #bfdbfe;
-
-  color: #2563eb;
-
-  font-size: 16px;
-
-  font-weight: 800;
-}
-
-.brand-text {
-  display: flex;
-  flex-direction: column;
-
-  gap: 2px;
-}
-
-.brand-text strong {
-  font-size: 15px;
-
-  font-weight: 800;
-}
-
-.brand-text span {
-  font-size: 11px;
-
-  color: #64748b;
-}
-
-
-/* =====================================================
-   OLD LANGUAGE BUTTONS
-===================================================== */
-
-.language-button {
-  display: flex;
-  align-items: center;
-
-  gap: 7px;
-
-  padding: 8px 14px;
-
-  border: none;
-
-  border-radius: 7px;
-
-  background: transparent;
-
-  color: #64748b;
-
-  font-size: 13px;
-
-  font-weight: 700;
-
-  transition: all 0.2s ease;
-}
-
-.language-button:hover {
-  background: #ffffff;
-
-  color: #2563eb;
-}
-
-.language-button.active {
-  background: #ffffff;
-
-  color: #2563eb;
-
-  box-shadow:
-    0 2px 6px rgba(15, 23, 42, 0.08);
-}
-
-.language-icon {
-  font-size: 16px;
-}
-
-
-/* =====================================================
-   HEADER
-===================================================== */
-
-.header-center {
-  display: flex;
-  align-items: center;
-
-  gap: 8px;
-
-  color: #64748b;
-
-  font-size: 12px;
-
-  font-weight: 600;
-}
-
-.header-status-dot {
-  width: 8px;
-  height: 8px;
-
-  border-radius: 50%;
-
-  background: #22c55e;
-
-  box-shadow:
-    0 0 0 4px #dcfce7;
-}
-
-.header-actions {
-  display: flex;
-  align-items: center;
-
-  gap: 12px;
-
-  min-width: 230px;
-
-  justify-content: flex-end;
-}
-
-.header-feedback {
-  display: flex;
-  align-items: center;
-
-  gap: 7px;
-
-  padding: 9px 13px;
-
-  border: 1px solid #e2e8f0;
-
-  border-radius: 9px;
-
-  color: #334155;
-
-  background: #ffffff;
-
-  font-size: 13px;
-
-  font-weight: 700;
-
-  transition: all 0.2s ease;
-}
-
-.header-feedback:hover {
-  background: #eff6ff;
-
-  border-color: #bfdbfe;
-
-  color: #2563eb;
-}
-
-.header-user {
-  display: flex;
-  align-items: center;
-}
-
-
-/* =====================================================
-   WORKSPACE
-===================================================== */
-
-.workspace {
-  display: flex;
-
-  min-height: calc(100vh - 72px);
-}
-
-
-/* =====================================================
-   SIDEBAR
-===================================================== */
-
-.learning-sidebar {
-  width: 270px;
-
-  flex-shrink: 0;
-
-  background: #ffffff;
-
-  border-right: 1px solid #e2e8f0;
-
-  padding: 24px 16px;
-
-  position: sticky;
-
-  top: 72px;
-
-  height: calc(100vh - 72px);
-
-  overflow-y: auto;
-}
-
-
-/* =====================================================
-   SIDEBAR SEARCH
-===================================================== */
-
-.sidebar-search {
-  margin: 16px 0;
-
-  position: relative;
-}
-
-.sidebar-search input {
-  width: 100%;
-
-  height: 42px;
-
-  padding: 0 12px 0 38px;
-
-  border: 1px solid #e2e8f0;
-
-  border-radius: 9px;
-
-  outline: none;
-
-  background: #f8fafc;
-
-  color: #0f172a;
-
-  font-size: 13px;
-}
-
-.sidebar-search input:focus {
-  background: #ffffff;
-
-  border-color: #93c5fd;
-
-  box-shadow:
-    0 0 0 3px rgba(59, 130, 246, 0.1);
-}
-
-.search-icon {
-  position: absolute;
-
-  left: 13px;
-
-  top: 50%;
-
-  transform: translateY(-50%);
-
-  color: #94a3b8;
-
-  pointer-events: none;
-}
-
-
-/* =====================================================
-   SIDEBAR ITEMS
-===================================================== */
-
-.sidebar-heading {
-  display: flex;
-
-  align-items: center;
-
-  justify-content: space-between;
-
-  padding: 0 8px 20px;
-
-  border-bottom: 1px solid #f1f5f9;
-}
-
-.eyebrow {
-  display: block;
-
-  color: #94a3b8;
-
-  font-size: 9px;
-
-  font-weight: 800;
-
-  letter-spacing: 0.12em;
-
-  margin-bottom: 5px;
-}
-
-.sidebar-heading h2 {
-  margin: 0;
-
-  font-size: 20px;
-
-  font-weight: 800;
-}
-
-.sidebar-count {
-  width: 30px;
-  height: 30px;
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: center;
-
-  border-radius: 8px;
-
-  background: #eff6ff;
-
-  color: #2563eb;
-
-  font-size: 12px;
-
-  font-weight: 800;
-}
-
-.sidebar-group {
-  margin-top: 20px;
-}
-
-.sidebar-group-title {
-  padding: 0 9px 8px;
-
-  color: #94a3b8;
-
-  font-size: 10px;
-
-  font-weight: 800;
-
-  letter-spacing: 0.08em;
-
-  text-transform: uppercase;
-}
-
-.sidebar-item {
-  width: 100%;
-
-  display: flex;
-
-  align-items: center;
-
-  gap: 10px;
-
-  padding: 10px 11px;
-
-  margin-bottom: 4px;
-
-  border: 1px solid transparent;
-
-  border-radius: 10px;
-
-  background: transparent;
-
-  color: #475569;
-
-  text-align: left;
-
-  transition: all 0.2s ease;
-}
-
-.sidebar-item:hover {
-  background: #f8fafc;
-
-  color: #2563eb;
-}
-
-.sidebar-item.active {
-  background: #eff6ff;
-
-  border-color: #dbeafe;
-
-  color: #2563eb;
-}
-
-.sidebar-item-icon {
-  width: 28px;
-  height: 28px;
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: center;
-
-  border-radius: 7px;
-
-  background: #f8fafc;
-
-  font-size: 14px;
-}
-
-.sidebar-item-content {
-  flex: 1;
-
-  min-width: 0;
-
-  display: flex;
-
-  flex-direction: column;
-
-  gap: 2px;
-}
-
-.sidebar-item-content strong {
-  font-size: 12px;
-}
-
-.sidebar-item-content small {
-  color: #94a3b8;
-
-  font-size: 10px;
-
-  white-space: nowrap;
-
-  overflow: hidden;
-
-  text-overflow: ellipsis;
-}
-
-
-/* =====================================================
-   SIDEBAR FEEDBACK / ABOUT
-===================================================== */
-
-.sidebar-feedback,
-.sidebar-about {
-  display: flex;
-
-  align-items: center;
-
-  gap: 10px;
-
-  width: 100%;
-
-  margin-top: 10px;
-
-  padding: 12px 14px;
-
-  border-radius: 10px;
-
-  background: #f8fafc;
-
-  border: 1px solid #e2e8f0;
-
-  color: #334155;
-
-  text-decoration: none;
-
-  font-size: 13px;
-
-  font-weight: 700;
-
-  transition: all 0.2s ease;
-}
-
-.sidebar-feedback:hover,
-.sidebar-about:hover {
-  background: #eff6ff;
-
-  border-color: #bfdbfe;
-
-  color: #2563eb;
-
-  transform: translateY(-1px);
-}
-
-
-/* =====================================================
-   MAIN CONTENT
-===================================================== */
-
-.learning-content {
-  flex: 1;
-
-  min-width: 0;
-
-  padding: 42px 48px 60px;
-}
-
-.page-intro {
-  max-width: 1100px;
-
-  margin: 0 auto 50px;
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: space-between;
-
-  gap: 40px;
-}
-
-.intro-label {
-  display: inline-block;
-
-  margin-bottom: 12px;
-
-  color: #2563eb;
-
-  font-size: 10px;
-
-  font-weight: 800;
-
-  letter-spacing: 0.12em;
-}
-
-.page-intro h1 {
-  margin: 0;
-
-  font-size: clamp(36px, 5vw, 58px);
-
-  line-height: 1.05;
-
-  letter-spacing: -0.04em;
-}
-
-.page-intro h1 span {
-  color: #2563eb;
-}
-
-.page-intro p {
-  max-width: 650px;
-
-  margin: 18px 0 0;
-
-  color: #64748b;
-
-  font-size: 16px;
-
-  line-height: 1.7;
-}
-
-
-/* =====================================================
-   LEARNING CARD
-===================================================== */
-
-.learning-section {
-  max-width: 1100px;
-
-  margin: 0 auto 70px;
-}
-
-.learning-card {
-  background: #ffffff;
-
-  border: 1px solid #e2e8f0;
-
-  border-radius: 16px;
-
-  box-shadow:
-    0 4px 15px rgba(15, 23, 42, 0.04);
-}
-
-
-/* =====================================================
    RESPONSIVE
 ===================================================== */
+
+@media (max-width: 1100px) {
+
+  .language-selector {
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+  }
+
+}
+
 
 @media (max-width: 800px) {
 
   .language-header {
+    min-height: 70px;
+
     padding: 0 16px;
   }
 
+  .language-brand > div:last-child {
+    display: none;
+  }
+
+  .top-navigation {
+    gap: 3px;
+  }
+
+  .top-nav-link {
+    padding: 0 8px;
+  }
+
+  .top-nav-link > span:last-child {
+    display: none;
+  }
+
+  .nav-icon {
+    width: 30px;
+    height: 30px;
+  }
+
   .language-main {
-    padding: 55px 18px 40px;
+    padding:
+      55px 20px 60px;
   }
 
   .language-selector {
-    grid-template-columns: 1fr;
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
   }
 
-  .language-option {
-    min-height: 150px;
-  }
-
-  .learning-sidebar {
-    position: static;
-
-    width: 100%;
-
-    height: auto;
-
-    border-right: none;
-
-    border-bottom: 1px solid #e2e8f0;
-  }
-
-  .workspace {
-    display: block;
-  }
-
-  .learning-content {
-    padding: 30px 18px 50px;
-  }
-
-  .page-intro {
-    flex-direction: column;
-
-    align-items: flex-start;
-  }
-
-  .header-center {
-    display: none;
-  }
-
-  .header-feedback {
-    display: none;
-  }
 }
 
 
 @media (max-width: 520px) {
 
   .language-header {
-    height: 64px;
+    min-height: 64px;
+
+    padding: 0 10px;
   }
 
-  .language-brand span {
-    display: none;
+  .language-brand-logo {
+    width: 38px;
+    height: 38px;
   }
 
-  .language-brand strong {
-    font-size: 13px;
+  .language-brand-logo img {
+    width: 26px;
+    height: 26px;
+  }
+
+  .top-navigation {
+    padding: 3px;
+
+    border-radius: 11px;
+  }
+
+  .top-nav-link {
+    height: 36px;
+
+    padding: 0 5px;
+  }
+
+  .top-nav-user {
+    padding-left: 5px;
   }
 
   .language-main {
-    padding-top: 45px;
+    padding:
+      42px 14px 50px;
+  }
+
+  .language-intro {
+    margin-bottom: 35px;
   }
 
   .language-intro h1 {
-    font-size: 35px;
+    font-size: 38px;
   }
 
   .language-intro p {
     font-size: 14px;
   }
 
+  .language-selector {
+    grid-template-columns: 1fr;
+
+    gap: 12px;
+  }
+
   .language-option {
-    padding: 22px;
+    min-height: 155px;
 
-    gap: 14px;
-  }
-
-  .language-logo {
-    width: 52px;
-    height: 52px;
-  }
-
-  .language-option strong {
-    font-size: 18px;
-  }
-
-  .learning-content {
-    padding: 25px 15px 40px;
-  }
-}
-
-
-/* =====================================================
-   LANGUAGE OPTIONS
-===================================================== */
-
-.language-selector {
-  width: 100%;
-
-  display: grid;
-
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-
-  gap: 20px;
-
-  max-width: 760px;
-
-  margin: 0 auto;
-}
-
-.language-option {
-  min-height: 180px;
-
-  position: relative;
-
-  display: flex;
-
-  align-items: center;
-
-  gap: 18px;
-
-  padding: 28px;
-
-  text-align: left;
-
-  background: #ffffff;
-
-  border: 1px solid #e2e8f0;
-
-  border-radius: 18px;
-
-  color: #0f172a;
-
-  box-shadow:
-    0 5px 20px rgba(15, 23, 42, 0.05);
-
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease,
-    border-color 0.2s ease;
-}
-
-.language-option:hover {
-  transform: translateY(-5px);
-
-  box-shadow:
-    0 15px 35px rgba(15, 23, 42, 0.10);
-
-  border-color: #bfdbfe;
-}
-
-
-/* =====================================================
-   LANGUAGE LOGO
-===================================================== */
-
-.language-logo {
-  width: 64px;
-  height: 64px;
-
-  flex-shrink: 0;
-
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
-
-  border-radius: 15px;
-
-  background: #eff6ff;
-
-  border: 1px solid #bfdbfe;
-
-  color: #2563eb;
-
-  font-size: 18px;
-
-  font-weight: 900;
-}
-
-
-/* Java */
-
-.java-option .language-logo {
-  background: #fff7ed;
-
-  border-color: #fed7aa;
-
-  font-size: 30px;
-}
-
-
-/* PHP */
-
-.php-option .language-logo {
-  background: #f1f0ff;
-
-  border-color: #d8d5ff;
-
-  font-size: 25px;
-}
-
-
-/* Python */
-
-.python-option .language-logo {
-  background: #fffbea;
-
-  border-color: #f5df8b;
-
-  font-size: 27px;
-}
-
-
-/* SQL */
-
-.sql-option .language-logo {
-  background: #ecfeff;
-
-  border-color: #a5f3fc;
-
-  color: #0891b2;
-
-  font-size: 17px;
-}
-
-
-/* =====================================================
-   LANGUAGE TEXT
-===================================================== */
-
-.language-info {
-  display: flex;
-
-  flex-direction: column;
-
-  gap: 6px;
-
-  min-width: 0;
-}
-
-.language-info strong {
-  font-size: 20px;
-
-  font-weight: 800;
-}
-
-.language-info small {
-  color: #64748b;
-
-  font-size: 12px;
-
-  line-height: 1.5;
-}
-
-
-/* =====================================================
-   LANGUAGE ARROW
-===================================================== */
-
-.language-arrow {
-  position: absolute;
-
-  right: 22px;
-
-  bottom: 18px;
-
-  color: #94a3b8;
-
-  font-size: 18px;
-
-  transition: all 0.2s ease;
-}
-
-.language-option:hover .language-arrow {
-  color: #2563eb;
-
-  transform: translateX(4px);
-}
-
-
-/* =====================================================
-   C++ OPTION
-===================================================== */
-
-.cpp-option:hover {
-  border-color: #93c5fd;
-}
-
-.cpp-option:hover .language-logo {
-  background: #dbeafe;
-}
-
-
-/* =====================================================
-   JAVA OPTION
-===================================================== */
-
-.java-option:hover {
-  border-color: #fdba74;
-}
-
-.java-option:hover .language-logo {
-  background: #ffedd5;
-}
-
-
-/* =====================================================
-   PHP OPTION
-===================================================== */
-
-.php-option:hover {
-  border-color: #c7c4f5;
-}
-
-.php-option:hover .language-logo {
-  background: #e9e7ff;
-}
-
-
-/* =====================================================
-   PYTHON OPTION
-===================================================== */
-
-.python-option:hover {
-  border-color: #e5cf70;
-}
-
-.python-option:hover .language-logo {
-  background: #fff6cf;
-}
-
-
-/* =====================================================
-   SQL OPTION
-===================================================== */
-
-.sql-option:hover {
-  border-color: #67e8f9;
-}
-
-.sql-option:hover .language-logo {
-  background: #cffafe;
-}
-
-/* =====================================================
-   TOP RIGHT NAVIGATION
-===================================================== */
-
-.top-navigation {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-
-  margin-left: auto;
-  margin-right: 20px;
-}
-
-.top-nav-link {
-  display: inline-flex;
-  align-items: center;
-
-  padding: 9px 14px;
-
-  border-radius: 8px;
-
-  color: #475569;
-  background: transparent;
-
-  font-size: 13px;
-  font-weight: 700;
-
-  text-decoration: none;
-
-  transition: all 0.2s ease;
-}
-
-.top-nav-link:hover {
-  background: #eff6ff;
-  color: #2563eb;
-  transform: translateY(-1px);
-}
-
-.top-nav-link:active {
-  background: #dbeafe;
-  color: #2563eb;
-}
-
-
-/* =====================================================
-   HEADER
-===================================================== */
-
-.language-header {
-  display: flex;
-  align-items: center;
-
-  min-height: 72px;
-
-  padding: 0 28px;
-
-  background: #ffffff;
-
-  border-bottom: 1px solid #e2e8f0;
-
-  position: sticky;
-  top: 0;
-
-  z-index: 1000;
-}
-
-
-/* =====================================================
-   RESPONSIVE
-===================================================== */
-
-@media (max-width: 700px) {
-
-  .top-navigation {
-    gap: 2px;
-    margin-right: 10px;
-  }
-
-  .top-nav-link {
-    padding: 8px 9px;
-    font-size: 12px;
-  }
-
-}
-
-@media (max-width: 520px) {
-
-  .top-navigation {
-    display: none;
+    padding: 20px;
   }
 
 }
