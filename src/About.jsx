@@ -200,7 +200,7 @@ function About() {
             {/* =================================================
                 PYTHON
             ================================================= */}
-            <div className="about-topic coming-soon-card">
+            <div className="about-topic">
 
               <div className="topic-icon python-topic">
                 🐍
