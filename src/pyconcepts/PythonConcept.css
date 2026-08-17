@@ -1,4 +1,985 @@
 /* =========================================
+   PYTHON CONCEPT PAGE
+========================================= */
+
+.python-concept-page {
+  min-height: 100vh;
+
+  background: #f5f7fb;
+
+  color: #1f2937;
+
+  font-family:
+    "Inter",
+    "Segoe UI",
+    Arial,
+    sans-serif;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.python-concept-header {
+  height: 72px;
+
+  padding: 0 7%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  background: #ffffff;
+
+  border-bottom: 1px solid #e5e7eb;
+
+  position: sticky;
+
+  top: 0;
+
+  z-index: 100;
+}
+
+
+/* Back */
+
+.python-concept-back {
+  color: #4b5563;
+
+  text-decoration: none;
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+  transition: all 0.2s ease;
+}
+
+.python-concept-back:hover {
+  color: #3776ab;
+
+  transform: translateX(-3px);
+}
+
+
+/* Brand */
+
+.python-concept-brand {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+}
+
+
+/* Python icon */
+
+.python-concept-icon {
+  width: 42px;
+
+  height: 42px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 10px;
+
+  background: #3776ab;
+
+  font-size: 23px;
+}
+
+
+/* Brand text */
+
+.python-concept-brand-text {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 2px;
+}
+
+.python-concept-brand-text strong {
+  font-size: 16px;
+
+  color: #111827;
+}
+
+.python-concept-brand-text span {
+  font-size: 12px;
+
+  color: #6b7280;
+}
+
+
+/* =========================================
+   MAIN
+========================================= */
+
+.python-concept-main {
+  width: min(900px, 90%);
+
+  margin: 0 auto;
+
+  padding: 60px 0;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.python-concept-hero {
+  text-align: center;
+
+  margin-bottom: 45px;
+}
+
+.python-concept-number {
+  display: inline-block;
+
+  padding: 7px 14px;
+
+  border-radius: 20px;
+
+  background: #e8f1f8;
+
+  color: #3776ab;
+
+  font-size: 12px;
+
+  font-weight: 800;
+
+  letter-spacing: 1px;
+}
+
+.python-concept-hero h1 {
+  margin: 18px 0 12px;
+
+  font-size: clamp(36px, 6vw, 54px);
+
+  line-height: 1.1;
+
+  color: #111827;
+
+  letter-spacing: -1px;
+}
+
+.python-concept-hero p {
+  max-width: 650px;
+
+  margin: 0 auto;
+
+  color: #6b7280;
+
+  font-size: 18px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================
+   CONCEPT CARDS
+========================================= */
+
+.python-concept-card {
+  background: #ffffff;
+
+  margin-bottom: 28px;
+
+  padding: 32px;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 16px;
+
+  box-shadow:
+    0 8px 25px rgba(15, 23, 42, 0.05);
+}
+
+.python-concept-card h2 {
+  margin: 0 0 18px;
+
+  font-size: 24px;
+
+  color: #111827;
+}
+
+.python-concept-card p {
+  color: #6b7280;
+
+  font-size: 15px;
+
+  line-height: 1.8;
+}
+
+.python-concept-card strong {
+  color: #374151;
+}
+
+
+/* =========================================
+   SUB HEADINGS
+========================================= */
+
+.python-subheading {
+  margin: 28px 0 12px;
+
+  font-size: 17px;
+
+  color: #374151;
+}
+
+
+/* =========================================
+   CODE BLOCK
+========================================= */
+
+.python-code {
+  margin: 0;
+
+  padding: 22px;
+
+  overflow-x: auto;
+
+  border-radius: 12px;
+
+  background: #1e293b;
+
+  color: #e5e7eb;
+
+  font-family:
+    "Fira Code",
+    "Consolas",
+    monospace;
+
+  font-size: 14px;
+
+  line-height: 1.7;
+
+  border: 1px solid #334155;
+
+  tab-size: 4;
+}
+
+.python-code code {
+  font-family: inherit;
+
+  color: inherit;
+}
+
+
+/* =========================================
+   OUTPUT
+========================================= */
+
+.python-output {
+  margin-top: 16px;
+
+  padding: 16px 18px;
+
+  background: #f0fdf4;
+
+  border: 1px solid #bbf7d0;
+
+  border-left: 4px solid #22c55e;
+
+  border-radius: 10px;
+
+  color: #166534;
+
+  font-family:
+    "Consolas",
+    monospace;
+
+  font-size: 14px;
+
+  line-height: 1.7;
+}
+
+.python-output-title {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: #15803d;
+
+  font-family:
+    "Inter",
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.8px;
+}
+
+
+/* =========================================
+   WARNING BOX
+========================================= */
+
+.python-warning {
+  margin-top: 16px;
+
+  padding: 16px 18px;
+
+  background: #fff7ed;
+
+  border: 1px solid #fed7aa;
+
+  border-left: 4px solid #f97316;
+
+  border-radius: 10px;
+
+  color: #9a3412;
+
+  font-family:
+    "Consolas",
+    monospace;
+
+  font-size: 13px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================
+   KEY POINTS
+========================================= */
+
+.python-key-points {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 12px;
+
+  margin-top: 22px;
+}
+
+.python-key-point {
+  padding: 13px 15px;
+
+  background: #f8fafc;
+
+  border: 1px solid #e2e8f0;
+
+  border-radius: 9px;
+
+  color: #475569;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  line-height: 1.5;
+
+  transition: all 0.2s ease;
+}
+
+.python-key-point:hover {
+  border-color: #3776ab;
+
+  background: #f1f7fc;
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================================
+   COMPARISON TABLE
+========================================= */
+
+.python-comparison-table {
+  width: 100%;
+
+  margin-top: 25px;
+
+  overflow-x: auto;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 12px;
+
+  background: #ffffff;
+}
+
+.python-comparison-row {
+  min-width: 650px;
+
+  display: grid;
+
+  grid-template-columns:
+    1.4fr
+    1fr
+    1fr
+    1.2fr
+    1fr;
+
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.python-comparison-row:last-child {
+  border-bottom: none;
+}
+
+.python-comparison-row span {
+  display: flex;
+
+  align-items: center;
+
+  padding: 14px 12px;
+
+  color: #475569;
+
+  font-size: 13px;
+
+  border-right: 1px solid #e5e7eb;
+}
+
+.python-comparison-row span:last-child {
+  border-right: none;
+}
+
+
+/* Header */
+
+.python-comparison-header {
+  background: #f1f5f9;
+}
+
+.python-comparison-header span {
+  color: #111827;
+
+  font-size: 12px;
+
+  font-weight: 800;
+}
+
+
+/* First column */
+
+.python-comparison-row:not(.python-comparison-header)
+  span:first-child {
+  color: #3776ab;
+
+  font-weight: 700;
+}
+
+
+/* =========================================
+   TABLE NOTE
+========================================= */
+
+.python-table-note {
+  margin-top: 12px !important;
+
+  margin-bottom: 0 !important;
+
+  font-size: 12px !important;
+
+  color: #94a3b8 !important;
+}
+
+
+/* =========================================
+   REAL WORLD USE CASES
+========================================= */
+
+.python-use-case {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 18px;
+
+  margin-top: 25px;
+}
+
+.python-use-item {
+  padding: 20px;
+
+  background: #f8fafc;
+
+  border: 1px solid #e2e8f0;
+
+  border-radius: 12px;
+
+  transition: all 0.2s ease;
+}
+
+.python-use-item:hover {
+  border-color: #3776ab;
+
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 8px 20px rgba(15, 23, 42, 0.06);
+}
+
+.python-use-item h3 {
+  margin: 0 0 10px;
+
+  color: #111827;
+
+  font-size: 18px;
+}
+
+.python-use-item p {
+  margin: 0 0 15px;
+
+  font-size: 13px;
+
+  line-height: 1.6;
+}
+
+.python-use-item .python-code {
+  margin: 0;
+
+  padding: 15px;
+
+  font-size: 12px;
+}
+
+
+/* =========================================
+   MEMORY CARDS
+========================================= */
+
+.python-memory-grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 16px;
+
+  margin-top: 22px;
+}
+
+.python-memory-card {
+  padding: 20px;
+
+  background: #f8fafc;
+
+  border: 1px solid #e2e8f0;
+
+  border-radius: 12px;
+
+  transition: all 0.2s ease;
+}
+
+.python-memory-card:hover {
+  border-color: #3776ab;
+
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 8px 20px rgba(15, 23, 42, 0.06);
+}
+
+.python-memory-card span {
+  display: block;
+
+  font-size: 28px;
+
+  margin-bottom: 10px;
+}
+
+.python-memory-card strong {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #3776ab;
+
+  font-size: 16px;
+
+  letter-spacing: 0.5px;
+}
+
+.python-memory-card p {
+  margin: 0 0 14px;
+
+  font-size: 13px;
+
+  line-height: 1.6;
+}
+
+.python-memory-card code {
+  display: inline-block;
+
+  padding: 7px 10px;
+
+  background: #1e293b;
+
+  color: #e5e7eb;
+
+  border-radius: 6px;
+
+  font-family:
+    "Fira Code",
+    "Consolas",
+    monospace;
+
+  font-size: 12px;
+}
+
+
+/* =========================================
+   SUMMARY
+========================================= */
+
+.python-summary-box {
+  margin-top: 40px;
+
+  padding: 32px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #3776ab,
+      #2f6690
+    );
+
+  color: #ffffff;
+
+  border-radius: 18px;
+
+  box-shadow:
+    0 15px 35px rgba(55, 118, 171, 0.22);
+}
+
+.python-summary-box h2 {
+  margin: 0 0 20px;
+
+  font-size: 25px;
+}
+
+.python-summary-box ul {
+  margin: 0;
+
+  padding-left: 22px;
+}
+
+.python-summary-box li {
+  margin-bottom: 9px;
+
+  color: rgba(255, 255, 255, 0.92);
+
+  line-height: 1.6;
+
+  font-size: 14px;
+}
+
+.python-summary-box li:last-child {
+  margin-bottom: 0;
+}
+
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+.python-concept-navigation {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 16px;
+
+  margin-top: 40px;
+}
+
+.python-nav-button {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  min-width: 130px;
+
+  padding: 13px 20px;
+
+  border: 1px solid #d1d5db;
+
+  border-radius: 10px;
+
+  background: #ffffff;
+
+  color: #374151;
+
+  text-decoration: none;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  transition: all 0.2s ease;
+}
+
+.python-nav-button:hover {
+  border-color: #3776ab;
+
+  color: #3776ab;
+
+  transform: translateY(-2px);
+}
+
+.python-nav-button.primary {
+  background: #3776ab;
+
+  border-color: #3776ab;
+
+  color: #ffffff;
+}
+
+.python-nav-button.primary:hover {
+  background: #2f6690;
+
+  color: #ffffff;
+
+  box-shadow:
+    0 6px 16px rgba(55, 118, 171, 0.25);
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 768px) {
+
+  .python-concept-header {
+    height: auto;
+
+    min-height: 68px;
+
+    padding: 12px 5%;
+  }
+
+  .python-concept-main {
+    padding: 45px 0;
+  }
+
+  .python-concept-card {
+    padding: 24px;
+  }
+
+  .python-concept-hero p {
+    font-size: 16px;
+  }
+
+  .python-code {
+    font-size: 14px;
+  }
+
+  .python-key-points {
+    grid-template-columns: 1fr;
+  }
+
+  .python-use-case {
+    grid-template-columns: 1fr;
+  }
+
+  .python-memory-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 520px) {
+
+  .python-concept-header {
+    align-items: flex-start;
+
+    gap: 12px;
+  }
+
+  .python-concept-back {
+    font-size: 13px;
+
+    margin-top: 12px;
+  }
+
+  .python-concept-brand {
+    gap: 8px;
+  }
+
+  .python-concept-icon {
+    width: 36px;
+
+    height: 36px;
+
+    font-size: 19px;
+  }
+
+  .python-concept-brand-text strong {
+    font-size: 14px;
+  }
+
+  .python-concept-brand-text span {
+    font-size: 10px;
+  }
+
+  .python-concept-main {
+    width: 92%;
+
+    padding: 35px 0;
+  }
+
+  .python-concept-hero {
+    margin-bottom: 30px;
+  }
+
+  .python-concept-hero h1 {
+    font-size: 36px;
+  }
+
+  .python-concept-hero p {
+    font-size: 15px;
+  }
+
+  .python-concept-card {
+    padding: 20px;
+
+    border-radius: 13px;
+  }
+
+  .python-concept-card h2 {
+    font-size: 20px;
+  }
+
+  .python-concept-card p {
+    font-size: 14px;
+  }
+
+  .python-subheading {
+    font-size: 16px;
+
+    margin-top: 24px;
+  }
+
+  .python-code {
+    padding: 17px;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+  }
+
+  .python-output {
+    font-size: 12px;
+
+    padding: 14px;
+  }
+
+  .python-key-points {
+    grid-template-columns: 1fr;
+
+    gap: 10px;
+  }
+
+  .python-key-point {
+    padding: 11px 13px;
+
+    font-size: 12px;
+  }
+
+  .python-comparison-table {
+    margin-top: 18px;
+
+    overflow-x: auto;
+
+    border-radius: 9px;
+  }
+
+  .python-comparison-row {
+    min-width: 680px;
+  }
+
+  .python-comparison-row span {
+    padding: 11px 10px;
+
+    font-size: 11px;
+  }
+
+  .python-comparison-header span {
+    font-size: 10px;
+  }
+
+  .python-use-case {
+    grid-template-columns: 1fr;
+
+    gap: 14px;
+  }
+
+  .python-use-item {
+    padding: 17px;
+  }
+
+  .python-use-item h3 {
+    font-size: 17px;
+  }
+
+  .python-memory-grid {
+    grid-template-columns: 1fr;
+
+    gap: 12px;
+  }
+
+  .python-memory-card {
+    padding: 17px;
+  }
+
+  .python-summary-box {
+    margin-top: 30px;
+
+    padding: 24px;
+
+    border-radius: 14px;
+  }
+
+  .python-summary-box h2 {
+    font-size: 22px;
+  }
+
+  .python-summary-box li {
+    font-size: 13px;
+  }
+
+  .python-concept-navigation {
+    flex-direction: column;
+  }
+
+  .python-nav-button {
+    width: 100%;
+  }
+
+}
+
+
+/* =========================================
    Python Basics Page
 ========================================= */
 
