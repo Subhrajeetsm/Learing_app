@@ -206,8 +206,8 @@ function About() {
                 🐍
               </div>
 
-              <span className="language-status coming-soon">
-                COMING SOON
+              <span className="language-status available">
+                AVAILABLE
               </span>
 
               <h3>
@@ -220,12 +220,12 @@ function About() {
                 resources.
               </p>
 
-              <button
-                className="language-learn-btn disabled-btn"
-                disabled
+               <Link
+                to="/cpp"
+                className="language-learn-btn"
               >
-                Coming Soon
-              </button>
+                Start Learning →
+              </Link>
 
             </div>
 
