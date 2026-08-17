@@ -1,371 +1,334 @@
-/* =========================================
-   Python Basics Page
-   ========================================= */
+/* ================================
+   Python Concept Page
+================================ */
 
-.python-basics-page {
+.python-concept-page {
   min-height: 100vh;
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 40px 25px 70px;
-  font-family: Arial, Helvetica, sans-serif;
+  background: #f5f7fb;
   color: #1f2937;
+  font-family: "Inter", "Segoe UI", Arial, sans-serif;
 }
 
-/* Back Button */
+/* ================================
+   Header
+================================ */
 
-.back-button {
-  display: inline-flex;
+.python-concept-header {
+  height: 72px;
+  padding: 0 7%;
+  display: flex;
   align-items: center;
-  gap: 6px;
-  margin-bottom: 25px;
-  color: #2563eb;
+  justify-content: space-between;
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.python-concept-back {
+  color: #4b5563;
   text-decoration: none;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 600;
   transition: 0.2s ease;
 }
 
-.back-button:hover {
-  color: #1d4ed8;
-  transform: translateX(-4px);
+.python-concept-back:hover {
+  color: #3776ab;
+  transform: translateX(-3px);
 }
 
-
-/* =========================================
-   Hero
-   ========================================= */
-
-.python-hero {
-  padding: 45px;
-  margin-bottom: 30px;
-  border-radius: 22px;
-  background: linear-gradient(135deg, #eff6ff, #f8fafc);
-  border: 1px solid #dbeafe;
+.python-concept-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
-.lesson-badge {
-  display: inline-block;
-  padding: 7px 13px;
-  margin-bottom: 15px;
-  border-radius: 20px;
-  background: #dbeafe;
-  color: #1d4ed8;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.7px;
+.python-concept-icon {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: #3776ab;
+  font-size: 23px;
 }
 
-.python-hero h1 {
-  margin: 0 0 15px;
-  color: #111827;
-  font-size: 44px;
-  line-height: 1.2;
+.python-concept-brand-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
 }
 
-.python-hero p {
-  max-width: 750px;
-  margin: 0;
-  color: #4b5563;
-  font-size: 18px;
-  line-height: 1.8;
-}
-
-
-/* =========================================
-   Sections
-   ========================================= */
-
-.concept-section {
-  margin-top: 28px;
-  padding: 32px;
-  background: #ffffff;
-  border: 1px solid #e5e7eb;
-  border-radius: 18px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-}
-
-.concept-section h2 {
-  margin: 0 0 18px;
-  padding-left: 12px;
-  border-left: 4px solid #2563eb;
-  color: #111827;
-  font-size: 26px;
-}
-
-.concept-section p {
-  margin: 0 0 18px;
-  color: #4b5563;
+.python-concept-brand-text strong {
   font-size: 16px;
-  line-height: 1.8;
-}
-
-.concept-section code {
-  padding: 3px 7px;
-  border-radius: 5px;
-  background: #f3f4f6;
-  color: #dc2626;
-  font-family: "Fira Code", "Courier New", monospace;
-}
-
-
-/* =========================================
-   Info Card
-   ========================================= */
-
-.info-card {
-  margin-top: 25px;
-  padding: 22px;
-  border-radius: 12px;
-  background: #f8fafc;
-  border: 1px solid #e5e7eb;
-}
-
-.info-card h3 {
-  margin-top: 0;
   color: #111827;
 }
 
-.info-card ul {
-  margin-bottom: 0;
-  padding-left: 22px;
-  color: #4b5563;
+.python-concept-brand-text span {
+  font-size: 12px;
+  color: #6b7280;
 }
 
-.info-card li {
-  margin: 8px 0;
+/* ================================
+   Main
+================================ */
+
+.python-concept-main {
+  width: min(900px, 90%);
+  margin: 0 auto;
+  padding: 60px 0;
 }
 
+/* ================================
+   Hero
+================================ */
 
-/* =========================================
-   Code Blocks
-   ========================================= */
+.python-concept-hero {
+  text-align: center;
+  margin-bottom: 45px;
+}
 
-.concept-section pre {
-  margin: 20px 0;
-  padding: 22px;
+.python-concept-number {
+  display: inline-block;
+  padding: 7px 14px;
+  border-radius: 20px;
+  background: #e8f1f8;
+  color: #3776ab;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.python-concept-hero h1 {
+  margin: 18px 0 12px;
+  font-size: clamp(36px, 6vw, 54px);
+  line-height: 1.1;
+  color: #111827;
+}
+
+.python-concept-hero p {
+  max-width: 620px;
+  margin: 0 auto;
+  color: #6b7280;
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+/* ================================
+   Concept Cards
+================================ */
+
+.python-concept-card {
+  background: #ffffff;
+  margin-bottom: 28px;
+  padding: 32px;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(15, 23, 42, 0.05);
+}
+
+.python-concept-card h2 {
+  margin: 0 0 20px;
+  font-size: 24px;
+  color: #111827;
+}
+
+/* ================================
+   Code
+================================ */
+
+.python-code {
+  margin: 0;
+  padding: 24px;
   overflow-x: auto;
   border-radius: 12px;
-  background: #111827;
+  background: #1e293b;
   color: #e5e7eb;
-  font-family: "Fira Code", "Courier New", monospace;
+  font-family: "Fira Code", "Consolas", monospace;
   font-size: 15px;
   line-height: 1.7;
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+  border: 1px solid #334155;
 }
 
+.python-code code {
+  font-family: inherit;
+}
 
-/* =========================================
+/* ================================
    Output
-   ========================================= */
+================================ */
 
-.output-box {
-  margin-top: 18px;
-  padding: 18px 20px;
-  border-radius: 10px;
+.python-output {
+  margin-top: 16px;
+  padding: 16px 18px;
   background: #f0fdf4;
   border: 1px solid #bbf7d0;
-}
-
-.output-box span {
-  display: block;
-  margin-bottom: 8px;
-  color: #15803d;
-  font-size: 13px;
-  font-weight: 700;
-  text-transform: uppercase;
-}
-
-.output-box code {
-  padding: 0;
-  background: transparent;
+  border-left: 4px solid #22c55e;
+  border-radius: 10px;
   color: #166534;
-}
-
-
-/* =========================================
-   Data Types
-   ========================================= */
-
-.data-type-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 18px;
-}
-
-.type-card {
-  padding: 20px;
-  border: 1px solid #e5e7eb;
-  border-radius: 12px;
-  background: #f9fafb;
-}
-
-.type-card h3 {
-  margin: 0 0 5px;
-  color: #2563eb;
-  font-size: 21px;
-}
-
-.type-card p {
-  margin-bottom: 10px;
+  font-family: "Consolas", monospace;
   font-size: 14px;
+  line-height: 1.6;
 }
 
-.type-card pre {
-  margin: 0;
-  padding: 14px;
-  font-size: 13px;
+.python-output-title {
+  display: block;
+  margin-bottom: 6px;
+  color: #15803d;
+  font-family: "Inter", "Segoe UI", Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
 }
 
+/* ================================
+   Navigation
+================================ */
 
-/* =========================================
-   Operator Table
-   ========================================= */
-
-.operator-table {
-  overflow: hidden;
-  border: 1px solid #e5e7eb;
-  border-radius: 12px;
+.python-concept-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 40px;
 }
 
-.operator-row {
-  display: grid;
-  grid-template-columns: 1fr 2fr 2fr;
-  padding: 14px 18px;
-  border-bottom: 1px solid #e5e7eb;
-}
-
-.operator-row:last-child {
-  border-bottom: none;
-}
-
-.operator-header {
-  background: #f3f4f6;
-  color: #111827;
-  font-weight: 700;
-}
-
-.operator-row span {
-  color: #4b5563;
-}
-
-.operator-row span:first-child {
-  color: #2563eb;
-  font-family: "Fira Code", monospace;
-  font-weight: 700;
-}
-
-
-/* =========================================
-   Summary
-   ========================================= */
-
-.summary-card {
-  margin-top: 30px;
-  padding: 32px;
-  border-radius: 18px;
-  background: linear-gradient(135deg, #eff6ff, #f8fafc);
-  border: 1px solid #bfdbfe;
-}
-
-.summary-card h2 {
-  margin-top: 0;
-  color: #111827;
-}
-
-.summary-card ul {
-  padding-left: 22px;
-  color: #4b5563;
-  line-height: 1.8;
-}
-
-.summary-card li {
-  margin: 5px 0;
-}
-
-
-/* =========================================
-   Continue Button
-   ========================================= */
-
-.next-button {
-  display: inline-block;
-  margin-top: 15px;
-  padding: 12px 20px;
-  border-radius: 9px;
-  background: #2563eb;
-  color: #ffffff;
+.python-nav-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 130px;
+  padding: 13px 20px;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #374151;
   text-decoration: none;
-  font-weight: 600;
-  transition: 0.2s ease;
+  font-size: 14px;
+  font-weight: 700;
+  transition: all 0.2s ease;
 }
 
-.next-button:hover {
-  background: #1d4ed8;
+.python-nav-button:hover {
+  border-color: #3776ab;
+  color: #3776ab;
   transform: translateY(-2px);
 }
 
+.python-nav-button.primary {
+  background: #3776ab;
+  border-color: #3776ab;
+  color: #ffffff;
+}
 
-/* =========================================
-   Responsive
-   ========================================= */
+.python-nav-button.primary:hover {
+  background: #2f6690;
+  color: #ffffff;
+  box-shadow: 0 6px 16px rgba(55, 118, 171, 0.25);
+}
+
+/* ================================
+   Tablet
+================================ */
 
 @media (max-width: 768px) {
-
-  .python-basics-page {
-    padding: 25px 15px 50px;
+  .python-concept-header {
+    height: auto;
+    min-height: 68px;
+    padding: 12px 5%;
   }
 
-  .python-hero {
-    padding: 30px 22px;
+  .python-concept-main {
+    padding: 45px 0;
   }
 
-  .python-hero h1 {
-    font-size: 34px;
+  .python-concept-card {
+    padding: 24px;
   }
 
-  .python-hero p {
+  .python-concept-hero p {
     font-size: 16px;
   }
 
-  .concept-section {
-    padding: 24px 20px;
-  }
-
-  .concept-section h2 {
-    font-size: 22px;
-  }
-
-  .data-type-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .operator-row {
-    grid-template-columns: 0.8fr 1.5fr 1.5fr;
+  .python-code {
     font-size: 14px;
-  }
-
-  .concept-section pre {
-    font-size: 13px;
   }
 }
 
+/* ================================
+   Mobile
+================================ */
 
-@media (max-width: 480px) {
-
-  .python-hero h1 {
-    font-size: 29px;
+@media (max-width: 520px) {
+  .python-concept-header {
+    align-items: flex-start;
+    gap: 12px;
   }
 
-  .concept-section {
-    padding: 20px 16px;
+  .python-concept-back {
+    font-size: 13px;
+    margin-top: 12px;
   }
 
-  .operator-row {
-    padding: 12px 10px;
-    font-size: 12px;
+  .python-concept-brand {
+    gap: 8px;
   }
 
-  .summary-card {
-    padding: 24px 18px;
+  .python-concept-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 19px;
+  }
+
+  .python-concept-brand-text strong {
+    font-size: 14px;
+  }
+
+  .python-concept-brand-text span {
+    font-size: 10px;
+  }
+
+  .python-concept-main {
+    width: 92%;
+    padding: 35px 0;
+  }
+
+  .python-concept-hero {
+    margin-bottom: 30px;
+  }
+
+  .python-concept-hero h1 {
+    font-size: 38px;
+  }
+
+  .python-concept-hero p {
+    font-size: 15px;
+  }
+
+  .python-concept-card {
+    padding: 20px;
+    border-radius: 13px;
+  }
+
+  .python-concept-card h2 {
+    font-size: 20px;
+  }
+
+  .python-code {
+    padding: 18px;
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  .python-concept-navigation {
+    flex-direction: column;
+  }
+
+  .python-nav-button {
+    width: 100%;
   }
 }
