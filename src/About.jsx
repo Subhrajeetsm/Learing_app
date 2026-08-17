@@ -198,7 +198,7 @@ function About() {
 
 
             {/* =================================================
-                PYTHON
+                PYTHON - AVAILABLE
             ================================================= */}
             <div className="about-topic">
 
@@ -220,8 +220,8 @@ function About() {
                 resources.
               </p>
 
-               <Link
-                to="/cpp"
+              <Link
+                to="/python"
                 className="language-learn-btn"
               >
                 Start Learning →
@@ -402,8 +402,8 @@ function About() {
                   </strong>
 
                   <p>
-                    Learn C++ today and explore more programming
-                    languages as the platform grows.
+                    Learn C++ and Python today and explore more
+                    programming languages as the platform grows.
                   </p>
 
                 </div>
@@ -461,8 +461,8 @@ function About() {
               </h3>
 
               <p>
-                Select C++ or explore the upcoming programming
-                languages.
+                Select C++ or Python and explore the available
+                programming content.
               </p>
 
             </div>
