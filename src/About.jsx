@@ -198,38 +198,36 @@ function About() {
 
 
             {/* =================================================
-                PYTHON - AVAILABLE
-            ================================================= */}
-            <div className="about-topic">
+    PYTHON - AVAILABLE
+================================================= */}
+<div className="about-topic">
 
-              <div className="topic-icon python-topic">
-                🐍
-              </div>
+  <div className="topic-icon python-topic">
+    🐍
+  </div>
 
-              <span className="language-status available">
-                AVAILABLE
-              </span>
+  <span className="language-status available">
+    AVAILABLE
+  </span>
 
-              <h3>
-                Python
-              </h3>
+  <h3>
+    Python
+  </h3>
 
-              <p>
-                Learn Python programming with simple examples,
-                practical concepts and interactive learning
-                resources.
-              </p>
+  <p>
+    Learn Python programming with simple examples,
+    practical concepts and interactive learning
+    resources.
+  </p>
 
-              <Link
-                to="/python"
-                className="language-learn-btn"
-              >
-                Start Learning →
-              </Link>
+  <Link
+    to="/python"
+    className="language-learn-btn"
+  >
+    Start Learning →
+  </Link>
 
-            </div>
-
-
+</div>
 
             {/* =================================================
                 PHP
