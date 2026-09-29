@@ -174,6 +174,9 @@ function Feedback() {
           >
             Submit Feedback
           </button>
+          <div>
+            <h1> <a href="https://forms.gle/tcepCdXrnxhgsfbB6">Give your valueable feedback here aslo !!!(clik) </a> </h1>
+          </div>
 
         </form>
 
