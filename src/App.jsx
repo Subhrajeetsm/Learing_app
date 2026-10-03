@@ -194,14 +194,12 @@ function SignUpPage() {
 function LanguageSelector() {
 
   const languages = [
-
     {
       name: "C++",
       description: "C++ OOP & Inheritance",
       icon: "C++",
       path: "/cpp",
       className: "cpp-option",
-      available: true,
     },
 
     {
@@ -210,7 +208,6 @@ function LanguageSelector() {
       icon: "☕",
       path: "/java",
       className: "java-option",
-      available: true,
     },
 
     {
@@ -219,7 +216,6 @@ function LanguageSelector() {
       icon: "🐘",
       path: "/php",
       className: "php-option",
-      available: true,
     },
 
     {
@@ -228,7 +224,6 @@ function LanguageSelector() {
       icon: "🐍",
       path: "/python",
       className: "python-option",
-      available: true,
     },
 
     {
@@ -237,9 +232,7 @@ function LanguageSelector() {
       icon: "🗄️",
       path: "/sql",
       className: "sql-option",
-      available: true,
     },
-
   ];
 
   return (
@@ -289,8 +282,6 @@ function TopNavigation() {
   return (
     <nav className="top-navigation">
 
-      {/* LANGUAGES */}
-
       <Link
         to="/"
         className="top-nav-link languages-link"
@@ -303,9 +294,6 @@ function TopNavigation() {
           Languages
         </span>
       </Link>
-
-
-      {/* ABOUT */}
 
       <Link
         to="/about"
@@ -320,9 +308,6 @@ function TopNavigation() {
         </span>
       </Link>
 
-
-      {/* FEEDBACK */}
-
       <Link
         to="/feedback"
         className="top-nav-link"
@@ -335,9 +320,6 @@ function TopNavigation() {
           Feedback
         </span>
       </Link>
-
-
-      {/* USER */}
 
       <div className="top-nav-user">
         <UserButton />
@@ -361,13 +343,7 @@ function HomePage() {
   return (
     <div className="language-home">
 
-      {/* =================================================
-          TOP HEADER
-      ================================================= */}
-
       <header className="language-header">
-
-        {/* BRAND */}
 
         <Link
           to="/"
@@ -397,23 +373,11 @@ function HomePage() {
 
         </Link>
 
-
-        {/* =================================================
-            TOP RIGHT LINKS
-        ================================================= */}
-
         <TopNavigation />
 
       </header>
 
-
-      {/* =================================================
-          MAIN
-      ================================================= */}
-
       <main className="language-main">
-
-        {/* INTRO */}
 
         <div className="language-intro">
 
@@ -438,15 +402,7 @@ function HomePage() {
 
         </div>
 
-
-        {/* =================================================
-            LANGUAGE CARDS
-        ================================================= */}
-
         <LanguageSelector />
-
-
-        {/* NOTE */}
 
         <div className="language-note">
 
@@ -473,26 +429,33 @@ function App() {
       <Routes>
 
         {/* =================================================
-            AUTH
+            PUBLIC AUTH PAGES
         ================================================= */}
 
         <Route
           path="/sign-in/*"
-          element={
-            <SignInPage />
-          }
+          element={<SignInPage />}
         />
 
         <Route
           path="/sign-up/*"
-          element={
-            <SignUpPage />
-          }
+          element={<SignUpPage />}
         />
 
 
         {/* =================================================
-            HOME / LANGUAGES
+            PUBLIC ABOUT PAGE
+            NO LOGIN REQUIRED
+        ================================================= */}
+
+        <Route
+          path="/about"
+          element={<About />}
+        />
+
+
+        {/* =================================================
+            PROTECTED HOME
         ================================================= */}
 
         <Route
@@ -506,7 +469,7 @@ function App() {
 
 
         {/* =================================================
-            C++
+            PROTECTED C++
         ================================================= */}
 
         <Route
@@ -520,7 +483,7 @@ function App() {
 
 
         {/* =================================================
-            JAVA
+            PROTECTED JAVA
         ================================================= */}
 
         <Route
@@ -534,7 +497,7 @@ function App() {
 
 
         {/* =================================================
-            PHP
+            PROTECTED PHP
         ================================================= */}
 
         <Route
@@ -548,7 +511,7 @@ function App() {
 
 
         {/* =================================================
-            PYTHON MAIN PAGE
+            PROTECTED PYTHON
         ================================================= */}
 
         <Route
@@ -702,7 +665,7 @@ function App() {
 
 
         {/* =================================================
-            SQL
+            PROTECTED SQL
         ================================================= */}
 
         <Route
@@ -716,7 +679,7 @@ function App() {
 
 
         {/* =================================================
-            FEEDBACK
+            PROTECTED FEEDBACK
         ================================================= */}
 
         <Route
@@ -730,20 +693,6 @@ function App() {
 
 
         {/* =================================================
-            ABOUT
-        ================================================= */}
-
-        <Route
-          path="/about"
-          element={
-            <ProtectedRoute>
-              <About />
-            </ProtectedRoute>
-          }
-        />
-
-
-        {/* =================================================
             FALLBACK
         ================================================= */}
 
@@ -751,7 +700,7 @@ function App() {
           path="*"
           element={
             <Navigate
-              to="/"
+              to="/about"
               replace
             />
           }
