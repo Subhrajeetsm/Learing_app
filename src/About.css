@@ -1,4 +1,3 @@
-```css
 /* =====================================================
    ABOUT PAGE
 ===================================================== */
@@ -1659,8 +1658,3 @@
   }
 
 }
-```
-
-This keeps the existing page structure/content and changes the navigation styling through CSS only. Your existing `/about`, `/sign-in`, and `/sign-up` links remain untouched.
-
-If you want, I can also make the **whole About page UI more premium/modern while still changing CSS only**.
