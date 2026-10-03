@@ -1,17 +1,21 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useAuth } from "@clerk/react";
 import "./About.css";
 
 function About() {
+  const { isLoaded, isSignedIn } = useAuth();
 
-  /* =====================================================
-     CHECK LOGIN STATUS
-  ===================================================== */
+  if (!isLoaded) {
+    return (
+      <div className="auth-loading">
+        <div className="loading-spinner"></div>
+        <span>Loading...</span>
+      </div>
+    );
+  }
 
-  const isLoggedIn =
-    !!localStorage.getItem("token") ||
-    !!localStorage.getItem("authToken") ||
-    !!localStorage.getItem("accessToken");
+  const isLoggedIn = isSignedIn;
 
   return (
     <div className="about-page">
@@ -26,13 +30,11 @@ function About() {
           to="/about"
           className="about-header-brand"
         >
-
           <div className="about-logo">
             C++
           </div>
 
           <div>
-
             <h1>
               Programming Learning Lab
             </h1>
@@ -40,36 +42,26 @@ function About() {
             <p>
               Learn programming concepts visually and interactively
             </p>
-
           </div>
-
         </Link>
 
 
         {/* =====================================================
-            PUBLIC / LOGGED-IN NAVIGATION
+            NAVIGATION
         ===================================================== */}
 
         <nav className="about-navigation">
 
           {isLoggedIn ? (
 
-            /* ============================
-               LOGGED-IN USER
-            ============================ */
-
             <Link
-              to="/learn"
+              to="/"
               className="about-nav-button"
             >
               Start Learning →
             </Link>
 
           ) : (
-
-            /* ============================
-               NOT LOGGED-IN USER
-            ============================ */
 
             <>
               <Link
@@ -118,11 +110,9 @@ function About() {
             ABOUT US
           </span>
 
-
           <h2>
             Learn Programming in a Simple & Interactive Way 🚀
           </h2>
-
 
           <p>
             Programming Learning Lab is an educational platform
@@ -137,7 +127,7 @@ function About() {
             {isLoggedIn ? (
 
               <Link
-                to="/learn"
+                to="/"
                 className="hero-primary-btn"
               >
                 Start Learning →
@@ -187,13 +177,11 @@ function About() {
             🎯
           </div>
 
-
           <div>
 
             <h2>
               Our Mission
             </h2>
-
 
             <p>
               Our mission is to make programming easier and more
@@ -201,7 +189,6 @@ function About() {
               from theory, students can explore concepts through
               visual explanations, examples and interactive learning.
             </p>
-
 
             <p>
               We aim to create a student-friendly platform where
@@ -215,7 +202,7 @@ function About() {
 
 
         {/* =====================================================
-            AVAILABLE LANGUAGES
+            PROGRAMMING LANGUAGES
         ===================================================== */}
 
         <section className="about-section">
@@ -244,9 +231,7 @@ function About() {
           <div className="about-grid">
 
 
-            {/* =================================================
-                C++
-            ================================================= */}
+            {/* C++ */}
 
             <div className="about-topic">
 
@@ -254,23 +239,19 @@ function About() {
                 C++
               </div>
 
-
               <span className="language-status available">
                 AVAILABLE
               </span>
 
-
               <h3>
                 C++
               </h3>
-
 
               <p>
                 Learn C++ Object-Oriented Programming concepts,
                 inheritance, classes, objects, constructors and
                 access specifiers with interactive examples.
               </p>
-
 
               <Link
                 to="/cpp"
@@ -282,9 +263,7 @@ function About() {
             </div>
 
 
-            {/* =================================================
-                JAVA
-            ================================================= */}
+            {/* JAVA */}
 
             <div className="about-topic coming-soon-card">
 
@@ -292,23 +271,19 @@ function About() {
                 ☕
               </div>
 
-
               <span className="language-status coming-soon">
                 COMING SOON
               </span>
 
-
               <h3>
                 Java
               </h3>
-
 
               <p>
                 Java learning content with Object-Oriented
                 Programming concepts, examples and interactive
                 explanations is currently under development.
               </p>
-
 
               <button
                 className="language-learn-btn disabled-btn"
@@ -320,9 +295,7 @@ function About() {
             </div>
 
 
-            {/* =================================================
-                PYTHON
-            ================================================= */}
+            {/* PYTHON */}
 
             <div className="about-topic">
 
@@ -330,23 +303,19 @@ function About() {
                 🐍
               </div>
 
-
               <span className="language-status available">
                 AVAILABLE
               </span>
 
-
               <h3>
                 Python
               </h3>
-
 
               <p>
                 Learn Python programming with simple examples,
                 practical concepts and interactive learning
                 resources.
               </p>
-
 
               <Link
                 to="/python"
@@ -358,9 +327,7 @@ function About() {
             </div>
 
 
-            {/* =================================================
-                PHP
-            ================================================= */}
+            {/* PHP */}
 
             <div className="about-topic coming-soon-card">
 
@@ -368,22 +335,18 @@ function About() {
                 PHP
               </div>
 
-
               <span className="language-status coming-soon">
                 COMING SOON
               </span>
-
 
               <h3>
                 PHP
               </h3>
 
-
               <p>
                 Explore PHP fundamentals, web programming concepts
                 and practical server-side development examples.
               </p>
-
 
               <button
                 className="language-learn-btn disabled-btn"
@@ -395,9 +358,7 @@ function About() {
             </div>
 
 
-            {/* =================================================
-                SQL
-            ================================================= */}
+            {/* SQL */}
 
             <div className="about-topic coming-soon-card">
 
@@ -405,22 +366,18 @@ function About() {
                 SQL
               </div>
 
-
               <span className="language-status coming-soon">
                 COMING SOON
               </span>
-
 
               <h3>
                 SQL
               </h3>
 
-
               <p>
                 Learn databases, SQL queries, tables, relationships
                 and database management through practical examples.
               </p>
-
 
               <button
                 className="language-learn-btn disabled-btn"
@@ -437,7 +394,7 @@ function About() {
 
 
         {/* =====================================================
-            WHY THIS PLATFORM
+            WHY USE THIS PLATFORM
         ===================================================== */}
 
         <section className="about-card why-card">
@@ -446,16 +403,13 @@ function About() {
             💡
           </div>
 
-
           <div>
 
             <h2>
               Why Use This Learning Platform?
             </h2>
 
-
             <div className="feature-list">
-
 
               <div className="feature">
 
@@ -552,7 +506,7 @@ function About() {
 
 
         {/* =====================================================
-            LEARNING FLOW
+            HOW IT WORKS
         ===================================================== */}
 
         <section className="about-section">
@@ -579,7 +533,6 @@ function About() {
 
 
           <div className="learning-flow">
-
 
             <div className="flow-step">
 
@@ -655,11 +608,9 @@ function About() {
             PROJECT
           </span>
 
-
           <h2>
             Built for Students 💻
           </h2>
-
 
           <p>
             This project combines modern web technologies with
@@ -667,44 +618,17 @@ function About() {
             learning experience.
           </p>
 
-
           <div className="technology-list">
 
-            <span>
-              React
-            </span>
-
-            <span>
-              JavaScript
-            </span>
-
-            <span>
-              CSS
-            </span>
-
-            <span>
-              C++
-            </span>
-
-            <span>
-              Java
-            </span>
-
-            <span>
-              Python
-            </span>
-
-            <span>
-              PHP
-            </span>
-
-            <span>
-              SQL
-            </span>
-
-            <span>
-              Interactive UI
-            </span>
+            <span>React</span>
+            <span>JavaScript</span>
+            <span>CSS</span>
+            <span>C++</span>
+            <span>Java</span>
+            <span>Python</span>
+            <span>PHP</span>
+            <span>SQL</span>
+            <span>Interactive UI</span>
 
           </div>
 
@@ -725,7 +649,6 @@ function About() {
 
           </div>
 
-
           <div>
 
             <h2>
@@ -738,7 +661,6 @@ function About() {
             </p>
 
           </div>
-
 
           <Link
             to="/feedback"
@@ -757,9 +679,11 @@ function About() {
         <section className="about-final-cta">
 
           <h2>
-            Ready to Start Learning? 🚀
+            {isLoggedIn
+              ? "Ready to Continue Learning? 🚀"
+              : "Ready to Start Learning? 🚀"
+            }
           </h2>
-
 
           <p>
             {isLoggedIn
@@ -774,7 +698,7 @@ function About() {
             {isLoggedIn ? (
 
               <Link
-                to="/learn"
+                to="/"
                 className="hero-primary-btn"
               >
                 Start Learning →
@@ -816,7 +740,6 @@ function About() {
         <p>
           © {new Date().getFullYear()} Programming Learning Lab
         </p>
-
 
         <p>
           Made for students who want to learn programming better 🚀
