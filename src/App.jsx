@@ -194,6 +194,7 @@ function SignUpPage() {
 function LanguageSelector() {
 
   const languages = [
+
     {
       name: "C++",
       description: "C++ OOP & Inheritance",
@@ -233,6 +234,7 @@ function LanguageSelector() {
       path: "/sql",
       className: "sql-option",
     },
+
   ];
 
   return (
@@ -282,10 +284,13 @@ function TopNavigation() {
   return (
     <nav className="top-navigation">
 
+      {/* LANGUAGES */}
+
       <Link
         to="/"
         className="top-nav-link languages-link"
       >
+
         <span className="nav-icon">
           ⌘
         </span>
@@ -293,12 +298,17 @@ function TopNavigation() {
         <span>
           Languages
         </span>
+
       </Link>
+
+
+      {/* ABOUT - PUBLIC */}
 
       <Link
         to="/about"
         className="top-nav-link"
       >
+
         <span className="nav-icon">
           ◎
         </span>
@@ -306,12 +316,17 @@ function TopNavigation() {
         <span>
           About
         </span>
+
       </Link>
+
+
+      {/* FEEDBACK */}
 
       <Link
         to="/feedback"
         className="top-nav-link"
       >
+
         <span className="nav-icon">
           ✦
         </span>
@@ -319,7 +334,11 @@ function TopNavigation() {
         <span>
           Feedback
         </span>
+
       </Link>
+
+
+      {/* USER */}
 
       <div className="top-nav-user">
         <UserButton />
@@ -334,6 +353,7 @@ function TopNavigation() {
 ===================================================== */
 
 function HomePage() {
+
   const { isSignedIn } = useAuth();
 
   if (!isSignedIn) {
@@ -343,7 +363,13 @@ function HomePage() {
   return (
     <div className="language-home">
 
+      {/* =================================================
+          HEADER
+      ================================================= */}
+
       <header className="language-header">
+
+        {/* BRAND */}
 
         <Link
           to="/"
@@ -373,9 +399,17 @@ function HomePage() {
 
         </Link>
 
+
+        {/* NAVIGATION */}
+
         <TopNavigation />
 
       </header>
+
+
+      {/* =================================================
+          MAIN
+      ================================================= */}
 
       <main className="language-main">
 
@@ -402,7 +436,13 @@ function HomePage() {
 
         </div>
 
+
+        {/* LANGUAGE CARDS */}
+
         <LanguageSelector />
+
+
+        {/* NOTE */}
 
         <div className="language-note">
 
@@ -429,7 +469,7 @@ function App() {
       <Routes>
 
         {/* =================================================
-            PUBLIC AUTH PAGES
+            PUBLIC AUTH
         ================================================= */}
 
         <Route
@@ -444,7 +484,7 @@ function App() {
 
 
         {/* =================================================
-            PUBLIC ABOUT PAGE
+            PUBLIC ABOUT
             NO LOGIN REQUIRED
         ================================================= */}
 
