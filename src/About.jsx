@@ -9,19 +9,59 @@ function About() {
       {/* =====================================================
           HEADER
       ===================================================== */}
+
       <header className="about-header">
 
-        <div className="about-logo">
-          C++
-        </div>
+        <Link
+          to="/about"
+          className="about-header-brand"
+        >
 
-        <div>
-          <h1>Programming Learning Lab</h1>
+          <div className="about-logo">
+            C++
+          </div>
 
-          <p>
-            Learn programming concepts visually and interactively
-          </p>
-        </div>
+          <div>
+
+            <h1>
+              Programming Learning Lab
+            </h1>
+
+            <p>
+              Learn programming concepts visually and interactively
+            </p>
+
+          </div>
+
+        </Link>
+
+
+        {/* PUBLIC NAVIGATION */}
+
+        <nav className="about-navigation">
+
+          <Link
+            to="/about"
+            className="about-nav-link active"
+          >
+            About
+          </Link>
+
+          <Link
+            to="/sign-in"
+            className="about-nav-link"
+          >
+            Sign In
+          </Link>
+
+          <Link
+            to="/sign-up"
+            className="about-nav-button"
+          >
+            Get Started
+          </Link>
+
+        </nav>
 
       </header>
 
@@ -29,12 +69,14 @@ function About() {
       {/* =====================================================
           MAIN CONTENT
       ===================================================== */}
+
       <main className="about-container">
 
 
         {/* =====================================================
             HERO
         ===================================================== */}
+
         <section className="about-hero">
 
           <span className="about-badge">
@@ -46,28 +88,47 @@ function About() {
           </h2>
 
           <p>
-            Programming Learning Lab is an educational platform designed
-            to help students understand programming concepts through
-            interactive learning, visual explanations, examples and
-            easy-to-understand content.
+            Programming Learning Lab is an educational platform
+            designed to help students understand programming
+            concepts through interactive learning, visual
+            explanations, examples and easy-to-understand content.
           </p>
 
 
+          <div className="about-hero-actions">
+
+            <Link
+              to="/sign-up"
+              className="hero-primary-btn"
+            >
+              Start Learning →
+            </Link>
+
+            <Link
+              to="/sign-in"
+              className="hero-secondary-btn"
+            >
+              Sign In
+            </Link>
+
+          </div>
+
+
           <Link
-            to="/"
+            to="/about"
             className="sidebar-about"
           >
-            <span>←</span>
-            <span>Back to Learning Lab</span>
+            <span>✓</span>
+            <span>Public About Page</span>
           </Link>
 
         </section>
 
 
-
         {/* =====================================================
             OUR MISSION
         ===================================================== */}
+
         <section className="about-card">
 
           <div className="about-icon">
@@ -98,10 +159,10 @@ function About() {
         </section>
 
 
-
         {/* =====================================================
             AVAILABLE LANGUAGES
         ===================================================== */}
+
         <section className="about-section">
 
           <div className="section-heading">
@@ -125,13 +186,13 @@ function About() {
           </div>
 
 
-
           <div className="about-grid">
 
 
             {/* =================================================
                 C++
             ================================================= */}
+
             <div className="about-topic">
 
               <div className="topic-icon">
@@ -162,10 +223,10 @@ function About() {
             </div>
 
 
-
             {/* =================================================
                 JAVA
             ================================================= */}
+
             <div className="about-topic coming-soon-card">
 
               <div className="topic-icon java-topic">
@@ -196,42 +257,44 @@ function About() {
             </div>
 
 
-
             {/* =================================================
-    PYTHON - AVAILABLE
-================================================= */}
-<div className="about-topic">
+                PYTHON
+            ================================================= */}
 
-  <div className="topic-icon python-topic">
-    🐍
-  </div>
+            <div className="about-topic">
 
-  <span className="language-status available">
-    AVAILABLE
-  </span>
+              <div className="topic-icon python-topic">
+                🐍
+              </div>
 
-  <h3>
-    Python
-  </h3>
+              <span className="language-status available">
+                AVAILABLE
+              </span>
 
-  <p>
-    Learn Python programming with simple examples,
-    practical concepts and interactive learning
-    resources.
-  </p>
+              <h3>
+                Python
+              </h3>
 
-  <Link
-    to="/python"
-    className="language-learn-btn"
-  >
-    Start Learning →
-  </Link>
+              <p>
+                Learn Python programming with simple examples,
+                practical concepts and interactive learning
+                resources.
+              </p>
 
-</div>
+              <Link
+                to="/python"
+                className="language-learn-btn"
+              >
+                Start Learning →
+              </Link>
+
+            </div>
+
 
             {/* =================================================
                 PHP
             ================================================= */}
+
             <div className="about-topic coming-soon-card">
 
               <div className="topic-icon php-topic">
@@ -261,10 +324,10 @@ function About() {
             </div>
 
 
-
             {/* =================================================
                 SQL
             ================================================= */}
+
             <div className="about-topic coming-soon-card">
 
               <div className="topic-icon sql-topic">
@@ -298,10 +361,10 @@ function About() {
         </section>
 
 
-
         {/* =====================================================
             WHY THIS PLATFORM
         ===================================================== */}
+
         <section className="about-card why-card">
 
           <div className="about-icon">
@@ -313,7 +376,6 @@ function About() {
             <h2>
               Why Use This Learning Platform?
             </h2>
-
 
             <div className="feature-list">
 
@@ -340,7 +402,6 @@ function About() {
               </div>
 
 
-
               <div className="feature">
 
                 <span>
@@ -361,7 +422,6 @@ function About() {
                 </div>
 
               </div>
-
 
 
               <div className="feature">
@@ -386,7 +446,6 @@ function About() {
               </div>
 
 
-
               <div className="feature">
 
                 <span>
@@ -408,7 +467,6 @@ function About() {
 
               </div>
 
-
             </div>
 
           </div>
@@ -416,12 +474,11 @@ function About() {
         </section>
 
 
-
         {/* =====================================================
             LEARNING FLOW
         ===================================================== */}
-        <section className="about-section">
 
+        <section className="about-section">
 
           <div className="section-heading">
 
@@ -444,7 +501,6 @@ function About() {
           </div>
 
 
-
           <div className="learning-flow">
 
 
@@ -455,20 +511,18 @@ function About() {
               </div>
 
               <h3>
-                Choose a Language
+                Create an Account
               </h3>
 
               <p>
-                Select C++ or Python and explore the available
-                programming content.
+                Sign up for an account to access the interactive
+                learning platform.
               </p>
 
             </div>
 
 
-
             <div className="flow-line"></div>
-
 
 
             <div className="flow-step">
@@ -489,9 +543,7 @@ function About() {
             </div>
 
 
-
             <div className="flow-line"></div>
-
 
 
             <div className="flow-step">
@@ -511,16 +563,15 @@ function About() {
 
             </div>
 
-
           </div>
 
         </section>
 
 
-
         {/* =====================================================
             TECHNOLOGY
         ===================================================== */}
+
         <section className="technology-card">
 
           <span className="about-badge">
@@ -581,16 +632,18 @@ function About() {
         </section>
 
 
-
         {/* =====================================================
             FEEDBACK
         ===================================================== */}
+
         <section className="feedback-card">
 
           <div>
+
             <span className="feedback-icon">
               💬
             </span>
+
           </div>
 
 
@@ -610,8 +663,6 @@ function About() {
 
           <Link
             to="/feedback"
-            target="_blank"
-            rel="noopener noreferrer"
             className="feedback-btn"
           >
             Send Feedback →
@@ -620,13 +671,48 @@ function About() {
         </section>
 
 
-      </main>
+        {/* =====================================================
+            FINAL CTA
+        ===================================================== */}
 
+        <section className="about-final-cta">
+
+          <h2>
+            Ready to Start Learning? 🚀
+          </h2>
+
+          <p>
+            Create your account and start exploring programming
+            concepts interactively.
+          </p>
+
+          <div>
+
+            <Link
+              to="/sign-up"
+              className="hero-primary-btn"
+            >
+              Create Account
+            </Link>
+
+            <Link
+              to="/sign-in"
+              className="hero-secondary-btn"
+            >
+              Already have an account?
+            </Link>
+
+          </div>
+
+        </section>
+
+      </main>
 
 
       {/* =====================================================
           FOOTER
       ===================================================== */}
+
       <footer className="about-footer">
 
         <p>
